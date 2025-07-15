@@ -50086,2416 +50086,8 @@
 					"_parent": {
 						"$ref": "AAAAAAFFxnG7qRNvP5M="
 					},
-					"name": "Classes",
+					"name": "Persistence",
 					"ownedElements": [
-						{
-							"_type": "UMLClass",
-							"_id": "AAAAAAGWFrLA9ydh2Eo=",
-							"_parent": {
-								"$ref": "AAAAAAGWF9PsaAJ+6Y8="
-							},
-							"name": "TelaAlugarImóvel",
-							"ownedElements": [
-								{
-									"_type": "UMLAssociation",
-									"_id": "AAAAAAGXcOjp8P9/3h8=",
-									"_parent": {
-										"$ref": "AAAAAAGWFrLA9ydh2Eo="
-									},
-									"end1": {
-										"_type": "UMLAssociationEnd",
-										"_id": "AAAAAAGXcOjp8P+Ar+I=",
-										"_parent": {
-											"$ref": "AAAAAAGXcOjp8P9/3h8="
-										},
-										"reference": {
-											"$ref": "AAAAAAGWFrLA9ydh2Eo="
-										},
-										"multiplicity": "*"
-									},
-									"end2": {
-										"_type": "UMLAssociationEnd",
-										"_id": "AAAAAAGXcOjp8P+BtOQ=",
-										"_parent": {
-											"$ref": "AAAAAAGXcOjp8P9/3h8="
-										},
-										"reference": {
-											"$ref": "AAAAAAGWF03qRv9UsNI="
-										},
-										"multiplicity": "1"
-									}
-								},
-								{
-									"_type": "UMLAssociation",
-									"_id": "AAAAAAGXcOk78AEsL+g=",
-									"_parent": {
-										"$ref": "AAAAAAGWFrLA9ydh2Eo="
-									},
-									"end1": {
-										"_type": "UMLAssociationEnd",
-										"_id": "AAAAAAGXcOk78AEtvfg=",
-										"_parent": {
-											"$ref": "AAAAAAGXcOk78AEsL+g="
-										},
-										"reference": {
-											"$ref": "AAAAAAGWFrLA9ydh2Eo="
-										},
-										"multiplicity": "*"
-									},
-									"end2": {
-										"_type": "UMLAssociationEnd",
-										"_id": "AAAAAAGXcOk78AEuAzY=",
-										"_parent": {
-											"$ref": "AAAAAAGXcOk78AEsL+g="
-										},
-										"reference": {
-											"$ref": "AAAAAAGWF1AF0wAxk6A="
-										},
-										"multiplicity": "1"
-									}
-								},
-								{
-									"_type": "UMLAssociation",
-									"_id": "AAAAAAGXcOlnoAOno8k=",
-									"_parent": {
-										"$ref": "AAAAAAGWFrLA9ydh2Eo="
-									},
-									"end1": {
-										"_type": "UMLAssociationEnd",
-										"_id": "AAAAAAGXcOlnoAOog1M=",
-										"_parent": {
-											"$ref": "AAAAAAGXcOlnoAOno8k="
-										},
-										"reference": {
-											"$ref": "AAAAAAGWFrLA9ydh2Eo="
-										},
-										"multiplicity": "*"
-									},
-									"end2": {
-										"_type": "UMLAssociationEnd",
-										"_id": "AAAAAAGXcOlnoQOpUpc=",
-										"_parent": {
-											"$ref": "AAAAAAGXcOlnoAOno8k="
-										},
-										"reference": {
-											"$ref": "AAAAAAGWF05f+f+DDOg="
-										},
-										"multiplicity": "1"
-									}
-								},
-								{
-									"_type": "UMLAssociation",
-									"_id": "AAAAAAGXcOmviAoDcjY=",
-									"_parent": {
-										"$ref": "AAAAAAGWFrLA9ydh2Eo="
-									},
-									"end1": {
-										"_type": "UMLAssociationEnd",
-										"_id": "AAAAAAGXcOmviAoEyAs=",
-										"_parent": {
-											"$ref": "AAAAAAGXcOmviAoDcjY="
-										},
-										"reference": {
-											"$ref": "AAAAAAGWFrLA9ydh2Eo="
-										},
-										"multiplicity": "*"
-									},
-									"end2": {
-										"_type": "UMLAssociationEnd",
-										"_id": "AAAAAAGXcOmviAoFhEY=",
-										"_parent": {
-											"$ref": "AAAAAAGXcOmviAoDcjY="
-										},
-										"reference": {
-											"$ref": "AAAAAAGWF02ue/8pwP8="
-										},
-										"multiplicity": "1"
-									}
-								},
-								{
-									"_type": "UMLDependency",
-									"_id": "AAAAAAGXcRZ5GsvV5T8=",
-									"_parent": {
-										"$ref": "AAAAAAGWFrLA9ydh2Eo="
-									},
-									"source": {
-										"$ref": "AAAAAAGWFrLA9ydh2Eo="
-									},
-									"target": {
-										"$ref": "AAAAAAGWF0JcIf4Sbxc="
-									}
-								},
-								{
-									"_type": "UMLDependency",
-									"_id": "AAAAAAGXcRaiT+K0imY=",
-									"_parent": {
-										"$ref": "AAAAAAGWFrLA9ydh2Eo="
-									},
-									"source": {
-										"$ref": "AAAAAAGWFrLA9ydh2Eo="
-									},
-									"target": {
-										"$ref": "AAAAAAGWF0H6TP3mN2M="
-									}
-								},
-								{
-									"_type": "UMLDependency",
-									"_id": "AAAAAAGXn0s+tfGCGj4=",
-									"_parent": {
-										"$ref": "AAAAAAGWFrLA9ydh2Eo="
-									},
-									"source": {
-										"$ref": "AAAAAAGWFrLA9ydh2Eo="
-									},
-									"target": {
-										"$ref": "AAAAAAGWF0azTv5IurA="
-									}
-								},
-								{
-									"_type": "UMLDependency",
-									"_id": "AAAAAAGXn0zw9jHqLLU=",
-									"_parent": {
-										"$ref": "AAAAAAGWFrLA9ydh2Eo="
-									},
-									"source": {
-										"$ref": "AAAAAAGWFrLA9ydh2Eo="
-									},
-									"target": {
-										"$ref": "AAAAAAGXlJYylnbgirI="
-									}
-								}
-							],
-							"stereotype": {
-								"$ref": "AAAAAAFFw0h1/QXL978="
-							},
-							"operations": [
-								{
-									"_type": "UMLOperation",
-									"_id": "AAAAAAGXJ2VInoZTUBQ=",
-									"_parent": {
-										"$ref": "AAAAAAGWFrLA9ydh2Eo="
-									},
-									"name": "alugar"
-								},
-								{
-									"_type": "UMLOperation",
-									"_id": "AAAAAAGXLeN/LhnWtUg=",
-									"_parent": {
-										"$ref": "AAAAAAGWFrLA9ydh2Eo="
-									},
-									"name": "buscarImovel"
-								},
-								{
-									"_type": "UMLOperation",
-									"_id": "AAAAAAGXLeO2kxnu6sA=",
-									"_parent": {
-										"$ref": "AAAAAAGWFrLA9ydh2Eo="
-									},
-									"name": "buscarInquilino"
-								}
-							]
-						},
-						{
-							"_type": "UMLClass",
-							"_id": "AAAAAAGWFrS9GCksQoQ=",
-							"_parent": {
-								"$ref": "AAAAAAGWF9PsaAJ+6Y8="
-							},
-							"name": "TelaEncerrarLocacao",
-							"ownedElements": [
-								{
-									"_type": "UMLAssociation",
-									"_id": "AAAAAAGXcUsYlRMZtIo=",
-									"_parent": {
-										"$ref": "AAAAAAGWFrS9GCksQoQ="
-									},
-									"end1": {
-										"_type": "UMLAssociationEnd",
-										"_id": "AAAAAAGXcUsYlRMaPcc=",
-										"_parent": {
-											"$ref": "AAAAAAGXcUsYlRMZtIo="
-										},
-										"reference": {
-											"$ref": "AAAAAAGWFrS9GCksQoQ="
-										},
-										"multiplicity": "*"
-									},
-									"end2": {
-										"_type": "UMLAssociationEnd",
-										"_id": "AAAAAAGXcUsYlRMbsnA=",
-										"_parent": {
-											"$ref": "AAAAAAGXcUsYlRMZtIo="
-										},
-										"reference": {
-											"$ref": "AAAAAAGWF1AF0wAxk6A="
-										},
-										"multiplicity": "1"
-									}
-								},
-								{
-									"_type": "UMLDependency",
-									"_id": "AAAAAAGXcUt2HiDYJKc=",
-									"_parent": {
-										"$ref": "AAAAAAGWFrS9GCksQoQ="
-									},
-									"source": {
-										"$ref": "AAAAAAGWFrS9GCksQoQ="
-									},
-									"target": {
-										"$ref": "AAAAAAGWF0JcIf4Sbxc="
-									}
-								},
-								{
-									"_type": "UMLDependency",
-									"_id": "AAAAAAGXcUuMfiqXFAo=",
-									"_parent": {
-										"$ref": "AAAAAAGWFrS9GCksQoQ="
-									},
-									"source": {
-										"$ref": "AAAAAAGWFrS9GCksQoQ="
-									},
-									"target": {
-										"$ref": "AAAAAAGWF0azTv5IurA="
-									}
-								},
-								{
-									"_type": "UMLDependency",
-									"_id": "AAAAAAGXn3axZYW1e60=",
-									"_parent": {
-										"$ref": "AAAAAAGWFrS9GCksQoQ="
-									},
-									"source": {
-										"$ref": "AAAAAAGWFrS9GCksQoQ="
-									},
-									"target": {
-										"$ref": "AAAAAAGXlJWNZXPBRKg="
-									}
-								}
-							],
-							"stereotype": {
-								"$ref": "AAAAAAFFw0h1/QXL978="
-							}
-						},
-						{
-							"_type": "UMLClass",
-							"_id": "AAAAAAGWFrTERioieVI=",
-							"_parent": {
-								"$ref": "AAAAAAGWF9PsaAJ+6Y8="
-							},
-							"name": "TelaPedidosManutencao",
-							"ownedElements": [
-								{
-									"_type": "UMLAssociation",
-									"_id": "AAAAAAGXdeFllRPvYkc=",
-									"_parent": {
-										"$ref": "AAAAAAGWFrTERioieVI="
-									},
-									"end1": {
-										"_type": "UMLAssociationEnd",
-										"_id": "AAAAAAGXdeFllRPwVHk=",
-										"_parent": {
-											"$ref": "AAAAAAGXdeFllRPvYkc="
-										},
-										"reference": {
-											"$ref": "AAAAAAGWFySXWfzHJTU="
-										},
-										"multiplicity": "*"
-									},
-									"end2": {
-										"_type": "UMLAssociationEnd",
-										"_id": "AAAAAAGXdeFllRPxbps=",
-										"_parent": {
-											"$ref": "AAAAAAGXdeFllRPvYkc="
-										},
-										"reference": {
-											"$ref": "AAAAAAGWF02ue/8pwP8="
-										},
-										"multiplicity": "1"
-									}
-								},
-								{
-									"_type": "UMLDependency",
-									"_id": "AAAAAAGXdeHNUBb7hzM=",
-									"_parent": {
-										"$ref": "AAAAAAGWFrTERioieVI="
-									},
-									"source": {
-										"$ref": "AAAAAAGWFySXWfzHJTU="
-									},
-									"target": {
-										"$ref": "AAAAAAGWF0H6TP3mN2M="
-									}
-								},
-								{
-									"_type": "UMLDependency",
-									"_id": "AAAAAAGXdeHgZRg+oLw=",
-									"_parent": {
-										"$ref": "AAAAAAGWFrTERioieVI="
-									},
-									"source": {
-										"$ref": "AAAAAAGWFrTERioieVI="
-									},
-									"target": {
-										"$ref": "AAAAAAGWF0iLO/6kyoI="
-									}
-								}
-							],
-							"stereotype": {
-								"$ref": "AAAAAAFFw0h1/QXL978="
-							}
-						},
-						{
-							"_type": "UMLClass",
-							"_id": "AAAAAAGWFrTFBipLxeY=",
-							"_parent": {
-								"$ref": "AAAAAAGWF9PsaAJ+6Y8="
-							},
-							"name": "TelaEnviarCobranca",
-							"ownedElements": [
-								{
-									"_type": "UMLDependency",
-									"_id": "AAAAAAGXcTAxPc+rZU0=",
-									"_parent": {
-										"$ref": "AAAAAAGWFrTFBipLxeY="
-									},
-									"source": {
-										"$ref": "AAAAAAGWFrTFBipLxeY="
-									},
-									"target": {
-										"$ref": "AAAAAAGWF0JcIf4Sbxc="
-									}
-								},
-								{
-									"_type": "UMLAssociation",
-									"_id": "AAAAAAGXcT2rKfmdGxI=",
-									"_parent": {
-										"$ref": "AAAAAAGWFrTFBipLxeY="
-									},
-									"end1": {
-										"_type": "UMLAssociationEnd",
-										"_id": "AAAAAAGXcT2rKfmeEG4=",
-										"_parent": {
-											"$ref": "AAAAAAGXcT2rKfmdGxI="
-										},
-										"reference": {
-											"$ref": "AAAAAAGWFrTFBipLxeY="
-										},
-										"multiplicity": "*"
-									},
-									"end2": {
-										"_type": "UMLAssociationEnd",
-										"_id": "AAAAAAGXcT2rKfmfu2A=",
-										"_parent": {
-											"$ref": "AAAAAAGXcT2rKfmdGxI="
-										},
-										"reference": {
-											"$ref": "AAAAAAGWF083vf/bII0="
-										},
-										"multiplicity": "1"
-									}
-								},
-								{
-									"_type": "UMLDependency",
-									"_id": "AAAAAAGXqC30w0l/gRw=",
-									"_parent": {
-										"$ref": "AAAAAAGWFrTFBipLxeY="
-									},
-									"source": {
-										"$ref": "AAAAAAGWFrTFBipLxeY="
-									},
-									"target": {
-										"$ref": "AAAAAAGWF0azTv5IurA="
-									}
-								}
-							],
-							"stereotype": {
-								"$ref": "AAAAAAFFw0h1/QXL978="
-							}
-						},
-						{
-							"_type": "UMLClass",
-							"_id": "AAAAAAGWFrTF3Sp0Skk=",
-							"_parent": {
-								"$ref": "AAAAAAGWF9PsaAJ+6Y8="
-							},
-							"name": "TelaReceberPagamento",
-							"ownedElements": [
-								{
-									"_type": "UMLDependency",
-									"_id": "AAAAAAGXcSbZgqlL94A=",
-									"_parent": {
-										"$ref": "AAAAAAGWFrTF3Sp0Skk="
-									},
-									"source": {
-										"$ref": "AAAAAAGWFrTF3Sp0Skk="
-									},
-									"target": {
-										"$ref": "AAAAAAGWF0pbt/79ivs="
-									}
-								},
-								{
-									"_type": "UMLAssociation",
-									"_id": "AAAAAAGXcUFSZyiHdCI=",
-									"_parent": {
-										"$ref": "AAAAAAGWFrTF3Sp0Skk="
-									},
-									"end1": {
-										"_type": "UMLAssociationEnd",
-										"_id": "AAAAAAGXcUFSZyiIzM0=",
-										"_parent": {
-											"$ref": "AAAAAAGXcUFSZyiHdCI="
-										},
-										"reference": {
-											"$ref": "AAAAAAGWFrTF3Sp0Skk="
-										},
-										"multiplicity": "*"
-									},
-									"end2": {
-										"_type": "UMLAssociationEnd",
-										"_id": "AAAAAAGXcUFSZyiJzzw=",
-										"_parent": {
-											"$ref": "AAAAAAGXcUFSZyiHdCI="
-										},
-										"reference": {
-											"$ref": "AAAAAAGWF0+OdAAGmKo="
-										},
-										"multiplicity": "1"
-									}
-								},
-								{
-									"_type": "UMLDependency",
-									"_id": "AAAAAAGXqDGDY1a0bZc=",
-									"_parent": {
-										"$ref": "AAAAAAGWFrTF3Sp0Skk="
-									},
-									"source": {
-										"$ref": "AAAAAAGWFrTF3Sp0Skk="
-									},
-									"target": {
-										"$ref": "AAAAAAGWF0k47/7R6iY="
-									}
-								}
-							],
-							"stereotype": {
-								"$ref": "AAAAAAFFw0h1/QXL978="
-							},
-							"operations": [
-								{
-									"_type": "UMLOperation",
-									"_id": "AAAAAAGXT9oyYQdIbXE=",
-									"_parent": {
-										"$ref": "AAAAAAGWFrTF3Sp0Skk="
-									},
-									"name": "registrar"
-								}
-							]
-						},
-						{
-							"_type": "UMLClass",
-							"_id": "AAAAAAGWFySXWfzHJTU=",
-							"_parent": {
-								"$ref": "AAAAAAGWF9PsaAJ+6Y8="
-							},
-							"name": "TelaAbrirChamadoDeReparo",
-							"ownedElements": [
-								{
-									"_type": "UMLDependency",
-									"_id": "AAAAAAGXdea2iFbgzXA=",
-									"_parent": {
-										"$ref": "AAAAAAGWFySXWfzHJTU="
-									},
-									"source": {
-										"$ref": "AAAAAAGWFySXWfzHJTU="
-									},
-									"target": {
-										"$ref": "AAAAAAGWF0H6TP3mN2M="
-									}
-								},
-								{
-									"_type": "UMLDependency",
-									"_id": "AAAAAAGXdebbM18lbAI=",
-									"_parent": {
-										"$ref": "AAAAAAGWFySXWfzHJTU="
-									},
-									"source": {
-										"$ref": "AAAAAAGWFySXWfzHJTU="
-									},
-									"target": {
-										"$ref": "AAAAAAGWF0iLO/6kyoI="
-									}
-								},
-								{
-									"_type": "UMLAssociation",
-									"_id": "AAAAAAGXdebwCmKu+Zw=",
-									"_parent": {
-										"$ref": "AAAAAAGWFySXWfzHJTU="
-									},
-									"end1": {
-										"_type": "UMLAssociationEnd",
-										"_id": "AAAAAAGXdebwCmKv6JI=",
-										"_parent": {
-											"$ref": "AAAAAAGXdebwCmKu+Zw="
-										},
-										"reference": {
-											"$ref": "AAAAAAGWFySXWfzHJTU="
-										},
-										"multiplicity": "*"
-									},
-									"end2": {
-										"_type": "UMLAssociationEnd",
-										"_id": "AAAAAAGXdebwCmKwXDE=",
-										"_parent": {
-											"$ref": "AAAAAAGXdebwCmKu+Zw="
-										},
-										"reference": {
-											"$ref": "AAAAAAGWF06xf/+uVBM="
-										},
-										"multiplicity": "1"
-									}
-								}
-							],
-							"stereotype": {
-								"$ref": "AAAAAAFFw0h1/QXL978="
-							},
-							"operations": [
-								{
-									"_type": "UMLOperation",
-									"_id": "AAAAAAGXT/wgkw7sMD8=",
-									"_parent": {
-										"$ref": "AAAAAAGWFySXWfzHJTU="
-									},
-									"name": "cadastrar"
-								}
-							]
-						},
-						{
-							"_type": "UMLClass",
-							"_id": "AAAAAAGWFyX3Pfz2t+s=",
-							"_parent": {
-								"$ref": "AAAAAAGWF9PsaAJ+6Y8="
-							},
-							"name": "TelaFazerPagamento",
-							"ownedElements": [
-								{
-									"_type": "UMLDependency",
-									"_id": "AAAAAAGXcS1Ad73gwKo=",
-									"_parent": {
-										"$ref": "AAAAAAGWFyX3Pfz2t+s="
-									},
-									"source": {
-										"$ref": "AAAAAAGWFyX3Pfz2t+s="
-									},
-									"target": {
-										"$ref": "AAAAAAGWF0JcIf4Sbxc="
-									}
-								},
-								{
-									"_type": "UMLDependency",
-									"_id": "AAAAAAGXcS1e+MHzbKE=",
-									"_parent": {
-										"$ref": "AAAAAAGWFyX3Pfz2t+s="
-									},
-									"source": {
-										"$ref": "AAAAAAGWFyX3Pfz2t+s="
-									},
-									"target": {
-										"$ref": "AAAAAAGWF0pbt/79ivs="
-									}
-								},
-								{
-									"_type": "UMLAssociation",
-									"_id": "AAAAAAGXqC7JA02Gas8=",
-									"_parent": {
-										"$ref": "AAAAAAGWFyX3Pfz2t+s="
-									},
-									"end1": {
-										"_type": "UMLAssociationEnd",
-										"_id": "AAAAAAGXqC7JA02HvbE=",
-										"_parent": {
-											"$ref": "AAAAAAGXqC7JA02Gas8="
-										},
-										"reference": {
-											"$ref": "AAAAAAGWFyX3Pfz2t+s="
-										},
-										"multiplicity": "*"
-									},
-									"end2": {
-										"_type": "UMLAssociationEnd",
-										"_id": "AAAAAAGXqC7JA02IIxo=",
-										"_parent": {
-											"$ref": "AAAAAAGXqC7JA02Gas8="
-										},
-										"reference": {
-											"$ref": "AAAAAAGWF0+OdAAGmKo="
-										},
-										"multiplicity": "1"
-									}
-								},
-								{
-									"_type": "UMLDependency",
-									"_id": "AAAAAAGXqDGoCljz/pc=",
-									"_parent": {
-										"$ref": "AAAAAAGWFyX3Pfz2t+s="
-									},
-									"source": {
-										"$ref": "AAAAAAGWFyX3Pfz2t+s="
-									},
-									"target": {
-										"$ref": "AAAAAAGWF0k47/7R6iY="
-									}
-								}
-							],
-							"stereotype": {
-								"$ref": "AAAAAAFFw0h1/QXL978="
-							}
-						},
-						{
-							"_type": "UMLClass",
-							"_id": "AAAAAAGWFz4SYP1Fp9Y=",
-							"_parent": {
-								"$ref": "AAAAAAGWF9PsaAJ+6Y8="
-							},
-							"name": "TelaConsultaPagamentos",
-							"ownedElements": [
-								{
-									"_type": "UMLDependency",
-									"_id": "AAAAAAGXdeo1WXdziRk=",
-									"_parent": {
-										"$ref": "AAAAAAGWFz4SYP1Fp9Y="
-									},
-									"source": {
-										"$ref": "AAAAAAGWFz4SYP1Fp9Y="
-									},
-									"target": {
-										"$ref": "AAAAAAGWF0JcIf4Sbxc="
-									}
-								},
-								{
-									"_type": "UMLAssociation",
-									"_id": "AAAAAAGX+3Yr+coXM4Q=",
-									"_parent": {
-										"$ref": "AAAAAAGWFz4SYP1Fp9Y="
-									},
-									"end1": {
-										"_type": "UMLAssociationEnd",
-										"_id": "AAAAAAGX+3Yr+coYbhk=",
-										"_parent": {
-											"$ref": "AAAAAAGX+3Yr+coXM4Q="
-										},
-										"reference": {
-											"$ref": "AAAAAAGWFz4SYP1Fp9Y="
-										},
-										"multiplicity": "*"
-									},
-									"end2": {
-										"_type": "UMLAssociationEnd",
-										"_id": "AAAAAAGX+3Yr+coZWyE=",
-										"_parent": {
-											"$ref": "AAAAAAGX+3Yr+coXM4Q="
-										},
-										"reference": {
-											"$ref": "AAAAAAGWF0+OdAAGmKo="
-										},
-										"multiplicity": "1"
-									}
-								},
-								{
-									"_type": "UMLDependency",
-									"_id": "AAAAAAGX+3mA3QL+UIw=",
-									"_parent": {
-										"$ref": "AAAAAAGWFz4SYP1Fp9Y="
-									},
-									"source": {
-										"$ref": "AAAAAAGWFz4SYP1Fp9Y="
-									},
-									"target": {
-										"$ref": "AAAAAAGWF0azTv5IurA="
-									}
-								}
-							],
-							"stereotype": {
-								"$ref": "AAAAAAFFw0h1/QXL978="
-							},
-							"operations": [
-								{
-									"_type": "UMLOperation",
-									"_id": "AAAAAAGXLT0e5vqMqFA=",
-									"_parent": {
-										"$ref": "AAAAAAGWFz4SYP1Fp9Y="
-									},
-									"name": "buscar"
-								},
-								{
-									"_type": "UMLOperation",
-									"_id": "AAAAAAGXUAlddQ/e9hM=",
-									"_parent": {
-										"$ref": "AAAAAAGWFz4SYP1Fp9Y="
-									},
-									"name": "consultar"
-								}
-							]
-						},
-						{
-							"_type": "UMLClass",
-							"_id": "AAAAAAGWFz9Xjf14xS0=",
-							"_parent": {
-								"$ref": "AAAAAAGWF9PsaAJ+6Y8="
-							},
-							"name": "TelaVisualizarContrato",
-							"ownedElements": [
-								{
-									"_type": "UMLDependency",
-									"_id": "AAAAAAGXdfGHM55wrTk=",
-									"_parent": {
-										"$ref": "AAAAAAGWFz9Xjf14xS0="
-									},
-									"source": {
-										"$ref": "AAAAAAGWFz9Xjf14xS0="
-									},
-									"target": {
-										"$ref": "AAAAAAGWF0dibP53UJM="
-									}
-								},
-								{
-									"_type": "UMLDependency",
-									"_id": "AAAAAAGXdfIcraF+58g=",
-									"_parent": {
-										"$ref": "AAAAAAGWFz9Xjf14xS0="
-									},
-									"source": {
-										"$ref": "AAAAAAGWFz9Xjf14xS0="
-									},
-									"target": {
-										"$ref": "AAAAAAGWF0azTv5IurA="
-									}
-								},
-								{
-									"_type": "UMLDependency",
-									"_id": "AAAAAAGXdfI6A6Wavoc=",
-									"_parent": {
-										"$ref": "AAAAAAGWFz9Xjf14xS0="
-									},
-									"source": {
-										"$ref": "AAAAAAGWFz9Xjf14xS0="
-									},
-									"target": {
-										"$ref": "AAAAAAGWF0H6TP3mN2M="
-									}
-								}
-							],
-							"stereotype": {
-								"$ref": "AAAAAAFFw0h1/QXL978="
-							}
-						},
-						{
-							"_type": "UMLClass",
-							"_id": "AAAAAAGWF0DGiP2jm4I=",
-							"_parent": {
-								"$ref": "AAAAAAGWF9PsaAJ+6Y8="
-							},
-							"name": "TelaInformacaoImove",
-							"ownedElements": [
-								{
-									"_type": "UMLDependency",
-									"_id": "AAAAAAGXdhVV/hoy9/8=",
-									"_parent": {
-										"$ref": "AAAAAAGWF0DGiP2jm4I="
-									},
-									"source": {
-										"$ref": "AAAAAAGWF0DGiP2jm4I="
-									},
-									"target": {
-										"$ref": "AAAAAAGWF0JcIf4Sbxc="
-									}
-								},
-								{
-									"_type": "UMLDependency",
-									"_id": "AAAAAAGXdhVjFBv8UbY=",
-									"_parent": {
-										"$ref": "AAAAAAGWF0DGiP2jm4I="
-									},
-									"source": {
-										"$ref": "AAAAAAGWF0DGiP2jm4I="
-									},
-									"target": {
-										"$ref": "AAAAAAGWF0H6TP3mN2M="
-									}
-								},
-								{
-									"_type": "UMLAssociation",
-									"_id": "AAAAAAGXdhWdtiGXPas=",
-									"_parent": {
-										"$ref": "AAAAAAGWF0DGiP2jm4I="
-									},
-									"end1": {
-										"_type": "UMLAssociationEnd",
-										"_id": "AAAAAAGXdhWdtiGY6gI=",
-										"_parent": {
-											"$ref": "AAAAAAGXdhWdtiGXPas="
-										},
-										"reference": {
-											"$ref": "AAAAAAGWF0DGiP2jm4I="
-										},
-										"multiplicity": "*"
-									},
-									"end2": {
-										"_type": "UMLAssociationEnd",
-										"_id": "AAAAAAGXdhWdtyGZ/EE=",
-										"_parent": {
-											"$ref": "AAAAAAGXdhWdtiGXPas="
-										},
-										"reference": {
-											"$ref": "AAAAAAGWF03qRv9UsNI="
-										},
-										"multiplicity": "1"
-									}
-								},
-								{
-									"_type": "UMLDependency",
-									"_id": "AAAAAAGXn301swAZJlk=",
-									"_parent": {
-										"$ref": "AAAAAAGWF0DGiP2jm4I="
-									},
-									"source": {
-										"$ref": "AAAAAAGWF0DGiP2jm4I="
-									},
-									"target": {
-										"$ref": "AAAAAAGXlJYylnbgirI="
-									}
-								}
-							],
-							"stereotype": {
-								"$ref": "AAAAAAFFw0h1/QXL978="
-							}
-						},
-						{
-							"_type": "UMLClass",
-							"_id": "AAAAAAGWF70iXwIZMTE=",
-							"_parent": {
-								"$ref": "AAAAAAGWF9PsaAJ+6Y8="
-							},
-							"name": "TelaAutenticarUsuario",
-							"ownedElements": [
-								{
-									"_type": "UMLDependency",
-									"_id": "AAAAAAGXdhgJ0zCdTpI=",
-									"_parent": {
-										"$ref": "AAAAAAGWF70iXwIZMTE="
-									},
-									"source": {
-										"$ref": "AAAAAAGWF70iXwIZMTE="
-									},
-									"target": {
-										"$ref": "AAAAAAGWF0JcIf4Sbxc="
-									}
-								},
-								{
-									"_type": "UMLAssociation",
-									"_id": "AAAAAAGXdhgWOTHOEz8=",
-									"_parent": {
-										"$ref": "AAAAAAGWF70iXwIZMTE="
-									},
-									"end1": {
-										"_type": "UMLAssociationEnd",
-										"_id": "AAAAAAGXdhgWOTHPrzU=",
-										"_parent": {
-											"$ref": "AAAAAAGXdhgWOTHOEz8="
-										},
-										"reference": {
-											"$ref": "AAAAAAGWF70iXwIZMTE="
-										},
-										"multiplicity": "*"
-									},
-									"end2": {
-										"_type": "UMLAssociationEnd",
-										"_id": "AAAAAAGXdhgWOTHQOWQ=",
-										"_parent": {
-											"$ref": "AAAAAAGXdhgWOTHOEz8="
-										},
-										"reference": {
-											"$ref": "AAAAAAGWF03qRv9UsNI="
-										},
-										"multiplicity": "1"
-									}
-								}
-							],
-							"stereotype": {
-								"$ref": "AAAAAAFFw0h1/QXL978="
-							}
-						},
-						{
-							"_type": "UMLClass",
-							"_id": "AAAAAAGWF0H6TP3mN2M=",
-							"_parent": {
-								"$ref": "AAAAAAGWF9PsaAJ+6Y8="
-							},
-							"name": "Imovel",
-							"ownedElements": [
-								{
-									"_type": "UMLAssociation",
-									"_id": "AAAAAAGXdeOIvDNWNrc=",
-									"_parent": {
-										"$ref": "AAAAAAGWF0H6TP3mN2M="
-									},
-									"end1": {
-										"_type": "UMLAssociationEnd",
-										"_id": "AAAAAAGXdeOIvDNXibY=",
-										"_parent": {
-											"$ref": "AAAAAAGXdeOIvDNWNrc="
-										},
-										"reference": {
-											"$ref": "AAAAAAGWF0H6TP3mN2M="
-										},
-										"multiplicity": "1"
-									},
-									"end2": {
-										"_type": "UMLAssociationEnd",
-										"_id": "AAAAAAGXdeOIvDNYHbM=",
-										"_parent": {
-											"$ref": "AAAAAAGXdeOIvDNWNrc="
-										},
-										"reference": {
-											"$ref": "AAAAAAGWF0iLO/6kyoI="
-										},
-										"multiplicity": "0..*"
-									}
-								}
-							],
-							"stereotype": {
-								"$ref": "AAAAAAFFJsYgDTM+Z6E="
-							},
-							"attributes": [
-								{
-									"_type": "UMLAttribute",
-									"_id": "AAAAAAGXlPNU0/RfPIA=",
-									"_parent": {
-										"$ref": "AAAAAAGWF0H6TP3mN2M="
-									},
-									"name": "id",
-									"type": "int"
-								},
-								{
-									"_type": "UMLAttribute",
-									"_id": "AAAAAAGXlPPN7PZKy5c=",
-									"_parent": {
-										"$ref": "AAAAAAGWF0H6TP3mN2M="
-									},
-									"name": "estaAlugado",
-									"type": "boolean"
-								},
-								{
-									"_type": "UMLAttribute",
-									"_id": "AAAAAAGXlPVtJPkcGwI=",
-									"_parent": {
-										"$ref": "AAAAAAGWF0H6TP3mN2M="
-									},
-									"name": "apelido",
-									"type": "String"
-								},
-								{
-									"_type": "UMLAttribute",
-									"_id": "AAAAAAGXlPXfrvsHaBw=",
-									"_parent": {
-										"$ref": "AAAAAAGWF0H6TP3mN2M="
-									},
-									"name": "valorAluguel",
-									"type": "Float"
-								},
-								{
-									"_type": "UMLAttribute",
-									"_id": "AAAAAAGXlPfrLvzy97o=",
-									"_parent": {
-										"$ref": "AAAAAAGWF0H6TP3mN2M="
-									},
-									"name": "logradouro",
-									"type": "String"
-								},
-								{
-									"_type": "UMLAttribute",
-									"_id": "AAAAAAGXlPh9lv9brJI=",
-									"_parent": {
-										"$ref": "AAAAAAGWF0H6TP3mN2M="
-									},
-									"name": "uf",
-									"type": "Enum"
-								},
-								{
-									"_type": "UMLAttribute",
-									"_id": "AAAAAAGXlPlEcQN9JTY=",
-									"_parent": {
-										"$ref": "AAAAAAGWF0H6TP3mN2M="
-									},
-									"name": "numero",
-									"type": "String"
-								},
-								{
-									"_type": "UMLAttribute",
-									"_id": "AAAAAAGXlPomogdLfu8=",
-									"_parent": {
-										"$ref": "AAAAAAGWF0H6TP3mN2M="
-									},
-									"name": "cidade",
-									"type": "String"
-								},
-								{
-									"_type": "UMLAttribute",
-									"_id": "AAAAAAGXlPsRQgvsqAQ=",
-									"_parent": {
-										"$ref": "AAAAAAGWF0H6TP3mN2M="
-									},
-									"name": "bairro",
-									"type": "String"
-								}
-							]
-						},
-						{
-							"_type": "UMLClass",
-							"_id": "AAAAAAGWF0JcIf4Sbxc=",
-							"_parent": {
-								"$ref": "AAAAAAGWF9PsaAJ+6Y8="
-							},
-							"name": "Usuario",
-							"stereotype": {
-								"$ref": "AAAAAAFFJsYgDTM+Z6E="
-							},
-							"attributes": [
-								{
-									"_type": "UMLAttribute",
-									"_id": "AAAAAAGXlKEk+ayRCOc=",
-									"_parent": {
-										"$ref": "AAAAAAGWF0JcIf4Sbxc="
-									},
-									"name": "id",
-									"type": "int"
-								},
-								{
-									"_type": "UMLAttribute",
-									"_id": "AAAAAAGXlKFeMa8FN4A=",
-									"_parent": {
-										"$ref": "AAAAAAGWF0JcIf4Sbxc="
-									},
-									"name": "nome",
-									"type": "String"
-								},
-								{
-									"_type": "UMLAttribute",
-									"_id": "AAAAAAGXlOBj7Jx2Hng=",
-									"_parent": {
-										"$ref": "AAAAAAGWF0JcIf4Sbxc="
-									},
-									"name": "cpf",
-									"type": "String"
-								},
-								{
-									"_type": "UMLAttribute",
-									"_id": "AAAAAAGXlOGW+J331/E=",
-									"_parent": {
-										"$ref": "AAAAAAGWF0JcIf4Sbxc="
-									},
-									"name": "rg",
-									"type": "String"
-								},
-								{
-									"_type": "UMLAttribute",
-									"_id": "AAAAAAGXlOIbgKA1YCk=",
-									"_parent": {
-										"$ref": "AAAAAAGWF0JcIf4Sbxc="
-									},
-									"name": "email",
-									"type": "String"
-								},
-								{
-									"_type": "UMLAttribute",
-									"_id": "AAAAAAGXlOLh9KI98uA=",
-									"_parent": {
-										"$ref": "AAAAAAGWF0JcIf4Sbxc="
-									},
-									"name": "telefone",
-									"type": "String"
-								},
-								{
-									"_type": "UMLAttribute",
-									"_id": "AAAAAAGXlOQkeqO++sk=",
-									"_parent": {
-										"$ref": "AAAAAAGWF0JcIf4Sbxc="
-									},
-									"name": "estadoCivil",
-									"type": "Enum"
-								},
-								{
-									"_type": "UMLAttribute",
-									"_id": "AAAAAAGXlOWnCK5H6nY=",
-									"_parent": {
-										"$ref": "AAAAAAGWF0JcIf4Sbxc="
-									},
-									"name": "profissao",
-									"type": "String"
-								},
-								{
-									"_type": "UMLAttribute",
-									"_id": "AAAAAAGXlOwtLcKGuBE=",
-									"_parent": {
-										"$ref": "AAAAAAGWF0JcIf4Sbxc="
-									},
-									"name": "logradouro",
-									"type": "String"
-								},
-								{
-									"_type": "UMLAttribute",
-									"_id": "AAAAAAGXlO5kfMdmWFU=",
-									"_parent": {
-										"$ref": "AAAAAAGWF0JcIf4Sbxc="
-									},
-									"name": "uf",
-									"type": "Enum"
-								},
-								{
-									"_type": "UMLAttribute",
-									"_id": "AAAAAAGXlO8xksnPdRk=",
-									"_parent": {
-										"$ref": "AAAAAAGWF0JcIf4Sbxc="
-									},
-									"name": "numero",
-									"type": "String"
-								},
-								{
-									"_type": "UMLAttribute",
-									"_id": "AAAAAAGXlPANxc3IbpI=",
-									"_parent": {
-										"$ref": "AAAAAAGWF0JcIf4Sbxc="
-									},
-									"name": "cidade",
-									"type": "String"
-								},
-								{
-									"_type": "UMLAttribute",
-									"_id": "AAAAAAGXlPBWpM/IfUQ=",
-									"_parent": {
-										"$ref": "AAAAAAGWF0JcIf4Sbxc="
-									},
-									"name": "bairro",
-									"type": "String"
-								}
-							]
-						},
-						{
-							"_type": "UMLClass",
-							"_id": "AAAAAAGWF0azTv5IurA=",
-							"_parent": {
-								"$ref": "AAAAAAGWF9PsaAJ+6Y8="
-							},
-							"name": "Locacao",
-							"ownedElements": [
-								{
-									"_type": "UMLAssociation",
-									"_id": "AAAAAAGXcQG2+lX1Wf8=",
-									"_parent": {
-										"$ref": "AAAAAAGWF0azTv5IurA="
-									},
-									"end1": {
-										"_type": "UMLAssociationEnd",
-										"_id": "AAAAAAGXcQG2+lX2jh8=",
-										"_parent": {
-											"$ref": "AAAAAAGXcQG2+lX1Wf8="
-										},
-										"reference": {
-											"$ref": "AAAAAAGWF0azTv5IurA="
-										},
-										"multiplicity": "1"
-									},
-									"end2": {
-										"_type": "UMLAssociationEnd",
-										"_id": "AAAAAAGXcQG2+lX3j44=",
-										"_parent": {
-											"$ref": "AAAAAAGXcQG2+lX1Wf8="
-										},
-										"reference": {
-											"$ref": "AAAAAAGWF0dibP53UJM="
-										},
-										"multiplicity": "1"
-									}
-								},
-								{
-									"_type": "UMLAssociation",
-									"_id": "AAAAAAGXcUbyK3SYjJU=",
-									"_parent": {
-										"$ref": "AAAAAAGWF0azTv5IurA="
-									},
-									"end1": {
-										"_type": "UMLAssociationEnd",
-										"_id": "AAAAAAGXcUbyK3SZXxM=",
-										"_parent": {
-											"$ref": "AAAAAAGXcUbyK3SYjJU="
-										},
-										"reference": {
-											"$ref": "AAAAAAGWF0azTv5IurA="
-										},
-										"multiplicity": "*"
-									},
-									"end2": {
-										"_type": "UMLAssociationEnd",
-										"_id": "AAAAAAGXcUbyK3SamrM=",
-										"_parent": {
-											"$ref": "AAAAAAGXcUbyK3SYjJU="
-										},
-										"reference": {
-											"$ref": "AAAAAAGWF0H6TP3mN2M="
-										},
-										"multiplicity": "1"
-									}
-								},
-								{
-									"_type": "UMLAssociation",
-									"_id": "AAAAAAGXp95yZjJwtNE=",
-									"_parent": {
-										"$ref": "AAAAAAGWF0azTv5IurA="
-									},
-									"end1": {
-										"_type": "UMLAssociationEnd",
-										"_id": "AAAAAAGXp95yZjJxB8c=",
-										"_parent": {
-											"$ref": "AAAAAAGXp95yZjJwtNE="
-										},
-										"reference": {
-											"$ref": "AAAAAAGWF0azTv5IurA="
-										},
-										"multiplicity": "0..*"
-									},
-									"end2": {
-										"_type": "UMLAssociationEnd",
-										"_id": "AAAAAAGXp95yZjJyekU=",
-										"_parent": {
-											"$ref": "AAAAAAGXp95yZjJwtNE="
-										},
-										"reference": {
-											"$ref": "AAAAAAGXlJWNZXPBRKg="
-										}
-									}
-								},
-								{
-									"_type": "UMLAssociation",
-									"_id": "AAAAAAGXp96L9TdUu9g=",
-									"_parent": {
-										"$ref": "AAAAAAGWF0azTv5IurA="
-									},
-									"end1": {
-										"_type": "UMLAssociationEnd",
-										"_id": "AAAAAAGXp96L9TdVYIM=",
-										"_parent": {
-											"$ref": "AAAAAAGXp96L9TdUu9g="
-										},
-										"reference": {
-											"$ref": "AAAAAAGWF0azTv5IurA="
-										},
-										"multiplicity": "0..*"
-									},
-									"end2": {
-										"_type": "UMLAssociationEnd",
-										"_id": "AAAAAAGXp96L9TdWuEs=",
-										"_parent": {
-											"$ref": "AAAAAAGXp96L9TdUu9g="
-										},
-										"reference": {
-											"$ref": "AAAAAAGXlJYylnbgirI="
-										},
-										"multiplicity": "1"
-									}
-								},
-								{
-									"_type": "UMLAssociation",
-									"_id": "AAAAAAGXqCC+4bOB47U=",
-									"_parent": {
-										"$ref": "AAAAAAGWF0azTv5IurA="
-									},
-									"end1": {
-										"_type": "UMLAssociationEnd",
-										"_id": "AAAAAAGXqCC+4bOCXvA=",
-										"_parent": {
-											"$ref": "AAAAAAGXqCC+4bOB47U="
-										},
-										"reference": {
-											"$ref": "AAAAAAGWF0azTv5IurA="
-										},
-										"multiplicity": "1"
-									},
-									"end2": {
-										"_type": "UMLAssociationEnd",
-										"_id": "AAAAAAGXqCC+4bODQaA=",
-										"_parent": {
-											"$ref": "AAAAAAGXqCC+4bOB47U="
-										},
-										"reference": {
-											"$ref": "AAAAAAGWF0k47/7R6iY="
-										},
-										"multiplicity": "0..*"
-									}
-								}
-							],
-							"stereotype": {
-								"$ref": "AAAAAAFFJsYgDTM+Z6E="
-							},
-							"attributes": [
-								{
-									"_type": "UMLAttribute",
-									"_id": "AAAAAAGXp28ExOyNI3s=",
-									"_parent": {
-										"$ref": "AAAAAAGWF0azTv5IurA="
-									},
-									"name": "id",
-									"type": "int"
-								},
-								{
-									"_type": "UMLAttribute",
-									"_id": "AAAAAAGXp29oxe9fbsA=",
-									"_parent": {
-										"$ref": "AAAAAAGWF0azTv5IurA="
-									},
-									"name": "dataInicio",
-									"type": "Date"
-								},
-								{
-									"_type": "UMLAttribute",
-									"_id": "AAAAAAGXp2/eFfFKutc=",
-									"_parent": {
-										"$ref": "AAAAAAGWF0azTv5IurA="
-									},
-									"name": "DataFim",
-									"type": "Date"
-								},
-								{
-									"_type": "UMLAttribute",
-									"_id": "AAAAAAGXp3BqVvTZ61k=",
-									"_parent": {
-										"$ref": "AAAAAAGWF0azTv5IurA="
-									},
-									"name": "valorAluguel",
-									"type": "Float"
-								}
-							],
-							"operations": [
-								{
-									"_type": "UMLOperation",
-									"_id": "AAAAAAGXE05IZQ+R5dY=",
-									"_parent": {
-										"$ref": "AAAAAAGWF0azTv5IurA="
-									},
-									"name": "criarLocacao"
-								}
-							]
-						},
-						{
-							"_type": "UMLClass",
-							"_id": "AAAAAAGWF0dibP53UJM=",
-							"_parent": {
-								"$ref": "AAAAAAGWF9PsaAJ+6Y8="
-							},
-							"name": "Contrato",
-							"stereotype": {
-								"$ref": "AAAAAAFFJsYgDTM+Z6E="
-							},
-							"attributes": [
-								{
-									"_type": "UMLAttribute",
-									"_id": "AAAAAAGXp2lFreTc9bQ=",
-									"_parent": {
-										"$ref": "AAAAAAGWF0dibP53UJM="
-									},
-									"name": "id",
-									"type": "int"
-								},
-								{
-									"_type": "UMLAttribute",
-									"_id": "AAAAAAGXp2vGwecFWIE=",
-									"_parent": {
-										"$ref": "AAAAAAGWF0dibP53UJM="
-									},
-									"name": "caminho",
-									"type": "String"
-								}
-							]
-						},
-						{
-							"_type": "UMLClass",
-							"_id": "AAAAAAGWF0iLO/6kyoI=",
-							"_parent": {
-								"$ref": "AAAAAAGWF9PsaAJ+6Y8="
-							},
-							"name": "ChamadoReparo",
-							"stereotype": {
-								"$ref": "AAAAAAFFJsYgDTM+Z6E="
-							},
-							"attributes": [
-								{
-									"_type": "UMLAttribute",
-									"_id": "AAAAAAGXp9l+oQwcwKw=",
-									"_parent": {
-										"$ref": "AAAAAAGWF0iLO/6kyoI="
-									},
-									"name": "id",
-									"type": "int"
-								},
-								{
-									"_type": "UMLAttribute",
-									"_id": "AAAAAAGXqCcTSfnBZoA=",
-									"_parent": {
-										"$ref": "AAAAAAGWF0iLO/6kyoI="
-									},
-									"name": "tipo",
-									"type": "Enum"
-								},
-								{
-									"_type": "UMLAttribute",
-									"_id": "AAAAAAGXqCfQjP2VsJ8=",
-									"_parent": {
-										"$ref": "AAAAAAGWF0iLO/6kyoI="
-									},
-									"name": "dataCadastro",
-									"type": "Date"
-								},
-								{
-									"_type": "UMLAttribute",
-									"_id": "AAAAAAGXqCiGaQDiyVc=",
-									"_parent": {
-										"$ref": "AAAAAAGWF0iLO/6kyoI="
-									},
-									"name": "dataResolucao",
-									"type": "Date"
-								},
-								{
-									"_type": "UMLAttribute",
-									"_id": "AAAAAAGXqCmJ6xgK0Hs=",
-									"_parent": {
-										"$ref": "AAAAAAGWF0iLO/6kyoI="
-									},
-									"name": "estaResolvido",
-									"type": "boolean"
-								}
-							]
-						},
-						{
-							"_type": "UMLClass",
-							"_id": "AAAAAAGWF0k47/7R6iY=",
-							"_parent": {
-								"$ref": "AAAAAAGWF9PsaAJ+6Y8="
-							},
-							"name": "Cobranca",
-							"stereotype": {
-								"$ref": "AAAAAAFFJsYgDTM+Z6E="
-							},
-							"attributes": [
-								{
-									"_type": "UMLAttribute",
-									"_id": "AAAAAAGXqCtbmzcB65c=",
-									"_parent": {
-										"$ref": "AAAAAAGWF0k47/7R6iY="
-									},
-									"name": "id",
-									"type": "int"
-								},
-								{
-									"_type": "UMLAttribute",
-									"_id": "AAAAAAGXqCubgTn9vno=",
-									"_parent": {
-										"$ref": "AAAAAAGWF0k47/7R6iY="
-									},
-									"name": "valor",
-									"type": "Float"
-								},
-								{
-									"_type": "UMLAttribute",
-									"_id": "AAAAAAGXqCwMAjvr6Z4=",
-									"_parent": {
-										"$ref": "AAAAAAGWF0k47/7R6iY="
-									},
-									"name": "dataCobranca",
-									"type": "Date"
-								},
-								{
-									"_type": "UMLAttribute",
-									"_id": "AAAAAAGXqCyV1j8dl78=",
-									"_parent": {
-										"$ref": "AAAAAAGWF0k47/7R6iY="
-									},
-									"name": "tipoCobranca",
-									"type": "Enum"
-								}
-							]
-						},
-						{
-							"_type": "UMLClass",
-							"_id": "AAAAAAGWF0pbt/79ivs=",
-							"_parent": {
-								"$ref": "AAAAAAGWF9PsaAJ+6Y8="
-							},
-							"name": "Pagamento",
-							"ownedElements": [
-								{
-									"_type": "UMLAssociation",
-									"_id": "AAAAAAGXqCK3NdhpRrc=",
-									"_parent": {
-										"$ref": "AAAAAAGWF0pbt/79ivs="
-									},
-									"end1": {
-										"_type": "UMLAssociationEnd",
-										"_id": "AAAAAAGXqCK3NdhqihM=",
-										"_parent": {
-											"$ref": "AAAAAAGXqCK3NdhpRrc="
-										},
-										"reference": {
-											"$ref": "AAAAAAGWF0pbt/79ivs="
-										},
-										"multiplicity": "0..*"
-									},
-									"end2": {
-										"_type": "UMLAssociationEnd",
-										"_id": "AAAAAAGXqCK3NdhroPM=",
-										"_parent": {
-											"$ref": "AAAAAAGXqCK3NdhpRrc="
-										},
-										"reference": {
-											"$ref": "AAAAAAGWF0k47/7R6iY="
-										},
-										"multiplicity": "1"
-									}
-								}
-							],
-							"stereotype": {
-								"$ref": "AAAAAAFFJsYgDTM+Z6E="
-							},
-							"attributes": [
-								{
-									"_type": "UMLAttribute",
-									"_id": "AAAAAAGXp3GWyfjnQB4=",
-									"_parent": {
-										"$ref": "AAAAAAGWF0pbt/79ivs="
-									},
-									"name": "id",
-									"type": "int"
-								},
-								{
-									"_type": "UMLAttribute",
-									"_id": "AAAAAAGXp3HcmPpp2l4=",
-									"_parent": {
-										"$ref": "AAAAAAGWF0pbt/79ivs="
-									},
-									"name": "valor",
-									"type": "Float"
-								},
-								{
-									"_type": "UMLAttribute",
-									"_id": "AAAAAAGXqCpKFDGYvek=",
-									"_parent": {
-										"$ref": "AAAAAAGWF0pbt/79ivs="
-									},
-									"name": "dataPagamento",
-									"type": "Date"
-								}
-							]
-						},
-						{
-							"_type": "UMLClass",
-							"_id": "AAAAAAGWF02ue/8pwP8=",
-							"_parent": {
-								"$ref": "AAAAAAGWF9PsaAJ+6Y8="
-							},
-							"name": "ControleImovel",
-							"ownedElements": [
-								{
-									"_type": "UMLDependency",
-									"_id": "AAAAAAGXcOZvSv8I8zM=",
-									"_parent": {
-										"$ref": "AAAAAAGWF02ue/8pwP8="
-									},
-									"source": {
-										"$ref": "AAAAAAGWF02ue/8pwP8="
-									},
-									"target": {
-										"$ref": "AAAAAAGWF0H6TP3mN2M="
-									}
-								},
-								{
-									"_type": "UMLAssociation",
-									"_id": "AAAAAAGXcPj4QTk0axs=",
-									"_parent": {
-										"$ref": "AAAAAAGWF02ue/8pwP8="
-									},
-									"end1": {
-										"_type": "UMLAssociationEnd",
-										"_id": "AAAAAAGXcPj4QTk1bYU=",
-										"_parent": {
-											"$ref": "AAAAAAGXcPj4QTk0axs="
-										},
-										"reference": {
-											"$ref": "AAAAAAGWF02ue/8pwP8="
-										},
-										"multiplicity": "1"
-									},
-									"end2": {
-										"_type": "UMLAssociationEnd",
-										"_id": "AAAAAAGXcPj4QTk28MQ=",
-										"_parent": {
-											"$ref": "AAAAAAGXcPj4QTk0axs="
-										},
-										"reference": {
-											"$ref": "AAAAAAGWF1MbbwBkFLI="
-										},
-										"multiplicity": "1"
-									}
-								},
-								{
-									"_type": "UMLAssociation",
-									"_id": "AAAAAAGXdeZ+o1H6fdU=",
-									"_parent": {
-										"$ref": "AAAAAAGWF02ue/8pwP8="
-									},
-									"end1": {
-										"_type": "UMLAssociationEnd",
-										"_id": "AAAAAAGXdeZ+o1H7C+I=",
-										"_parent": {
-											"$ref": "AAAAAAGXdeZ+o1H6fdU="
-										},
-										"reference": {
-											"$ref": "AAAAAAGWF02ue/8pwP8="
-										},
-										"multiplicity": "1"
-									},
-									"end2": {
-										"_type": "UMLAssociationEnd",
-										"_id": "AAAAAAGXdeZ+o1H8V6w=",
-										"_parent": {
-											"$ref": "AAAAAAGXdeZ+o1H6fdU="
-										},
-										"reference": {
-											"$ref": "AAAAAAGWFySXWfzHJTU="
-										},
-										"multiplicity": "*"
-									}
-								},
-								{
-									"_type": "UMLAssociation",
-									"_id": "AAAAAAGXdgwk4EJq8ZA=",
-									"_parent": {
-										"$ref": "AAAAAAGWF02ue/8pwP8="
-									},
-									"end1": {
-										"_type": "UMLAssociationEnd",
-										"_id": "AAAAAAGXdgwk4EJrEog=",
-										"_parent": {
-											"$ref": "AAAAAAGXdgwk4EJq8ZA="
-										},
-										"reference": {
-											"$ref": "AAAAAAGWF02ue/8pwP8="
-										},
-										"multiplicity": "1"
-									},
-									"end2": {
-										"_type": "UMLAssociationEnd",
-										"_id": "AAAAAAGXdgwk4EJsm7I=",
-										"_parent": {
-											"$ref": "AAAAAAGXdgwk4EJq8ZA="
-										},
-										"reference": {
-											"$ref": "AAAAAAGWFz9Xjf14xS0="
-										},
-										"multiplicity": "*"
-									}
-								},
-								{
-									"_type": "UMLAssociation",
-									"_id": "AAAAAAGXdhVyHh2ibUU=",
-									"_parent": {
-										"$ref": "AAAAAAGWF02ue/8pwP8="
-									},
-									"end1": {
-										"_type": "UMLAssociationEnd",
-										"_id": "AAAAAAGXdhVyHh2jRqo=",
-										"_parent": {
-											"$ref": "AAAAAAGXdhVyHh2ibUU="
-										},
-										"reference": {
-											"$ref": "AAAAAAGWF02ue/8pwP8="
-										},
-										"multiplicity": "1"
-									},
-									"end2": {
-										"_type": "UMLAssociationEnd",
-										"_id": "AAAAAAGXdhVyHh2kSUI=",
-										"_parent": {
-											"$ref": "AAAAAAGXdhVyHh2ibUU="
-										},
-										"reference": {
-											"$ref": "AAAAAAGWF0DGiP2jm4I="
-										},
-										"multiplicity": "*"
-									}
-								}
-							],
-							"stereotype": {
-								"$ref": "AAAAAAFFwx8Q/35u/80="
-							},
-							"operations": [
-								{
-									"_type": "UMLOperation",
-									"_id": "AAAAAAGXLd0LHxgq61s=",
-									"_parent": {
-										"$ref": "AAAAAAGWF02ue/8pwP8="
-									},
-									"name": "visualizar"
-								},
-								{
-									"_type": "UMLOperation",
-									"_id": "AAAAAAGXT4TJCv+EUVM=",
-									"_parent": {
-										"$ref": "AAAAAAGWF02ue/8pwP8="
-									},
-									"name": "buscarImovel"
-								},
-								{
-									"_type": "UMLOperation",
-									"_id": "AAAAAAGXT82a3gSebYY=",
-									"_parent": {
-										"$ref": "AAAAAAGWF02ue/8pwP8="
-									},
-									"name": "cadastrar"
-								},
-								{
-									"_type": "UMLOperation",
-									"_id": "AAAAAAGXT9SOlAVDFXQ=",
-									"_parent": {
-										"$ref": "AAAAAAGWF02ue/8pwP8="
-									},
-									"name": "buscar"
-								},
-								{
-									"_type": "UMLOperation",
-									"_id": "AAAAAAGXT9ZLGQX2uRA=",
-									"_parent": {
-										"$ref": "AAAAAAGWF02ue/8pwP8="
-									},
-									"name": "atualizar"
-								},
-								{
-									"_type": "UMLOperation",
-									"_id": "AAAAAAGXT9i6qAbXB/M=",
-									"_parent": {
-										"$ref": "AAAAAAGWF02ue/8pwP8="
-									},
-									"name": "excluir"
-								}
-							]
-						},
-						{
-							"_type": "UMLClass",
-							"_id": "AAAAAAGWF03qRv9UsNI=",
-							"_parent": {
-								"$ref": "AAAAAAGWF9PsaAJ+6Y8="
-							},
-							"name": "ControleUsuario",
-							"ownedElements": [
-								{
-									"_type": "UMLAssociation",
-									"_id": "AAAAAAGXcNhBQvFjR70=",
-									"_parent": {
-										"$ref": "AAAAAAGWF03qRv9UsNI="
-									},
-									"end1": {
-										"_type": "UMLAssociationEnd",
-										"_id": "AAAAAAGXcNhBQvFkEN0=",
-										"_parent": {
-											"$ref": "AAAAAAGXcNhBQvFjR70="
-										},
-										"reference": {
-											"$ref": "AAAAAAGWF03qRv9UsNI="
-										},
-										"multiplicity": "1"
-									},
-									"end2": {
-										"_type": "UMLAssociationEnd",
-										"_id": "AAAAAAGXcNhBQvFlD4o=",
-										"_parent": {
-											"$ref": "AAAAAAGXcNhBQvFjR70="
-										},
-										"reference": {
-											"$ref": "AAAAAAGXTOFm1vz9v2g="
-										},
-										"multiplicity": "*"
-									}
-								},
-								{
-									"_type": "UMLAssociation",
-									"_id": "AAAAAAGXcNieT/OLNDw=",
-									"_parent": {
-										"$ref": "AAAAAAGWF03qRv9UsNI="
-									},
-									"end1": {
-										"_type": "UMLAssociationEnd",
-										"_id": "AAAAAAGXcNieT/OM92s=",
-										"_parent": {
-											"$ref": "AAAAAAGXcNieT/OLNDw="
-										},
-										"reference": {
-											"$ref": "AAAAAAGWF03qRv9UsNI="
-										},
-										"multiplicity": "1"
-									},
-									"end2": {
-										"_type": "UMLAssociationEnd",
-										"_id": "AAAAAAGXcNieT/ONwD0=",
-										"_parent": {
-											"$ref": "AAAAAAGXcNieT/OLNDw="
-										},
-										"reference": {
-											"$ref": "AAAAAAGWF1NJ5ACNbzE="
-										},
-										"multiplicity": "1"
-									}
-								},
-								{
-									"_type": "UMLAssociation",
-									"_id": "AAAAAAGXcTrdCugHW/U=",
-									"_parent": {
-										"$ref": "AAAAAAGWF03qRv9UsNI="
-									},
-									"end1": {
-										"_type": "UMLAssociationEnd",
-										"_id": "AAAAAAGXcTrdCugI9FQ=",
-										"_parent": {
-											"$ref": "AAAAAAGXcTrdCugHW/U="
-										},
-										"reference": {
-											"$ref": "AAAAAAGWF03qRv9UsNI="
-										},
-										"multiplicity": "1"
-									},
-									"end2": {
-										"_type": "UMLAssociationEnd",
-										"_id": "AAAAAAGXcTrdCugJSKE=",
-										"_parent": {
-											"$ref": "AAAAAAGXcTrdCugHW/U="
-										},
-										"reference": {
-											"$ref": "AAAAAAGXT95z/whlomw="
-										},
-										"multiplicity": "*"
-									}
-								},
-								{
-									"_type": "UMLDependency",
-									"_id": "AAAAAAGXlQeiD3VsDP0=",
-									"_parent": {
-										"$ref": "AAAAAAGWF03qRv9UsNI="
-									},
-									"source": {
-										"$ref": "AAAAAAGWF03qRv9UsNI="
-									},
-									"target": {
-										"$ref": "AAAAAAGXlJYylnbgirI="
-									}
-								},
-								{
-									"_type": "UMLDependency",
-									"_id": "AAAAAAGXn3WkC3ypdaw=",
-									"_parent": {
-										"$ref": "AAAAAAGWF03qRv9UsNI="
-									},
-									"source": {
-										"$ref": "AAAAAAGWF03qRv9UsNI="
-									},
-									"target": {
-										"$ref": "AAAAAAGXlJWNZXPBRKg="
-									}
-								}
-							],
-							"stereotype": {
-								"$ref": "AAAAAAFFwx8Q/35u/80="
-							},
-							"operations": [
-								{
-									"_type": "UMLOperation",
-									"_id": "AAAAAAGXLRtO3+0m7HI=",
-									"_parent": {
-										"$ref": "AAAAAAGWF03qRv9UsNI="
-									},
-									"name": "inserir"
-								},
-								{
-									"_type": "UMLOperation",
-									"_id": "AAAAAAGXLRu04e1AB6g=",
-									"_parent": {
-										"$ref": "AAAAAAGWF03qRv9UsNI="
-									},
-									"name": "validar"
-								},
-								{
-									"_type": "UMLOperation",
-									"_id": "AAAAAAGXLSkQ9O92LdM=",
-									"_parent": {
-										"$ref": "AAAAAAGWF03qRv9UsNI="
-									},
-									"name": "apagar"
-								},
-								{
-									"_type": "UMLOperation",
-									"_id": "AAAAAAGXLdRqK/sprPM=",
-									"_parent": {
-										"$ref": "AAAAAAGWF03qRv9UsNI="
-									},
-									"name": "validar"
-								},
-								{
-									"_type": "UMLOperation",
-									"_id": "AAAAAAGXLdeOkfvQ+2k=",
-									"_parent": {
-										"$ref": "AAAAAAGWF03qRv9UsNI="
-									},
-									"name": "atualizar"
-								},
-								{
-									"_type": "UMLOperation",
-									"_id": "AAAAAAGXLdgV0Pv/T4M=",
-									"_parent": {
-										"$ref": "AAAAAAGWF03qRv9UsNI="
-									},
-									"name": "procurar"
-								},
-								{
-									"_type": "UMLOperation",
-									"_id": "AAAAAAGXLdkY8vxJvcI=",
-									"_parent": {
-										"$ref": "AAAAAAGWF03qRv9UsNI="
-									},
-									"name": "modificar"
-								},
-								{
-									"_type": "UMLOperation",
-									"_id": "AAAAAAGXTOlhbf3LgGs=",
-									"_parent": {
-										"$ref": "AAAAAAGWF03qRv9UsNI="
-									},
-									"name": "cadastrar"
-								},
-								{
-									"_type": "UMLOperation",
-									"_id": "AAAAAAGXT3LCsP5KBKM=",
-									"_parent": {
-										"$ref": "AAAAAAGWF03qRv9UsNI="
-									},
-									"name": "buscar"
-								},
-								{
-									"_type": "UMLOperation",
-									"_id": "AAAAAAGXT3uOSf7+Cko=",
-									"_parent": {
-										"$ref": "AAAAAAGWF03qRv9UsNI="
-									},
-									"name": "deletar"
-								},
-								{
-									"_type": "UMLOperation",
-									"_id": "AAAAAAGXT4VWHf+fIvA=",
-									"_parent": {
-										"$ref": "AAAAAAGWF03qRv9UsNI="
-									},
-									"name": "buscarInquilino"
-								},
-								{
-									"_type": "UMLOperation",
-									"_id": "AAAAAAGXT+d4pwt9hpM=",
-									"_parent": {
-										"$ref": "AAAAAAGWF03qRv9UsNI="
-									},
-									"name": "excluir"
-								}
-							]
-						},
-						{
-							"_type": "UMLClass",
-							"_id": "AAAAAAGWF06xf/+uVBM=",
-							"_parent": {
-								"$ref": "AAAAAAGWF9PsaAJ+6Y8="
-							},
-							"name": "ControleChamadoReparo",
-							"ownedElements": [
-								{
-									"_type": "UMLAssociation",
-									"_id": "AAAAAAGXdeH5vRmNrk8=",
-									"_parent": {
-										"$ref": "AAAAAAGWF06xf/+uVBM="
-									},
-									"end1": {
-										"_type": "UMLAssociationEnd",
-										"_id": "AAAAAAGXdeH5vRmOoag=",
-										"_parent": {
-											"$ref": "AAAAAAGXdeH5vRmNrk8="
-										},
-										"reference": {
-											"$ref": "AAAAAAGWF06xf/+uVBM="
-										},
-										"multiplicity": "1"
-									},
-									"end2": {
-										"_type": "UMLAssociationEnd",
-										"_id": "AAAAAAGXdeH5vRmPZXM=",
-										"_parent": {
-											"$ref": "AAAAAAGXdeH5vRmNrk8="
-										},
-										"reference": {
-											"$ref": "AAAAAAGWFrTERioieVI="
-										},
-										"multiplicity": "*"
-									}
-								},
-								{
-									"_type": "UMLDependency",
-									"_id": "AAAAAAGXdeJaphylLJo=",
-									"_parent": {
-										"$ref": "AAAAAAGWF06xf/+uVBM="
-									},
-									"source": {
-										"$ref": "AAAAAAGWF06xf/+uVBM="
-									},
-									"target": {
-										"$ref": "AAAAAAGWF0iLO/6kyoI="
-									}
-								},
-								{
-									"_type": "UMLAssociation",
-									"_id": "AAAAAAGXdeJ3Th4VLcw=",
-									"_parent": {
-										"$ref": "AAAAAAGWF06xf/+uVBM="
-									},
-									"end1": {
-										"_type": "UMLAssociationEnd",
-										"_id": "AAAAAAGXdeJ3Tx4WKGg=",
-										"_parent": {
-											"$ref": "AAAAAAGXdeJ3Th4VLcw="
-										},
-										"reference": {
-											"$ref": "AAAAAAGWF06xf/+uVBM="
-										},
-										"multiplicity": "1"
-									},
-									"end2": {
-										"_type": "UMLAssociationEnd",
-										"_id": "AAAAAAGXdeJ3Tx4XfYU=",
-										"_parent": {
-											"$ref": "AAAAAAGXdeJ3Th4VLcw="
-										},
-										"reference": {
-											"$ref": "AAAAAAGWF1NbswE3YcE="
-										},
-										"multiplicity": "1"
-									}
-								}
-							],
-							"stereotype": {
-								"$ref": "AAAAAAFFwx8Q/35u/80="
-							},
-							"operations": [
-								{
-									"_type": "UMLOperation",
-									"_id": "AAAAAAGXLdqS5PyqVi8=",
-									"_parent": {
-										"$ref": "AAAAAAGWF06xf/+uVBM="
-									},
-									"name": "validar"
-								},
-								{
-									"_type": "UMLOperation",
-									"_id": "AAAAAAGXT+jf/wu5X94=",
-									"_parent": {
-										"$ref": "AAAAAAGWF06xf/+uVBM="
-									},
-									"name": "buscar"
-								},
-								{
-									"_type": "UMLOperation",
-									"_id": "AAAAAAGXT/x+hA8GeoY=",
-									"_parent": {
-										"$ref": "AAAAAAGWF06xf/+uVBM="
-									},
-									"name": "cadastrar"
-								}
-							]
-						},
-						{
-							"_type": "UMLClass",
-							"_id": "AAAAAAGWF083vf/bII0=",
-							"_parent": {
-								"$ref": "AAAAAAGWF9PsaAJ+6Y8="
-							},
-							"name": "ControleCobranca",
-							"ownedElements": [
-								{
-									"_type": "UMLDependency",
-									"_id": "AAAAAAGXcTGDoNXDgwg=",
-									"_parent": {
-										"$ref": "AAAAAAGWF083vf/bII0="
-									},
-									"source": {
-										"$ref": "AAAAAAGWF083vf/bII0="
-									},
-									"target": {
-										"$ref": "AAAAAAGWF0k47/7R6iY="
-									}
-								}
-							],
-							"stereotype": {
-								"$ref": "AAAAAAFFwx8Q/35u/80="
-							},
-							"operations": [
-								{
-									"_type": "UMLOperation",
-									"_id": "AAAAAAGXLdMGK/rpbnA=",
-									"_parent": {
-										"$ref": "AAAAAAGWF083vf/bII0="
-									},
-									"name": "validar"
-								},
-								{
-									"_type": "UMLOperation",
-									"_id": "AAAAAAGXT9tG8weekkc=",
-									"_parent": {
-										"$ref": "AAAAAAGWF083vf/bII0="
-									},
-									"name": "enviar"
-								},
-								{
-									"_type": "UMLOperation",
-									"_id": "AAAAAAGXqeKWvu/mAr8=",
-									"_parent": {
-										"$ref": "AAAAAAGWF083vf/bII0="
-									},
-									"name": "consultar"
-								},
-								{
-									"_type": "UMLOperation",
-									"_id": "AAAAAAGX+3KgKsJWhCs=",
-									"_parent": {
-										"$ref": "AAAAAAGWF083vf/bII0="
-									},
-									"name": "consultarExtrato"
-								},
-								{
-									"_type": "UMLOperation",
-									"_id": "AAAAAAGX+3MUVsJu0E8=",
-									"_parent": {
-										"$ref": "AAAAAAGWF083vf/bII0="
-									},
-									"name": "consultar1"
-								},
-								{
-									"_type": "UMLOperation",
-									"_id": "AAAAAAGX+3T1DsMccg8=",
-									"_parent": {
-										"$ref": "AAAAAAGWF083vf/bII0="
-									},
-									"name": "consultarExtrato"
-								}
-							]
-						},
-						{
-							"_type": "UMLClass",
-							"_id": "AAAAAAGWF0+OdAAGmKo=",
-							"_parent": {
-								"$ref": "AAAAAAGWF9PsaAJ+6Y8="
-							},
-							"name": "ControlePagamento",
-							"ownedElements": [
-								{
-									"_type": "UMLDependency",
-									"_id": "AAAAAAGX+3mg5wXWAhY=",
-									"_parent": {
-										"$ref": "AAAAAAGWF0+OdAAGmKo="
-									},
-									"source": {
-										"$ref": "AAAAAAGWF0+OdAAGmKo="
-									},
-									"target": {
-										"$ref": "AAAAAAGWF0azTv5IurA="
-									}
-								}
-							],
-							"stereotype": {
-								"$ref": "AAAAAAFFwx8Q/35u/80="
-							},
-							"operations": [
-								{
-									"_type": "UMLOperation",
-									"_id": "AAAAAAGXLT1hVPqllC0=",
-									"_parent": {
-										"$ref": "AAAAAAGWF0+OdAAGmKo="
-									},
-									"name": "visualizar"
-								},
-								{
-									"_type": "UMLOperation",
-									"_id": "AAAAAAGXT9pr3AdhpYQ=",
-									"_parent": {
-										"$ref": "AAAAAAGWF0+OdAAGmKo="
-									},
-									"name": "registrar"
-								},
-								{
-									"_type": "UMLOperation",
-									"_id": "AAAAAAGXUAmqJA/37T4=",
-									"_parent": {
-										"$ref": "AAAAAAGWF0+OdAAGmKo="
-									},
-									"name": "consultar"
-								},
-								{
-									"_type": "UMLOperation",
-									"_id": "AAAAAAGXUDOR/BAX/UQ=",
-									"_parent": {
-										"$ref": "AAAAAAGWF0+OdAAGmKo="
-									},
-									"name": "validar"
-								}
-							]
-						},
-						{
-							"_type": "UMLClass",
-							"_id": "AAAAAAGWF1AF0wAxk6A=",
-							"_parent": {
-								"$ref": "AAAAAAGWF9PsaAJ+6Y8="
-							},
-							"name": "ControleLocacao",
-							"ownedElements": [
-								{
-									"_type": "UMLDependency",
-									"_id": "AAAAAAGXcObAHP9WESI=",
-									"_parent": {
-										"$ref": "AAAAAAGWF1AF0wAxk6A="
-									},
-									"source": {
-										"$ref": "AAAAAAGWF1AF0wAxk6A="
-									},
-									"target": {
-										"$ref": "AAAAAAGWF0azTv5IurA="
-									}
-								},
-								{
-									"_type": "UMLAssociation",
-									"_id": "AAAAAAGXcPUT8j2BWDQ=",
-									"_parent": {
-										"$ref": "AAAAAAGWF1AF0wAxk6A="
-									},
-									"end1": {
-										"_type": "UMLAssociationEnd",
-										"_id": "AAAAAAGXcPUT8j2CIh8=",
-										"_parent": {
-											"$ref": "AAAAAAGXcPUT8j2BWDQ="
-										},
-										"reference": {
-											"$ref": "AAAAAAGWF1AF0wAxk6A="
-										},
-										"multiplicity": "1"
-									},
-									"end2": {
-										"_type": "UMLAssociationEnd",
-										"_id": "AAAAAAGXcPUT8j2DCTE=",
-										"_parent": {
-											"$ref": "AAAAAAGXcPUT8j2BWDQ="
-										},
-										"reference": {
-											"$ref": "AAAAAAGWF1NPfgC2ZyI="
-										},
-										"multiplicity": "1"
-									}
-								},
-								{
-									"_type": "UMLAssociation",
-									"_id": "AAAAAAGXdgyUUlAF/n4=",
-									"_parent": {
-										"$ref": "AAAAAAGWF1AF0wAxk6A="
-									},
-									"end1": {
-										"_type": "UMLAssociationEnd",
-										"_id": "AAAAAAGXdgyUUlAGDw8=",
-										"_parent": {
-											"$ref": "AAAAAAGXdgyUUlAF/n4="
-										},
-										"reference": {
-											"$ref": "AAAAAAGWF1AF0wAxk6A="
-										},
-										"multiplicity": "1"
-									},
-									"end2": {
-										"_type": "UMLAssociationEnd",
-										"_id": "AAAAAAGXdgyUUlAHaZc=",
-										"_parent": {
-											"$ref": "AAAAAAGXdgyUUlAF/n4="
-										},
-										"reference": {
-											"$ref": "AAAAAAGWFz9Xjf14xS0="
-										},
-										"multiplicity": "*"
-									}
-								}
-							],
-							"stereotype": {
-								"$ref": "AAAAAAFFwx8Q/35u/80="
-							},
-							"operations": [
-								{
-									"_type": "UMLOperation",
-									"_id": "AAAAAAGXE0/7wQ/JzGs=",
-									"_parent": {
-										"$ref": "AAAAAAGWF1AF0wAxk6A="
-									},
-									"name": "alugar"
-								},
-								{
-									"_type": "UMLOperation",
-									"_id": "AAAAAAGXE1CnNg/smZ4=",
-									"_parent": {
-										"$ref": "AAAAAAGWF1AF0wAxk6A="
-									},
-									"name": "checarLocacao"
-								},
-								{
-									"_type": "UMLOperation",
-									"_id": "AAAAAAGXLeTZhhpXhlA=",
-									"_parent": {
-										"$ref": "AAAAAAGWF1AF0wAxk6A="
-									},
-									"name": "inserir"
-								},
-								{
-									"_type": "UMLOperation",
-									"_id": "AAAAAAGXLeUvQBpwhf4=",
-									"_parent": {
-										"$ref": "AAAAAAGWF1AF0wAxk6A="
-									},
-									"name": "validar"
-								},
-								{
-									"_type": "UMLOperation",
-									"_id": "AAAAAAGXT/Nsow5JP7c=",
-									"_parent": {
-										"$ref": "AAAAAAGWF1AF0wAxk6A="
-									},
-									"name": "buscar"
-								},
-								{
-									"_type": "UMLOperation",
-									"_id": "AAAAAAGXT/PNGA534zk=",
-									"_parent": {
-										"$ref": "AAAAAAGWF1AF0wAxk6A="
-									},
-									"name": "encerrar"
-								},
-								{
-									"_type": "UMLOperation",
-									"_id": "AAAAAAGXUE9E+hG8uaY=",
-									"_parent": {
-										"$ref": "AAAAAAGWF1AF0wAxk6A="
-									},
-									"name": "alugar"
-								}
-							]
-						},
 						{
 							"_type": "UMLClass",
 							"_id": "AAAAAAGWF1MbbwBkFLI=",
@@ -52882,325 +50474,6 @@
 						},
 						{
 							"_type": "UMLClass",
-							"_id": "AAAAAAGXTOFm1vz9v2g=",
-							"_parent": {
-								"$ref": "AAAAAAGWF9PsaAJ+6Y8="
-							},
-							"name": "TelaManterInquilino",
-							"ownedElements": [
-								{
-									"_type": "UMLAssociation",
-									"_id": "AAAAAAGXcNZbKumnvws=",
-									"_parent": {
-										"$ref": "AAAAAAGXTOFm1vz9v2g="
-									},
-									"end1": {
-										"_type": "UMLAssociationEnd",
-										"_id": "AAAAAAGXcNZbKumo9lk=",
-										"_parent": {
-											"$ref": "AAAAAAGXcNZbKumnvws="
-										},
-										"reference": {
-											"$ref": "AAAAAAGXTOFm1vz9v2g="
-										},
-										"multiplicity": "*"
-									},
-									"end2": {
-										"_type": "UMLAssociationEnd",
-										"_id": "AAAAAAGXcNZbKumpAWY=",
-										"_parent": {
-											"$ref": "AAAAAAGXcNZbKumnvws="
-										},
-										"reference": {
-											"$ref": "AAAAAAGWF03qRv9UsNI="
-										},
-										"multiplicity": "1"
-									}
-								},
-								{
-									"_type": "UMLDependency",
-									"_id": "AAAAAAGXlQeGb3Nv8HU=",
-									"_parent": {
-										"$ref": "AAAAAAGXTOFm1vz9v2g="
-									},
-									"source": {
-										"$ref": "AAAAAAGXTOFm1vz9v2g="
-									},
-									"target": {
-										"$ref": "AAAAAAGXlJYylnbgirI="
-									}
-								}
-							],
-							"stereotype": {
-								"$ref": "AAAAAAFFw0h1/QXL978="
-							},
-							"operations": [
-								{
-									"_type": "UMLOperation",
-									"_id": "AAAAAAGXTOjTC/2dMvU=",
-									"_parent": {
-										"$ref": "AAAAAAGXTOFm1vz9v2g="
-									},
-									"name": "cadastrar"
-								},
-								{
-									"_type": "UMLOperation",
-									"_id": "AAAAAAGXT3J2S/4xepo=",
-									"_parent": {
-										"$ref": "AAAAAAGXTOFm1vz9v2g="
-									},
-									"name": "buscar"
-								},
-								{
-									"_type": "UMLOperation",
-									"_id": "AAAAAAGXT3s+Jv7lU5Y=",
-									"_parent": {
-										"$ref": "AAAAAAGXTOFm1vz9v2g="
-									},
-									"name": "deletar"
-								},
-								{
-									"_type": "UMLOperation",
-									"_id": "AAAAAAGXT+uSVw2wvyc=",
-									"_parent": {
-										"$ref": "AAAAAAGXTOFm1vz9v2g="
-									},
-									"name": "atualizar"
-								}
-							]
-						},
-						{
-							"_type": "UMLClass",
-							"_id": "AAAAAAGXT5oZ4gKnGBw=",
-							"_parent": {
-								"$ref": "AAAAAAGWF9PsaAJ+6Y8="
-							},
-							"name": "TelaManterImovel",
-							"ownedElements": [
-								{
-									"_type": "UMLDependency",
-									"_id": "AAAAAAGXcQpeQ9ZhwN8=",
-									"_parent": {
-										"$ref": "AAAAAAGXT5oZ4gKnGBw="
-									},
-									"source": {
-										"$ref": "AAAAAAGXT5oZ4gKnGBw="
-									},
-									"target": {
-										"$ref": "AAAAAAGWF0JcIf4Sbxc="
-									}
-								},
-								{
-									"_type": "UMLAssociation",
-									"_id": "AAAAAAGXcT9R5RXNFas=",
-									"_parent": {
-										"$ref": "AAAAAAGXT5oZ4gKnGBw="
-									},
-									"end1": {
-										"_type": "UMLAssociationEnd",
-										"_id": "AAAAAAGXcT9R5RXOEgs=",
-										"_parent": {
-											"$ref": "AAAAAAGXcT9R5RXNFas="
-										},
-										"reference": {
-											"$ref": "AAAAAAGXT5oZ4gKnGBw="
-										},
-										"multiplicity": "*"
-									},
-									"end2": {
-										"_type": "UMLAssociationEnd",
-										"_id": "AAAAAAGXcT9R5RXPpDU=",
-										"_parent": {
-											"$ref": "AAAAAAGXcT9R5RXNFas="
-										},
-										"reference": {
-											"$ref": "AAAAAAGWF03qRv9UsNI="
-										},
-										"multiplicity": "1"
-									}
-								},
-								{
-									"_type": "UMLAssociation",
-									"_id": "AAAAAAGXcT+XBR2EzH0=",
-									"_parent": {
-										"$ref": "AAAAAAGXT5oZ4gKnGBw="
-									},
-									"end1": {
-										"_type": "UMLAssociationEnd",
-										"_id": "AAAAAAGXcT+XBR2FrmY=",
-										"_parent": {
-											"$ref": "AAAAAAGXcT+XBR2EzH0="
-										},
-										"reference": {
-											"$ref": "AAAAAAGXT5oZ4gKnGBw="
-										},
-										"multiplicity": "*"
-									},
-									"end2": {
-										"_type": "UMLAssociationEnd",
-										"_id": "AAAAAAGXcT+XBR2GubI=",
-										"_parent": {
-											"$ref": "AAAAAAGXcT+XBR2EzH0="
-										},
-										"reference": {
-											"$ref": "AAAAAAGWF02ue/8pwP8="
-										},
-										"multiplicity": "1"
-									}
-								},
-								{
-									"_type": "UMLDependency",
-									"_id": "AAAAAAGXcUMHVERDNeg=",
-									"_parent": {
-										"$ref": "AAAAAAGXT5oZ4gKnGBw="
-									},
-									"source": {
-										"$ref": "AAAAAAGXT5oZ4gKnGBw="
-									},
-									"target": {
-										"$ref": "AAAAAAGWF0H6TP3mN2M="
-									}
-								},
-								{
-									"_type": "UMLDependency",
-									"_id": "AAAAAAGXn183i1T7mSQ=",
-									"_parent": {
-										"$ref": "AAAAAAGXT5oZ4gKnGBw="
-									},
-									"source": {
-										"$ref": "AAAAAAGXT5oZ4gKnGBw="
-									},
-									"target": {
-										"$ref": "AAAAAAGXlJWNZXPBRKg="
-									}
-								}
-							],
-							"stereotype": {
-								"$ref": "AAAAAAFFw0h1/QXL978="
-							},
-							"operations": [
-								{
-									"_type": "UMLOperation",
-									"_id": "AAAAAAGXT807MwRwZ1o=",
-									"_parent": {
-										"$ref": "AAAAAAGXT5oZ4gKnGBw="
-									},
-									"name": "cadastrar"
-								},
-								{
-									"_type": "UMLOperation",
-									"_id": "AAAAAAGXT9RBpgUq9aY=",
-									"_parent": {
-										"$ref": "AAAAAAGXT5oZ4gKnGBw="
-									},
-									"name": "buscar"
-								},
-								{
-									"_type": "UMLOperation",
-									"_id": "AAAAAAGXT9YENAXdjcM=",
-									"_parent": {
-										"$ref": "AAAAAAGXT5oZ4gKnGBw="
-									},
-									"name": "atualizar"
-								},
-								{
-									"_type": "UMLOperation",
-									"_id": "AAAAAAGXT9iAtAa+8xY=",
-									"_parent": {
-										"$ref": "AAAAAAGXT5oZ4gKnGBw="
-									},
-									"name": "excluir"
-								}
-							]
-						},
-						{
-							"_type": "UMLClass",
-							"_id": "AAAAAAGXT95z/whlomw=",
-							"_parent": {
-								"$ref": "AAAAAAGWF9PsaAJ+6Y8="
-							},
-							"name": "TelaManterProprietario",
-							"ownedElements": [
-								{
-									"_type": "UMLDependency",
-									"_id": "AAAAAAGXcTtZPOoLa7c=",
-									"_parent": {
-										"$ref": "AAAAAAGXT95z/whlomw="
-									},
-									"source": {
-										"$ref": "AAAAAAGXT95z/whlomw="
-									},
-									"target": {
-										"$ref": "AAAAAAGWF0JcIf4Sbxc="
-									}
-								},
-								{
-									"_type": "UMLDependency",
-									"_id": "AAAAAAGXcUKSWjbxkqw=",
-									"_parent": {
-										"$ref": "AAAAAAGXT95z/whlomw="
-									},
-									"source": {
-										"$ref": "AAAAAAGXT95z/whlomw="
-									},
-									"target": {
-										"$ref": "AAAAAAGWF0JcIf4Sbxc="
-									}
-								},
-								{
-									"_type": "UMLDependency",
-									"_id": "AAAAAAGXn3V1mnlvWkU=",
-									"_parent": {
-										"$ref": "AAAAAAGXT95z/whlomw="
-									},
-									"source": {
-										"$ref": "AAAAAAGXT95z/whlomw="
-									},
-									"target": {
-										"$ref": "AAAAAAGXlJWNZXPBRKg="
-									}
-								}
-							],
-							"stereotype": {
-								"$ref": "AAAAAAFFw0h1/QXL978="
-							},
-							"operations": [
-								{
-									"_type": "UMLOperation",
-									"_id": "AAAAAAGXT+CjrAlhDCE=",
-									"_parent": {
-										"$ref": "AAAAAAGXT95z/whlomw="
-									},
-									"name": "cadastrar"
-								},
-								{
-									"_type": "UMLOperation",
-									"_id": "AAAAAAGXT+PWUgomQcM=",
-									"_parent": {
-										"$ref": "AAAAAAGXT95z/whlomw="
-									},
-									"name": "buscar"
-								},
-								{
-									"_type": "UMLOperation",
-									"_id": "AAAAAAGXT+VzXAqpHoA=",
-									"_parent": {
-										"$ref": "AAAAAAGXT95z/whlomw="
-									},
-									"name": "atualizar"
-								},
-								{
-									"_type": "UMLOperation",
-									"_id": "AAAAAAGXT+cmFwtk3tI=",
-									"_parent": {
-										"$ref": "AAAAAAGXT95z/whlomw="
-									},
-									"name": "excluir"
-								}
-							]
-						},
-						{
-							"_type": "UMLClass",
 							"_id": "AAAAAAGWF1NPfgC2ZyI=",
 							"_parent": {
 								"$ref": "AAAAAAGWF9PsaAJ+6Y8="
@@ -53248,212 +50521,6 @@
 									"name": "gravar"
 								}
 							]
-						},
-						{
-							"_type": "UMLClass",
-							"_id": "AAAAAAGWF05f+f+DDOg=",
-							"_parent": {
-								"$ref": "AAAAAAGWF9PsaAJ+6Y8="
-							},
-							"name": "ControleContrato",
-							"ownedElements": [
-								{
-									"_type": "UMLDependency",
-									"_id": "AAAAAAGXcOX60f6+MEg=",
-									"_parent": {
-										"$ref": "AAAAAAGWF05f+f+DDOg="
-									},
-									"source": {
-										"$ref": "AAAAAAGWF05f+f+DDOg="
-									},
-									"target": {
-										"$ref": "AAAAAAGWF0dibP53UJM="
-									}
-								},
-								{
-									"_type": "UMLAssociation",
-									"_id": "AAAAAAGXcParXYJNcHk=",
-									"_parent": {
-										"$ref": "AAAAAAGWF05f+f+DDOg="
-									},
-									"end1": {
-										"_type": "UMLAssociationEnd",
-										"_id": "AAAAAAGXcParXoJOmLs=",
-										"_parent": {
-											"$ref": "AAAAAAGXcParXYJNcHk="
-										},
-										"reference": {
-											"$ref": "AAAAAAGWF05f+f+DDOg="
-										},
-										"multiplicity": "1"
-									},
-									"end2": {
-										"_type": "UMLAssociationEnd",
-										"_id": "AAAAAAGXcParXoJPbQY=",
-										"_parent": {
-											"$ref": "AAAAAAGXcParXYJNcHk="
-										},
-										"reference": {
-											"$ref": "AAAAAAGWF1NR1gDfOC8="
-										},
-										"multiplicity": "1"
-									}
-								},
-								{
-									"_type": "UMLAssociation",
-									"_id": "AAAAAAGXdgxZikgu/sg=",
-									"_parent": {
-										"$ref": "AAAAAAGWF05f+f+DDOg="
-									},
-									"end1": {
-										"_type": "UMLAssociationEnd",
-										"_id": "AAAAAAGXdgxZikgvtqM=",
-										"_parent": {
-											"$ref": "AAAAAAGXdgxZikgu/sg="
-										},
-										"reference": {
-											"$ref": "AAAAAAGWF05f+f+DDOg="
-										},
-										"multiplicity": "1"
-									},
-									"end2": {
-										"_type": "UMLAssociationEnd",
-										"_id": "AAAAAAGXdgxZikgwLLM=",
-										"_parent": {
-											"$ref": "AAAAAAGXdgxZikgu/sg="
-										},
-										"reference": {
-											"$ref": "AAAAAAGWFz9Xjf14xS0="
-										},
-										"multiplicity": "*"
-									}
-								}
-							],
-							"stereotype": {
-								"$ref": "AAAAAAFFwx8Q/35u/80="
-							},
-							"operations": [
-								{
-									"_type": "UMLOperation",
-									"_id": "AAAAAAGXUAg9Kw+LsHk=",
-									"_parent": {
-										"$ref": "AAAAAAGWF05f+f+DDOg="
-									},
-									"name": "buscar"
-								}
-							]
-						},
-						{
-							"_type": "UMLClass",
-							"_id": "AAAAAAGXlJWNZXPBRKg=",
-							"_parent": {
-								"$ref": "AAAAAAGWF9PsaAJ+6Y8="
-							},
-							"name": "Propietario",
-							"ownedElements": [
-								{
-									"_type": "UMLGeneralization",
-									"_id": "AAAAAAGXlJ7acaSxE1I=",
-									"_parent": {
-										"$ref": "AAAAAAGXlJWNZXPBRKg="
-									},
-									"source": {
-										"$ref": "AAAAAAGXlJWNZXPBRKg="
-									},
-									"target": {
-										"$ref": "AAAAAAGWF0JcIf4Sbxc="
-									}
-								},
-								{
-									"_type": "UMLAssociation",
-									"_id": "AAAAAAGXlP6OVxJac3A=",
-									"_parent": {
-										"$ref": "AAAAAAGXlJWNZXPBRKg="
-									},
-									"name": "possui",
-									"end1": {
-										"_type": "UMLAssociationEnd",
-										"_id": "AAAAAAGXlP6OWBJb+Us=",
-										"_parent": {
-											"$ref": "AAAAAAGXlP6OVxJac3A="
-										},
-										"reference": {
-											"$ref": "AAAAAAGXlJWNZXPBRKg="
-										},
-										"multiplicity": "1"
-									},
-									"end2": {
-										"_type": "UMLAssociationEnd",
-										"_id": "AAAAAAGXlP6OWBJcYpg=",
-										"_parent": {
-											"$ref": "AAAAAAGXlP6OVxJac3A="
-										},
-										"reference": {
-											"$ref": "AAAAAAGWF0H6TP3mN2M="
-										},
-										"multiplicity": "0..*"
-									}
-								}
-							],
-							"stereotype": {
-								"$ref": "AAAAAAFFJsYgDTM+Z6E="
-							}
-						},
-						{
-							"_type": "UMLClass",
-							"_id": "AAAAAAGXlJYylnbgirI=",
-							"_parent": {
-								"$ref": "AAAAAAGWF9PsaAJ+6Y8="
-							},
-							"name": "Inquilino",
-							"ownedElements": [
-								{
-									"_type": "UMLGeneralization",
-									"_id": "AAAAAAGXlJ7Hfp9aWn8=",
-									"_parent": {
-										"$ref": "AAAAAAGXlJYylnbgirI="
-									},
-									"source": {
-										"$ref": "AAAAAAGXlJYylnbgirI="
-									},
-									"target": {
-										"$ref": "AAAAAAGWF0JcIf4Sbxc="
-									}
-								},
-								{
-									"_type": "UMLAssociation",
-									"_id": "AAAAAAGXlP+cARuqbks=",
-									"_parent": {
-										"$ref": "AAAAAAGXlJYylnbgirI="
-									},
-									"name": "loca",
-									"end1": {
-										"_type": "UMLAssociationEnd",
-										"_id": "AAAAAAGXlP+cARurtdw=",
-										"_parent": {
-											"$ref": "AAAAAAGXlP+cARuqbks="
-										},
-										"reference": {
-											"$ref": "AAAAAAGXlJYylnbgirI="
-										},
-										"multiplicity": "0..1"
-									},
-									"end2": {
-										"_type": "UMLAssociationEnd",
-										"_id": "AAAAAAGXlP+cARusaoQ=",
-										"_parent": {
-											"$ref": "AAAAAAGXlP+cARuqbks="
-										},
-										"reference": {
-											"$ref": "AAAAAAGWF0H6TP3mN2M="
-										},
-										"multiplicity": "0..*"
-									}
-								}
-							],
-							"stereotype": {
-								"$ref": "AAAAAAFFJsYgDTM+Z6E="
-							}
 						}
 					]
 				},
@@ -57718,9 +54785,9 @@
 														"$ref": "AAAAAAGXLSrBRvWoaR4="
 													},
 													"font": "Arial;13;0",
-													"left": 32.72998046875,
+													"left": 30.55908203125,
 													"top": 13,
-													"width": 205.49609375,
+													"width": 185.107421875,
 													"height": 13,
 													"text": "SequenceDiagramConsultarExtrato"
 												},
@@ -57733,7 +54800,7 @@
 													"font": "Arial;13;1",
 													"left": 13,
 													"top": 13,
-													"width": 14.72998046875,
+													"width": 12.55908203125,
 													"height": 13,
 													"text": "sd"
 												}
@@ -99437,6 +96504,2969 @@
 							"headQualifiersCompartment": {
 								"$ref": "AAAAAAGXqCK3Nth4aHs="
 							}
+						}
+					]
+				},
+				{
+					"_type": "UMLPackage",
+					"_id": "AAAAAAGYDzjIpP2/ELc=",
+					"_parent": {
+						"$ref": "AAAAAAFFxnG7qRNvP5M="
+					},
+					"name": "Boundary",
+					"ownedElements": [
+						{
+							"_type": "UMLClass",
+							"_id": "AAAAAAGWFrLA9ydh2Eo=",
+							"_parent": {
+								"$ref": "AAAAAAGYDzjIpP2/ELc="
+							},
+							"name": "TelaAlugarImóvel",
+							"ownedElements": [
+								{
+									"_type": "UMLAssociation",
+									"_id": "AAAAAAGXcOjp8P9/3h8=",
+									"_parent": {
+										"$ref": "AAAAAAGWFrLA9ydh2Eo="
+									},
+									"end1": {
+										"_type": "UMLAssociationEnd",
+										"_id": "AAAAAAGXcOjp8P+Ar+I=",
+										"_parent": {
+											"$ref": "AAAAAAGXcOjp8P9/3h8="
+										},
+										"reference": {
+											"$ref": "AAAAAAGWFrLA9ydh2Eo="
+										},
+										"multiplicity": "*"
+									},
+									"end2": {
+										"_type": "UMLAssociationEnd",
+										"_id": "AAAAAAGXcOjp8P+BtOQ=",
+										"_parent": {
+											"$ref": "AAAAAAGXcOjp8P9/3h8="
+										},
+										"reference": {
+											"$ref": "AAAAAAGWF03qRv9UsNI="
+										},
+										"multiplicity": "1"
+									}
+								},
+								{
+									"_type": "UMLAssociation",
+									"_id": "AAAAAAGXcOk78AEsL+g=",
+									"_parent": {
+										"$ref": "AAAAAAGWFrLA9ydh2Eo="
+									},
+									"end1": {
+										"_type": "UMLAssociationEnd",
+										"_id": "AAAAAAGXcOk78AEtvfg=",
+										"_parent": {
+											"$ref": "AAAAAAGXcOk78AEsL+g="
+										},
+										"reference": {
+											"$ref": "AAAAAAGWFrLA9ydh2Eo="
+										},
+										"multiplicity": "*"
+									},
+									"end2": {
+										"_type": "UMLAssociationEnd",
+										"_id": "AAAAAAGXcOk78AEuAzY=",
+										"_parent": {
+											"$ref": "AAAAAAGXcOk78AEsL+g="
+										},
+										"reference": {
+											"$ref": "AAAAAAGWF1AF0wAxk6A="
+										},
+										"multiplicity": "1"
+									}
+								},
+								{
+									"_type": "UMLAssociation",
+									"_id": "AAAAAAGXcOlnoAOno8k=",
+									"_parent": {
+										"$ref": "AAAAAAGWFrLA9ydh2Eo="
+									},
+									"end1": {
+										"_type": "UMLAssociationEnd",
+										"_id": "AAAAAAGXcOlnoAOog1M=",
+										"_parent": {
+											"$ref": "AAAAAAGXcOlnoAOno8k="
+										},
+										"reference": {
+											"$ref": "AAAAAAGWFrLA9ydh2Eo="
+										},
+										"multiplicity": "*"
+									},
+									"end2": {
+										"_type": "UMLAssociationEnd",
+										"_id": "AAAAAAGXcOlnoQOpUpc=",
+										"_parent": {
+											"$ref": "AAAAAAGXcOlnoAOno8k="
+										},
+										"reference": {
+											"$ref": "AAAAAAGWF05f+f+DDOg="
+										},
+										"multiplicity": "1"
+									}
+								},
+								{
+									"_type": "UMLAssociation",
+									"_id": "AAAAAAGXcOmviAoDcjY=",
+									"_parent": {
+										"$ref": "AAAAAAGWFrLA9ydh2Eo="
+									},
+									"end1": {
+										"_type": "UMLAssociationEnd",
+										"_id": "AAAAAAGXcOmviAoEyAs=",
+										"_parent": {
+											"$ref": "AAAAAAGXcOmviAoDcjY="
+										},
+										"reference": {
+											"$ref": "AAAAAAGWFrLA9ydh2Eo="
+										},
+										"multiplicity": "*"
+									},
+									"end2": {
+										"_type": "UMLAssociationEnd",
+										"_id": "AAAAAAGXcOmviAoFhEY=",
+										"_parent": {
+											"$ref": "AAAAAAGXcOmviAoDcjY="
+										},
+										"reference": {
+											"$ref": "AAAAAAGWF02ue/8pwP8="
+										},
+										"multiplicity": "1"
+									}
+								},
+								{
+									"_type": "UMLDependency",
+									"_id": "AAAAAAGXcRZ5GsvV5T8=",
+									"_parent": {
+										"$ref": "AAAAAAGWFrLA9ydh2Eo="
+									},
+									"source": {
+										"$ref": "AAAAAAGWFrLA9ydh2Eo="
+									},
+									"target": {
+										"$ref": "AAAAAAGWF0JcIf4Sbxc="
+									}
+								},
+								{
+									"_type": "UMLDependency",
+									"_id": "AAAAAAGXcRaiT+K0imY=",
+									"_parent": {
+										"$ref": "AAAAAAGWFrLA9ydh2Eo="
+									},
+									"source": {
+										"$ref": "AAAAAAGWFrLA9ydh2Eo="
+									},
+									"target": {
+										"$ref": "AAAAAAGWF0H6TP3mN2M="
+									}
+								},
+								{
+									"_type": "UMLDependency",
+									"_id": "AAAAAAGXn0s+tfGCGj4=",
+									"_parent": {
+										"$ref": "AAAAAAGWFrLA9ydh2Eo="
+									},
+									"source": {
+										"$ref": "AAAAAAGWFrLA9ydh2Eo="
+									},
+									"target": {
+										"$ref": "AAAAAAGWF0azTv5IurA="
+									}
+								},
+								{
+									"_type": "UMLDependency",
+									"_id": "AAAAAAGXn0zw9jHqLLU=",
+									"_parent": {
+										"$ref": "AAAAAAGWFrLA9ydh2Eo="
+									},
+									"source": {
+										"$ref": "AAAAAAGWFrLA9ydh2Eo="
+									},
+									"target": {
+										"$ref": "AAAAAAGXlJYylnbgirI="
+									}
+								}
+							],
+							"stereotype": {
+								"$ref": "AAAAAAFFw0h1/QXL978="
+							},
+							"operations": [
+								{
+									"_type": "UMLOperation",
+									"_id": "AAAAAAGXJ2VInoZTUBQ=",
+									"_parent": {
+										"$ref": "AAAAAAGWFrLA9ydh2Eo="
+									},
+									"name": "alugar"
+								},
+								{
+									"_type": "UMLOperation",
+									"_id": "AAAAAAGXLeN/LhnWtUg=",
+									"_parent": {
+										"$ref": "AAAAAAGWFrLA9ydh2Eo="
+									},
+									"name": "buscarImovel"
+								},
+								{
+									"_type": "UMLOperation",
+									"_id": "AAAAAAGXLeO2kxnu6sA=",
+									"_parent": {
+										"$ref": "AAAAAAGWFrLA9ydh2Eo="
+									},
+									"name": "buscarInquilino"
+								}
+							]
+						},
+						{
+							"_type": "UMLClass",
+							"_id": "AAAAAAGWFrS9GCksQoQ=",
+							"_parent": {
+								"$ref": "AAAAAAGYDzjIpP2/ELc="
+							},
+							"name": "TelaEncerrarLocacao",
+							"ownedElements": [
+								{
+									"_type": "UMLAssociation",
+									"_id": "AAAAAAGXcUsYlRMZtIo=",
+									"_parent": {
+										"$ref": "AAAAAAGWFrS9GCksQoQ="
+									},
+									"end1": {
+										"_type": "UMLAssociationEnd",
+										"_id": "AAAAAAGXcUsYlRMaPcc=",
+										"_parent": {
+											"$ref": "AAAAAAGXcUsYlRMZtIo="
+										},
+										"reference": {
+											"$ref": "AAAAAAGWFrS9GCksQoQ="
+										},
+										"multiplicity": "*"
+									},
+									"end2": {
+										"_type": "UMLAssociationEnd",
+										"_id": "AAAAAAGXcUsYlRMbsnA=",
+										"_parent": {
+											"$ref": "AAAAAAGXcUsYlRMZtIo="
+										},
+										"reference": {
+											"$ref": "AAAAAAGWF1AF0wAxk6A="
+										},
+										"multiplicity": "1"
+									}
+								},
+								{
+									"_type": "UMLDependency",
+									"_id": "AAAAAAGXcUt2HiDYJKc=",
+									"_parent": {
+										"$ref": "AAAAAAGWFrS9GCksQoQ="
+									},
+									"source": {
+										"$ref": "AAAAAAGWFrS9GCksQoQ="
+									},
+									"target": {
+										"$ref": "AAAAAAGWF0JcIf4Sbxc="
+									}
+								},
+								{
+									"_type": "UMLDependency",
+									"_id": "AAAAAAGXcUuMfiqXFAo=",
+									"_parent": {
+										"$ref": "AAAAAAGWFrS9GCksQoQ="
+									},
+									"source": {
+										"$ref": "AAAAAAGWFrS9GCksQoQ="
+									},
+									"target": {
+										"$ref": "AAAAAAGWF0azTv5IurA="
+									}
+								},
+								{
+									"_type": "UMLDependency",
+									"_id": "AAAAAAGXn3axZYW1e60=",
+									"_parent": {
+										"$ref": "AAAAAAGWFrS9GCksQoQ="
+									},
+									"source": {
+										"$ref": "AAAAAAGWFrS9GCksQoQ="
+									},
+									"target": {
+										"$ref": "AAAAAAGXlJWNZXPBRKg="
+									}
+								}
+							],
+							"stereotype": {
+								"$ref": "AAAAAAFFw0h1/QXL978="
+							}
+						},
+						{
+							"_type": "UMLClass",
+							"_id": "AAAAAAGWF0DGiP2jm4I=",
+							"_parent": {
+								"$ref": "AAAAAAGYDzjIpP2/ELc="
+							},
+							"name": "TelaInformacaoImove",
+							"ownedElements": [
+								{
+									"_type": "UMLDependency",
+									"_id": "AAAAAAGXdhVV/hoy9/8=",
+									"_parent": {
+										"$ref": "AAAAAAGWF0DGiP2jm4I="
+									},
+									"source": {
+										"$ref": "AAAAAAGWF0DGiP2jm4I="
+									},
+									"target": {
+										"$ref": "AAAAAAGWF0JcIf4Sbxc="
+									}
+								},
+								{
+									"_type": "UMLDependency",
+									"_id": "AAAAAAGXdhVjFBv8UbY=",
+									"_parent": {
+										"$ref": "AAAAAAGWF0DGiP2jm4I="
+									},
+									"source": {
+										"$ref": "AAAAAAGWF0DGiP2jm4I="
+									},
+									"target": {
+										"$ref": "AAAAAAGWF0H6TP3mN2M="
+									}
+								},
+								{
+									"_type": "UMLAssociation",
+									"_id": "AAAAAAGXdhWdtiGXPas=",
+									"_parent": {
+										"$ref": "AAAAAAGWF0DGiP2jm4I="
+									},
+									"end1": {
+										"_type": "UMLAssociationEnd",
+										"_id": "AAAAAAGXdhWdtiGY6gI=",
+										"_parent": {
+											"$ref": "AAAAAAGXdhWdtiGXPas="
+										},
+										"reference": {
+											"$ref": "AAAAAAGWF0DGiP2jm4I="
+										},
+										"multiplicity": "*"
+									},
+									"end2": {
+										"_type": "UMLAssociationEnd",
+										"_id": "AAAAAAGXdhWdtyGZ/EE=",
+										"_parent": {
+											"$ref": "AAAAAAGXdhWdtiGXPas="
+										},
+										"reference": {
+											"$ref": "AAAAAAGWF03qRv9UsNI="
+										},
+										"multiplicity": "1"
+									}
+								},
+								{
+									"_type": "UMLDependency",
+									"_id": "AAAAAAGXn301swAZJlk=",
+									"_parent": {
+										"$ref": "AAAAAAGWF0DGiP2jm4I="
+									},
+									"source": {
+										"$ref": "AAAAAAGWF0DGiP2jm4I="
+									},
+									"target": {
+										"$ref": "AAAAAAGXlJYylnbgirI="
+									}
+								}
+							],
+							"stereotype": {
+								"$ref": "AAAAAAFFw0h1/QXL978="
+							}
+						},
+						{
+							"_type": "UMLClass",
+							"_id": "AAAAAAGXT95z/whlomw=",
+							"_parent": {
+								"$ref": "AAAAAAGYDzjIpP2/ELc="
+							},
+							"name": "TelaManterProprietario",
+							"ownedElements": [
+								{
+									"_type": "UMLDependency",
+									"_id": "AAAAAAGXcTtZPOoLa7c=",
+									"_parent": {
+										"$ref": "AAAAAAGXT95z/whlomw="
+									},
+									"source": {
+										"$ref": "AAAAAAGXT95z/whlomw="
+									},
+									"target": {
+										"$ref": "AAAAAAGWF0JcIf4Sbxc="
+									}
+								},
+								{
+									"_type": "UMLDependency",
+									"_id": "AAAAAAGXcUKSWjbxkqw=",
+									"_parent": {
+										"$ref": "AAAAAAGXT95z/whlomw="
+									},
+									"source": {
+										"$ref": "AAAAAAGXT95z/whlomw="
+									},
+									"target": {
+										"$ref": "AAAAAAGWF0JcIf4Sbxc="
+									}
+								},
+								{
+									"_type": "UMLDependency",
+									"_id": "AAAAAAGXn3V1mnlvWkU=",
+									"_parent": {
+										"$ref": "AAAAAAGXT95z/whlomw="
+									},
+									"source": {
+										"$ref": "AAAAAAGXT95z/whlomw="
+									},
+									"target": {
+										"$ref": "AAAAAAGXlJWNZXPBRKg="
+									}
+								}
+							],
+							"stereotype": {
+								"$ref": "AAAAAAFFw0h1/QXL978="
+							},
+							"operations": [
+								{
+									"_type": "UMLOperation",
+									"_id": "AAAAAAGXT+CjrAlhDCE=",
+									"_parent": {
+										"$ref": "AAAAAAGXT95z/whlomw="
+									},
+									"name": "cadastrar"
+								},
+								{
+									"_type": "UMLOperation",
+									"_id": "AAAAAAGXT+PWUgomQcM=",
+									"_parent": {
+										"$ref": "AAAAAAGXT95z/whlomw="
+									},
+									"name": "buscar"
+								},
+								{
+									"_type": "UMLOperation",
+									"_id": "AAAAAAGXT+VzXAqpHoA=",
+									"_parent": {
+										"$ref": "AAAAAAGXT95z/whlomw="
+									},
+									"name": "atualizar"
+								},
+								{
+									"_type": "UMLOperation",
+									"_id": "AAAAAAGXT+cmFwtk3tI=",
+									"_parent": {
+										"$ref": "AAAAAAGXT95z/whlomw="
+									},
+									"name": "excluir"
+								}
+							]
+						},
+						{
+							"_type": "UMLClass",
+							"_id": "AAAAAAGXTOFm1vz9v2g=",
+							"_parent": {
+								"$ref": "AAAAAAGYDzjIpP2/ELc="
+							},
+							"name": "TelaManterInquilino",
+							"ownedElements": [
+								{
+									"_type": "UMLAssociation",
+									"_id": "AAAAAAGXcNZbKumnvws=",
+									"_parent": {
+										"$ref": "AAAAAAGXTOFm1vz9v2g="
+									},
+									"end1": {
+										"_type": "UMLAssociationEnd",
+										"_id": "AAAAAAGXcNZbKumo9lk=",
+										"_parent": {
+											"$ref": "AAAAAAGXcNZbKumnvws="
+										},
+										"reference": {
+											"$ref": "AAAAAAGXTOFm1vz9v2g="
+										},
+										"multiplicity": "*"
+									},
+									"end2": {
+										"_type": "UMLAssociationEnd",
+										"_id": "AAAAAAGXcNZbKumpAWY=",
+										"_parent": {
+											"$ref": "AAAAAAGXcNZbKumnvws="
+										},
+										"reference": {
+											"$ref": "AAAAAAGWF03qRv9UsNI="
+										},
+										"multiplicity": "1"
+									}
+								},
+								{
+									"_type": "UMLDependency",
+									"_id": "AAAAAAGXlQeGb3Nv8HU=",
+									"_parent": {
+										"$ref": "AAAAAAGXTOFm1vz9v2g="
+									},
+									"source": {
+										"$ref": "AAAAAAGXTOFm1vz9v2g="
+									},
+									"target": {
+										"$ref": "AAAAAAGXlJYylnbgirI="
+									}
+								}
+							],
+							"stereotype": {
+								"$ref": "AAAAAAFFw0h1/QXL978="
+							},
+							"operations": [
+								{
+									"_type": "UMLOperation",
+									"_id": "AAAAAAGXTOjTC/2dMvU=",
+									"_parent": {
+										"$ref": "AAAAAAGXTOFm1vz9v2g="
+									},
+									"name": "cadastrar"
+								},
+								{
+									"_type": "UMLOperation",
+									"_id": "AAAAAAGXT3J2S/4xepo=",
+									"_parent": {
+										"$ref": "AAAAAAGXTOFm1vz9v2g="
+									},
+									"name": "buscar"
+								},
+								{
+									"_type": "UMLOperation",
+									"_id": "AAAAAAGXT3s+Jv7lU5Y=",
+									"_parent": {
+										"$ref": "AAAAAAGXTOFm1vz9v2g="
+									},
+									"name": "deletar"
+								},
+								{
+									"_type": "UMLOperation",
+									"_id": "AAAAAAGXT+uSVw2wvyc=",
+									"_parent": {
+										"$ref": "AAAAAAGXTOFm1vz9v2g="
+									},
+									"name": "atualizar"
+								}
+							]
+						},
+						{
+							"_type": "UMLClass",
+							"_id": "AAAAAAGXT5oZ4gKnGBw=",
+							"_parent": {
+								"$ref": "AAAAAAGYDzjIpP2/ELc="
+							},
+							"name": "TelaManterImovel",
+							"ownedElements": [
+								{
+									"_type": "UMLDependency",
+									"_id": "AAAAAAGXcQpeQ9ZhwN8=",
+									"_parent": {
+										"$ref": "AAAAAAGXT5oZ4gKnGBw="
+									},
+									"source": {
+										"$ref": "AAAAAAGXT5oZ4gKnGBw="
+									},
+									"target": {
+										"$ref": "AAAAAAGWF0JcIf4Sbxc="
+									}
+								},
+								{
+									"_type": "UMLAssociation",
+									"_id": "AAAAAAGXcT9R5RXNFas=",
+									"_parent": {
+										"$ref": "AAAAAAGXT5oZ4gKnGBw="
+									},
+									"end1": {
+										"_type": "UMLAssociationEnd",
+										"_id": "AAAAAAGXcT9R5RXOEgs=",
+										"_parent": {
+											"$ref": "AAAAAAGXcT9R5RXNFas="
+										},
+										"reference": {
+											"$ref": "AAAAAAGXT5oZ4gKnGBw="
+										},
+										"multiplicity": "*"
+									},
+									"end2": {
+										"_type": "UMLAssociationEnd",
+										"_id": "AAAAAAGXcT9R5RXPpDU=",
+										"_parent": {
+											"$ref": "AAAAAAGXcT9R5RXNFas="
+										},
+										"reference": {
+											"$ref": "AAAAAAGWF03qRv9UsNI="
+										},
+										"multiplicity": "1"
+									}
+								},
+								{
+									"_type": "UMLAssociation",
+									"_id": "AAAAAAGXcT+XBR2EzH0=",
+									"_parent": {
+										"$ref": "AAAAAAGXT5oZ4gKnGBw="
+									},
+									"end1": {
+										"_type": "UMLAssociationEnd",
+										"_id": "AAAAAAGXcT+XBR2FrmY=",
+										"_parent": {
+											"$ref": "AAAAAAGXcT+XBR2EzH0="
+										},
+										"reference": {
+											"$ref": "AAAAAAGXT5oZ4gKnGBw="
+										},
+										"multiplicity": "*"
+									},
+									"end2": {
+										"_type": "UMLAssociationEnd",
+										"_id": "AAAAAAGXcT+XBR2GubI=",
+										"_parent": {
+											"$ref": "AAAAAAGXcT+XBR2EzH0="
+										},
+										"reference": {
+											"$ref": "AAAAAAGWF02ue/8pwP8="
+										},
+										"multiplicity": "1"
+									}
+								},
+								{
+									"_type": "UMLDependency",
+									"_id": "AAAAAAGXcUMHVERDNeg=",
+									"_parent": {
+										"$ref": "AAAAAAGXT5oZ4gKnGBw="
+									},
+									"source": {
+										"$ref": "AAAAAAGXT5oZ4gKnGBw="
+									},
+									"target": {
+										"$ref": "AAAAAAGWF0H6TP3mN2M="
+									}
+								},
+								{
+									"_type": "UMLDependency",
+									"_id": "AAAAAAGXn183i1T7mSQ=",
+									"_parent": {
+										"$ref": "AAAAAAGXT5oZ4gKnGBw="
+									},
+									"source": {
+										"$ref": "AAAAAAGXT5oZ4gKnGBw="
+									},
+									"target": {
+										"$ref": "AAAAAAGXlJWNZXPBRKg="
+									}
+								}
+							],
+							"stereotype": {
+								"$ref": "AAAAAAFFw0h1/QXL978="
+							},
+							"operations": [
+								{
+									"_type": "UMLOperation",
+									"_id": "AAAAAAGXT807MwRwZ1o=",
+									"_parent": {
+										"$ref": "AAAAAAGXT5oZ4gKnGBw="
+									},
+									"name": "cadastrar"
+								},
+								{
+									"_type": "UMLOperation",
+									"_id": "AAAAAAGXT9RBpgUq9aY=",
+									"_parent": {
+										"$ref": "AAAAAAGXT5oZ4gKnGBw="
+									},
+									"name": "buscar"
+								},
+								{
+									"_type": "UMLOperation",
+									"_id": "AAAAAAGXT9YENAXdjcM=",
+									"_parent": {
+										"$ref": "AAAAAAGXT5oZ4gKnGBw="
+									},
+									"name": "atualizar"
+								},
+								{
+									"_type": "UMLOperation",
+									"_id": "AAAAAAGXT9iAtAa+8xY=",
+									"_parent": {
+										"$ref": "AAAAAAGXT5oZ4gKnGBw="
+									},
+									"name": "excluir"
+								}
+							]
+						},
+						{
+							"_type": "UMLClass",
+							"_id": "AAAAAAGWF70iXwIZMTE=",
+							"_parent": {
+								"$ref": "AAAAAAGYDzjIpP2/ELc="
+							},
+							"name": "TelaAutenticarUsuario",
+							"ownedElements": [
+								{
+									"_type": "UMLDependency",
+									"_id": "AAAAAAGXdhgJ0zCdTpI=",
+									"_parent": {
+										"$ref": "AAAAAAGWF70iXwIZMTE="
+									},
+									"source": {
+										"$ref": "AAAAAAGWF70iXwIZMTE="
+									},
+									"target": {
+										"$ref": "AAAAAAGWF0JcIf4Sbxc="
+									}
+								},
+								{
+									"_type": "UMLAssociation",
+									"_id": "AAAAAAGXdhgWOTHOEz8=",
+									"_parent": {
+										"$ref": "AAAAAAGWF70iXwIZMTE="
+									},
+									"end1": {
+										"_type": "UMLAssociationEnd",
+										"_id": "AAAAAAGXdhgWOTHPrzU=",
+										"_parent": {
+											"$ref": "AAAAAAGXdhgWOTHOEz8="
+										},
+										"reference": {
+											"$ref": "AAAAAAGWF70iXwIZMTE="
+										},
+										"multiplicity": "*"
+									},
+									"end2": {
+										"_type": "UMLAssociationEnd",
+										"_id": "AAAAAAGXdhgWOTHQOWQ=",
+										"_parent": {
+											"$ref": "AAAAAAGXdhgWOTHOEz8="
+										},
+										"reference": {
+											"$ref": "AAAAAAGWF03qRv9UsNI="
+										},
+										"multiplicity": "1"
+									}
+								}
+							],
+							"stereotype": {
+								"$ref": "AAAAAAFFw0h1/QXL978="
+							}
+						},
+						{
+							"_type": "UMLClass",
+							"_id": "AAAAAAGWFrTERioieVI=",
+							"_parent": {
+								"$ref": "AAAAAAGYDzjIpP2/ELc="
+							},
+							"name": "TelaPedidosManutencao",
+							"ownedElements": [
+								{
+									"_type": "UMLAssociation",
+									"_id": "AAAAAAGXdeFllRPvYkc=",
+									"_parent": {
+										"$ref": "AAAAAAGWFrTERioieVI="
+									},
+									"end1": {
+										"_type": "UMLAssociationEnd",
+										"_id": "AAAAAAGXdeFllRPwVHk=",
+										"_parent": {
+											"$ref": "AAAAAAGXdeFllRPvYkc="
+										},
+										"reference": {
+											"$ref": "AAAAAAGWFySXWfzHJTU="
+										},
+										"multiplicity": "*"
+									},
+									"end2": {
+										"_type": "UMLAssociationEnd",
+										"_id": "AAAAAAGXdeFllRPxbps=",
+										"_parent": {
+											"$ref": "AAAAAAGXdeFllRPvYkc="
+										},
+										"reference": {
+											"$ref": "AAAAAAGWF02ue/8pwP8="
+										},
+										"multiplicity": "1"
+									}
+								},
+								{
+									"_type": "UMLDependency",
+									"_id": "AAAAAAGXdeHNUBb7hzM=",
+									"_parent": {
+										"$ref": "AAAAAAGWFrTERioieVI="
+									},
+									"source": {
+										"$ref": "AAAAAAGWFySXWfzHJTU="
+									},
+									"target": {
+										"$ref": "AAAAAAGWF0H6TP3mN2M="
+									}
+								},
+								{
+									"_type": "UMLDependency",
+									"_id": "AAAAAAGXdeHgZRg+oLw=",
+									"_parent": {
+										"$ref": "AAAAAAGWFrTERioieVI="
+									},
+									"source": {
+										"$ref": "AAAAAAGWFrTERioieVI="
+									},
+									"target": {
+										"$ref": "AAAAAAGWF0iLO/6kyoI="
+									}
+								}
+							],
+							"stereotype": {
+								"$ref": "AAAAAAFFw0h1/QXL978="
+							}
+						},
+						{
+							"_type": "UMLClass",
+							"_id": "AAAAAAGWFrTFBipLxeY=",
+							"_parent": {
+								"$ref": "AAAAAAGYDzjIpP2/ELc="
+							},
+							"name": "TelaEnviarCobranca",
+							"ownedElements": [
+								{
+									"_type": "UMLDependency",
+									"_id": "AAAAAAGXcTAxPc+rZU0=",
+									"_parent": {
+										"$ref": "AAAAAAGWFrTFBipLxeY="
+									},
+									"source": {
+										"$ref": "AAAAAAGWFrTFBipLxeY="
+									},
+									"target": {
+										"$ref": "AAAAAAGWF0JcIf4Sbxc="
+									}
+								},
+								{
+									"_type": "UMLAssociation",
+									"_id": "AAAAAAGXcT2rKfmdGxI=",
+									"_parent": {
+										"$ref": "AAAAAAGWFrTFBipLxeY="
+									},
+									"end1": {
+										"_type": "UMLAssociationEnd",
+										"_id": "AAAAAAGXcT2rKfmeEG4=",
+										"_parent": {
+											"$ref": "AAAAAAGXcT2rKfmdGxI="
+										},
+										"reference": {
+											"$ref": "AAAAAAGWFrTFBipLxeY="
+										},
+										"multiplicity": "*"
+									},
+									"end2": {
+										"_type": "UMLAssociationEnd",
+										"_id": "AAAAAAGXcT2rKfmfu2A=",
+										"_parent": {
+											"$ref": "AAAAAAGXcT2rKfmdGxI="
+										},
+										"reference": {
+											"$ref": "AAAAAAGWF083vf/bII0="
+										},
+										"multiplicity": "1"
+									}
+								},
+								{
+									"_type": "UMLDependency",
+									"_id": "AAAAAAGXqC30w0l/gRw=",
+									"_parent": {
+										"$ref": "AAAAAAGWFrTFBipLxeY="
+									},
+									"source": {
+										"$ref": "AAAAAAGWFrTFBipLxeY="
+									},
+									"target": {
+										"$ref": "AAAAAAGWF0azTv5IurA="
+									}
+								}
+							],
+							"stereotype": {
+								"$ref": "AAAAAAFFw0h1/QXL978="
+							}
+						},
+						{
+							"_type": "UMLClass",
+							"_id": "AAAAAAGWFrTF3Sp0Skk=",
+							"_parent": {
+								"$ref": "AAAAAAGYDzjIpP2/ELc="
+							},
+							"name": "TelaReceberPagamento",
+							"ownedElements": [
+								{
+									"_type": "UMLDependency",
+									"_id": "AAAAAAGXcSbZgqlL94A=",
+									"_parent": {
+										"$ref": "AAAAAAGWFrTF3Sp0Skk="
+									},
+									"source": {
+										"$ref": "AAAAAAGWFrTF3Sp0Skk="
+									},
+									"target": {
+										"$ref": "AAAAAAGWF0pbt/79ivs="
+									}
+								},
+								{
+									"_type": "UMLAssociation",
+									"_id": "AAAAAAGXcUFSZyiHdCI=",
+									"_parent": {
+										"$ref": "AAAAAAGWFrTF3Sp0Skk="
+									},
+									"end1": {
+										"_type": "UMLAssociationEnd",
+										"_id": "AAAAAAGXcUFSZyiIzM0=",
+										"_parent": {
+											"$ref": "AAAAAAGXcUFSZyiHdCI="
+										},
+										"reference": {
+											"$ref": "AAAAAAGWFrTF3Sp0Skk="
+										},
+										"multiplicity": "*"
+									},
+									"end2": {
+										"_type": "UMLAssociationEnd",
+										"_id": "AAAAAAGXcUFSZyiJzzw=",
+										"_parent": {
+											"$ref": "AAAAAAGXcUFSZyiHdCI="
+										},
+										"reference": {
+											"$ref": "AAAAAAGWF0+OdAAGmKo="
+										},
+										"multiplicity": "1"
+									}
+								},
+								{
+									"_type": "UMLDependency",
+									"_id": "AAAAAAGXqDGDY1a0bZc=",
+									"_parent": {
+										"$ref": "AAAAAAGWFrTF3Sp0Skk="
+									},
+									"source": {
+										"$ref": "AAAAAAGWFrTF3Sp0Skk="
+									},
+									"target": {
+										"$ref": "AAAAAAGWF0k47/7R6iY="
+									}
+								}
+							],
+							"stereotype": {
+								"$ref": "AAAAAAFFw0h1/QXL978="
+							},
+							"operations": [
+								{
+									"_type": "UMLOperation",
+									"_id": "AAAAAAGXT9oyYQdIbXE=",
+									"_parent": {
+										"$ref": "AAAAAAGWFrTF3Sp0Skk="
+									},
+									"name": "registrar"
+								}
+							]
+						},
+						{
+							"_type": "UMLClass",
+							"_id": "AAAAAAGWFySXWfzHJTU=",
+							"_parent": {
+								"$ref": "AAAAAAGYDzjIpP2/ELc="
+							},
+							"name": "TelaAbrirChamadoDeReparo",
+							"ownedElements": [
+								{
+									"_type": "UMLDependency",
+									"_id": "AAAAAAGXdea2iFbgzXA=",
+									"_parent": {
+										"$ref": "AAAAAAGWFySXWfzHJTU="
+									},
+									"source": {
+										"$ref": "AAAAAAGWFySXWfzHJTU="
+									},
+									"target": {
+										"$ref": "AAAAAAGWF0H6TP3mN2M="
+									}
+								},
+								{
+									"_type": "UMLDependency",
+									"_id": "AAAAAAGXdebbM18lbAI=",
+									"_parent": {
+										"$ref": "AAAAAAGWFySXWfzHJTU="
+									},
+									"source": {
+										"$ref": "AAAAAAGWFySXWfzHJTU="
+									},
+									"target": {
+										"$ref": "AAAAAAGWF0iLO/6kyoI="
+									}
+								},
+								{
+									"_type": "UMLAssociation",
+									"_id": "AAAAAAGXdebwCmKu+Zw=",
+									"_parent": {
+										"$ref": "AAAAAAGWFySXWfzHJTU="
+									},
+									"end1": {
+										"_type": "UMLAssociationEnd",
+										"_id": "AAAAAAGXdebwCmKv6JI=",
+										"_parent": {
+											"$ref": "AAAAAAGXdebwCmKu+Zw="
+										},
+										"reference": {
+											"$ref": "AAAAAAGWFySXWfzHJTU="
+										},
+										"multiplicity": "*"
+									},
+									"end2": {
+										"_type": "UMLAssociationEnd",
+										"_id": "AAAAAAGXdebwCmKwXDE=",
+										"_parent": {
+											"$ref": "AAAAAAGXdebwCmKu+Zw="
+										},
+										"reference": {
+											"$ref": "AAAAAAGWF06xf/+uVBM="
+										},
+										"multiplicity": "1"
+									}
+								}
+							],
+							"stereotype": {
+								"$ref": "AAAAAAFFw0h1/QXL978="
+							},
+							"operations": [
+								{
+									"_type": "UMLOperation",
+									"_id": "AAAAAAGXT/wgkw7sMD8=",
+									"_parent": {
+										"$ref": "AAAAAAGWFySXWfzHJTU="
+									},
+									"name": "cadastrar"
+								}
+							]
+						},
+						{
+							"_type": "UMLClass",
+							"_id": "AAAAAAGWFyX3Pfz2t+s=",
+							"_parent": {
+								"$ref": "AAAAAAGYDzjIpP2/ELc="
+							},
+							"name": "TelaFazerPagamento",
+							"ownedElements": [
+								{
+									"_type": "UMLDependency",
+									"_id": "AAAAAAGXcS1Ad73gwKo=",
+									"_parent": {
+										"$ref": "AAAAAAGWFyX3Pfz2t+s="
+									},
+									"source": {
+										"$ref": "AAAAAAGWFyX3Pfz2t+s="
+									},
+									"target": {
+										"$ref": "AAAAAAGWF0JcIf4Sbxc="
+									}
+								},
+								{
+									"_type": "UMLDependency",
+									"_id": "AAAAAAGXcS1e+MHzbKE=",
+									"_parent": {
+										"$ref": "AAAAAAGWFyX3Pfz2t+s="
+									},
+									"source": {
+										"$ref": "AAAAAAGWFyX3Pfz2t+s="
+									},
+									"target": {
+										"$ref": "AAAAAAGWF0pbt/79ivs="
+									}
+								},
+								{
+									"_type": "UMLAssociation",
+									"_id": "AAAAAAGXqC7JA02Gas8=",
+									"_parent": {
+										"$ref": "AAAAAAGWFyX3Pfz2t+s="
+									},
+									"end1": {
+										"_type": "UMLAssociationEnd",
+										"_id": "AAAAAAGXqC7JA02HvbE=",
+										"_parent": {
+											"$ref": "AAAAAAGXqC7JA02Gas8="
+										},
+										"reference": {
+											"$ref": "AAAAAAGWFyX3Pfz2t+s="
+										},
+										"multiplicity": "*"
+									},
+									"end2": {
+										"_type": "UMLAssociationEnd",
+										"_id": "AAAAAAGXqC7JA02IIxo=",
+										"_parent": {
+											"$ref": "AAAAAAGXqC7JA02Gas8="
+										},
+										"reference": {
+											"$ref": "AAAAAAGWF0+OdAAGmKo="
+										},
+										"multiplicity": "1"
+									}
+								},
+								{
+									"_type": "UMLDependency",
+									"_id": "AAAAAAGXqDGoCljz/pc=",
+									"_parent": {
+										"$ref": "AAAAAAGWFyX3Pfz2t+s="
+									},
+									"source": {
+										"$ref": "AAAAAAGWFyX3Pfz2t+s="
+									},
+									"target": {
+										"$ref": "AAAAAAGWF0k47/7R6iY="
+									}
+								}
+							],
+							"stereotype": {
+								"$ref": "AAAAAAFFw0h1/QXL978="
+							}
+						},
+						{
+							"_type": "UMLClass",
+							"_id": "AAAAAAGWFz4SYP1Fp9Y=",
+							"_parent": {
+								"$ref": "AAAAAAGYDzjIpP2/ELc="
+							},
+							"name": "TelaConsultaPagamentos",
+							"ownedElements": [
+								{
+									"_type": "UMLDependency",
+									"_id": "AAAAAAGXdeo1WXdziRk=",
+									"_parent": {
+										"$ref": "AAAAAAGWFz4SYP1Fp9Y="
+									},
+									"source": {
+										"$ref": "AAAAAAGWFz4SYP1Fp9Y="
+									},
+									"target": {
+										"$ref": "AAAAAAGWF0JcIf4Sbxc="
+									}
+								},
+								{
+									"_type": "UMLAssociation",
+									"_id": "AAAAAAGX+3Yr+coXM4Q=",
+									"_parent": {
+										"$ref": "AAAAAAGWFz4SYP1Fp9Y="
+									},
+									"end1": {
+										"_type": "UMLAssociationEnd",
+										"_id": "AAAAAAGX+3Yr+coYbhk=",
+										"_parent": {
+											"$ref": "AAAAAAGX+3Yr+coXM4Q="
+										},
+										"reference": {
+											"$ref": "AAAAAAGWFz4SYP1Fp9Y="
+										},
+										"multiplicity": "*"
+									},
+									"end2": {
+										"_type": "UMLAssociationEnd",
+										"_id": "AAAAAAGX+3Yr+coZWyE=",
+										"_parent": {
+											"$ref": "AAAAAAGX+3Yr+coXM4Q="
+										},
+										"reference": {
+											"$ref": "AAAAAAGWF0+OdAAGmKo="
+										},
+										"multiplicity": "1"
+									}
+								},
+								{
+									"_type": "UMLDependency",
+									"_id": "AAAAAAGX+3mA3QL+UIw=",
+									"_parent": {
+										"$ref": "AAAAAAGWFz4SYP1Fp9Y="
+									},
+									"source": {
+										"$ref": "AAAAAAGWFz4SYP1Fp9Y="
+									},
+									"target": {
+										"$ref": "AAAAAAGWF0azTv5IurA="
+									}
+								}
+							],
+							"stereotype": {
+								"$ref": "AAAAAAFFw0h1/QXL978="
+							},
+							"operations": [
+								{
+									"_type": "UMLOperation",
+									"_id": "AAAAAAGXLT0e5vqMqFA=",
+									"_parent": {
+										"$ref": "AAAAAAGWFz4SYP1Fp9Y="
+									},
+									"name": "buscar"
+								},
+								{
+									"_type": "UMLOperation",
+									"_id": "AAAAAAGXUAlddQ/e9hM=",
+									"_parent": {
+										"$ref": "AAAAAAGWFz4SYP1Fp9Y="
+									},
+									"name": "consultar"
+								}
+							]
+						},
+						{
+							"_type": "UMLClass",
+							"_id": "AAAAAAGWFz9Xjf14xS0=",
+							"_parent": {
+								"$ref": "AAAAAAGYDzjIpP2/ELc="
+							},
+							"name": "TelaVisualizarContrato",
+							"ownedElements": [
+								{
+									"_type": "UMLDependency",
+									"_id": "AAAAAAGXdfGHM55wrTk=",
+									"_parent": {
+										"$ref": "AAAAAAGWFz9Xjf14xS0="
+									},
+									"source": {
+										"$ref": "AAAAAAGWFz9Xjf14xS0="
+									},
+									"target": {
+										"$ref": "AAAAAAGWF0dibP53UJM="
+									}
+								},
+								{
+									"_type": "UMLDependency",
+									"_id": "AAAAAAGXdfIcraF+58g=",
+									"_parent": {
+										"$ref": "AAAAAAGWFz9Xjf14xS0="
+									},
+									"source": {
+										"$ref": "AAAAAAGWFz9Xjf14xS0="
+									},
+									"target": {
+										"$ref": "AAAAAAGWF0azTv5IurA="
+									}
+								},
+								{
+									"_type": "UMLDependency",
+									"_id": "AAAAAAGXdfI6A6Wavoc=",
+									"_parent": {
+										"$ref": "AAAAAAGWFz9Xjf14xS0="
+									},
+									"source": {
+										"$ref": "AAAAAAGWFz9Xjf14xS0="
+									},
+									"target": {
+										"$ref": "AAAAAAGWF0H6TP3mN2M="
+									}
+								}
+							],
+							"stereotype": {
+								"$ref": "AAAAAAFFw0h1/QXL978="
+							}
+						}
+					]
+				},
+				{
+					"_type": "UMLPackage",
+					"_id": "AAAAAAGYDzvhLwEo+Tw=",
+					"_parent": {
+						"$ref": "AAAAAAFFxnG7qRNvP5M="
+					},
+					"name": "Control",
+					"ownedElements": [
+						{
+							"_type": "UMLClass",
+							"_id": "AAAAAAGWF05f+f+DDOg=",
+							"_parent": {
+								"$ref": "AAAAAAGYDzvhLwEo+Tw="
+							},
+							"name": "ControleContrato",
+							"ownedElements": [
+								{
+									"_type": "UMLDependency",
+									"_id": "AAAAAAGXcOX60f6+MEg=",
+									"_parent": {
+										"$ref": "AAAAAAGWF05f+f+DDOg="
+									},
+									"source": {
+										"$ref": "AAAAAAGWF05f+f+DDOg="
+									},
+									"target": {
+										"$ref": "AAAAAAGWF0dibP53UJM="
+									}
+								},
+								{
+									"_type": "UMLAssociation",
+									"_id": "AAAAAAGXcParXYJNcHk=",
+									"_parent": {
+										"$ref": "AAAAAAGWF05f+f+DDOg="
+									},
+									"end1": {
+										"_type": "UMLAssociationEnd",
+										"_id": "AAAAAAGXcParXoJOmLs=",
+										"_parent": {
+											"$ref": "AAAAAAGXcParXYJNcHk="
+										},
+										"reference": {
+											"$ref": "AAAAAAGWF05f+f+DDOg="
+										},
+										"multiplicity": "1"
+									},
+									"end2": {
+										"_type": "UMLAssociationEnd",
+										"_id": "AAAAAAGXcParXoJPbQY=",
+										"_parent": {
+											"$ref": "AAAAAAGXcParXYJNcHk="
+										},
+										"reference": {
+											"$ref": "AAAAAAGWF1NR1gDfOC8="
+										},
+										"multiplicity": "1"
+									}
+								},
+								{
+									"_type": "UMLAssociation",
+									"_id": "AAAAAAGXdgxZikgu/sg=",
+									"_parent": {
+										"$ref": "AAAAAAGWF05f+f+DDOg="
+									},
+									"end1": {
+										"_type": "UMLAssociationEnd",
+										"_id": "AAAAAAGXdgxZikgvtqM=",
+										"_parent": {
+											"$ref": "AAAAAAGXdgxZikgu/sg="
+										},
+										"reference": {
+											"$ref": "AAAAAAGWF05f+f+DDOg="
+										},
+										"multiplicity": "1"
+									},
+									"end2": {
+										"_type": "UMLAssociationEnd",
+										"_id": "AAAAAAGXdgxZikgwLLM=",
+										"_parent": {
+											"$ref": "AAAAAAGXdgxZikgu/sg="
+										},
+										"reference": {
+											"$ref": "AAAAAAGWFz9Xjf14xS0="
+										},
+										"multiplicity": "*"
+									}
+								}
+							],
+							"stereotype": {
+								"$ref": "AAAAAAFFwx8Q/35u/80="
+							},
+							"operations": [
+								{
+									"_type": "UMLOperation",
+									"_id": "AAAAAAGXUAg9Kw+LsHk=",
+									"_parent": {
+										"$ref": "AAAAAAGWF05f+f+DDOg="
+									},
+									"name": "buscar"
+								}
+							]
+						},
+						{
+							"_type": "UMLClass",
+							"_id": "AAAAAAGWF1AF0wAxk6A=",
+							"_parent": {
+								"$ref": "AAAAAAGYDzvhLwEo+Tw="
+							},
+							"name": "ControleLocacao",
+							"ownedElements": [
+								{
+									"_type": "UMLDependency",
+									"_id": "AAAAAAGXcObAHP9WESI=",
+									"_parent": {
+										"$ref": "AAAAAAGWF1AF0wAxk6A="
+									},
+									"source": {
+										"$ref": "AAAAAAGWF1AF0wAxk6A="
+									},
+									"target": {
+										"$ref": "AAAAAAGWF0azTv5IurA="
+									}
+								},
+								{
+									"_type": "UMLAssociation",
+									"_id": "AAAAAAGXcPUT8j2BWDQ=",
+									"_parent": {
+										"$ref": "AAAAAAGWF1AF0wAxk6A="
+									},
+									"end1": {
+										"_type": "UMLAssociationEnd",
+										"_id": "AAAAAAGXcPUT8j2CIh8=",
+										"_parent": {
+											"$ref": "AAAAAAGXcPUT8j2BWDQ="
+										},
+										"reference": {
+											"$ref": "AAAAAAGWF1AF0wAxk6A="
+										},
+										"multiplicity": "1"
+									},
+									"end2": {
+										"_type": "UMLAssociationEnd",
+										"_id": "AAAAAAGXcPUT8j2DCTE=",
+										"_parent": {
+											"$ref": "AAAAAAGXcPUT8j2BWDQ="
+										},
+										"reference": {
+											"$ref": "AAAAAAGWF1NPfgC2ZyI="
+										},
+										"multiplicity": "1"
+									}
+								},
+								{
+									"_type": "UMLAssociation",
+									"_id": "AAAAAAGXdgyUUlAF/n4=",
+									"_parent": {
+										"$ref": "AAAAAAGWF1AF0wAxk6A="
+									},
+									"end1": {
+										"_type": "UMLAssociationEnd",
+										"_id": "AAAAAAGXdgyUUlAGDw8=",
+										"_parent": {
+											"$ref": "AAAAAAGXdgyUUlAF/n4="
+										},
+										"reference": {
+											"$ref": "AAAAAAGWF1AF0wAxk6A="
+										},
+										"multiplicity": "1"
+									},
+									"end2": {
+										"_type": "UMLAssociationEnd",
+										"_id": "AAAAAAGXdgyUUlAHaZc=",
+										"_parent": {
+											"$ref": "AAAAAAGXdgyUUlAF/n4="
+										},
+										"reference": {
+											"$ref": "AAAAAAGWFz9Xjf14xS0="
+										},
+										"multiplicity": "*"
+									}
+								}
+							],
+							"stereotype": {
+								"$ref": "AAAAAAFFwx8Q/35u/80="
+							},
+							"operations": [
+								{
+									"_type": "UMLOperation",
+									"_id": "AAAAAAGXE0/7wQ/JzGs=",
+									"_parent": {
+										"$ref": "AAAAAAGWF1AF0wAxk6A="
+									},
+									"name": "alugar"
+								},
+								{
+									"_type": "UMLOperation",
+									"_id": "AAAAAAGXE1CnNg/smZ4=",
+									"_parent": {
+										"$ref": "AAAAAAGWF1AF0wAxk6A="
+									},
+									"name": "checarLocacao"
+								},
+								{
+									"_type": "UMLOperation",
+									"_id": "AAAAAAGXLeTZhhpXhlA=",
+									"_parent": {
+										"$ref": "AAAAAAGWF1AF0wAxk6A="
+									},
+									"name": "inserir"
+								},
+								{
+									"_type": "UMLOperation",
+									"_id": "AAAAAAGXLeUvQBpwhf4=",
+									"_parent": {
+										"$ref": "AAAAAAGWF1AF0wAxk6A="
+									},
+									"name": "validar"
+								},
+								{
+									"_type": "UMLOperation",
+									"_id": "AAAAAAGXT/Nsow5JP7c=",
+									"_parent": {
+										"$ref": "AAAAAAGWF1AF0wAxk6A="
+									},
+									"name": "buscar"
+								},
+								{
+									"_type": "UMLOperation",
+									"_id": "AAAAAAGXT/PNGA534zk=",
+									"_parent": {
+										"$ref": "AAAAAAGWF1AF0wAxk6A="
+									},
+									"name": "encerrar"
+								},
+								{
+									"_type": "UMLOperation",
+									"_id": "AAAAAAGXUE9E+hG8uaY=",
+									"_parent": {
+										"$ref": "AAAAAAGWF1AF0wAxk6A="
+									},
+									"name": "alugar"
+								}
+							]
+						},
+						{
+							"_type": "UMLClass",
+							"_id": "AAAAAAGWF0+OdAAGmKo=",
+							"_parent": {
+								"$ref": "AAAAAAGYDzvhLwEo+Tw="
+							},
+							"name": "ControlePagamento",
+							"ownedElements": [
+								{
+									"_type": "UMLDependency",
+									"_id": "AAAAAAGX+3mg5wXWAhY=",
+									"_parent": {
+										"$ref": "AAAAAAGWF0+OdAAGmKo="
+									},
+									"source": {
+										"$ref": "AAAAAAGWF0+OdAAGmKo="
+									},
+									"target": {
+										"$ref": "AAAAAAGWF0azTv5IurA="
+									}
+								}
+							],
+							"stereotype": {
+								"$ref": "AAAAAAFFwx8Q/35u/80="
+							},
+							"operations": [
+								{
+									"_type": "UMLOperation",
+									"_id": "AAAAAAGXLT1hVPqllC0=",
+									"_parent": {
+										"$ref": "AAAAAAGWF0+OdAAGmKo="
+									},
+									"name": "visualizar"
+								},
+								{
+									"_type": "UMLOperation",
+									"_id": "AAAAAAGXT9pr3AdhpYQ=",
+									"_parent": {
+										"$ref": "AAAAAAGWF0+OdAAGmKo="
+									},
+									"name": "registrar"
+								},
+								{
+									"_type": "UMLOperation",
+									"_id": "AAAAAAGXUAmqJA/37T4=",
+									"_parent": {
+										"$ref": "AAAAAAGWF0+OdAAGmKo="
+									},
+									"name": "consultar"
+								},
+								{
+									"_type": "UMLOperation",
+									"_id": "AAAAAAGXUDOR/BAX/UQ=",
+									"_parent": {
+										"$ref": "AAAAAAGWF0+OdAAGmKo="
+									},
+									"name": "validar"
+								}
+							]
+						},
+						{
+							"_type": "UMLClass",
+							"_id": "AAAAAAGWF083vf/bII0=",
+							"_parent": {
+								"$ref": "AAAAAAGYDzvhLwEo+Tw="
+							},
+							"name": "ControleCobranca",
+							"ownedElements": [
+								{
+									"_type": "UMLDependency",
+									"_id": "AAAAAAGXcTGDoNXDgwg=",
+									"_parent": {
+										"$ref": "AAAAAAGWF083vf/bII0="
+									},
+									"source": {
+										"$ref": "AAAAAAGWF083vf/bII0="
+									},
+									"target": {
+										"$ref": "AAAAAAGWF0k47/7R6iY="
+									}
+								}
+							],
+							"stereotype": {
+								"$ref": "AAAAAAFFwx8Q/35u/80="
+							},
+							"operations": [
+								{
+									"_type": "UMLOperation",
+									"_id": "AAAAAAGXLdMGK/rpbnA=",
+									"_parent": {
+										"$ref": "AAAAAAGWF083vf/bII0="
+									},
+									"name": "validar"
+								},
+								{
+									"_type": "UMLOperation",
+									"_id": "AAAAAAGXT9tG8weekkc=",
+									"_parent": {
+										"$ref": "AAAAAAGWF083vf/bII0="
+									},
+									"name": "enviar"
+								},
+								{
+									"_type": "UMLOperation",
+									"_id": "AAAAAAGXqeKWvu/mAr8=",
+									"_parent": {
+										"$ref": "AAAAAAGWF083vf/bII0="
+									},
+									"name": "consultar"
+								},
+								{
+									"_type": "UMLOperation",
+									"_id": "AAAAAAGX+3KgKsJWhCs=",
+									"_parent": {
+										"$ref": "AAAAAAGWF083vf/bII0="
+									},
+									"name": "consultarExtrato"
+								},
+								{
+									"_type": "UMLOperation",
+									"_id": "AAAAAAGX+3MUVsJu0E8=",
+									"_parent": {
+										"$ref": "AAAAAAGWF083vf/bII0="
+									},
+									"name": "consultar1"
+								},
+								{
+									"_type": "UMLOperation",
+									"_id": "AAAAAAGX+3T1DsMccg8=",
+									"_parent": {
+										"$ref": "AAAAAAGWF083vf/bII0="
+									},
+									"name": "consultarExtrato"
+								}
+							]
+						},
+						{
+							"_type": "UMLClass",
+							"_id": "AAAAAAGWF06xf/+uVBM=",
+							"_parent": {
+								"$ref": "AAAAAAGYDzvhLwEo+Tw="
+							},
+							"name": "ControleChamadoReparo",
+							"ownedElements": [
+								{
+									"_type": "UMLAssociation",
+									"_id": "AAAAAAGXdeH5vRmNrk8=",
+									"_parent": {
+										"$ref": "AAAAAAGWF06xf/+uVBM="
+									},
+									"end1": {
+										"_type": "UMLAssociationEnd",
+										"_id": "AAAAAAGXdeH5vRmOoag=",
+										"_parent": {
+											"$ref": "AAAAAAGXdeH5vRmNrk8="
+										},
+										"reference": {
+											"$ref": "AAAAAAGWF06xf/+uVBM="
+										},
+										"multiplicity": "1"
+									},
+									"end2": {
+										"_type": "UMLAssociationEnd",
+										"_id": "AAAAAAGXdeH5vRmPZXM=",
+										"_parent": {
+											"$ref": "AAAAAAGXdeH5vRmNrk8="
+										},
+										"reference": {
+											"$ref": "AAAAAAGWFrTERioieVI="
+										},
+										"multiplicity": "*"
+									}
+								},
+								{
+									"_type": "UMLDependency",
+									"_id": "AAAAAAGXdeJaphylLJo=",
+									"_parent": {
+										"$ref": "AAAAAAGWF06xf/+uVBM="
+									},
+									"source": {
+										"$ref": "AAAAAAGWF06xf/+uVBM="
+									},
+									"target": {
+										"$ref": "AAAAAAGWF0iLO/6kyoI="
+									}
+								},
+								{
+									"_type": "UMLAssociation",
+									"_id": "AAAAAAGXdeJ3Th4VLcw=",
+									"_parent": {
+										"$ref": "AAAAAAGWF06xf/+uVBM="
+									},
+									"end1": {
+										"_type": "UMLAssociationEnd",
+										"_id": "AAAAAAGXdeJ3Tx4WKGg=",
+										"_parent": {
+											"$ref": "AAAAAAGXdeJ3Th4VLcw="
+										},
+										"reference": {
+											"$ref": "AAAAAAGWF06xf/+uVBM="
+										},
+										"multiplicity": "1"
+									},
+									"end2": {
+										"_type": "UMLAssociationEnd",
+										"_id": "AAAAAAGXdeJ3Tx4XfYU=",
+										"_parent": {
+											"$ref": "AAAAAAGXdeJ3Th4VLcw="
+										},
+										"reference": {
+											"$ref": "AAAAAAGWF1NbswE3YcE="
+										},
+										"multiplicity": "1"
+									}
+								}
+							],
+							"stereotype": {
+								"$ref": "AAAAAAFFwx8Q/35u/80="
+							},
+							"operations": [
+								{
+									"_type": "UMLOperation",
+									"_id": "AAAAAAGXLdqS5PyqVi8=",
+									"_parent": {
+										"$ref": "AAAAAAGWF06xf/+uVBM="
+									},
+									"name": "validar"
+								},
+								{
+									"_type": "UMLOperation",
+									"_id": "AAAAAAGXT+jf/wu5X94=",
+									"_parent": {
+										"$ref": "AAAAAAGWF06xf/+uVBM="
+									},
+									"name": "buscar"
+								},
+								{
+									"_type": "UMLOperation",
+									"_id": "AAAAAAGXT/x+hA8GeoY=",
+									"_parent": {
+										"$ref": "AAAAAAGWF06xf/+uVBM="
+									},
+									"name": "cadastrar"
+								}
+							]
+						},
+						{
+							"_type": "UMLClass",
+							"_id": "AAAAAAGWF03qRv9UsNI=",
+							"_parent": {
+								"$ref": "AAAAAAGYDzvhLwEo+Tw="
+							},
+							"name": "ControleUsuario",
+							"ownedElements": [
+								{
+									"_type": "UMLAssociation",
+									"_id": "AAAAAAGXcNhBQvFjR70=",
+									"_parent": {
+										"$ref": "AAAAAAGWF03qRv9UsNI="
+									},
+									"end1": {
+										"_type": "UMLAssociationEnd",
+										"_id": "AAAAAAGXcNhBQvFkEN0=",
+										"_parent": {
+											"$ref": "AAAAAAGXcNhBQvFjR70="
+										},
+										"reference": {
+											"$ref": "AAAAAAGWF03qRv9UsNI="
+										},
+										"multiplicity": "1"
+									},
+									"end2": {
+										"_type": "UMLAssociationEnd",
+										"_id": "AAAAAAGXcNhBQvFlD4o=",
+										"_parent": {
+											"$ref": "AAAAAAGXcNhBQvFjR70="
+										},
+										"reference": {
+											"$ref": "AAAAAAGXTOFm1vz9v2g="
+										},
+										"multiplicity": "*"
+									}
+								},
+								{
+									"_type": "UMLAssociation",
+									"_id": "AAAAAAGXcNieT/OLNDw=",
+									"_parent": {
+										"$ref": "AAAAAAGWF03qRv9UsNI="
+									},
+									"end1": {
+										"_type": "UMLAssociationEnd",
+										"_id": "AAAAAAGXcNieT/OM92s=",
+										"_parent": {
+											"$ref": "AAAAAAGXcNieT/OLNDw="
+										},
+										"reference": {
+											"$ref": "AAAAAAGWF03qRv9UsNI="
+										},
+										"multiplicity": "1"
+									},
+									"end2": {
+										"_type": "UMLAssociationEnd",
+										"_id": "AAAAAAGXcNieT/ONwD0=",
+										"_parent": {
+											"$ref": "AAAAAAGXcNieT/OLNDw="
+										},
+										"reference": {
+											"$ref": "AAAAAAGWF1NJ5ACNbzE="
+										},
+										"multiplicity": "1"
+									}
+								},
+								{
+									"_type": "UMLAssociation",
+									"_id": "AAAAAAGXcTrdCugHW/U=",
+									"_parent": {
+										"$ref": "AAAAAAGWF03qRv9UsNI="
+									},
+									"end1": {
+										"_type": "UMLAssociationEnd",
+										"_id": "AAAAAAGXcTrdCugI9FQ=",
+										"_parent": {
+											"$ref": "AAAAAAGXcTrdCugHW/U="
+										},
+										"reference": {
+											"$ref": "AAAAAAGWF03qRv9UsNI="
+										},
+										"multiplicity": "1"
+									},
+									"end2": {
+										"_type": "UMLAssociationEnd",
+										"_id": "AAAAAAGXcTrdCugJSKE=",
+										"_parent": {
+											"$ref": "AAAAAAGXcTrdCugHW/U="
+										},
+										"reference": {
+											"$ref": "AAAAAAGXT95z/whlomw="
+										},
+										"multiplicity": "*"
+									}
+								},
+								{
+									"_type": "UMLDependency",
+									"_id": "AAAAAAGXlQeiD3VsDP0=",
+									"_parent": {
+										"$ref": "AAAAAAGWF03qRv9UsNI="
+									},
+									"source": {
+										"$ref": "AAAAAAGWF03qRv9UsNI="
+									},
+									"target": {
+										"$ref": "AAAAAAGXlJYylnbgirI="
+									}
+								},
+								{
+									"_type": "UMLDependency",
+									"_id": "AAAAAAGXn3WkC3ypdaw=",
+									"_parent": {
+										"$ref": "AAAAAAGWF03qRv9UsNI="
+									},
+									"source": {
+										"$ref": "AAAAAAGWF03qRv9UsNI="
+									},
+									"target": {
+										"$ref": "AAAAAAGXlJWNZXPBRKg="
+									}
+								}
+							],
+							"stereotype": {
+								"$ref": "AAAAAAFFwx8Q/35u/80="
+							},
+							"operations": [
+								{
+									"_type": "UMLOperation",
+									"_id": "AAAAAAGXLRtO3+0m7HI=",
+									"_parent": {
+										"$ref": "AAAAAAGWF03qRv9UsNI="
+									},
+									"name": "inserir"
+								},
+								{
+									"_type": "UMLOperation",
+									"_id": "AAAAAAGXLRu04e1AB6g=",
+									"_parent": {
+										"$ref": "AAAAAAGWF03qRv9UsNI="
+									},
+									"name": "validar"
+								},
+								{
+									"_type": "UMLOperation",
+									"_id": "AAAAAAGXLSkQ9O92LdM=",
+									"_parent": {
+										"$ref": "AAAAAAGWF03qRv9UsNI="
+									},
+									"name": "apagar"
+								},
+								{
+									"_type": "UMLOperation",
+									"_id": "AAAAAAGXLdRqK/sprPM=",
+									"_parent": {
+										"$ref": "AAAAAAGWF03qRv9UsNI="
+									},
+									"name": "validar"
+								},
+								{
+									"_type": "UMLOperation",
+									"_id": "AAAAAAGXLdeOkfvQ+2k=",
+									"_parent": {
+										"$ref": "AAAAAAGWF03qRv9UsNI="
+									},
+									"name": "atualizar"
+								},
+								{
+									"_type": "UMLOperation",
+									"_id": "AAAAAAGXLdgV0Pv/T4M=",
+									"_parent": {
+										"$ref": "AAAAAAGWF03qRv9UsNI="
+									},
+									"name": "procurar"
+								},
+								{
+									"_type": "UMLOperation",
+									"_id": "AAAAAAGXLdkY8vxJvcI=",
+									"_parent": {
+										"$ref": "AAAAAAGWF03qRv9UsNI="
+									},
+									"name": "modificar"
+								},
+								{
+									"_type": "UMLOperation",
+									"_id": "AAAAAAGXTOlhbf3LgGs=",
+									"_parent": {
+										"$ref": "AAAAAAGWF03qRv9UsNI="
+									},
+									"name": "cadastrar"
+								},
+								{
+									"_type": "UMLOperation",
+									"_id": "AAAAAAGXT3LCsP5KBKM=",
+									"_parent": {
+										"$ref": "AAAAAAGWF03qRv9UsNI="
+									},
+									"name": "buscar"
+								},
+								{
+									"_type": "UMLOperation",
+									"_id": "AAAAAAGXT3uOSf7+Cko=",
+									"_parent": {
+										"$ref": "AAAAAAGWF03qRv9UsNI="
+									},
+									"name": "deletar"
+								},
+								{
+									"_type": "UMLOperation",
+									"_id": "AAAAAAGXT4VWHf+fIvA=",
+									"_parent": {
+										"$ref": "AAAAAAGWF03qRv9UsNI="
+									},
+									"name": "buscarInquilino"
+								},
+								{
+									"_type": "UMLOperation",
+									"_id": "AAAAAAGXT+d4pwt9hpM=",
+									"_parent": {
+										"$ref": "AAAAAAGWF03qRv9UsNI="
+									},
+									"name": "excluir"
+								}
+							]
+						},
+						{
+							"_type": "UMLClass",
+							"_id": "AAAAAAGWF02ue/8pwP8=",
+							"_parent": {
+								"$ref": "AAAAAAGYDzvhLwEo+Tw="
+							},
+							"name": "ControleImovel",
+							"ownedElements": [
+								{
+									"_type": "UMLDependency",
+									"_id": "AAAAAAGXcOZvSv8I8zM=",
+									"_parent": {
+										"$ref": "AAAAAAGWF02ue/8pwP8="
+									},
+									"source": {
+										"$ref": "AAAAAAGWF02ue/8pwP8="
+									},
+									"target": {
+										"$ref": "AAAAAAGWF0H6TP3mN2M="
+									}
+								},
+								{
+									"_type": "UMLAssociation",
+									"_id": "AAAAAAGXcPj4QTk0axs=",
+									"_parent": {
+										"$ref": "AAAAAAGWF02ue/8pwP8="
+									},
+									"end1": {
+										"_type": "UMLAssociationEnd",
+										"_id": "AAAAAAGXcPj4QTk1bYU=",
+										"_parent": {
+											"$ref": "AAAAAAGXcPj4QTk0axs="
+										},
+										"reference": {
+											"$ref": "AAAAAAGWF02ue/8pwP8="
+										},
+										"multiplicity": "1"
+									},
+									"end2": {
+										"_type": "UMLAssociationEnd",
+										"_id": "AAAAAAGXcPj4QTk28MQ=",
+										"_parent": {
+											"$ref": "AAAAAAGXcPj4QTk0axs="
+										},
+										"reference": {
+											"$ref": "AAAAAAGWF1MbbwBkFLI="
+										},
+										"multiplicity": "1"
+									}
+								},
+								{
+									"_type": "UMLAssociation",
+									"_id": "AAAAAAGXdeZ+o1H6fdU=",
+									"_parent": {
+										"$ref": "AAAAAAGWF02ue/8pwP8="
+									},
+									"end1": {
+										"_type": "UMLAssociationEnd",
+										"_id": "AAAAAAGXdeZ+o1H7C+I=",
+										"_parent": {
+											"$ref": "AAAAAAGXdeZ+o1H6fdU="
+										},
+										"reference": {
+											"$ref": "AAAAAAGWF02ue/8pwP8="
+										},
+										"multiplicity": "1"
+									},
+									"end2": {
+										"_type": "UMLAssociationEnd",
+										"_id": "AAAAAAGXdeZ+o1H8V6w=",
+										"_parent": {
+											"$ref": "AAAAAAGXdeZ+o1H6fdU="
+										},
+										"reference": {
+											"$ref": "AAAAAAGWFySXWfzHJTU="
+										},
+										"multiplicity": "*"
+									}
+								},
+								{
+									"_type": "UMLAssociation",
+									"_id": "AAAAAAGXdgwk4EJq8ZA=",
+									"_parent": {
+										"$ref": "AAAAAAGWF02ue/8pwP8="
+									},
+									"end1": {
+										"_type": "UMLAssociationEnd",
+										"_id": "AAAAAAGXdgwk4EJrEog=",
+										"_parent": {
+											"$ref": "AAAAAAGXdgwk4EJq8ZA="
+										},
+										"reference": {
+											"$ref": "AAAAAAGWF02ue/8pwP8="
+										},
+										"multiplicity": "1"
+									},
+									"end2": {
+										"_type": "UMLAssociationEnd",
+										"_id": "AAAAAAGXdgwk4EJsm7I=",
+										"_parent": {
+											"$ref": "AAAAAAGXdgwk4EJq8ZA="
+										},
+										"reference": {
+											"$ref": "AAAAAAGWFz9Xjf14xS0="
+										},
+										"multiplicity": "*"
+									}
+								},
+								{
+									"_type": "UMLAssociation",
+									"_id": "AAAAAAGXdhVyHh2ibUU=",
+									"_parent": {
+										"$ref": "AAAAAAGWF02ue/8pwP8="
+									},
+									"end1": {
+										"_type": "UMLAssociationEnd",
+										"_id": "AAAAAAGXdhVyHh2jRqo=",
+										"_parent": {
+											"$ref": "AAAAAAGXdhVyHh2ibUU="
+										},
+										"reference": {
+											"$ref": "AAAAAAGWF02ue/8pwP8="
+										},
+										"multiplicity": "1"
+									},
+									"end2": {
+										"_type": "UMLAssociationEnd",
+										"_id": "AAAAAAGXdhVyHh2kSUI=",
+										"_parent": {
+											"$ref": "AAAAAAGXdhVyHh2ibUU="
+										},
+										"reference": {
+											"$ref": "AAAAAAGWF0DGiP2jm4I="
+										},
+										"multiplicity": "*"
+									}
+								}
+							],
+							"stereotype": {
+								"$ref": "AAAAAAFFwx8Q/35u/80="
+							},
+							"operations": [
+								{
+									"_type": "UMLOperation",
+									"_id": "AAAAAAGXLd0LHxgq61s=",
+									"_parent": {
+										"$ref": "AAAAAAGWF02ue/8pwP8="
+									},
+									"name": "visualizar"
+								},
+								{
+									"_type": "UMLOperation",
+									"_id": "AAAAAAGXT4TJCv+EUVM=",
+									"_parent": {
+										"$ref": "AAAAAAGWF02ue/8pwP8="
+									},
+									"name": "buscarImovel"
+								},
+								{
+									"_type": "UMLOperation",
+									"_id": "AAAAAAGXT82a3gSebYY=",
+									"_parent": {
+										"$ref": "AAAAAAGWF02ue/8pwP8="
+									},
+									"name": "cadastrar"
+								},
+								{
+									"_type": "UMLOperation",
+									"_id": "AAAAAAGXT9SOlAVDFXQ=",
+									"_parent": {
+										"$ref": "AAAAAAGWF02ue/8pwP8="
+									},
+									"name": "buscar"
+								},
+								{
+									"_type": "UMLOperation",
+									"_id": "AAAAAAGXT9ZLGQX2uRA=",
+									"_parent": {
+										"$ref": "AAAAAAGWF02ue/8pwP8="
+									},
+									"name": "atualizar"
+								},
+								{
+									"_type": "UMLOperation",
+									"_id": "AAAAAAGXT9i6qAbXB/M=",
+									"_parent": {
+										"$ref": "AAAAAAGWF02ue/8pwP8="
+									},
+									"name": "excluir"
+								}
+							]
+						}
+					]
+				},
+				{
+					"_type": "UMLPackage",
+					"_id": "AAAAAAGYDz0L/QMiT54=",
+					"_parent": {
+						"$ref": "AAAAAAFFxnG7qRNvP5M="
+					},
+					"name": "Entity",
+					"ownedElements": [
+						{
+							"_type": "UMLClass",
+							"_id": "AAAAAAGXlJYylnbgirI=",
+							"_parent": {
+								"$ref": "AAAAAAGYDz0L/QMiT54="
+							},
+							"name": "Inquilino",
+							"ownedElements": [
+								{
+									"_type": "UMLGeneralization",
+									"_id": "AAAAAAGXlJ7Hfp9aWn8=",
+									"_parent": {
+										"$ref": "AAAAAAGXlJYylnbgirI="
+									},
+									"source": {
+										"$ref": "AAAAAAGXlJYylnbgirI="
+									},
+									"target": {
+										"$ref": "AAAAAAGWF0JcIf4Sbxc="
+									}
+								},
+								{
+									"_type": "UMLAssociation",
+									"_id": "AAAAAAGXlP+cARuqbks=",
+									"_parent": {
+										"$ref": "AAAAAAGXlJYylnbgirI="
+									},
+									"name": "loca",
+									"end1": {
+										"_type": "UMLAssociationEnd",
+										"_id": "AAAAAAGXlP+cARurtdw=",
+										"_parent": {
+											"$ref": "AAAAAAGXlP+cARuqbks="
+										},
+										"reference": {
+											"$ref": "AAAAAAGXlJYylnbgirI="
+										},
+										"multiplicity": "0..1"
+									},
+									"end2": {
+										"_type": "UMLAssociationEnd",
+										"_id": "AAAAAAGXlP+cARusaoQ=",
+										"_parent": {
+											"$ref": "AAAAAAGXlP+cARuqbks="
+										},
+										"reference": {
+											"$ref": "AAAAAAGWF0H6TP3mN2M="
+										},
+										"multiplicity": "0..*"
+									}
+								}
+							],
+							"stereotype": {
+								"$ref": "AAAAAAFFJsYgDTM+Z6E="
+							}
+						},
+						{
+							"_type": "UMLClass",
+							"_id": "AAAAAAGXlJWNZXPBRKg=",
+							"_parent": {
+								"$ref": "AAAAAAGYDz0L/QMiT54="
+							},
+							"name": "Propietario",
+							"ownedElements": [
+								{
+									"_type": "UMLGeneralization",
+									"_id": "AAAAAAGXlJ7acaSxE1I=",
+									"_parent": {
+										"$ref": "AAAAAAGXlJWNZXPBRKg="
+									},
+									"source": {
+										"$ref": "AAAAAAGXlJWNZXPBRKg="
+									},
+									"target": {
+										"$ref": "AAAAAAGWF0JcIf4Sbxc="
+									}
+								},
+								{
+									"_type": "UMLAssociation",
+									"_id": "AAAAAAGXlP6OVxJac3A=",
+									"_parent": {
+										"$ref": "AAAAAAGXlJWNZXPBRKg="
+									},
+									"name": "possui",
+									"end1": {
+										"_type": "UMLAssociationEnd",
+										"_id": "AAAAAAGXlP6OWBJb+Us=",
+										"_parent": {
+											"$ref": "AAAAAAGXlP6OVxJac3A="
+										},
+										"reference": {
+											"$ref": "AAAAAAGXlJWNZXPBRKg="
+										},
+										"multiplicity": "1"
+									},
+									"end2": {
+										"_type": "UMLAssociationEnd",
+										"_id": "AAAAAAGXlP6OWBJcYpg=",
+										"_parent": {
+											"$ref": "AAAAAAGXlP6OVxJac3A="
+										},
+										"reference": {
+											"$ref": "AAAAAAGWF0H6TP3mN2M="
+										},
+										"multiplicity": "0..*"
+									}
+								}
+							],
+							"stereotype": {
+								"$ref": "AAAAAAFFJsYgDTM+Z6E="
+							}
+						},
+						{
+							"_type": "UMLClass",
+							"_id": "AAAAAAGWF0pbt/79ivs=",
+							"_parent": {
+								"$ref": "AAAAAAGYDz0L/QMiT54="
+							},
+							"name": "Pagamento",
+							"ownedElements": [
+								{
+									"_type": "UMLAssociation",
+									"_id": "AAAAAAGXqCK3NdhpRrc=",
+									"_parent": {
+										"$ref": "AAAAAAGWF0pbt/79ivs="
+									},
+									"end1": {
+										"_type": "UMLAssociationEnd",
+										"_id": "AAAAAAGXqCK3NdhqihM=",
+										"_parent": {
+											"$ref": "AAAAAAGXqCK3NdhpRrc="
+										},
+										"reference": {
+											"$ref": "AAAAAAGWF0pbt/79ivs="
+										},
+										"multiplicity": "0..*"
+									},
+									"end2": {
+										"_type": "UMLAssociationEnd",
+										"_id": "AAAAAAGXqCK3NdhroPM=",
+										"_parent": {
+											"$ref": "AAAAAAGXqCK3NdhpRrc="
+										},
+										"reference": {
+											"$ref": "AAAAAAGWF0k47/7R6iY="
+										},
+										"multiplicity": "1"
+									}
+								}
+							],
+							"stereotype": {
+								"$ref": "AAAAAAFFJsYgDTM+Z6E="
+							},
+							"attributes": [
+								{
+									"_type": "UMLAttribute",
+									"_id": "AAAAAAGXp3GWyfjnQB4=",
+									"_parent": {
+										"$ref": "AAAAAAGWF0pbt/79ivs="
+									},
+									"name": "id",
+									"type": "int"
+								},
+								{
+									"_type": "UMLAttribute",
+									"_id": "AAAAAAGXp3HcmPpp2l4=",
+									"_parent": {
+										"$ref": "AAAAAAGWF0pbt/79ivs="
+									},
+									"name": "valor",
+									"type": "Float"
+								},
+								{
+									"_type": "UMLAttribute",
+									"_id": "AAAAAAGXqCpKFDGYvek=",
+									"_parent": {
+										"$ref": "AAAAAAGWF0pbt/79ivs="
+									},
+									"name": "dataPagamento",
+									"type": "Date"
+								}
+							]
+						},
+						{
+							"_type": "UMLClass",
+							"_id": "AAAAAAGWF0k47/7R6iY=",
+							"_parent": {
+								"$ref": "AAAAAAGYDz0L/QMiT54="
+							},
+							"name": "Cobranca",
+							"stereotype": {
+								"$ref": "AAAAAAFFJsYgDTM+Z6E="
+							},
+							"attributes": [
+								{
+									"_type": "UMLAttribute",
+									"_id": "AAAAAAGXqCtbmzcB65c=",
+									"_parent": {
+										"$ref": "AAAAAAGWF0k47/7R6iY="
+									},
+									"name": "id",
+									"type": "int"
+								},
+								{
+									"_type": "UMLAttribute",
+									"_id": "AAAAAAGXqCubgTn9vno=",
+									"_parent": {
+										"$ref": "AAAAAAGWF0k47/7R6iY="
+									},
+									"name": "valor",
+									"type": "Float"
+								},
+								{
+									"_type": "UMLAttribute",
+									"_id": "AAAAAAGXqCwMAjvr6Z4=",
+									"_parent": {
+										"$ref": "AAAAAAGWF0k47/7R6iY="
+									},
+									"name": "dataCobranca",
+									"type": "Date"
+								},
+								{
+									"_type": "UMLAttribute",
+									"_id": "AAAAAAGXqCyV1j8dl78=",
+									"_parent": {
+										"$ref": "AAAAAAGWF0k47/7R6iY="
+									},
+									"name": "tipoCobranca",
+									"type": "Enum"
+								}
+							]
+						},
+						{
+							"_type": "UMLClass",
+							"_id": "AAAAAAGWF0iLO/6kyoI=",
+							"_parent": {
+								"$ref": "AAAAAAGYDz0L/QMiT54="
+							},
+							"name": "ChamadoReparo",
+							"stereotype": {
+								"$ref": "AAAAAAFFJsYgDTM+Z6E="
+							},
+							"attributes": [
+								{
+									"_type": "UMLAttribute",
+									"_id": "AAAAAAGXp9l+oQwcwKw=",
+									"_parent": {
+										"$ref": "AAAAAAGWF0iLO/6kyoI="
+									},
+									"name": "id",
+									"type": "int"
+								},
+								{
+									"_type": "UMLAttribute",
+									"_id": "AAAAAAGXqCcTSfnBZoA=",
+									"_parent": {
+										"$ref": "AAAAAAGWF0iLO/6kyoI="
+									},
+									"name": "tipo",
+									"type": "Enum"
+								},
+								{
+									"_type": "UMLAttribute",
+									"_id": "AAAAAAGXqCfQjP2VsJ8=",
+									"_parent": {
+										"$ref": "AAAAAAGWF0iLO/6kyoI="
+									},
+									"name": "dataCadastro",
+									"type": "Date"
+								},
+								{
+									"_type": "UMLAttribute",
+									"_id": "AAAAAAGXqCiGaQDiyVc=",
+									"_parent": {
+										"$ref": "AAAAAAGWF0iLO/6kyoI="
+									},
+									"name": "dataResolucao",
+									"type": "Date"
+								},
+								{
+									"_type": "UMLAttribute",
+									"_id": "AAAAAAGXqCmJ6xgK0Hs=",
+									"_parent": {
+										"$ref": "AAAAAAGWF0iLO/6kyoI="
+									},
+									"name": "estaResolvido",
+									"type": "boolean"
+								}
+							]
+						},
+						{
+							"_type": "UMLClass",
+							"_id": "AAAAAAGWF0dibP53UJM=",
+							"_parent": {
+								"$ref": "AAAAAAGYDz0L/QMiT54="
+							},
+							"name": "Contrato",
+							"stereotype": {
+								"$ref": "AAAAAAFFJsYgDTM+Z6E="
+							},
+							"attributes": [
+								{
+									"_type": "UMLAttribute",
+									"_id": "AAAAAAGXp2lFreTc9bQ=",
+									"_parent": {
+										"$ref": "AAAAAAGWF0dibP53UJM="
+									},
+									"name": "id",
+									"type": "int"
+								},
+								{
+									"_type": "UMLAttribute",
+									"_id": "AAAAAAGXp2vGwecFWIE=",
+									"_parent": {
+										"$ref": "AAAAAAGWF0dibP53UJM="
+									},
+									"name": "caminho",
+									"type": "String"
+								}
+							]
+						},
+						{
+							"_type": "UMLClass",
+							"_id": "AAAAAAGWF0azTv5IurA=",
+							"_parent": {
+								"$ref": "AAAAAAGYDz0L/QMiT54="
+							},
+							"name": "Locacao",
+							"ownedElements": [
+								{
+									"_type": "UMLAssociation",
+									"_id": "AAAAAAGXcQG2+lX1Wf8=",
+									"_parent": {
+										"$ref": "AAAAAAGWF0azTv5IurA="
+									},
+									"end1": {
+										"_type": "UMLAssociationEnd",
+										"_id": "AAAAAAGXcQG2+lX2jh8=",
+										"_parent": {
+											"$ref": "AAAAAAGXcQG2+lX1Wf8="
+										},
+										"reference": {
+											"$ref": "AAAAAAGWF0azTv5IurA="
+										},
+										"multiplicity": "1"
+									},
+									"end2": {
+										"_type": "UMLAssociationEnd",
+										"_id": "AAAAAAGXcQG2+lX3j44=",
+										"_parent": {
+											"$ref": "AAAAAAGXcQG2+lX1Wf8="
+										},
+										"reference": {
+											"$ref": "AAAAAAGWF0dibP53UJM="
+										},
+										"multiplicity": "1"
+									}
+								},
+								{
+									"_type": "UMLAssociation",
+									"_id": "AAAAAAGXcUbyK3SYjJU=",
+									"_parent": {
+										"$ref": "AAAAAAGWF0azTv5IurA="
+									},
+									"end1": {
+										"_type": "UMLAssociationEnd",
+										"_id": "AAAAAAGXcUbyK3SZXxM=",
+										"_parent": {
+											"$ref": "AAAAAAGXcUbyK3SYjJU="
+										},
+										"reference": {
+											"$ref": "AAAAAAGWF0azTv5IurA="
+										},
+										"multiplicity": "*"
+									},
+									"end2": {
+										"_type": "UMLAssociationEnd",
+										"_id": "AAAAAAGXcUbyK3SamrM=",
+										"_parent": {
+											"$ref": "AAAAAAGXcUbyK3SYjJU="
+										},
+										"reference": {
+											"$ref": "AAAAAAGWF0H6TP3mN2M="
+										},
+										"multiplicity": "1"
+									}
+								},
+								{
+									"_type": "UMLAssociation",
+									"_id": "AAAAAAGXp95yZjJwtNE=",
+									"_parent": {
+										"$ref": "AAAAAAGWF0azTv5IurA="
+									},
+									"end1": {
+										"_type": "UMLAssociationEnd",
+										"_id": "AAAAAAGXp95yZjJxB8c=",
+										"_parent": {
+											"$ref": "AAAAAAGXp95yZjJwtNE="
+										},
+										"reference": {
+											"$ref": "AAAAAAGWF0azTv5IurA="
+										},
+										"multiplicity": "0..*"
+									},
+									"end2": {
+										"_type": "UMLAssociationEnd",
+										"_id": "AAAAAAGXp95yZjJyekU=",
+										"_parent": {
+											"$ref": "AAAAAAGXp95yZjJwtNE="
+										},
+										"reference": {
+											"$ref": "AAAAAAGXlJWNZXPBRKg="
+										}
+									}
+								},
+								{
+									"_type": "UMLAssociation",
+									"_id": "AAAAAAGXp96L9TdUu9g=",
+									"_parent": {
+										"$ref": "AAAAAAGWF0azTv5IurA="
+									},
+									"end1": {
+										"_type": "UMLAssociationEnd",
+										"_id": "AAAAAAGXp96L9TdVYIM=",
+										"_parent": {
+											"$ref": "AAAAAAGXp96L9TdUu9g="
+										},
+										"reference": {
+											"$ref": "AAAAAAGWF0azTv5IurA="
+										},
+										"multiplicity": "0..*"
+									},
+									"end2": {
+										"_type": "UMLAssociationEnd",
+										"_id": "AAAAAAGXp96L9TdWuEs=",
+										"_parent": {
+											"$ref": "AAAAAAGXp96L9TdUu9g="
+										},
+										"reference": {
+											"$ref": "AAAAAAGXlJYylnbgirI="
+										},
+										"multiplicity": "1"
+									}
+								},
+								{
+									"_type": "UMLAssociation",
+									"_id": "AAAAAAGXqCC+4bOB47U=",
+									"_parent": {
+										"$ref": "AAAAAAGWF0azTv5IurA="
+									},
+									"end1": {
+										"_type": "UMLAssociationEnd",
+										"_id": "AAAAAAGXqCC+4bOCXvA=",
+										"_parent": {
+											"$ref": "AAAAAAGXqCC+4bOB47U="
+										},
+										"reference": {
+											"$ref": "AAAAAAGWF0azTv5IurA="
+										},
+										"multiplicity": "1"
+									},
+									"end2": {
+										"_type": "UMLAssociationEnd",
+										"_id": "AAAAAAGXqCC+4bODQaA=",
+										"_parent": {
+											"$ref": "AAAAAAGXqCC+4bOB47U="
+										},
+										"reference": {
+											"$ref": "AAAAAAGWF0k47/7R6iY="
+										},
+										"multiplicity": "0..*"
+									}
+								}
+							],
+							"stereotype": {
+								"$ref": "AAAAAAFFJsYgDTM+Z6E="
+							},
+							"attributes": [
+								{
+									"_type": "UMLAttribute",
+									"_id": "AAAAAAGXp28ExOyNI3s=",
+									"_parent": {
+										"$ref": "AAAAAAGWF0azTv5IurA="
+									},
+									"name": "id",
+									"type": "int"
+								},
+								{
+									"_type": "UMLAttribute",
+									"_id": "AAAAAAGXp29oxe9fbsA=",
+									"_parent": {
+										"$ref": "AAAAAAGWF0azTv5IurA="
+									},
+									"name": "dataInicio",
+									"type": "Date"
+								},
+								{
+									"_type": "UMLAttribute",
+									"_id": "AAAAAAGXp2/eFfFKutc=",
+									"_parent": {
+										"$ref": "AAAAAAGWF0azTv5IurA="
+									},
+									"name": "DataFim",
+									"type": "Date"
+								},
+								{
+									"_type": "UMLAttribute",
+									"_id": "AAAAAAGXp3BqVvTZ61k=",
+									"_parent": {
+										"$ref": "AAAAAAGWF0azTv5IurA="
+									},
+									"name": "valorAluguel",
+									"type": "Float"
+								}
+							],
+							"operations": [
+								{
+									"_type": "UMLOperation",
+									"_id": "AAAAAAGXE05IZQ+R5dY=",
+									"_parent": {
+										"$ref": "AAAAAAGWF0azTv5IurA="
+									},
+									"name": "criarLocacao"
+								}
+							]
+						},
+						{
+							"_type": "UMLClass",
+							"_id": "AAAAAAGWF0JcIf4Sbxc=",
+							"_parent": {
+								"$ref": "AAAAAAGYDz0L/QMiT54="
+							},
+							"name": "Usuario",
+							"stereotype": {
+								"$ref": "AAAAAAFFJsYgDTM+Z6E="
+							},
+							"attributes": [
+								{
+									"_type": "UMLAttribute",
+									"_id": "AAAAAAGXlKEk+ayRCOc=",
+									"_parent": {
+										"$ref": "AAAAAAGWF0JcIf4Sbxc="
+									},
+									"name": "id",
+									"type": "int"
+								},
+								{
+									"_type": "UMLAttribute",
+									"_id": "AAAAAAGXlKFeMa8FN4A=",
+									"_parent": {
+										"$ref": "AAAAAAGWF0JcIf4Sbxc="
+									},
+									"name": "nome",
+									"type": "String"
+								},
+								{
+									"_type": "UMLAttribute",
+									"_id": "AAAAAAGXlOBj7Jx2Hng=",
+									"_parent": {
+										"$ref": "AAAAAAGWF0JcIf4Sbxc="
+									},
+									"name": "cpf",
+									"type": "String"
+								},
+								{
+									"_type": "UMLAttribute",
+									"_id": "AAAAAAGXlOGW+J331/E=",
+									"_parent": {
+										"$ref": "AAAAAAGWF0JcIf4Sbxc="
+									},
+									"name": "rg",
+									"type": "String"
+								},
+								{
+									"_type": "UMLAttribute",
+									"_id": "AAAAAAGXlOIbgKA1YCk=",
+									"_parent": {
+										"$ref": "AAAAAAGWF0JcIf4Sbxc="
+									},
+									"name": "email",
+									"type": "String"
+								},
+								{
+									"_type": "UMLAttribute",
+									"_id": "AAAAAAGXlOLh9KI98uA=",
+									"_parent": {
+										"$ref": "AAAAAAGWF0JcIf4Sbxc="
+									},
+									"name": "telefone",
+									"type": "String"
+								},
+								{
+									"_type": "UMLAttribute",
+									"_id": "AAAAAAGXlOQkeqO++sk=",
+									"_parent": {
+										"$ref": "AAAAAAGWF0JcIf4Sbxc="
+									},
+									"name": "estadoCivil",
+									"type": "Enum"
+								},
+								{
+									"_type": "UMLAttribute",
+									"_id": "AAAAAAGXlOWnCK5H6nY=",
+									"_parent": {
+										"$ref": "AAAAAAGWF0JcIf4Sbxc="
+									},
+									"name": "profissao",
+									"type": "String"
+								},
+								{
+									"_type": "UMLAttribute",
+									"_id": "AAAAAAGXlOwtLcKGuBE=",
+									"_parent": {
+										"$ref": "AAAAAAGWF0JcIf4Sbxc="
+									},
+									"name": "logradouro",
+									"type": "String"
+								},
+								{
+									"_type": "UMLAttribute",
+									"_id": "AAAAAAGXlO5kfMdmWFU=",
+									"_parent": {
+										"$ref": "AAAAAAGWF0JcIf4Sbxc="
+									},
+									"name": "uf",
+									"type": "Enum"
+								},
+								{
+									"_type": "UMLAttribute",
+									"_id": "AAAAAAGXlO8xksnPdRk=",
+									"_parent": {
+										"$ref": "AAAAAAGWF0JcIf4Sbxc="
+									},
+									"name": "numero",
+									"type": "String"
+								},
+								{
+									"_type": "UMLAttribute",
+									"_id": "AAAAAAGXlPANxc3IbpI=",
+									"_parent": {
+										"$ref": "AAAAAAGWF0JcIf4Sbxc="
+									},
+									"name": "cidade",
+									"type": "String"
+								},
+								{
+									"_type": "UMLAttribute",
+									"_id": "AAAAAAGXlPBWpM/IfUQ=",
+									"_parent": {
+										"$ref": "AAAAAAGWF0JcIf4Sbxc="
+									},
+									"name": "bairro",
+									"type": "String"
+								}
+							]
+						},
+						{
+							"_type": "UMLClass",
+							"_id": "AAAAAAGWF0H6TP3mN2M=",
+							"_parent": {
+								"$ref": "AAAAAAGYDz0L/QMiT54="
+							},
+							"name": "Imovel",
+							"ownedElements": [
+								{
+									"_type": "UMLAssociation",
+									"_id": "AAAAAAGXdeOIvDNWNrc=",
+									"_parent": {
+										"$ref": "AAAAAAGWF0H6TP3mN2M="
+									},
+									"end1": {
+										"_type": "UMLAssociationEnd",
+										"_id": "AAAAAAGXdeOIvDNXibY=",
+										"_parent": {
+											"$ref": "AAAAAAGXdeOIvDNWNrc="
+										},
+										"reference": {
+											"$ref": "AAAAAAGWF0H6TP3mN2M="
+										},
+										"multiplicity": "1"
+									},
+									"end2": {
+										"_type": "UMLAssociationEnd",
+										"_id": "AAAAAAGXdeOIvDNYHbM=",
+										"_parent": {
+											"$ref": "AAAAAAGXdeOIvDNWNrc="
+										},
+										"reference": {
+											"$ref": "AAAAAAGWF0iLO/6kyoI="
+										},
+										"multiplicity": "0..*"
+									}
+								}
+							],
+							"stereotype": {
+								"$ref": "AAAAAAFFJsYgDTM+Z6E="
+							},
+							"attributes": [
+								{
+									"_type": "UMLAttribute",
+									"_id": "AAAAAAGXlPNU0/RfPIA=",
+									"_parent": {
+										"$ref": "AAAAAAGWF0H6TP3mN2M="
+									},
+									"name": "id",
+									"type": "int"
+								},
+								{
+									"_type": "UMLAttribute",
+									"_id": "AAAAAAGXlPPN7PZKy5c=",
+									"_parent": {
+										"$ref": "AAAAAAGWF0H6TP3mN2M="
+									},
+									"name": "estaAlugado",
+									"type": "boolean"
+								},
+								{
+									"_type": "UMLAttribute",
+									"_id": "AAAAAAGXlPVtJPkcGwI=",
+									"_parent": {
+										"$ref": "AAAAAAGWF0H6TP3mN2M="
+									},
+									"name": "apelido",
+									"type": "String"
+								},
+								{
+									"_type": "UMLAttribute",
+									"_id": "AAAAAAGXlPXfrvsHaBw=",
+									"_parent": {
+										"$ref": "AAAAAAGWF0H6TP3mN2M="
+									},
+									"name": "valorAluguel",
+									"type": "Float"
+								},
+								{
+									"_type": "UMLAttribute",
+									"_id": "AAAAAAGXlPfrLvzy97o=",
+									"_parent": {
+										"$ref": "AAAAAAGWF0H6TP3mN2M="
+									},
+									"name": "logradouro",
+									"type": "String"
+								},
+								{
+									"_type": "UMLAttribute",
+									"_id": "AAAAAAGXlPh9lv9brJI=",
+									"_parent": {
+										"$ref": "AAAAAAGWF0H6TP3mN2M="
+									},
+									"name": "uf",
+									"type": "Enum"
+								},
+								{
+									"_type": "UMLAttribute",
+									"_id": "AAAAAAGXlPlEcQN9JTY=",
+									"_parent": {
+										"$ref": "AAAAAAGWF0H6TP3mN2M="
+									},
+									"name": "numero",
+									"type": "String"
+								},
+								{
+									"_type": "UMLAttribute",
+									"_id": "AAAAAAGXlPomogdLfu8=",
+									"_parent": {
+										"$ref": "AAAAAAGWF0H6TP3mN2M="
+									},
+									"name": "cidade",
+									"type": "String"
+								},
+								{
+									"_type": "UMLAttribute",
+									"_id": "AAAAAAGXlPsRQgvsqAQ=",
+									"_parent": {
+										"$ref": "AAAAAAGWF0H6TP3mN2M="
+									},
+									"name": "bairro",
+									"type": "String"
+								}
+							]
 						}
 					]
 				}
