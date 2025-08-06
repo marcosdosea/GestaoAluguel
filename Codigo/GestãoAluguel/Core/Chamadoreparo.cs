@@ -3,9 +3,9 @@ using System.Collections.Generic;
 
 namespace Core;
 
-public partial class Chamadoreparo
+public partial class ChamadoReparo
 {
-    public uint Id { get; set; }
+    public int Id { get; set; }
 
     /// <summary>
     /// C - Cadastrada
@@ -24,9 +24,9 @@ public partial class Chamadoreparo
 
     public sbyte EstaResolvido { get; set; }
 
-    public uint IdImovel { get; set; }
+    public int IdImovel { get; set; }
 
-    public uint IdInquilino { get; set; }
+    public int IdInquilino { get; set; }
 
     public virtual Imovel IdImovelNavigation { get; set; } = null!;
 
