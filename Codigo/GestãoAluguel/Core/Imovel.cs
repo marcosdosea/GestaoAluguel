@@ -5,7 +5,7 @@ namespace Core;
 
 public partial class Imovel
 {
-    public uint Id { get; set; }
+    public int Id { get; set; }
 
     public sbyte EstaAlugado { get; set; }
 
@@ -17,15 +17,17 @@ public partial class Imovel
 
     public string Uf { get; set; } = null!;
 
+    public string Cep { get; set; } = null!;
+
     public string Numero { get; set; } = null!;
 
     public string Cidade { get; set; } = null!;
 
     public string Bairro { get; set; } = null!;
 
-    public uint IdProprietario { get; set; }
+    public int IdProprietario { get; set; }
 
-    public virtual ICollection<Chamadoreparo> Chamadoreparos { get; set; } = new List<Chamadoreparo>();
+    public virtual ICollection<ChamadoReparo> Chamadoreparos { get; set; } = new List<ChamadoReparo>();
 
     public virtual Pessoa IdProprietarioNavigation { get; set; } = null!;
 

@@ -5,7 +5,7 @@ namespace Core;
 
 public partial class Cobranca
 {
-    public uint Id { get; set; }
+    public int Id { get; set; }
 
     public float Valor { get; set; }
 
@@ -13,7 +13,9 @@ public partial class Cobranca
 
     public string TipoCobranca { get; set; } = null!;
 
-    public uint IdLocacao { get; set; }
+    public string Descricao { get; set; } = null!;
+
+    public int IdLocacao { get; set; }
 
     public virtual Locacao IdLocacaoNavigation { get; set; } = null!;
 

@@ -5,7 +5,7 @@ namespace Core;
 
 public partial class Pessoa
 {
-    public uint Id { get; set; }
+    public int Id { get; set; }
 
     public string Nome { get; set; } = null!;
 
@@ -51,11 +51,9 @@ public partial class Pessoa
     /// </summary>
     public string TipoPessoa { get; set; } = null!;
 
-    public virtual ICollection<Chamadoreparo> Chamadoreparos { get; set; } = new List<Chamadoreparo>();
+    public virtual ICollection<ChamadoReparo> Chamadoreparos { get; set; } = new List<ChamadoReparo>();
 
     public virtual ICollection<Imovel> Imovels { get; set; } = new List<Imovel>();
 
-    public virtual ICollection<Locacao> LocacaoIdInquilinoNavigations { get; set; } = new List<Locacao>();
-
-    public virtual ICollection<Locacao> LocacaoIdProprietarioNavigations { get; set; } = new List<Locacao>();
+    public virtual ICollection<Locacao> Locacaos { get; set; } = new List<Locacao>();
 }

@@ -4,18 +4,18 @@ using Microsoft.EntityFrameworkCore;
 
 namespace Core;
 
-public partial class GestaoAluguelDbContext : DbContext
+public partial class GestaoAluguelContext : DbContext
 {
-    public GestaoAluguelDbContext()
+    public GestaoAluguelContext()
     {
     }
 
-    public GestaoAluguelDbContext(DbContextOptions<GestaoAluguelDbContext> options)
+    public GestaoAluguelContext(DbContextOptions<GestaoAluguelContext> options)
         : base(options)
     {
     }
 
-    public virtual DbSet<Chamadoreparo> Chamadoreparos { get; set; }
+    public virtual DbSet<ChamadoReparo> Chamadoreparos { get; set; }
 
     public virtual DbSet<Cobranca> Cobrancas { get; set; }
 
@@ -27,13 +27,9 @@ public partial class GestaoAluguelDbContext : DbContext
 
     public virtual DbSet<Pessoa> Pessoas { get; set; }
 
-    protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-#warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see https://go.microsoft.com/fwlink/?LinkId=723263.
-        => optionsBuilder.UseMySQL("server=localhost;port=3306;user=root;password=12345;database=gestaoalugueldb");
-
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
-        modelBuilder.Entity<Chamadoreparo>(entity =>
+        modelBuilder.Entity<ChamadoReparo>(entity =>
         {
             entity.HasKey(e => e.Id).HasName("PRIMARY");
 
@@ -100,6 +96,9 @@ public partial class GestaoAluguelDbContext : DbContext
             entity.Property(e => e.DataCobranca)
                 .HasColumnType("date")
                 .HasColumnName("dataCobranca");
+            entity.Property(e => e.Descricao)
+                .HasMaxLength(45)
+                .HasColumnName("descricao");
             entity.Property(e => e.IdLocacao)
                 .HasColumnType("int(10) unsigned")
                 .HasColumnName("idLocacao");
@@ -131,6 +130,10 @@ public partial class GestaoAluguelDbContext : DbContext
             entity.Property(e => e.Bairro)
                 .HasMaxLength(45)
                 .HasColumnName("bairro");
+            entity.Property(e => e.Cep)
+                .HasMaxLength(8)
+                .IsFixedLength()
+                .HasColumnName("cep");
             entity.Property(e => e.Cidade)
                 .HasMaxLength(45)
                 .HasColumnName("cidade");
@@ -165,8 +168,6 @@ public partial class GestaoAluguelDbContext : DbContext
 
             entity.HasIndex(e => e.IdImovel, "fk_Locacao_Imovel1_idx");
 
-            entity.HasIndex(e => e.IdProprietario, "fk_Locacao_Pessoa1_idx");
-
             entity.HasIndex(e => e.IdInquilino, "fk_Locacao_Pessoa2_idx");
 
             entity.Property(e => e.Id)
@@ -189,9 +190,6 @@ public partial class GestaoAluguelDbContext : DbContext
             entity.Property(e => e.IdInquilino)
                 .HasColumnType("int(10) unsigned")
                 .HasColumnName("idInquilino");
-            entity.Property(e => e.IdProprietario)
-                .HasColumnType("int(10) unsigned")
-                .HasColumnName("idProprietario");
             entity.Property(e => e.Motivo)
                 .HasMaxLength(200)
                 .HasDefaultValueSql("'NULL'")
@@ -206,15 +204,10 @@ public partial class GestaoAluguelDbContext : DbContext
                 .OnDelete(DeleteBehavior.ClientSetNull)
                 .HasConstraintName("fk_Locacao_Imovel1");
 
-            entity.HasOne(d => d.IdInquilinoNavigation).WithMany(p => p.LocacaoIdInquilinoNavigations)
+            entity.HasOne(d => d.IdInquilinoNavigation).WithMany(p => p.Locacaos)
                 .HasForeignKey(d => d.IdInquilino)
                 .OnDelete(DeleteBehavior.ClientSetNull)
                 .HasConstraintName("fk_Locacao_Pessoa2");
-
-            entity.HasOne(d => d.IdProprietarioNavigation).WithMany(p => p.LocacaoIdProprietarioNavigations)
-                .HasForeignKey(d => d.IdProprietario)
-                .OnDelete(DeleteBehavior.ClientSetNull)
-                .HasConstraintName("fk_Locacao_Pessoa1");
         });
 
         modelBuilder.Entity<Pagamento>(entity =>
@@ -229,6 +222,10 @@ public partial class GestaoAluguelDbContext : DbContext
             entity.Property(e => e.DataPagamento)
                 .HasColumnType("date")
                 .HasColumnName("dataPagamento");
+            entity.Property(e => e.TipoPagamento)
+                .HasComment("P - pix\nD - débito\nC - crédito\nE - espécime")
+                .HasColumnType("enum('C','D','P','E')")
+                .HasColumnName("tipoPagamento");
             entity.Property(e => e.Valor).HasColumnName("valor");
 
             entity.HasMany(d => d.IdCobrancas).WithMany(p => p.IdPagamentos)

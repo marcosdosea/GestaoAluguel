@@ -5,7 +5,7 @@ namespace Core;
 
 public partial class Locacao
 {
-    public uint Id { get; set; }
+    public int Id { get; set; }
 
     public DateTime DataInicio { get; set; }
 
@@ -15,11 +15,9 @@ public partial class Locacao
 
     public sbyte Status { get; set; }
 
-    public uint IdImovel { get; set; }
+    public int IdImovel { get; set; }
 
-    public uint IdProprietario { get; set; }
-
-    public uint IdInquilino { get; set; }
+    public int IdInquilino { get; set; }
 
     public byte[]? Contrato { get; set; }
 
@@ -30,6 +28,4 @@ public partial class Locacao
     public virtual Imovel IdImovelNavigation { get; set; } = null!;
 
     public virtual Pessoa IdInquilinoNavigation { get; set; } = null!;
-
-    public virtual Pessoa IdProprietarioNavigation { get; set; } = null!;
 }
