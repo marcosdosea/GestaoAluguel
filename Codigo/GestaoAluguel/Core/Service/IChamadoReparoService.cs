@@ -4,11 +4,11 @@ namespace Core.Service
 {
     public interface IChamadoReparoService
     {
-        int Create(ChamadoReparo chamadoreparo);
-        void Edit(ChamadoReparo chamadoreparo);
+        int Create(Chamadoreparo chamadoreparo);
+        void Edit(Chamadoreparo chamadoreparo);
         void Delete(int id);
-        ChamadoReparo? Get(int id);
-        IEnumerable<ChamadoReparo> GetAll();
+        Chamadoreparo? Get(int id);
+        IEnumerable<Chamadoreparo> GetAll();
         IEnumerable<ChamadoReparoDTO> GetByImovel(int idImovel);
 
     }
