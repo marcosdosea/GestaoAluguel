@@ -11,8 +11,6 @@ public partial class Imovel
 
     public string Apelido { get; set; } = null!;
 
-    public float ValorAluguel { get; set; }
-
     public string Logradouro { get; set; } = null!;
 
     public string Uf { get; set; } = null!;
