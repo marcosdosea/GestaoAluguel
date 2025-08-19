@@ -1,4 +1,4 @@
-namespace GestãoAluguelWeb
+namespace GestaoAluguelWeb
 {
     public class Program
     {
