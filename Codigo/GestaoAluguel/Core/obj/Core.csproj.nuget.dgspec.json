@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\XXX\\OneDrive\\Área de Trabalho\\UFS life\\exercícios\\6° período\\GestaoAluguel\\Codigo\\GestaoAluguel\\Core\\Core.csproj": {}
+    "D:\\Meus Documentos\\Desktop\\GestaoAluguel\\Codigo\\GestaoAluguel\\Core\\Core.csproj": {}
   },
   "projects": {
-    "C:\\Users\\XXX\\OneDrive\\Área de Trabalho\\UFS life\\exercícios\\6° período\\GestaoAluguel\\Codigo\\GestaoAluguel\\Core\\Core.csproj": {
+    "D:\\Meus Documentos\\Desktop\\GestaoAluguel\\Codigo\\GestaoAluguel\\Core\\Core.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\XXX\\OneDrive\\Área de Trabalho\\UFS life\\exercícios\\6° período\\GestaoAluguel\\Codigo\\GestaoAluguel\\Core\\Core.csproj",
+        "projectUniqueName": "D:\\Meus Documentos\\Desktop\\GestaoAluguel\\Codigo\\GestaoAluguel\\Core\\Core.csproj",
         "projectName": "Core",
-        "projectPath": "C:\\Users\\XXX\\OneDrive\\Área de Trabalho\\UFS life\\exercícios\\6° período\\GestaoAluguel\\Codigo\\GestaoAluguel\\Core\\Core.csproj",
-        "packagesPath": "C:\\Users\\XXX\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\XXX\\OneDrive\\Área de Trabalho\\UFS life\\exercícios\\6° período\\GestaoAluguel\\Codigo\\GestaoAluguel\\Core\\obj\\",
+        "projectPath": "D:\\Meus Documentos\\Desktop\\GestaoAluguel\\Codigo\\GestaoAluguel\\Core\\Core.csproj",
+        "packagesPath": "C:\\Users\\Usuario\\.nuget\\packages\\",
+        "outputPath": "D:\\Meus Documentos\\Desktop\\GestaoAluguel\\Codigo\\GestaoAluguel\\Core\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\XXX\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Usuario\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],

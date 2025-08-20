@@ -10,6 +10,10 @@ namespace Core.DTO
 
         public string Apelido { get; set; } = null!;
 
+        public string Logradouro { get; set; } = null!;
+
+        public string numero { get; set; } = null!;
+
         [Display(Name = "Código do proprietário")]
         public int IdProprietario { get; set; }
     }
