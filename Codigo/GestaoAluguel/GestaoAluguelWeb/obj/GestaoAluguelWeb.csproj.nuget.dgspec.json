@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\AnaMaria\\OneDrive\\UFS\\6periodo\\engenhariaDeSoftwareII\\GestaoAluguel\\Codigo\\GestaoAluguel\\GestaoAluguelWeb\\GestaoAluguelWeb.csproj": {}
+    "C:\\Users\\XXX\\OneDrive\\Área de Trabalho\\UFS life\\exercícios\\6° período\\GestaoAluguel\\Codigo\\GestaoAluguel\\GestaoAluguelWeb\\GestaoAluguelWeb.csproj": {}
   },
   "projects": {
-    "C:\\Users\\AnaMaria\\OneDrive\\UFS\\6periodo\\engenhariaDeSoftwareII\\GestaoAluguel\\Codigo\\GestaoAluguel\\GestaoAluguelWeb\\GestaoAluguelWeb.csproj": {
+    "C:\\Users\\XXX\\OneDrive\\Área de Trabalho\\UFS life\\exercícios\\6° período\\GestaoAluguel\\Codigo\\GestaoAluguel\\GestaoAluguelWeb\\GestaoAluguelWeb.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\AnaMaria\\OneDrive\\UFS\\6periodo\\engenhariaDeSoftwareII\\GestaoAluguel\\Codigo\\GestaoAluguel\\GestaoAluguelWeb\\GestaoAluguelWeb.csproj",
+        "projectUniqueName": "C:\\Users\\XXX\\OneDrive\\Área de Trabalho\\UFS life\\exercícios\\6° período\\GestaoAluguel\\Codigo\\GestaoAluguel\\GestaoAluguelWeb\\GestaoAluguelWeb.csproj",
         "projectName": "GestaoAluguelWeb",
-        "projectPath": "C:\\Users\\AnaMaria\\OneDrive\\UFS\\6periodo\\engenhariaDeSoftwareII\\GestaoAluguel\\Codigo\\GestaoAluguel\\GestaoAluguelWeb\\GestaoAluguelWeb.csproj",
-        "packagesPath": "C:\\Users\\AnaMaria\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\AnaMaria\\OneDrive\\UFS\\6periodo\\engenhariaDeSoftwareII\\GestaoAluguel\\Codigo\\GestaoAluguel\\GestaoAluguelWeb\\obj\\",
+        "projectPath": "C:\\Users\\XXX\\OneDrive\\Área de Trabalho\\UFS life\\exercícios\\6° período\\GestaoAluguel\\Codigo\\GestaoAluguel\\GestaoAluguelWeb\\GestaoAluguelWeb.csproj",
+        "packagesPath": "C:\\Users\\XXX\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\XXX\\OneDrive\\Área de Trabalho\\UFS life\\exercícios\\6° período\\GestaoAluguel\\Codigo\\GestaoAluguel\\GestaoAluguelWeb\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\AnaMaria\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\XXX\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
