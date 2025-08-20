@@ -15,7 +15,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("GestaoAluguelWeb")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+40f4f539b65620a3999c1ff26d8a6e0008815308")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+4c3cc4d72163caf85fd023433a07229dc4cf9ac0")]
 [assembly: System.Reflection.AssemblyProductAttribute("GestaoAluguelWeb")]
 [assembly: System.Reflection.AssemblyTitleAttribute("GestaoAluguelWeb")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
