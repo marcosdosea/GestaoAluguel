@@ -76,6 +76,10 @@ namespace Service
             return context.Pessoas.FirstOrDefault(p => p.Id == id);
         }
 
+        /// <summary>
+        /// Listar todas as <see cref="Pessoa"/> do banco de dados.
+        /// </summary>
+        /// <returns>Dados de todas as pessoas do banco</returns>
         public IEnumerable<Pessoa> GetAll()
         {
             return context.Pessoas.AsNoTracking();
@@ -83,7 +87,16 @@ namespace Service
 
         public IEnumerable<PessoaDTO> GetByNome(string nome)
         {
-            throw new NotImplementedException();
+            return from pessoa in context.Pessoas
+                   where pessoa.Nome.StartsWith(nome)
+                   select new PessoaDTO
+                   {
+                       Id = pessoa.Id,
+                       Nome = pessoa.Nome,
+                       Cpf = pessoa.Cpf,
+                       Email = pessoa.Email,
+                       Telefone = pessoa.Telefone
+                   };
         }
     }
 }

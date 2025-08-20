@@ -1,3 +1,8 @@
+using Core;
+using Core.Service;
+using Microsoft.EntityFrameworkCore;
+using Service;
+
 namespace GestaoAluguelWeb
 {
     public class Program
@@ -9,6 +14,19 @@ namespace GestaoAluguelWeb
             // Add services to the container.
             builder.Services.AddControllersWithViews();
 
+            var connectionString = builder.Configuration.GetConnectionString("GestaoAluguelConnection");
+            if (string.IsNullOrWhiteSpace(connectionString))
+            {
+                throw new InvalidOperationException("A string de conexão 'GestaoAluguelConnection' não foi encontrada ou está vazia.");
+            }
+
+            builder.Services.AddDbContext<GestaoAluguelContext>(options =>
+                options.UseMySQL(connectionString));
+
+            builder.Services.AddTransient<IPessoaService, PessoaService>();
+
+            builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
+            
             var app = builder.Build();
 
             // Configure the HTTP request pipeline.

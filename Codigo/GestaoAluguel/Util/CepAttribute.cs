@@ -30,7 +30,7 @@ namespace Util
             return true;
         }
 
-        public static string GetErrorMessage() =>
+        public string GetErrorMessage() =>
             $"CEP Inválido";
     }
 }

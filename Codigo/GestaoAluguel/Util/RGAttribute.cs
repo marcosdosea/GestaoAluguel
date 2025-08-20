@@ -20,7 +20,7 @@ namespace Util
         public override bool IsValid(object? value)
         {
             if (value == null || string.IsNullOrEmpty(value.ToString()))
-                return false;
+                return true;
 
             var rg = Methods.RemoveSpecialsCaracts((string)value);
 
@@ -91,7 +91,7 @@ namespace Util
         }
 
 
-        public static string GetErrorMessage() => $"RG Inválido";
+        public string GetErrorMessage() => $"RG Inválido";
 
     }
 }

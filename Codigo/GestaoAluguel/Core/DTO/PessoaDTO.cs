@@ -12,10 +12,10 @@ namespace Core.DTO
 
         public string Nome { get; set; } = null!;
 
-        /// <summary>
-        /// P - Proprietário
-        /// I - Inquilino
-        /// </summary>
-        public string TipoPessoa { get; set; } = null!;
+        public string Cpf { get; set; } = null!;
+
+        public string Email { get; set; } = null!;
+
+        public string Telefone { get; set; } = null!;
     }
 }

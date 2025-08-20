@@ -11,7 +11,7 @@ namespace Util
         public override bool IsValid(object? value)
         {
             if (value == null || string.IsNullOrEmpty(value.ToString()))
-                return true;
+                return false;
             var valueNoEspecial = Methods.RemoveSpecialsCaracts((string)value);
             bool valido = Methods.ValidarCpf(valueNoEspecial.ToString());
             return valido;
