@@ -3578,23 +3578,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\XXX\\.nuget\\packages\\": {},
+    "C:\\Users\\User\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\XXX\\OneDrive\\Área de Trabalho\\UFS life\\exercícios\\6° período\\GestaoAluguel\\Codigo\\GestaoAluguel\\Service\\Service.csproj",
+      "projectUniqueName": "C:\\Users\\User\\Documents\\Eng2.Repositorio\\GestaoAluguel\\Codigo\\GestaoAluguel\\Service\\Service.csproj",
       "projectName": "Service",
-      "projectPath": "C:\\Users\\XXX\\OneDrive\\Área de Trabalho\\UFS life\\exercícios\\6° período\\GestaoAluguel\\Codigo\\GestaoAluguel\\Service\\Service.csproj",
-      "packagesPath": "C:\\Users\\XXX\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\XXX\\OneDrive\\Área de Trabalho\\UFS life\\exercícios\\6° período\\GestaoAluguel\\Codigo\\GestaoAluguel\\Service\\obj\\",
+      "projectPath": "C:\\Users\\User\\Documents\\Eng2.Repositorio\\GestaoAluguel\\Codigo\\GestaoAluguel\\Service\\Service.csproj",
+      "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\User\\Documents\\Eng2.Repositorio\\GestaoAluguel\\Codigo\\GestaoAluguel\\Service\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\XXX\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
@@ -3609,8 +3609,8 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-            "C:\\Users\\XXX\\OneDrive\\Área de Trabalho\\UFS life\\exercícios\\6° período\\GestaoAluguel\\Codigo\\GestaoAluguel\\Core\\Core.csproj": {
-              "projectPath": "C:\\Users\\XXX\\OneDrive\\Área de Trabalho\\UFS life\\exercícios\\6° período\\GestaoAluguel\\Codigo\\GestaoAluguel\\Core\\Core.csproj"
+            "C:\\Users\\User\\Documents\\Eng2.Repositorio\\GestaoAluguel\\Codigo\\GestaoAluguel\\Core\\Core.csproj": {
+              "projectPath": "C:\\Users\\User\\Documents\\Eng2.Repositorio\\GestaoAluguel\\Codigo\\GestaoAluguel\\Core\\Core.csproj"
             }
           }
         }
