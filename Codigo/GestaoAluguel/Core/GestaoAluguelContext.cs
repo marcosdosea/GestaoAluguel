@@ -308,7 +308,7 @@ public partial class GestaoAluguelContext : DbContext
                 .HasDefaultValueSql("'NULL'")
                 .HasColumnName("rg");
             entity.Property(e => e.Telefone)
-                .HasMaxLength(9)
+                .HasMaxLength(11)
                 .IsFixedLength()
                 .HasColumnName("telefone");
             entity.Property(e => e.Uf)
