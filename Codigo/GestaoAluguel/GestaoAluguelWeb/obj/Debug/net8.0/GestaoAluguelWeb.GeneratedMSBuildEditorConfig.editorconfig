@@ -1,11 +1,19 @@
 is_global = true
 build_property.TargetFramework = net8.0
+build_property.TargetFramework = net8.0
+build_property.TargetPlatformMinVersion = 
 build_property.TargetPlatformMinVersion = 
 build_property.UsingMicrosoftNETSdkWeb = true
+build_property.UsingMicrosoftNETSdkWeb = true
+build_property.ProjectTypeGuids = 
 build_property.ProjectTypeGuids = 
 build_property.InvariantGlobalization = 
+build_property.InvariantGlobalization = 
+build_property.PlatformNeutralAssembly = 
 build_property.PlatformNeutralAssembly = 
 build_property.EnforceExtendedAnalyzerRules = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = GestaoAluguelWeb
 build_property.RootNamespace = GestaoAluguelWeb
@@ -26,6 +34,26 @@ build_metadata.AdditionalFiles.CssScope =
 
 [C:/Users/XXX/OneDrive/Área de Trabalho/UFS life/exercícios/6° período/GestaoAluguel/Codigo/GestaoAluguel/GestaoAluguelWeb/Views/Home/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/XXX/OneDrive/Área de Trabalho/UFS life/exercícios/6° período/GestaoAluguel/Codigo/GestaoAluguel/GestaoAluguelWeb/Views/Pessoa/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGVzc29hXENyZWF0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/XXX/OneDrive/Área de Trabalho/UFS life/exercícios/6° período/GestaoAluguel/Codigo/GestaoAluguel/GestaoAluguelWeb/Views/Pessoa/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGVzc29hXERlbGV0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/XXX/OneDrive/Área de Trabalho/UFS life/exercícios/6° período/GestaoAluguel/Codigo/GestaoAluguel/GestaoAluguelWeb/Views/Pessoa/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGVzc29hXERldGFpbHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/XXX/OneDrive/Área de Trabalho/UFS life/exercícios/6° período/GestaoAluguel/Codigo/GestaoAluguel/GestaoAluguelWeb/Views/Pessoa/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGVzc29hXEVkaXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/XXX/OneDrive/Área de Trabalho/UFS life/exercícios/6° período/GestaoAluguel/Codigo/GestaoAluguel/GestaoAluguelWeb/Views/Pessoa/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGVzc29hXEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/XXX/OneDrive/Área de Trabalho/UFS life/exercícios/6° período/GestaoAluguel/Codigo/GestaoAluguel/GestaoAluguelWeb/Views/Shared/Error.cshtml]
