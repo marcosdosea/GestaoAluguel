@@ -47,7 +47,7 @@ public partial class Pessoa
 
     public virtual ICollection<Chamadoreparo> Chamadoreparos { get; set; } = [];
 
-    public virtual ICollection<Imovel> Imovels { get; set; } = [];
+    public virtual ICollection<Imovel> Imoveis { get; set; } = [];
 
     public virtual ICollection<Locacao> Locacaos { get; set; } = [];
 }

@@ -82,14 +82,19 @@ namespace Service
 
         public IEnumerable<PessoaDTO> GetByNome(string nome)
         {
+            if (string.IsNullOrWhiteSpace(nome))
+            {
+                throw new ArgumentException("Nome não pode ser nulo ou vazio.", nameof(nome));
+            }
             return context.Pessoas
-                .Where(p => p.Nome.Contains(nome))
+                .Where(p => p.Nome.Equals(nome))
                 .Select(p => new PessoaDTO
                 {
                     Id = p.Id,
                     Nome = p.Nome,
-
-                    // Adicione outros campos conforme necessário
+                    Cpf = p.Cpf,
+                    Email = p.Email,
+                    Telefone = p.Telefone
                 })
                 .AsNoTracking()
                 .ToList();
