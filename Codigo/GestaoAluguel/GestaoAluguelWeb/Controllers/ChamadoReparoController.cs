@@ -20,38 +20,22 @@ namespace GestaoAluguelWeb.Controllers
         // GET: ChamadoReparo
         public IActionResult Index()
         {
-            try
-            {
-                var chamados = chamadoReparoService.GetAll();
-                var chamadosModel = mapper.Map<IEnumerable<ChamadoReparoModel>>(chamados);
-                return View(chamadosModel);
-            }
-            catch (Exception ex)
-            {
-                TempData["ErrorMessage"] = ex.Message;
-                return View(new List<ChamadoReparoModel>());
-            }
+            var chamados = chamadoReparoService.GetAll();
+            var chamadosModel = mapper.Map<IEnumerable<ChamadoReparoModel>>(chamados);
+            return View(chamadosModel);
         }
 
         // GET: ChamadoReparo/Details/5
         public IActionResult Details(int id)
         {
-            try
+            var chamado = chamadoReparoService.Get(id);
+            if (chamado == null)
             {
-                var chamado = chamadoReparoService.Get(id);
-                if (chamado == null)
-                {
-                    return NotFound();
-                }
+                return NotFound();
+            }
 
-                var chamadoModel = mapper.Map<ChamadoReparoModel>(chamado);
-                return View(chamadoModel);
-            }
-            catch (Exception ex)
-            {
-                TempData["ErrorMessage"] = ex.Message;
-                return RedirectToAction(nameof(Index));
-            }
+            var chamadoModel = mapper.Map<ChamadoReparoModel>(chamado);
+            return View(chamadoModel);
         }
 
         // GET: ChamadoReparo/Create
@@ -66,45 +50,23 @@ namespace GestaoAluguelWeb.Controllers
         [ValidateAntiForgeryToken]
         public IActionResult Create(ChamadoReparoModel model)
         {
-            try
-            {
-                if (ModelState.IsValid)
-                {
-                    var chamado = mapper.Map<Chamadoreparo>(model);
-                    var id = chamadoReparoService.Create(chamado);
+            var chamado = mapper.Map<Chamadoreparo>(model);
+            var id = chamadoReparoService.Create(chamado);
 
-                    TempData["SuccessMessage"] = "Chamado criado com sucesso!";
-                    return RedirectToAction(nameof(Details), new { id });
-                }
-
-                return View(model);
-            }
-            catch (Exception ex)
-            {
-                ModelState.AddModelError("", ex.Message);
-                return View(model);
-            }
+            return RedirectToAction(nameof(Index));
         }
 
         // GET: ChamadoReparo/Edit/5
         public IActionResult Edit(int id)
         {
-            try
+            var chamado = chamadoReparoService.Get(id);
+            if (chamado == null)
             {
-                var chamado = chamadoReparoService.Get(id);
-                if (chamado == null)
-                {
-                    return NotFound();
-                }
+                return NotFound();
+            }
 
-                var model = mapper.Map<ChamadoReparoModel>(chamado);
-                return View(model);
-            }
-            catch (Exception ex)
-            {
-                TempData["ErrorMessage"] = ex.Message;
-                return RedirectToAction(nameof(Index));
-            }
+            var model = mapper.Map<ChamadoReparoModel>(chamado);
+            return View(model);
         }
 
         // POST: ChamadoReparo/Edit/5
@@ -112,48 +74,31 @@ namespace GestaoAluguelWeb.Controllers
         [ValidateAntiForgeryToken]
         public IActionResult Edit(int id, ChamadoReparoModel model)
         {
-            try
+            if (id != model.Id)
             {
-                if (id != model.Id)
-                {
-                    return BadRequest();
-                }
-
-                if (ModelState.IsValid)
-                {
-                    var chamado = mapper.Map<Chamadoreparo>(model);
-                    chamadoReparoService.Edit(chamado);
-
-                    TempData["SuccessMessage"] = "Chamado editado com sucesso!";
-                    return RedirectToAction(nameof(Details), new { id });
-                }
-
-                return View(model);
+                return BadRequest();
             }
-            catch (Exception ex)
+
+            if (ModelState.IsValid)
             {
-                ModelState.AddModelError("", ex.Message);
-                return View(model);
+                var chamado = mapper.Map<Chamadoreparo>(model);
+                chamadoReparoService.Edit(chamado);
+
+                return RedirectToAction(nameof(Index));
             }
+
+            return View(model);
         }
 
         // GET: ChamadoReparo/PorImovel/5
         public IActionResult PorImovel(int idImovel)
         {
-            try
-            {
-                var chamadosDTO = chamadoReparoService.GetByImovel(idImovel);
-                var chamadosModel = mapper.Map<IEnumerable<ChamadoReparoModel>>(chamadosDTO);
+            var chamadosDTO = chamadoReparoService.GetByImovel(idImovel);
+            var chamadosModel = mapper.Map<IEnumerable<ChamadoReparoModel>>(chamadosDTO);
 
-                ViewBag.IdImovel = idImovel;
+            ViewBag.IdImovel = idImovel;
 
-                return View(chamadosModel);
-            }
-            catch (Exception ex)
-            {
-                TempData["ErrorMessage"] = ex.Message;
-                return RedirectToAction(nameof(Index));
-            }
+            return View(chamadosModel);
         }
 
         // POST: ChamadoReparo/Resolver/5
@@ -161,24 +106,9 @@ namespace GestaoAluguelWeb.Controllers
         [ValidateAntiForgeryToken]
         public IActionResult Resolver(int id)
         {
-            try
-            {
-                var chamado = chamadoReparoService.ChamadoResolvido(id);
-                TempData["SuccessMessage"] = "Chamado marcado como resolvido!";
+            var chamado = chamadoReparoService.ChamadoResolvido(id);
 
-                // Redireciona para detalhes ou para lista por imóvel
-                return RedirectToAction(nameof(Details), new { id });
-            }
-            catch (ArgumentException ex)
-            {
-                TempData["ErrorMessage"] = ex.Message;
-                return RedirectToAction(nameof(Index));
-            }
-            catch (Exception ex)
-            {
-                TempData["ErrorMessage"] = "Erro ao resolver chamado: " + ex.Message;
-                return RedirectToAction(nameof(Index));
-            }
+            return RedirectToAction(nameof(Index));
         }
 
     }
