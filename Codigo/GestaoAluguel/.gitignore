@@ -1,5 +1,4 @@
-/.vs/*
-/GestaoAluguelWeb/*.json
+
 /GestaoAluguelWeb/bin/*
 /GestaoAluguelWeb/obj/*
 /Service/obj/*
