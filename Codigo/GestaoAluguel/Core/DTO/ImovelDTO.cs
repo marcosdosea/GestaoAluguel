@@ -14,6 +14,8 @@ namespace Core.DTO
 
         public string numero { get; set; } = null!;
 
+        public int idProprietario { get; set; }
+
         [Display(Name = "Código do proprietário")]
         public int IdProprietario { get; set; }
     }

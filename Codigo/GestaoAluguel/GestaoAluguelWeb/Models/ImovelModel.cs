@@ -9,6 +9,15 @@ namespace GestaoAluguelWeb.Models
         [Required(ErrorMessage = "O campo é obrigatório.")]
         public int Id { get; set; }
 
+        [Required]
+        [Range(0, int.MaxValue, ErrorMessage = "O Id do proprietário deve ser maior que zero.")]
+        public int IdProprietario { get; set; }
+
+        [Display(Name = "Está alugado?")]
+        [Required]
+        [Range(0, 1, ErrorMessage = "O valor deve ser 0 (não alugado) ou 1 (alugado).")]
+        public sbyte EstaAlugado { get; set; }
+
         [Required(ErrorMessage = "O campo é obrigatório.")]
         [StringLength(50, ErrorMessage = "O campo deve ter no máximo 50 caracteres.")]
         public string Apelido { get; set; } = null!;
