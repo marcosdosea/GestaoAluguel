@@ -1,0 +1,59 @@
+﻿/* Estilo geral do formulário */
+form {
+    background-color: #ffffff;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Títulos */
+h1, h4 {
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+/* Espaçamento entre campos */
+.form-group {
+    margin-bottom: 1.2rem;
+}
+
+/* Labels */
+label {
+    font-weight: 600;
+    margin-bottom: 0.3rem;
+    display: block;
+}
+
+/* Inputs e selects */
+input.form-control,
+select.form-control {
+    border-radius: 6px;
+    padding: 0.6rem 0.75rem;
+    font-size: 1rem;
+}
+
+/* Botão de envio */
+.btn-primary {
+    width: 100%;
+    padding: 0.6rem;
+    font-size: 1.1rem;
+    border-radius: 6px;
+}
+
+/* Link de voltar */
+a[asp-action="Index"] {
+    display: block;
+    margin-top: 1.5rem;
+    text-align: center;
+    color: #007bff;
+    text-decoration: none;
+}
+
+    a[asp-action="Index"]:hover {
+        text-decoration: underline;
+    }
+
+/* Validações */
+.text-danger {
+    font-size: 0.9rem;
+}
