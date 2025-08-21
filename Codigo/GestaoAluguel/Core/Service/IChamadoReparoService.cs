@@ -6,10 +6,9 @@ namespace Core.Service
     {
         int Create(Chamadoreparo chamadoreparo);
         void Edit(Chamadoreparo chamadoreparo);
-        void Delete(int id);
         Chamadoreparo? Get(int id);
         IEnumerable<Chamadoreparo> GetAll();
         IEnumerable<ChamadoReparoDTO> GetByImovel(int idImovel);
-
+        Chamadoreparo ChamadoResolvido(int id);
     }
 }
