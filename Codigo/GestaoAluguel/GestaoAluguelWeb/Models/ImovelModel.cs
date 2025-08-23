@@ -31,7 +31,7 @@ namespace GestaoAluguelWeb.Models
         public string Uf { get; set; } = null!;
 
         [Required(ErrorMessage = "O campo é obrigatório.")]
-        [StringLength(9, ErrorMessage = "O campo deve ter exatamente 9 caracteres.", MinimumLength = 9)]
+        [StringLength(8, ErrorMessage = "O campo deve ter exatamente 8 caracteres.", MinimumLength = 8)]
         public string Cep { get; set; } = null!;
 
         [Required(ErrorMessage = "O campo é obrigatório.")]

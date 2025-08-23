@@ -24,6 +24,7 @@ namespace GestaoAluguelWeb
                 options.UseMySQL(connectionString));
 
             builder.Services.AddTransient<IPessoaService, PessoaService>();
+            builder.Services.AddTransient<IImovelService, ImovelService>();
 
             builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
             

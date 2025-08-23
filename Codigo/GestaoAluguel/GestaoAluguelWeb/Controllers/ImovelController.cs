@@ -38,9 +38,9 @@ namespace GestaoAluguelWeb.Controllers
         // GET: ImovelController/Create
         public ActionResult Create()
         {
-            ImovelModel imovelModel = new();
-            
-            
+            ImovelModel imovelModel = new ImovelModel();
+
+
             return View(imovelModel);
         }
 
@@ -51,16 +51,9 @@ namespace GestaoAluguelWeb.Controllers
         {
             if (ModelState.IsValid)
             {
-                try
-                {
                     var imovel = mapper.Map<Imovel>(imovelModel);
                     ImovelService.Create(imovel);
                     return RedirectToAction(nameof(Index));
-                }
-                catch
-                {
-                    ModelState.AddModelError("", "Erro ao criar o imóvel.");
-                }
             }
             return View(imovelModel);
         }
@@ -77,20 +70,13 @@ namespace GestaoAluguelWeb.Controllers
         // POST: ImovelController/Edit/5
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit(int id, ImovelModel imovelModel)
+        public ActionResult Edit(ImovelModel imovelModel)
         {
             if (ModelState.IsValid)
             {
-                try
-                {
                     var imovel = mapper.Map<Imovel>(imovelModel);
                     ImovelService.Edit(imovel);
                     return RedirectToAction(nameof(Index));
-                }
-                catch
-                {
-                    ModelState.AddModelError("", "Erro ao editar o imóvel.");
-                }
             }
             return View(imovelModel);
         }
