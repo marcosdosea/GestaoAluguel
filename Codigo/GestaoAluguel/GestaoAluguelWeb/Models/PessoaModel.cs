@@ -70,6 +70,9 @@ namespace GestaoAluguelWeb.Models
         [StringLength(45, ErrorMessage = "O nome do cônjuge deve ter no máximo 45 caracteres")]
         public string? NomeConjuge { get; set; }
 
+        [Display(Name = "Foto de perfil")]
+        public byte[]? Foto { get; set; }
+
         public virtual ICollection<Chamadoreparo> Chamadoreparos { get; set; } = [];
 
         public virtual ICollection<Imovel> Imovels { get; set; } = [];

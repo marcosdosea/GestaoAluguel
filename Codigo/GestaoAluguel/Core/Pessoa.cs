@@ -45,9 +45,11 @@ public partial class Pessoa
 
     public string? NomeConjuge { get; set; }
 
-    public virtual ICollection<Chamadoreparo> Chamadoreparos { get; set; } = [];
+    public byte[]? Foto { get; set; }
 
-    public virtual ICollection<Imovel> Imovels { get; set; } = [];
+    public virtual ICollection<Chamadoreparo> Chamadoreparos { get; set; } = new List<Chamadoreparo>();
 
-    public virtual ICollection<Locacao> Locacaos { get; set; } = [];
+    public virtual ICollection<Imovel> Imovels { get; set; } = new List<Imovel>();
+
+    public virtual ICollection<Locacao> Locacaos { get; set; } = new List<Locacao>();
 }

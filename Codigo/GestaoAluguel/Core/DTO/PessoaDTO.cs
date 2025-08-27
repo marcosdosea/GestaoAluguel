@@ -11,5 +11,7 @@
         public string Email { get; set; } = null!;
 
         public string Telefone { get; set; } = null!;
+
+        public byte[]? Foto { get; set; }
     }
 }
