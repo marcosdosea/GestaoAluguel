@@ -75,6 +75,7 @@ namespace GestaoAluguelWeb.Models
         [DataType(DataType.Date , ErrorMessage = "Data inválida")]
         [Required(ErrorMessage = "A {0} é obrigatória.")]
         [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}")]
+        [Data(120)]
         public DateTime Nascimento { get; set; }
 
         [Display(Name = "CEP*")]
