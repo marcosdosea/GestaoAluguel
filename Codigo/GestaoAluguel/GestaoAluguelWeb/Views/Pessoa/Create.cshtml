@@ -11,7 +11,7 @@
 </head>
 
 <div class="row justify-content-center">
-    <div class="col-md-6 col-lg-5">
+    <div class="col-md-10">
         <form asp-action="Create">
 
             <h1>GestãoAluguel</h1>
@@ -24,114 +24,146 @@
                 <input asp-for="Nome" class="form-control" />
                 <span asp-validation-for="Nome" class="text-danger"></span>
             </div>
-            <div class="form-group">
-                <label asp-for="Cpf" class="control-label"></label>
-                <input asp-for="Cpf" class="form-control" />
-                <span asp-validation-for="Cpf" class="text-danger"></span>
+            <div class="row">
+                <div class="col-md-4 form-group mb-3">
+                    <label asp-for="Cpf" class="control-label"></label>
+                    <input asp-for="Cpf" class="form-control" />
+                    <span asp-validation-for="Cpf" class="text-danger"></span>
+                </div>
+                <div class="col-md-4 form-group mb-3">
+                    <label asp-for="Rg" class="control-label"></label>
+                    <input asp-for="Rg" class="form-control" />
+                    <span asp-validation-for="Rg" class="text-danger"></span>
+                </div>
+                <div class="col-md-4 form-group mb-3">
+                    <label asp-for="Nascimento" class="control-label"></label>
+                    <input asp-for="Nascimento" class="form-control" />
+                    <span asp-validation-for="Nascimento" class="text-danger"></span>
+                </div>
+
             </div>
-            <div class="form-group">
-                <label asp-for="Rg" class="control-label"></label>
-                <input asp-for="Rg" class="form-control" />
-                <span asp-validation-for="Rg" class="text-danger"></span>
+            
+            <div class="row">
+
+                <div class="col-md-2 form-group mb-3">
+                    <label for="EstadoCivil" class="control-label">Estado Civil</label>
+                    <select id="EstadoCivil" name="EstadoCivil" class="form-control">
+                        <option value="S">Solteiro(a)</option>
+                        <option value="C">Casado(a)</option>
+                        <option value="D">Divorciado(a)</option>
+                        <option value="U">União Estável</option>
+                        <option value="V">Viúvo(a)</option>
+                    </select>
+                    <span asp-validation-for="EstadoCivil" class="text-danger"></span>
+                </div>
+
+                <div class="col-md-6 form-group mb-3">
+                    <label asp-for="NomeConjuge" class="control-label"></label>
+                    <input asp-for="NomeConjuge" class="form-control" />
+                    <span asp-validation-for="NomeConjuge" class="text-danger"></span>
+                </div>
+
+                <div class="col-md-4 form-group mb-3">
+                    <label asp-for="Profissao" class="control-label"></label>
+                    <input asp-for="Profissao" class="form-control" />
+                    <span asp-validation-for="Profissao" class="text-danger"></span>
+                </div>
+
             </div>
-            <div class="form-group">
-                <label asp-for="Email" class="control-label"></label>
-                <input asp-for="Email" class="form-control" />
-                <span asp-validation-for="Email" class="text-danger"></span>
+
+            
+            <div class="row">
+
+                <div class="col-md-4 form-group mb-3">
+                    <label asp-for="Cep" class="control-label"></label>
+                    <input asp-for="Cep" class="form-control" />
+                    <span asp-validation-for="Cep" class="text-danger"></span>
+                </div>
+
+                <div class="col-md-4 form-group mb-3">
+                    <label asp-for="Uf" class="control-label"></label>
+                    <select id="UF" name="UF" class="form-control">
+                        <option value="AC">Acre</option>
+                        <option value="AL">Alagoas</option>
+                        <option value="AP">Amapá</option>
+                        <option value="AM">Amazonas</option>
+                        <option value="BA">Bahia</option>
+                        <option value="CE">Ceará</option>
+                        <option value="DF">Distrito Federal</option>
+                        <option value="ES">Espírito Santo</option>
+                        <option value="GO">Goiás</option>
+                        <option value="MA">Maranhão</option>
+                        <option value="MT">Mato Grosso</option>
+                        <option value="MS">Mato Grosso do Sul</option>
+                        <option value="MG">Minas Gerais</option>
+                        <option value="PA">Pará</option>
+                        <option value="PB">Paraíba</option>
+                        <option value="PR">Paraná</option>
+                        <option value="PE">Pernambuco</option>
+                        <option value="PI">Piauí</option>
+                        <option value="RJ">Rio de Janeiro</option>
+                        <option value="RN">Rio Grande do Norte</option>
+                        <option value="RS">Rio Grande do Sul</option>
+                        <option value="RO">Rondônia</option>
+                        <option value="RR">Roraima</option>
+                        <option value="SC">Santa Catarina</option>
+                        <option value="SP">São Paulo</option>
+                        <option value="SE">Sergipe</option>
+                        <option value="TO">Tocantins</option>
+                    </select>
+                    <span asp-validation-for="Uf" class="text-danger"></span>
+                </div>
+
+                <div class="col-md-4 form-group mb-3">
+                    <label asp-for="Cidade" class="control-label"></label>
+                    <input asp-for="Cidade" class="form-control" />
+                    <span asp-validation-for="Cidade" class="text-danger"></span>
+                </div>
+
             </div>
-            <div class="form-group">
-                <label asp-for="Telefone" class="control-label"></label>
-                <input asp-for="Telefone" class="form-control" />
-                <span asp-validation-for="Telefone" class="text-danger"></span>
+
+            <div class="row">
+
+                <div class="col-md-3 form-group mb-3">
+                    <label asp-for="Bairro" class="control-label"></label>
+                    <input asp-for="Bairro" class="form-control" />
+                    <span asp-validation-for="Bairro" class="text-danger"></span>
+                </div>
+
+                <div class="col-md-7 form-group mb-3">
+                    <label asp-for="Logradouro" class="control-label"></label>
+                    <input asp-for="Logradouro" class="form-control" />
+                    <span asp-validation-for="Logradouro" class="text-danger"></span>
+                </div>
+
+                <div class="col-md-2 form-group mb-3">
+                    <label asp-for="Numero" class="control-label"></label>
+                    <input asp-for="Numero" class="form-control" />
+                    <span asp-validation-for="Numero" class="text-danger"></span>
+                </div>
+
             </div>
-            <div class="form-group">
-                <label for="EstadoCivil" class="control-label">Estado Civil</label>
-                <select id="EstadoCivil" name="EstadoCivil" class="form-control">
-                    <option value="S">Solteiro(a)</option>
-                    <option value="C">Casado(a)</option>
-                    <option value="D">Divorciado(a)</option>
-                    <option value="U">União Estável</option>
-                    <option value="V">Viúvo(a)</option>
-                </select>
-                <span asp-validation-for="EstadoCivil" class="text-danger"></span>
+
+            <div class="row">
+
+                <div class="col-md-5 form-group mb-3">
+                    <label asp-for="Telefone" class="control-label"></label>
+                    <input asp-for="Telefone" class="form-control" />
+                    <span asp-validation-for="Telefone" class="text-danger"></span>
+                </div>
+
+                <div class="col-md-7 form-group mb-3">
+                    <label asp-for="Email" class="control-label"></label>
+                    <input asp-for="Email" class="form-control" />
+                    <span asp-validation-for="Email" class="text-danger"></span>
+                </div>
+
             </div>
 
             <div class="form-group">
-                <label asp-for="Profissao" class="control-label"></label>
-                <input asp-for="Profissao" class="form-control" />
-                <span asp-validation-for="Profissao" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Logradouro" class="control-label"></label>
-                <input asp-for="Logradouro" class="form-control" />
-                <span asp-validation-for="Logradouro" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label for="UF" class="control-label">Estado (UF)</label>
-                <select id="UF" name="UF" class="form-control">
-                    <option value="AC">Acre</option>
-                    <option value="AL">Alagoas</option>
-                    <option value="AP">Amapá</option>
-                    <option value="AM">Amazonas</option>
-                    <option value="BA">Bahia</option>
-                    <option value="CE">Ceará</option>
-                    <option value="DF">Distrito Federal</option>
-                    <option value="ES">Espírito Santo</option>
-                    <option value="GO">Goiás</option>
-                    <option value="MA">Maranhão</option>
-                    <option value="MT">Mato Grosso</option>
-                    <option value="MS">Mato Grosso do Sul</option>
-                    <option value="MG">Minas Gerais</option>
-                    <option value="PA">Pará</option>
-                    <option value="PB">Paraíba</option>
-                    <option value="PR">Paraná</option>
-                    <option value="PE">Pernambuco</option>
-                    <option value="PI">Piauí</option>
-                    <option value="RJ">Rio de Janeiro</option>
-                    <option value="RN">Rio Grande do Norte</option>
-                    <option value="RS">Rio Grande do Sul</option>
-                    <option value="RO">Rondônia</option>
-                    <option value="RR">Roraima</option>
-                    <option value="SC">Santa Catarina</option>
-                    <option value="SP">São Paulo</option>
-                    <option value="SE">Sergipe</option>
-                    <option value="TO">Tocantins</option>
-                </select>
-                <span asp-validation-for="Uf" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Numero" class="control-label"></label>
-                <input asp-for="Numero" class="form-control" />
-                <span asp-validation-for="Numero" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Cidade" class="control-label"></label>
-                <input asp-for="Cidade" class="form-control" />
-                <span asp-validation-for="Cidade" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Bairro" class="control-label"></label>
-                <input asp-for="Bairro" class="form-control" />
-                <span asp-validation-for="Bairro" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Nascimento" class="control-label"></label>
-                <input asp-for="Nascimento" class="form-control" />
-                <span asp-validation-for="Nascimento" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Cep" class="control-label"></label>
-                <input asp-for="Cep" class="form-control" />
-                <span asp-validation-for="Cep" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="NomeConjuge" class="control-label"></label>
-                <input asp-for="NomeConjuge" class="form-control" />
-                <span asp-validation-for="NomeConjuge" class="text-danger"></span>
-            </div>
-            <div class="form-group">
                 <input type="submit" value="Criar" class="btn btn-primary" />
             </div>
+
         </form>
     </div>
 </div>
