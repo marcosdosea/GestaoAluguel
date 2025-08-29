@@ -1,77 +1,79 @@
 ﻿@model IEnumerable<Core.Imovel>
 
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "Imóveis";
 }
 
-<h1>Index</h1>
+<h1 class="text-center">Imóveis</h1>
 
-<p>
-    <a asp-action="Create">Create New</a>
+<div class="row row-cols-1 row-cols-md-3 g-4">
+    @foreach (var item in Model)
+    {
+        <div class="col">
+            <div class="card h-100 shadow-sm">
+                <div class="card-body position-relative">
+                    <h5 class="card-title">@item.Apelido</h5>
+                    <p class="card-text">
+                        <strong>Endereço:</strong> @item.Logradouro, @item.Numero <br />
+                        <strong>Status:</strong> @(item.EstaAlugado == 1 ? "Alugado" : "Disponível")
+                    </p>
+                    <a asp-action="Details" asp-route-id="@item.Id" class="stretched-link"></a>
+                </div>
+                <div class="card-footer">
+                    <a class="btn btn-sm btn-warning col-12 mb-2" asp-action="Edit" asp-route-id="@item.Id">Editar</a>
+                    @if (item.EstaAlugado != 1)
+                    {
+                        <a class="btn btn-sm btn-danger col-12 mb-2"
+                           href="#"
+                           data-bs-toggle="modal"
+                           data-bs-target="#deleteModal"
+                           data-id="@item.Id"
+                           data-action="@Url.Action("Delete", new { id = item.Id })">
+                           Excluir
+                        </a>
+                        <a class="btn btn-sm btn-success col-12 mb-2" asp-action="Alugar" asp-route-id="@item.Id">Alugar Imóvel</a>
+                    }
+                </div>
+            </div>
+        </div>
+    }
+</div>
+
+<p class="text-end mt-3">
+    <a class="btn btn-success btn-sm" asp-action="Create">
+        <i class="bi bi-plus"></i>
+    </a>
 </p>
-<table class="table">
-    <thead>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.Id)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Apelido)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Logradouro)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Uf)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Cep)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Numero)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Cidade)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Bairro)
-            </th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Id)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Apelido)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Logradouro)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Uf)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Cep)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Numero)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Cidade)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Bairro)
-            </td>
-            <td>
-                @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
-                    @Html.ActionLink("Details", "Details", new { id = item.Id }) |
-                    @Html.ActionLink("Delete", "Delete", new { id = item.Id })
-            </td>
-        </tr>
+
+<!-- Modal de Confirmação de Exclusão -->
+<div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="deleteModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header bg-danger">
+        <h5 class="modal-title text-white" id="deleteModalLabel">Confirmar Exclusão</h5>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Fechar"></button>
+      </div>
+      <div class="modal-body">
+        Tem certeza que deseja excluir este imóvel?
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+        <form id="deleteForm" method="post">
+            <button type="submit" class="btn btn-danger">Excluir</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+@section Scripts {
+<script>
+    var deleteModal = document.getElementById('deleteModal');
+    deleteModal.addEventListener('show.bs.modal', function (event) {
+        var button = event.relatedTarget;
+        var action = button.getAttribute('data-action');
+        var form = document.getElementById('deleteForm');
+        form.action = action;
+    });
+</script>
 }
-    </tbody>
-</table>
