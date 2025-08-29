@@ -76,6 +76,15 @@ namespace Service
             return context.Pessoas.FirstOrDefault(p => p.Id == id);
         }
 
+        public Byte[]? GetFoto(int id)
+        {
+            return context.Pessoas
+                .AsNoTracking()
+                .Where(p => p.Id == id)
+                .Select(p => p.Foto)
+                .FirstOrDefault();
+        }
+
         /// <summary>
         /// Listar todas as <see cref="Pessoa"/> do banco de dados.
         /// </summary>

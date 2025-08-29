@@ -5,6 +5,9 @@ using Core.Service;
 using GestaoAluguelWeb.Models;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
+using Service;
+using System.IO;
 
 namespace GestaoAluguelWeb.Controllers
 {
@@ -72,14 +75,46 @@ namespace GestaoAluguelWeb.Controllers
         // POST: PessoaController/Edit/5
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit(int id, PessoaModel pessoaModel)
+        public async Task<ActionResult> Edit(int id, PessoaModel pessoaModel, IFormFile? fotoFile)
         {
+            // Primeiro, valide se o ID da URL corresponde ao ID do modelo
+            if (id != pessoaModel.Id)
+            {
+                return NotFound();
+            }
+
+            // Lógica para tratar o arquivo enviado
+            if (fotoFile != null && fotoFile.Length > 0)
+            {
+                // O arquivo foi enviado. Agora você pode processá-lo.
+                // A forma mais comum é converter o arquivo para um array de bytes (byte[])
+                // para salvar no banco de dados, exatamente como seu modelo espera.
+
+                using (var memoryStream = new MemoryStream())
+                {
+                    await fotoFile.CopyToAsync(memoryStream); // Copia o conteúdo do arquivo para a memória
+                    pessoaModel.Foto = memoryStream.ToArray();      // Converte para byte[] e atribui ao seu modelo
+                }
+            }
+            else
+            {
+                // Nenhum arquivo novo foi enviado.
+                // Para evitar que a foto existente seja apagada, precisamos recarregá-la do banco.
+                var FotoAntiga = pessoaService.GetFoto(id);
+                if (FotoAntiga != null)
+                {
+                    pessoaModel.Foto = FotoAntiga;
+                }
+            }
+
             if (ModelState.IsValid)
             {
-                var autor = mapper.Map<Pessoa>(pessoaModel);
-                pessoaService.Edit(autor);
+                Pessoa pessoa = mapper.Map<Pessoa>(pessoaModel);
+                pessoaService.Edit(pessoa);
+                return RedirectToAction(nameof(Details), new { id = pessoaModel.Id });
+
             }
-            return RedirectToAction(nameof(Index));
+            return View(pessoaModel);
             
         }
 

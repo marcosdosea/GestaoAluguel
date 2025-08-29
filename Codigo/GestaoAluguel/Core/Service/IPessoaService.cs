@@ -10,5 +10,6 @@ namespace Core.Service
         Pessoa? Get(int id);
         IEnumerable<Pessoa> GetAll();
         IEnumerable<PessoaDTO> GetByNome(string nome);
+        public Byte[]? GetFoto(int id);
     }
 }

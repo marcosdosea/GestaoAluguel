@@ -23,6 +23,8 @@ public partial class Imovel
 
     public string Bairro { get; set; } = null!;
 
+    public byte[]? Foto { get; set; }
+
     public int IdProprietario { get; set; }
 
     public virtual ICollection<Chamadoreparo> Chamadoreparos { get; set; } = new List<Chamadoreparo>();

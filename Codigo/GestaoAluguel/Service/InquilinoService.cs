@@ -80,6 +80,16 @@ namespace Service
             return context.Pessoas.AsNoTracking();
         }
 
+        public Byte[]? GetFoto(int id)
+        {
+            return context.Pessoas
+                .AsNoTracking()
+                .Where(p => p.Id == id)
+                .Select(p => p.Foto)
+                .FirstOrDefault();
+        }
+
+
         public IEnumerable<PessoaDTO> GetByNome(string nome)
         {
             if (string.IsNullOrWhiteSpace(nome))

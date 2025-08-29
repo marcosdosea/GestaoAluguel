@@ -5,11 +5,11 @@ using Microsoft.EntityFrameworkCore;
 
 namespace Service
 {
-    public class ChamadoReparo : IChamadoReparoService
+    public class ChamadoReparoService : IChamadoReparoService
     {
         private readonly GestaoAluguelContext context;
 
-        public ChamadoReparo(GestaoAluguelContext context)
+        public ChamadoReparoService(GestaoAluguelContext context)
         {
             this.context = context;
         }
