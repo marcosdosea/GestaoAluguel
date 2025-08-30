@@ -45,11 +45,22 @@ namespace GestaoAluguelWeb.Controllers
             var locacaoModel = new LocacaoModel();
 
             if (idImovel.HasValue)
-                locacaoModel.IdImovel = idImovel.Value; // pré-preenche o campo
+
+                locacaoModel.IdImovel = idImovel.Value; 
 
             return View(locacaoModel);
         }
 
+
+        public IActionResult VisualizarContrato(int id)
+        {
+            var locacao = LocacaoService.Get(id);
+            if (locacao == null || locacao.Contrato == null)
+            {
+                return NotFound();
+            }
+            return File(locacao.Contrato, "application/pdf");
+		}
         // POST: LocacaoController/Create
         [HttpPost]
         [ValidateAntiForgeryToken]

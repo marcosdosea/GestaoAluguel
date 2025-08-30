@@ -23,7 +23,6 @@ namespace Service
             context.Locacaos.Add(locacao);
             context.SaveChanges();
             return locacao.Id;
-            //throw new NotImplementedException();
         }
 
         public void Delete(int id)
@@ -34,7 +33,6 @@ namespace Service
                 context.Locacaos.Remove(locacao);
                 context.SaveChanges();
             }
-            //throw new NotImplementedException();
         }
 
         public void Edit(Locacao locacao)
@@ -42,13 +40,11 @@ namespace Service
             
                 context.Update(locacao);
                 context.SaveChanges();
-            //throw new NotImplementedException();
         }
 
         public Locacao? Get(int id)
         {
             return context.Locacaos.Find(id);
-            //throw new NotImplementedException();
         }
 
         public IEnumerable<Locacao> GetAll()
@@ -56,19 +52,42 @@ namespace Service
             return context.Locacaos
                 .OrderBy(locacao => locacao.Id)
                 .ToList();
-            //throw new NotImplementedException();
         }
 
         public IEnumerable<LocacaoDTO> GetByImovel(int idImovel)
         {
+
+            return from locacao in context.Locacaos
+                   where locacao.IdImovel == idImovel
+                   select new LocacaoDTO
+                   {
+                       Id = locacao.Id,
+                       DataInicio = locacao.DataInicio,
+                       DataFim = locacao.DataFim,
+                       Status = locacao.Status,
+                       IdImovel = locacao.IdImovel,
+                       IdInquilino = locacao.IdInquilino
+                   };
+                   
             IEnumerable<Locacao> locacoes = context.Locacaos;
 
             throw new NotImplementedException();
+
         }
 
         public IEnumerable<LocacaoDTO> GetByInquilino(int idInquilino)
         {
-            throw new NotImplementedException();
+            return from locacao in context.Locacaos
+                   where locacao.IdImovel == idInquilino
+                   select new LocacaoDTO
+                   {
+                       Id = locacao.Id,
+                       DataInicio = locacao.DataInicio,
+                       DataFim = locacao.DataFim,
+                       Status = locacao.Status,
+                       IdImovel = locacao.IdImovel,
+                       IdInquilino = locacao.IdInquilino
+                   };
         }
     }
 }
