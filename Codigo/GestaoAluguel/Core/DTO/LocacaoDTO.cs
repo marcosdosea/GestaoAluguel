@@ -10,6 +10,12 @@ namespace Core.DTO
 
         public DateTime? DataFim { get; set; }
 
+        public float ValorAluguel { get; set; }
+
+        public byte[]? Contrato { get; set; }
+
+        public string? Motivo { get; set; }
+
         /// <summary>
         /// 0 - Ativo
         /// 1 - Cancelado

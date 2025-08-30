@@ -45,10 +45,12 @@ namespace GestaoAluguelWeb.Controllers
             var locacaoModel = new LocacaoModel();
 
             if (idImovel.HasValue)
+
                 locacaoModel.IdImovel = idImovel.Value; 
 
             return View(locacaoModel);
         }
+
 
         public IActionResult VisualizarContrato(int id)
         {
@@ -59,9 +61,8 @@ namespace GestaoAluguelWeb.Controllers
             }
             return File(locacao.Contrato, "application/pdf");
 		}
-
-		// POST: LocacaoController/Create
-		[HttpPost]
+        // POST: LocacaoController/Create
+        [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Create(LocacaoModel locacaoModel)
         {

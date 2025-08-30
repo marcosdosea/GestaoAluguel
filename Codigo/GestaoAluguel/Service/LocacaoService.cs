@@ -56,6 +56,7 @@ namespace Service
 
         public IEnumerable<LocacaoDTO> GetByImovel(int idImovel)
         {
+
             return from locacao in context.Locacaos
                    where locacao.IdImovel == idImovel
                    select new LocacaoDTO
@@ -67,6 +68,11 @@ namespace Service
                        IdImovel = locacao.IdImovel,
                        IdInquilino = locacao.IdInquilino
                    };
+                   
+            IEnumerable<Locacao> locacoes = context.Locacaos;
+
+            throw new NotImplementedException();
+
         }
 
         public IEnumerable<LocacaoDTO> GetByInquilino(int idInquilino)
