@@ -31,7 +31,12 @@
                            data-action="@Url.Action("Delete", new { id = item.Id })">
                            Excluir
                         </a>
-                        <a class="btn btn-sm btn-success col-12 mb-2" asp-action="Alugar" asp-route-id="@item.Id">Alugar Imóvel</a>
+                        <a class="btn btn-sm btn-success col-12 mb-2"
+                           asp-controller="Locacao"
+                           asp-action="Create"
+                           asp-route-idImovel="@item.Id">
+                           Alugar Imóvel
+                        </a>
                     }
                 </div>
             </div>
