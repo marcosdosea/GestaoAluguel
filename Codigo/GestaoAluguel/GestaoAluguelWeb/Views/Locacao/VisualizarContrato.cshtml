@@ -1,0 +1,52 @@
+﻿@using GestaoAluguelWeb.Helpers
+@model GestaoAluguelWeb.Models.ArquivoModel
+@{
+    ViewData["Title"] = "Visualizar Arquivo";
+}
+
+<h2 class="text-center mb-4">@ViewData["Title"]</h2>
+
+@if (!string.IsNullOrEmpty(Model.DataUrl))
+{
+    <div style="height: 80vh; border: 1px solid #ddd; padding: 5px;">
+
+        @switch (Model.TipoArquivo)
+        {
+            case FileHelper.FileType.Jpeg:
+            case FileHelper.FileType.Png:
+            case FileHelper.FileType.Bmp:
+                // Para imagens, usamos a tag <img>
+                <img src="@Model.DataUrl" alt="Visualização da Imagem" style="max-width: 100%; max-height: 100%; object-fit: contain;" />
+                break;
+
+            case FileHelper.FileType.Pdf:
+                // Para PDF, a tag <embed> ou <iframe> funcionam bem.
+                    <embed src="@Model.DataUrl" type="application/pdf" style="max-width: 100%; max-height: 100%; object-fit: contain;" />
+                break;
+
+             case FileHelper.FileType.Docx:
+                // Navegadores modernos não exibem .docx nativamente.
+                // Usar um <iframe> irá forçar o download na maioria dos casos, o que é um comportamento esperado.
+                <div class="alert alert-info text-center">
+                    <p>Seu navegador não pode exibir arquivos .docx diretamente.</p>
+                    <a href="@Model.DataUrl" download="documento.docx" class="btn btn-primary mt-2">Clique aqui para baixar o arquivo</a>
+                </div>
+                    <iframe src="@Model.DataUrl" style="max-width: 100%; max-height: 100%; object-fit: contain;"></iframe>
+                break;
+                
+            default:
+                <p class="text-danger">Não é possível exibir este tipo de arquivo.</p>
+                break;
+        }
+
+    </div>
+}
+else
+{
+    <p class="text-danger">Ocorreu um erro ao carregar o arquivo para visualização.</p>
+}
+
+<div class="mt-3">
+    <a asp-action="Imovel/Index" class="btn btn-secondary">Voltar</a>
+</div>
+}
