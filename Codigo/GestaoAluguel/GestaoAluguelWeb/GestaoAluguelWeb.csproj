@@ -8,6 +8,7 @@
 
   <ItemGroup>
     <Compile Remove="Controllers\LocacaoController.cs" />
+    <Compile Remove="Views\Locacao\VisualizarContrato.cs" />
   </ItemGroup>
 
   <ItemGroup>
