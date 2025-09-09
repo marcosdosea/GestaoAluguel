@@ -4,6 +4,7 @@ using Core.DTO;
 using Core.Service;
 using GestaoAluguelWeb.Helpers;
 using GestaoAluguelWeb.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -12,6 +13,7 @@ using System.IO;
 
 namespace GestaoAluguelWeb.Controllers
 {
+    [Authorize]
     public class PessoaController : Controller
     {
 

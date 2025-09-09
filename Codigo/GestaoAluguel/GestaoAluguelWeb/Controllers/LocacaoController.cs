@@ -9,6 +9,7 @@ using Service;
 
 namespace GestaoAluguelWeb.Controllers
 {
+    [Authorize]
     public class LocacaoController : Controller
     {
 
