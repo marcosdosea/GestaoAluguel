@@ -59,7 +59,33 @@ namespace GestaoAluguelWeb.Controllers
             {
                 return NotFound();
             }
-            return File(locacao.Contrato, "application/pdf");
+
+            // --- USANDO O MÉTODO IsValid ---
+            // Aqui, permitimos apenas PDF, DOCX, JPEG e PNG.
+            var tiposPermitidos = new[] {
+                FileHelper.FileType.Pdf,
+                FileHelper.FileType.Docx,
+                FileHelper.FileType.Jpeg,
+                FileHelper.FileType.Png,
+                FileHelper.FileType.Bmp,
+
+            };
+
+            if (!FileHelper.IsValid(locacao.Contrato, tiposPermitidos))
+            {
+                ModelState.AddModelError("arquivo", "Tipo de arquivo inválido. Apenas PDF, DOCX, JPG, PNG e Bmp são permitidos.");
+                return View();
+            }
+
+            // --- USANDO O MÉTODO GetDataUrlAsync ---
+            var viewModel = new ArquivoModel
+            {
+                DataUrl = await FileSignatureValidator.GetDataUrlAsync(arquivo),
+                TipoArquivo = FileSignatureValidator.GetFileType(arquivo)
+            };
+
+            return View("VisualizarContrato", viewModel);
+        }
 		}
         // POST: LocacaoController/Create
         [HttpPost]

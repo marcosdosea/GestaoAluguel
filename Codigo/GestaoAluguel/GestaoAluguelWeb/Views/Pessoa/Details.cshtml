@@ -1,4 +1,6 @@
-﻿@model GestaoAluguelWeb.Models.PessoaModel
+﻿@using GestaoAluguelWeb.Helpers
+@using GestaoAluguelWeb.Models
+@model GestaoAluguelWeb.Models.PessoaModel
 
 @{
     ViewData["Title"] = "Detalhes";
@@ -8,8 +10,8 @@
 
     if (isValidImage)
     {
-        var base64 = Convert.ToBase64String(Model.Foto);
-        imgSrc = $"data:image/jpeg;base64,{base64}";
+        imgSrc = FileHelper.GetDataUrl(Model.Foto);
+
     }
     else
     {

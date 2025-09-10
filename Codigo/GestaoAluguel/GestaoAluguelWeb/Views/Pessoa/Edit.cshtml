@@ -1,13 +1,16 @@
-﻿@model GestaoAluguelWeb.Models.PessoaModel
+﻿@using GestaoAluguelWeb.Helpers
+@model GestaoAluguelWeb.Models.PessoaModel
 
 @{
     ViewData["Title"] = "Editar Usuário";
 
     string imgSrc;
-    if (Model.Foto != null && Model.Foto.Length > 0)
+    Boolean isnull = Model.Foto != null;
+    Boolean isValidImage = isnull && Model.Foto.Length > 0;
+
+    if (isValidImage)
     {
-        var base64 = Convert.ToBase64String(Model.Foto);
-        imgSrc = $"data:image/jpeg;base64,{base64}";
+        imgSrc = FileHelper.GetDataUrl(Model.Foto);
     }
     else
     {

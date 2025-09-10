@@ -2,6 +2,7 @@
 using Core;
 using Core.DTO;
 using Core.Service;
+using GestaoAluguelWeb.Helpers;
 using GestaoAluguelWeb.Models;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -86,9 +87,26 @@ namespace GestaoAluguelWeb.Controllers
             // Lógica para tratar o arquivo enviado
             if (fotoFile != null && fotoFile.Length > 0)
             {
-                // O arquivo foi enviado. Agora você pode processá-lo.
-                // A forma mais comum é converter o arquivo para um array de bytes (byte[])
-                // para salvar no banco de dados, exatamente como seu modelo espera.
+
+                // --- USANDO O MÉTODO IsValid ---
+                var tiposPermitidos = new[] {
+                    FileHelper.FileType.Jpeg,
+                    FileHelper.FileType.Png,
+                    FileHelper.FileType.Bmp
+
+                };
+
+                if (!FileHelper.IsValid(fotoFile, tiposPermitidos))
+                {
+                    
+                    var FotoAntiga = pessoaService.GetFoto(id);
+                    if (FotoAntiga != null)
+                    {
+                        pessoaModel.Foto = FotoAntiga;
+                    }
+                    ModelState.AddModelError("Foto", "Tipo de arquivo inválido. Apenas  JPG, PNG e Bmp são permitidos.");
+                    return View(pessoaModel);
+                }
 
                 using (var memoryStream = new MemoryStream())
                 {
