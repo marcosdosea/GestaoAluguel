@@ -27,6 +27,7 @@ public partial class GestaoAluguelContext : DbContext
 
     public virtual DbSet<Pessoa> Pessoas { get; set; }
 
+
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
         modelBuilder.Entity<Chamadoreparo>(entity =>
@@ -291,6 +292,10 @@ public partial class GestaoAluguelContext : DbContext
                 .HasDefaultValueSql("'NULL'")
                 .HasColumnType("blob")
                 .HasColumnName("foto");
+            entity.Property(e => e.IdUsuario)
+                .HasMaxLength(255)
+                .HasDefaultValueSql("'NULL'")
+                .HasColumnName("idUsuario");
             entity.Property(e => e.Logradouro)
                 .HasMaxLength(45)
                 .HasColumnName("logradouro");

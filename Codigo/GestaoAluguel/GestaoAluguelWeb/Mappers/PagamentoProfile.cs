@@ -1,4 +1,5 @@
-﻿using AutoMapper;
+using Core;
+using GestaoAluguelWeb.Models;
 
 namespace GestaoAluguelWeb.Mappers
 {
@@ -7,6 +8,9 @@ namespace GestaoAluguelWeb.Mappers
         public PagamentoProfile()
         {
             CreateMap<Core.Pagamento, Models.PagamentoModel>().ReverseMap();
+        public PagamentoProfile() 
+        {
+            CreateMap<PagamentoModel, Pagamento>().ReverseMap();
         }
     }
 }
