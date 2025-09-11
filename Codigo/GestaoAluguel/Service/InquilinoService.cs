@@ -5,6 +5,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace Service
 {
+    [Obsolete]
     public class InquilinoService : IPessoaService
     {
         private readonly GestaoAluguelContext context;
