@@ -17,9 +17,8 @@ namespace Core.DTO
         public string? Motivo { get; set; }
 
         /// <summary>
-        /// 0 - Ativo
-        /// 1 - Cancelado
-        /// 2 - Finalizado
+        /// 0 - Inativo
+        /// 1 - Ativo
         /// </summary>
         public sbyte Status { get; set; }
 

@@ -69,9 +69,6 @@ namespace Service
                        IdInquilino = locacao.IdInquilino
                    };
                    
-            IEnumerable<Locacao> locacoes = context.Locacaos;
-
-            throw new NotImplementedException();
 
         }
 
@@ -89,5 +86,20 @@ namespace Service
                        IdInquilino = locacao.IdInquilino
                    };
         }
+    
+        public Locacao FinalizarLocacao(int id, DateTime dataFim, string motivo)
+        {
+            var locacao = context.Locacaos.Find(id);
+            if (locacao == null)
+                throw new Exception("Locação não encontrada");
+            locacao.DataFim = dataFim;
+            locacao.Motivo = motivo;
+            locacao.Status = 0; // Inativa
+            context.Update(locacao);
+            context.SaveChanges();
+            return locacao;
+        }
+
+
     }
 }

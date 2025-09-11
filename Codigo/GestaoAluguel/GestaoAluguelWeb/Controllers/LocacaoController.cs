@@ -133,21 +133,11 @@ namespace GestaoAluguelWeb.Controllers
             return View(locacaoModel);
         }
 
-        // GET: LocacaoController/Delete/5
-        public ActionResult Delete(int id)
-        {
-            var locacao = LocacaoService.Get(id);
-            LocacaoModel locacaoModel = mapper.Map<LocacaoModel>(locacao);
-            return View();
-        }
-
-        // POST: LocacaoController/Delete/5
         [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Delete(int id, IFormCollection collection)
+        public IActionResult Finalizar(int id)
         {
-            LocacaoService.Delete(id);
-            return RedirectToAction(nameof(Index));
+            _locacaoService.FinalizarLocacao(id);
+            return RedirectToAction("Index");
         }
     }
 }
