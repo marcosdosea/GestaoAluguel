@@ -90,6 +90,19 @@ namespace GestaoAluguelWeb.Models
         [Display(Name = "Foto de perfil")]
         public byte[]? Foto { get; set; }
 
+        public string? IdUsuario { get; set; }
+
+        [Display(Name = "Senha *")]
+        [Required(ErrorMessage = "O campo {0} é obrigatório.")]
+        [DataType(DataType.Password)]
+        [StringLength(100, ErrorMessage = "A {0} deve ter no mínimo {2} e no máximo {1} caracteres.", MinimumLength = 6)]
+        public string Senha { get; set; }
+
+        [DataType(DataType.Password)]
+        [Display(Name = "Confirmar senha *")]
+        [Compare("Senha", ErrorMessage = "As senhas não são iguais")]
+        public string ConfirmaSenha { get; set; }
+
         public virtual ICollection<Chamadoreparo> Chamadoreparos { get; set; } = [];
 
         public virtual ICollection<Imovel> Imovels { get; set; } = [];
