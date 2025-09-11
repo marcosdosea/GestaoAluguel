@@ -1,9 +1,10 @@
-﻿using AutoMapper;
+﻿using GestaoAluguelWeb.Models;
+using Microsoft.AspNetCore.Mvc;
+using AutoMapper;
 using Core;
 using Core.Service;
-using GestaoAluguelWeb.Models;
 using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
+using Service;
 
 namespace GestaoAluguelWeb.Controllers
 {
@@ -21,7 +22,8 @@ namespace GestaoAluguelWeb.Controllers
         public ActionResult Index()
         {
             var listaCobrancas = CobrancaService.GetAll();
-            return View(listaCobrancas);
+            var listaCobrancasModel = mapper.Map<List<CobrancaModel>>(listaCobrancas);
+            return View(listaCobrancasModel);
         }
 
         // GET: CobrancaController/Details/5
@@ -87,7 +89,7 @@ namespace GestaoAluguelWeb.Controllers
         // POST: CobrancaController/Delete/5
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Delete(int id, IFormCollection collection)
+        public ActionResult Delete(int id, CobrancaModel cobrancaModel )
         {
             CobrancaService.Delete(id);
             return RedirectToAction(nameof(Index));
