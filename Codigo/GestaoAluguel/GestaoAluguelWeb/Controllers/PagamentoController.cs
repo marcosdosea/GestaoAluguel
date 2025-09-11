@@ -1,3 +1,7 @@
+namespace GestaoAluguelWeb.Controllers
+{
+    public class PagamentoController
+    {
 ﻿using GestaoAluguelWeb.Models;
 using Service;
 using Microsoft.AspNetCore.Http;
