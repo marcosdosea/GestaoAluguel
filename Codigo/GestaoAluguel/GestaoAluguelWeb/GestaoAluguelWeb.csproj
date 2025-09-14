@@ -7,12 +7,12 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Remove="Controllers\LocacaoController.cs" />
-    <Compile Remove="Views\Locacao\VisualizarContrato.cs" />
+    <Compile Remove="Controllers\LocacaoController2.cs" />
+    <Compile Remove="Views\Locacao2\VisualizarContrato.cs" />
   </ItemGroup>
 
   <ItemGroup>
-    <None Include="Controllers\LocacaoController.cs" />
+    <None Include="Controllers\LocacaoController2.cs" />
   </ItemGroup>
 
   <ItemGroup>
