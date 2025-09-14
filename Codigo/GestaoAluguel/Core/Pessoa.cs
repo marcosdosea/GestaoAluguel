@@ -47,6 +47,8 @@ public partial class Pessoa
 
     public byte[]? Foto { get; set; }
 
+    public string? IdUsuario { get; set; }
+
     public virtual ICollection<Chamadoreparo> Chamadoreparos { get; set; } = new List<Chamadoreparo>();
 
     public virtual ICollection<Imovel> Imovels { get; set; } = new List<Imovel>();

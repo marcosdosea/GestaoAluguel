@@ -1,4 +1,5 @@
-﻿@model GestaoAluguelWeb.Models.PessoaModel
+﻿@using GestaoAluguelWeb.Areas.Identity.Pages.Account
+@model GestaoAluguelWeb.Models.PessoaModel
 
 @{
     ViewData["Title"] = "Create";
@@ -160,9 +161,30 @@
 
             </div>
 
+            <div class="row">
+
+                <div class="form-group mb-3">
+                    <label asp-for="Senha" class="control-label"></label>
+                    <input asp-for="Senha" class="form-control" />
+                    <span asp-validation-for="Senha" class="text-danger"></span>
+                </div>
+
+            </div>
+
+            <div class="row">
+
+                <div class="form-group mb-3">
+                    <label asp-for="ConfirmaSenha" class="control-label"></label>
+                    <input asp-for="ConfirmaSenha" class="form-control" />
+                    <span asp-validation-for="ConfirmaSenha" class="text-danger"></span>
+                </div>
+
+            </div>
+
             <div class="form-group">
                 <input type="submit" value="Criar" class="btn btn-primary" />
             </div>
+
 
         </form>
     </div>
@@ -175,3 +197,4 @@
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
 }
+

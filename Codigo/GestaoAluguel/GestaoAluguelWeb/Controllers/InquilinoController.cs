@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace GestaoAluguelWeb.Controllers
 {
+    [Obsolete]
     public class InquilinoController : Controller
     {
         private readonly IPessoaService inquilinoService;

@@ -1,22 +1,34 @@
 ﻿using AutoMapper;
 using Core;
 using Core.Service;
+using GestaoAluguelWeb.Areas.Identity.Data;
+using GestaoAluguelWeb.Areas.Identity.Pages.Account;
 using GestaoAluguelWeb.Helpers;
 using GestaoAluguelWeb.Models;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+
 
 namespace GestaoAluguelWeb.Controllers
 {
+
+    [Authorize]
     public class PessoaController : Controller
     {
-
+      
         private readonly IPessoaService pessoaService;
-        private readonly IMapper mapper; 
+        private readonly IMapper mapper;
+        private readonly UserManager<UsuarioIdentity> userManager;
+        private readonly SignInManager<UsuarioIdentity> signInManager;
 
-        public PessoaController(IPessoaService pessoaService, IMapper mapper)
+        public PessoaController(IPessoaService pessoaService, IMapper mapper, UserManager<UsuarioIdentity> userManager, SignInManager<UsuarioIdentity> signInManager)
         {
             this.pessoaService = pessoaService;
             this.mapper = mapper;
+            this.userManager = userManager;
+            this.signInManager = signInManager;
         }
 
         // GET: PessoaController
@@ -36,6 +48,7 @@ namespace GestaoAluguelWeb.Controllers
         }
 
         // GET: PessoaController/Create
+        [AllowAnonymous]
         public ActionResult Create()
         {
             return View();
@@ -43,17 +56,51 @@ namespace GestaoAluguelWeb.Controllers
 
         // POST: PessoaController/Create
         [HttpPost]
+        [AllowAnonymous]
         [ValidateAntiForgeryToken]
-        public ActionResult Create(PessoaModel pessoaModel)
+        public async Task<IActionResult> Create(PessoaModel pessoaModel)
         {
-
             if (ModelState.IsValid)
             {
-                var pessoa = mapper.Map<Pessoa>(pessoaModel);
-                pessoaService.Create(pessoa);
+                // 1. Cria o usuário no banco de dados de Identidade
+                var user = new UsuarioIdentity { UserName = pessoaModel.Email, Email = pessoaModel.Email };
+                var result = await userManager.CreateAsync(user, pessoaModel.Senha);
+
+                if (result.Succeeded)
+                {
+                    // 2. Mapeia o ViewModel (PessoaModel) para a Entidade (Pessoa)
+                    var pessoa = mapper.Map<Pessoa>(pessoaModel);
+
+                    // 3. ✨ A LIGAÇÃO ACONTECE AQUI! ✨
+                    //    Guardamos o ID do usuário recém-criado na nossa entidade Pessoa.
+                    pessoa.IdUsuario = user.Id;
+
+                    try
+                    {
+                        // 4. Salva a entidade Pessoa no banco da aplicação usando o serviço
+                        pessoaService.Create(pessoa);
+
+                        // 5. Se tudo deu certo, loga o novo usuário no sistema
+                        await signInManager.SignInAsync(user, isPersistent: false);
+                        return RedirectToAction("Index", "Home");
+                    }
+                    catch
+                    {
+                        // 6. Se deu erro ao salvar a Pessoa, desfazemos o cadastro do usuário
+                        //    para não deixar dados inconsistentes.
+                        await userManager.DeleteAsync(user);
+                        ModelState.AddModelError("", "Ocorreu um erro ao salvar os dados. Tente novamente.");
+                        return View(pessoaModel);
+                    }
+                }
+
+                // Se a criação do usuário do Identity falhou, mostra os erros
+                foreach (var error in result.Errors)
+                {
+                    ModelState.AddModelError(string.Empty, error.Description);
+                }
             }
-            return RedirectToAction(nameof(Index));
-            
+            return View(pessoaModel);
         }
 
         // GET: PessoaController/Edit/5

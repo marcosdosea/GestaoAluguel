@@ -1,0 +1,67 @@
+﻿@page
+@model LoginModel
+
+@{
+    ViewData["Title"] = "Log in";
+}
+
+<div class="container">
+    <div class="row justify-content-center align-items-center vh-100">
+        <div class="col-md-5 col-lg-4">
+            <div class="card shadow-sm border-0 rounded-4 p-4">
+                <div class="card-body text-center">
+                    <h3 class="fw-bold mb-2">GestãoAluguel</h3>
+                    <p class="text-muted mb-4">Entre com as informações abaixo</p>
+
+                    <form id="account" method="post" class="text-start">
+
+                        <div asp-validation-summary="ModelOnly" class="text-danger small" role="alert"></div>
+
+                        <div class="mb-3">
+                            <label asp-for="Input.Email" class="form-label small">Email</label>
+                            <input asp-for="Input.Email" class="form-control" autocomplete="username" aria-required="true" placeholder="Entre com seu email" />
+                            <span asp-validation-for="Input.Email" class="text-danger small"></span>
+                        </div>
+
+                        <div class="mb-3">
+                            <label asp-for="Input.Password" class="form-label small">Senha</label>
+                            <input asp-for="Input.Password" class="form-control" autocomplete="current-password" aria-required="true" placeholder="Senha" />
+                            <span asp-validation-for="Input.Password" class="text-danger small"></span>
+                        </div>
+
+                        <div class="d-flex justify-content-between align-items-center mb-3">
+                            <div class="form-check">
+                                <input class="form-check-input" asp-for="Input.RememberMe" />
+                                <label class="form-check-label small" asp-for="Input.RememberMe">
+                                    Lembre-me
+                                </label>
+                            </div>
+                            <a id="forgot-password" asp-page="./ForgotPassword" class="small text-decoration-none">Esqueci a senha</a>
+                        </div>
+
+                        <div class="d-grid gap-2">
+                            <button id="login-submit" type="submit" class="btn btn-primary">Entrar</button>
+                          
+                        </div>
+                    </form>
+
+                    <p class="mt-4 small">
+                        @* Não possui uma conta? <a asp-page="./Register" asp-route-returnUrl="@Model.ReturnUrl" class="text-decoration-none">Registre-se</a> *@
+                        Não possui uma conta? <a asp-area="" asp-controller="Pessoa" asp-action="Create" class="text-decoration-none">Registre-se</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@* Adicione um pouco de CSS para o fundo, se desejar *@
+<style>
+    body {
+        background-color: #f8f9fa; /* Um cinza bem claro */
+    }
+</style>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}
