@@ -1,4 +1,4 @@
-﻿@model GestaoAluguelWeb.Models.FinalizarLocacaoModel
+﻿@model GestaoAluguelWeb.Models.LocacaoModel
 
 @{
     ViewData["Title"] = "Details";
@@ -7,7 +7,7 @@
 <h1>Details</h1>
 
 <div>
-    <h4>FinalizarLocacaoModel</h4>
+    <h4>LocacaoModel</h4>
     <hr />
     <dl class="row">
         <dt class = "col-sm-2">
@@ -17,34 +17,10 @@
             @Html.DisplayFor(model => model.Id)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.ImovelInfo)
+            @Html.DisplayNameFor(model => model.DataInicio)
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.ImovelInfo)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.InquilinoInfo)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.InquilinoInfo)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.StatusLocacao)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.StatusLocacao)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.DuracaoLocacao)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.DuracaoLocacao)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.ValorTotalEstimado)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.ValorTotalEstimado)
+            @Html.DisplayFor(model => model.DataInicio)
         </dd>
         <dt class = "col-sm-2">
             @Html.DisplayNameFor(model => model.DataFim)
@@ -53,14 +29,44 @@
             @Html.DisplayFor(model => model.DataFim)
         </dd>
         <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.ValorAluguel)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.ValorAluguel)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Status)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Status)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.IdImovel)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.IdImovel)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.IdInquilino)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.IdInquilino)
+        </dd>
+        <dt class = "col-sm-2">
             @Html.DisplayNameFor(model => model.Motivo)
         </dt>
         <dd class = "col-sm-10">
             @Html.DisplayFor(model => model.Motivo)
         </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Contrato)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Contrato)
+        </dd>
     </dl>
 </div>
 <div>
-    @Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
     <a asp-action="Index">Back to List</a>
 </div>

@@ -12,11 +12,12 @@
     <div class="col-md-4">
         <form asp-action="Create">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <div class="form-group">
-                <label asp-for="Id" class="control-label"></label>
-                <input asp-for="Id" class="form-control" />
-                <span asp-validation-for="Id" class="text-danger"></span>
-            </div>
+            
+            @* Campos ocultos *@
+            <input type="hidden" asp-for="Id" />
+            <input type="hidden" asp-for="IdImovel" />
+            <input type="hidden" asp-for="Status" />
+
             <div class="form-group">
                 <label asp-for="DataInicio" class="control-label"></label>
                 <input asp-for="DataInicio" class="form-control" />
@@ -33,16 +34,6 @@
                 <span asp-validation-for="ValorAluguel" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="Status" class="control-label"></label>
-                <input asp-for="Status" class="form-control" />
-                <span asp-validation-for="Status" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="IdImovel" class="control-label"></label>
-                <input asp-for="IdImovel" class="form-control" />
-                <span asp-validation-for="IdImovel" class="text-danger"></span>
-            </div>
-            <div class="form-group">
                 <label asp-for="IdInquilino" class="control-label"></label>
                 <input asp-for="IdInquilino" class="form-control" />
                 <span asp-validation-for="IdInquilino" class="text-danger"></span>
@@ -57,15 +48,16 @@
                 <input asp-for="Contrato" class="form-control" />
                 <span asp-validation-for="Contrato" class="text-danger"></span>
             </div>
-            <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-primary" />
+            <div class="form-group d-flex gap-2 mt-2">
+                <input type="submit" value="Alugar Imóvel" class="btn btn-success" />
+                <a class="btn btn-secondary"
+                   asp-controller="Imovel"
+                   asp-action="Index">
+                    Voltar
+                </a>
             </div>
         </form>
     </div>
-</div>
-
-<div>
-    <a asp-action="Index">Back to List</a>
 </div>
 
 @section Scripts {
