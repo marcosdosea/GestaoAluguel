@@ -2,6 +2,7 @@
 using Core;
 using Core.Service;
 using GestaoAluguelWeb.Models;
+using GestaoAluguelWeb.Helpers;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
@@ -12,7 +13,7 @@ namespace GestaoAluguelWeb.Controllers
     public class LocacaoController : Controller
     {
 
-        private readonly ILocacaoService LocacaoService;
+        private readonly ILocacaoService locacaoService;
         private readonly IImovelService imovelService;
         private readonly IMapper mapper;
 
@@ -24,10 +25,10 @@ namespace GestaoAluguelWeb.Controllers
         }
 
         // GET: LocacaoController
-        public IActionResult Index()
+        public ActionResult Index()
         {
             var locacoes = LocacaoService.GetAll(); // retorna List<Core.Locacao>
-            var locacoesModel = mapper.Map<List<LocacaoModel>>(locacoes); // mapeia para List<LocacaoModel>
+            LocacaoModel locacoesModel = mapper.Map<List<LocacaoModel>>(locacoes); // mapeia para List<LocacaoModel>
             return View(locacoesModel); // passa o model correto para a view
         }
 

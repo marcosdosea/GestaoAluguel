@@ -1,11 +1,15 @@
-using System;
 using Microsoft.AspNetCore.Http;
+using System;
+using System.ComponentModel.DataAnnotations;
 
 namespace GestaoAluguelWeb.Models
 {
     public class FinalizarLocacaoModel
     {
-        public int LocacaoId { get; set; }
+        [Display(Name = "Código")]
+        [Required(ErrorMessage = "O campo {0} é obrigatório.")]
+        public int Id { get; set; }
+
         public LocacaoModel? Locacao { get; set; }
         public string? ImovelInfo { get; set; }
         public string? InquilinoInfo { get; set; }
