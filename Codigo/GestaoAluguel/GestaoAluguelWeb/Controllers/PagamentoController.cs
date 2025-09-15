@@ -11,13 +11,11 @@ namespace GestaoAluguelWeb.Controllers
     public class PagamentoController : Controller
     {
         private readonly IPagamentoService pagamentoService;
-        private readonly ILocacaoService locacaoService;
         private readonly IMapper mapper;
 
-        public PagamentoController(IPagamentoService pagamentoService, ILocacaoService locacaoService, IMapper mapper)
+        public PagamentoController(IPagamentoService pagamentoService, IMapper mapper)
         {
             this.pagamentoService = pagamentoService;
-            this.locacaoService = locacaoService;
             this.mapper = mapper;
         }
 
