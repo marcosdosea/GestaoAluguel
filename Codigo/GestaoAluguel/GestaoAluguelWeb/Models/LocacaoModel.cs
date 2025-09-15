@@ -40,6 +40,9 @@ namespace GestaoAluguelWeb.Models
 
         public byte[]? Contrato { get; set; }
 
-        
+        public LocacaoModel()
+        {
+            Status = 1;
+        }
     }
 }

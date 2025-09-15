@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using Core;
+using Core.DTO;
 using Core.Service;
 using GestaoAluguelWeb.Areas.Identity.Data;
 using GestaoAluguelWeb.Areas.Identity.Pages.Account;
@@ -9,6 +10,9 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
+using Service;
+using System.IO;
 
 
 namespace GestaoAluguelWeb.Controllers
