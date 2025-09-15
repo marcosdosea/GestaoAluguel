@@ -94,6 +94,7 @@ namespace GestaoAluguelWeb
             builder.Services.AddTransient<IChamadoReparoService, ChamadoReparoService>();
             builder.Services.AddTransient<ILocacaoService, LocacaoService>();
             builder.Services.AddTransient<ICobrancaService, CobrancaService>();
+            builder.Services.AddTransient<IPagamentoService, PagamentoService>();
 
             builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
             
