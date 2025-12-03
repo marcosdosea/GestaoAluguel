@@ -1,26 +1,21 @@
 namespace GestaoAluguelWeb.Controllers
 {
-    public class PagamentoController
-    {
-﻿using GestaoAluguelWeb.Models;
-using Service;
-using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
-using Core.Service;
-using AutoMapper;
 
-namespace GestaoAluguelWeb.Controllers
-{
+    using Service;
+    using Microsoft.AspNetCore.Http;
+    using Microsoft.AspNetCore.Mvc;
+    using Core.Service;
+    using AutoMapper;
+    using global::GestaoAluguelWeb.Models;
+
     public class PagamentoController : Controller
     {
         private readonly IPagamentoService pagamentoService;
-        private readonly ILocacaoService locacaoService;
         private readonly IMapper mapper;
 
-        public PagamentoController(IPagamentoService pagamentoService, ILocacaoService locacaoService, IMapper mapper)
+        public PagamentoController(IPagamentoService pagamentoService, IMapper mapper)
         {
             this.pagamentoService = pagamentoService;
-            this.locacaoService = locacaoService;
             this.mapper = mapper;
         }
 
@@ -73,7 +68,7 @@ namespace GestaoAluguelWeb.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Edit(int id, PagamentoModel pagamentoModel)
         {
-            if(ModelState.IsValid)
+            if (ModelState.IsValid)
             {
                 var pagamento = mapper.Map<Core.Pagamento>(pagamentoModel);
                 pagamentoService.Edit(pagamento);

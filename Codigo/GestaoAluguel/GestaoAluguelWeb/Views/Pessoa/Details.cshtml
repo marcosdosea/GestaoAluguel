@@ -5,7 +5,7 @@
 @{
     ViewData["Title"] = "Detalhes";
     string imgSrc;
-    Boolean isnull = Model.Foto != null;
+    Boolean isnull = Model != null && Model.Foto != null;
     Boolean isValidImage = isnull && Model.Foto.Length > 0;
 
     if (isValidImage)

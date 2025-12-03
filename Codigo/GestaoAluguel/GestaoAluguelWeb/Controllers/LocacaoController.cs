@@ -52,8 +52,6 @@ namespace GestaoAluguelWeb.Controllers
 
             return View(locacaoModel);
         }
-
-
         public IActionResult VisualizarContrato(int id)
         {
             var locacao = LocacaoService.Get(id);
@@ -88,7 +86,6 @@ namespace GestaoAluguelWeb.Controllers
 
             return View("VisualizarContrato", viewModel);
         }
-		
         // POST: LocacaoController/Create
         [HttpPost]
         [ValidateAntiForgeryToken]

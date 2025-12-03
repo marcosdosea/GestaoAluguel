@@ -12,6 +12,12 @@ namespace Service
     public class PagamentoService : IPagamentoService
     {
         private readonly GestaoAluguelContext context;
+
+        public PagamentoService(GestaoAluguelContext context)
+        {
+            this.context = context;
+        }
+
         public int Create(Pagamento pagamento)
         {
             try
