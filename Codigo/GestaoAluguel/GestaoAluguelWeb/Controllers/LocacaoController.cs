@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using Core;
 using Core.Service;
+using GestaoAluguelWeb.Helpers;
 using GestaoAluguelWeb.Models;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
@@ -47,7 +48,7 @@ namespace GestaoAluguelWeb.Controllers
 
             if (idImovel.HasValue)
 
-                locacaoModel.IdImovel = idImovel.Value; 
+                locacaoModel.IdImovel = idImovel.Value;
 
             return View(locacaoModel);
         }
@@ -81,13 +82,13 @@ namespace GestaoAluguelWeb.Controllers
             // --- USANDO O MÉTODO GetDataUrlAsync ---
             var viewModel = new ArquivoModel
             {
-                DataUrl = await FileSignatureValidator.GetDataUrlAsync(arquivo),
-                TipoArquivo = FileSignatureValidator.GetFileType(arquivo)
+                DataUrl = FileHelper.GetDataUrl(locacao.Contrato),
+                TipoArquivo = FileHelper.GetFileType(locacao.Contrato)
             };
 
             return View("VisualizarContrato", viewModel);
         }
-		}
+		
         // POST: LocacaoController/Create
         [HttpPost]
         [ValidateAntiForgeryToken]

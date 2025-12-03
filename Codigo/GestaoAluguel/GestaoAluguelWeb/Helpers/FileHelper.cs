@@ -98,6 +98,17 @@ namespace GestaoAluguelWeb.Helpers
             return allowedTypes.Contains(actualType);
         }
 
+        public static bool IsValid(Byte[] file, params FileType[] allowedTypes)
+        {
+            if (allowedTypes == null || allowedTypes.Length == 0)
+            {
+                return false; // Se nada é permitido, nada é válido.
+            }
+
+            var actualType = GetFileType(file);
+            return allowedTypes.Contains(actualType);
+        }
+
         /// <summary>
         /// NOVO: Gera um Data URL (string Base64) para um arquivo, pronto para ser usado no atributo 'src' de tags HTML.
         /// </summary>
@@ -120,8 +131,6 @@ namespace GestaoAluguelWeb.Helpers
                 return $"data:{mimeType};base64,{base64String}";
             }
         }
-
-        #region --- MÉTODOS NOVOS PARA BYTE[] ---
 
         /// <summary>
         /// NOVO: Identifica o tipo de arquivo a partir de um array de bytes.
@@ -163,8 +172,7 @@ namespace GestaoAluguelWeb.Helpers
             var base64String = Convert.ToBase64String(fileBytes);
             return $"data:{mimeType};base64,{base64String}";
         }
-
-        #endregion
+        
     }
 
 }
