@@ -71,8 +71,6 @@ namespace Service
                    
             IEnumerable<Locacao> locacoes = context.Locacaos;
 
-            throw new NotImplementedException();
-
         }
 
         public IEnumerable<LocacaoDTO> GetByInquilino(int idInquilino)
