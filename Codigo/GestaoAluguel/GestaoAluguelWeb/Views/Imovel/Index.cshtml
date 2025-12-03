@@ -4,81 +4,169 @@
     ViewData["Title"] = "Imóveis";
 }
 
-<h1 class="text-center">Imóveis</h1>
+<style>
+    .btn-purple {
+        background-color: #582cd1;
+        color: white;
+        border: none;
+    }
+
+        .btn-purple:hover {
+            background-color: #4522a8;
+            color: white;
+        }
+
+    .btn-teal {
+        background-color: #17a2b8;
+        color: white;
+        border: none;
+    }
+
+        .btn-teal:hover {
+            background-color: #138496;
+            color: white;
+        }
+
+    .card-img-top {
+        height: 200px;
+        object-fit: cover;
+        background-color: #e9ecef;
+    }
+
+    .fab-container {
+        position: fixed;
+        bottom: 30px;
+        right: 30px;
+        z-index: 1000;
+    }
+
+    .btn-fab {
+        width: 60px;
+        height: 60px;
+        border-radius: 12px;
+        font-size: 28px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    }
+</style>
+
+<h1 class="text-center mb-4">Imóveis</h1>
 
 <div class="row row-cols-1 row-cols-md-3 g-4">
     @foreach (var item in Model)
     {
+        /* --- LÓGICA DA IMAGEM --- */
+        string imagemSrc = "";
+
+        if (item.Foto != null && item.Foto.Length > 0)
+        {
+            // Converte os bytes do banco para Base64 string
+            string base64 = Convert.ToBase64String(item.Foto);
+            // Monta o formato que o navegador entende
+            imagemSrc = $"data:image/jpeg;base64,{base64}";
+        }
+        else
+        {
+            // Se não tiver foto, usa o placeholder que você já tinha
+            imagemSrc = $"https://placehold.co/600x400/e9ecef/6c757d?text={item.Apelido}";
+        }
         <div class="col">
-            <div class="card h-100 shadow-sm">
-                <div class="card-body position-relative">
-                    <h5 class="card-title">@item.Apelido</h5>
-                    <p class="card-text">
-                        <strong>Endereço:</strong> @item.Logradouro, @item.Numero <br />
-                        <strong>Status:</strong> @(item.EstaAlugado == 1 ? "Alugado" : "Disponível")
-                    </p>
-                    <a asp-action="Details" asp-route-id="@item.Id" class="stretched-link"></a>
+            <div class="card h-100 shadow-sm border-0">
+
+                <div class="position-absolute top-0 end-0 p-2" style="z-index: 5;">
+                    <div class="dropdown">
+                        <button class="btn btn-light btn-sm rounded-circle shadow-sm opacity-75" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <i class="bi bi-three-dots-vertical"></i>
+                        </button>
+                        <ul class="dropdown-menu dropdown-menu-end">
+                            <li><a class="dropdown-item" asp-action="Edit" asp-route-id="@item.Id"><i class="bi bi-pencil me-2"></i>Editar</a></li>
+
+                            <li><a class="dropdown-item" asp-action="Details" asp-route-id="@item.Id"><i class="bi bi-info-circle me-2"></i>Detalhes</a></li>
+
+                        </ul>
+                    </div>
                 </div>
-                <div class="card-footer">
-                    <a class="btn btn-sm btn-warning col-12 mb-2" asp-action="Edit" asp-route-id="@item.Id">Editar</a>
-                    @if (item.EstaAlugado != 1)
-                    {
-                        <a class="btn btn-sm btn-danger col-12 mb-2"
-                           href="#"
-                           data-bs-toggle="modal"
-                           data-bs-target="#deleteModal"
-                           data-id="@item.Id"
-                           data-action="@Url.Action("Delete", new { id = item.Id })">
-                           Excluir
-                        </a>
-                        <a class="btn btn-sm btn-success col-12 mb-2"
-                           asp-controller="Locacao"
-                           asp-action="Create"
-                           asp-route-idImovel="@item.Id">
-                           Alugar Imóvel
-                        </a>
-                    }
+
+                <img src="@imagemSrc" class="card-img-top" alt="Imagem do Imóvel @item.Apelido">
+
+                <div class="card-body">
+                    <h5 class="card-title fw-bold">@item.Apelido</h5>
+                    <p class="card-text text-muted small mb-4">
+                        <strong>Localização:</strong> @item.Logradouro, @item.Numero <br />
+                        <strong>Status:</strong>
+                        @if (item.EstaAlugado == 1)
+                        {
+                            <span class="text-success fw-bold">Alugada</span>
+                        }
+                        else
+                        {
+                            <span class="text-secondary fw-bold">Disponível</span>
+                        }
+                    </p>
+
+                    <div class="d-grid gap-2">
+                        @if (item.EstaAlugado == 1)
+                        {
+
+                            <button class="btn btn-teal shadow-sm" type="button">Extratos</button>
+                            <button class="btn btn-warning shadow-sm" type="button">Chamados de Reparo</button>
+                            <button class="btn btn-danger shadow-sm" type="button">Encerrar Locação</button>
+                            <button class="btn btn-purple shadow-sm" type="button">Enviar cobrança</button>
+                        }
+                        else
+                        {
+                           
+                            <a class="btn btn-success py-3 fw-bold shadow-sm"
+                               asp-controller="Locacao"
+                               asp-action="Create"
+                               asp-route-idImovel="@item.Id">
+                                Alugar Imóvel
+                            </a>
+                        }
+                    </div>
                 </div>
             </div>
         </div>
     }
 </div>
 
-<p class="text-end mt-3">
-    <a class="btn btn-success btn-sm" asp-action="Create">
-        <i class="bi bi-plus"></i>
+<div class="fab-container">
+    <a class="btn btn-success btn-fab text-white" asp-action="Create" title="Novo Imóvel">
+        <i class="bi bi-plus-lg"></i>
     </a>
-</p>
+</div>
 
-<!-- Modal de Confirmação de Exclusão -->
 <div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="deleteModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header bg-danger">
-        <h5 class="modal-title text-white" id="deleteModalLabel">Confirmar Exclusão</h5>
-        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Fechar"></button>
-      </div>
-      <div class="modal-body">
-        Tem certeza que deseja excluir este imóvel?
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
-        <form id="deleteForm" method="post">
-            <button type="submit" class="btn btn-danger">Excluir</button>
-        </form>
-      </div>
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header bg-danger">
+                <h5 class="modal-title text-white" id="deleteModalLabel">Confirmar Exclusão</h5>
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Fechar"></button>
+            </div>
+            <div class="modal-body">
+                Tem certeza que deseja excluir este imóvel?
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                <form id="deleteForm" method="post">
+                    <button type="submit" class="btn btn-danger">Excluir</button>
+                </form>
+            </div>
+        </div>
     </div>
-  </div>
 </div>
 
 @section Scripts {
-<script>
-    var deleteModal = document.getElementById('deleteModal');
-    deleteModal.addEventListener('show.bs.modal', function (event) {
-        var button = event.relatedTarget;
-        var action = button.getAttribute('data-action');
-        var form = document.getElementById('deleteForm');
-        form.action = action;
-    });
-</script>
+    <script>
+        // Seu script original mantido
+        var deleteModal = document.getElementById('deleteModal');
+        deleteModal.addEventListener('show.bs.modal', function (event) {
+            var button = event.relatedTarget;
+            var action = button.getAttribute('data-action');
+            var form = document.getElementById('deleteForm');
+            form.action = action;
+        });
+    </script>
 }

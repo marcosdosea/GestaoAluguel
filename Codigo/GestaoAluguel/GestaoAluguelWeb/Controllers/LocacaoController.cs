@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using Core;
 using Core.Service;
+using GestaoAluguelWeb.Helpers;
 using GestaoAluguelWeb.Models;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
@@ -47,13 +48,13 @@ namespace GestaoAluguelWeb.Controllers
 
             if (idImovel.HasValue)
 
-                locacaoModel.IdImovel = idImovel.Value; 
+                locacaoModel.IdImovel = idImovel.Value;
 
             return View(locacaoModel);
         }
 
-
-        public IActionResult VisualizarContrato(int id)
+        // Tallysson: removi esse método pois estava causando conflito na locacaoController precisei recria-~´a novamente
+        /*public IActionResult VisualizarContrato(int id)
         {
             var locacao = LocacaoService.Get(id);
             if (locacao == null || locacao.Contrato == null)
@@ -87,7 +88,9 @@ namespace GestaoAluguelWeb.Controllers
 
             return View("VisualizarContrato", viewModel);
         }
-		}
+		}*/
+
+
         // POST: LocacaoController/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
