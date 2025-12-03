@@ -202,6 +202,19 @@ namespace GestaoAluguelWeb.Controllers.Tests
         }
 
         [TestMethod()]
+        public void EditTest_GetInvalid()
+        {
+            var result = controller.Edit(5);
+
+            Assert.IsInstanceOfType(result, typeof(ViewResult));
+            ViewResult viewResult = (ViewResult)result;
+            Assert.IsInstanceOfType(viewResult.ViewData.Model, typeof(PessoaModel));
+            PessoaModel pessoaModel = (PessoaModel)viewResult.ViewData.Model;
+            Assert.AreEqual("Carlos Souza", pessoaModel.Nome);
+            Assert.AreEqual(DateTime.Parse("1989-07-30"), pessoaModel.Nascimento);
+        }
+
+        [TestMethod()]
         public async Task EditTest_Post()
         {
             var pessoaModel = GetTargetPessoaModel();
@@ -216,6 +229,26 @@ namespace GestaoAluguelWeb.Controllers.Tests
             var redirectToActionResult = (RedirectToActionResult)result;
 
             Assert.AreEqual("Details", redirectToActionResult.ActionName, "Deveria redirecionar para a action 'Details'.");
+            Assert.IsNull(redirectToActionResult.ControllerName, "O redirecionamento deveria ser para o mesmo controller.");
+        }
+
+        [TestMethod()]
+        public async Task EditTest_PostInvalid()
+        {
+            var pessoaModel = GetTargetPessoaModel();
+            var pessoaId = pessoaModel.Id;
+            IFormFile? foto = null; // Deixa explícito que o arquivo é nulo
+
+            pessoaModel.Email = "emailinvalido"; // Definindo um email inválido para simular erro de validação
+
+            var result = await controller.Edit(pessoaId, pessoaModel, foto);
+
+
+            Assert.IsInstanceOfType(result, typeof(RedirectToActionResult), "O resultado deveria ser um redirecionamento.");
+
+            var redirectToActionResult = (RedirectToActionResult)result;
+
+            Assert.AreEqual("Edit", redirectToActionResult.ActionName, "Deveria redirecionar para a action 'Details'.");
             Assert.IsNull(redirectToActionResult.ControllerName, "O redirecionamento deveria ser para o mesmo controller.");
         }
 
@@ -242,6 +275,15 @@ namespace GestaoAluguelWeb.Controllers.Tests
             ViewResult ViewResult = (ViewResult)result;
             Assert.IsInstanceOfType(ViewResult.ViewData.Model, typeof(PessoaModel));
 
+        }
+
+        [TestMethod()]
+        public void DeleteTest_PostInvalid()
+        {
+            var result = controller.Delete(5);
+            Assert.IsInstanceOfType(result, typeof(ViewResult));
+            ViewResult ViewResult = (ViewResult)result;
+            Assert.IsInstanceOfType(ViewResult.ViewData.Model, typeof(PessoaModel));
 
         }
     }

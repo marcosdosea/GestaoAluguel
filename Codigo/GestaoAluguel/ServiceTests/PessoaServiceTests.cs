@@ -76,7 +76,7 @@ namespace Service.Tests
         }
 
         [TestMethod()]
-        public void CreateTest()
+        public void CreateTestValid()
         {
 
             pessoaService.Create(new Pessoa
@@ -109,7 +109,7 @@ namespace Service.Tests
         }
 
         [TestMethod()]
-        public void DeleteTest()
+        public void DeleteTestValid()
         {
             pessoaService.Delete(1);
 
@@ -119,7 +119,7 @@ namespace Service.Tests
         }
 
         [TestMethod()]
-        public void EditTest()
+        public void EditTestValid()
         {
             var pessoa = pessoaService.Get(1);
             pessoa.Nome = "Amanda de Jesus Melo";
@@ -134,7 +134,22 @@ namespace Service.Tests
         }
 
         [TestMethod()]
-        public void GetTest()
+        public void EditTestInvalid()
+        {
+            var pessoa = pessoaService.Get(1);
+            pessoa.Nome = "Amanda de Jesus Melo";
+            pessoa.Email = "amandexspeed";
+
+            pessoaService.Edit(pessoa);
+
+            pessoa = pessoaService.Get(1);
+            Assert.IsNotNull(pessoa);
+            Assert.AreEqual("Amanda", pessoa.Nome);
+            Assert.AreEqual("amandexspeed@hotmail.com", pessoa.Email);
+        }
+
+        [TestMethod()]
+        public void GetTestValid()
         {
             var pessoa = pessoaService.Get(1);
             Assert.IsNotNull(pessoa);
@@ -145,7 +160,15 @@ namespace Service.Tests
         }
 
         [TestMethod()]
-        public void GetAllTest()
+        public void GetTestInvalid()
+        {
+            var pessoa = pessoaService.Get(4);
+            Assert.IsNull(pessoa);
+
+        }
+
+        [TestMethod()]
+        public void GetAllTestValid()
         {
            var pessoas = pessoaService.GetAll();
             Assert.IsNotNull(pessoas);
@@ -155,13 +178,20 @@ namespace Service.Tests
         }
 
         [TestMethod()]
-        public void GetByNomeTest()
+        public void GetByNomeTestValid()
         {
             var pessoas = pessoaService.GetByNome("Amanda");
             Assert.IsNotNull(pessoas);
             Assert.AreEqual(1, pessoas.Count());
             Assert.IsTrue(pessoas.Any(p => p.Nome == "Amanda"));
             Assert.IsTrue(pessoas.Any(p => p.Cpf == "07834618520"));
+        }
+
+        [TestMethod()]
+        public void GetByNomeTestInvalid()
+        {
+            var pessoas = pessoaService.GetByNome("Lindinho");
+            Assert.AreEqual(0, pessoas.Count());
         }
     }
 }
