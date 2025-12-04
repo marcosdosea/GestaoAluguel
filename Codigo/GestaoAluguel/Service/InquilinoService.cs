@@ -111,7 +111,13 @@ namespace Service
                 .ToList();
         }
 
-
+        public Pessoa? GetByCpf(string cpf)
+        {
+            // OBSERVAÇÃO: Verifique se o nome da tabela no seu _context é "Pessoa" ou "Pessoas"
+            // Se der erro no ".Pessoas", mude para ".Pessoa"
+            return context.Pessoas
+                          .FirstOrDefault(p => p.Cpf == cpf);
+        }
 
 
     }
