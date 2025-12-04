@@ -1,65 +1,207 @@
 ﻿@model GestaoAluguelWeb.Models.LocacaoModel
 
 @{
-    ViewData["Title"] = "Create";
+    ViewData["Title"] = "Nova Locação";
 }
 
-<h1>Create</h1>
-
-<h4>LocacaoModel</h4>
-<hr />
-<div class="row">
-    <div class="col-md-4">
-        <form asp-action="Create">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            
-            @* Campos ocultos *@
-            <input type="hidden" asp-for="Id" />
-            <input type="hidden" asp-for="IdImovel" />
-            <input type="hidden" asp-for="Status" />
-
-            <div class="form-group">
-                <label asp-for="DataInicio" class="control-label"></label>
-                <input asp-for="DataInicio" class="form-control" />
-                <span asp-validation-for="DataInicio" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="DataFim" class="control-label"></label>
-                <input asp-for="DataFim" class="form-control" />
-                <span asp-validation-for="DataFim" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="ValorAluguel" class="control-label"></label>
-                <input asp-for="ValorAluguel" class="form-control" />
-                <span asp-validation-for="ValorAluguel" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="IdInquilino" class="control-label"></label>
-                <input asp-for="IdInquilino" class="form-control" />
-                <span asp-validation-for="IdInquilino" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Motivo" class="control-label"></label>
-                <input asp-for="Motivo" class="form-control" />
-                <span asp-validation-for="Motivo" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Contrato" class="control-label"></label>
-                <input asp-for="Contrato" class="form-control" />
-                <span asp-validation-for="Contrato" class="text-danger"></span>
-            </div>
-            <div class="form-group d-flex gap-2 mt-2">
-                <input type="submit" value="Alugar Imóvel" class="btn btn-success" />
-                <a class="btn btn-secondary"
-                   asp-controller="Imovel"
-                   asp-action="Index">
-                    Voltar
-                </a>
-            </div>
-        </form>
+<div class="container mt-4">
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <h2><i class="fa fa-file-contract"></i> Nova Locação</h2>
+        <a asp-controller="Imovel" asp-action="Index" class="btn btn-outline-secondary btn-sm">
+            &larr; Voltar para Imóveis
+        </a>
     </div>
+
+    <form asp-action="Create" enctype="multipart/form-data">
+        @Html.AntiForgeryToken()
+        <div asp-validation-summary="ModelOnly" class="alert alert-danger" role="alert"></div>
+
+        <input type="hidden" asp-for="IdImovel" />
+        <input type="hidden" asp-for="Status" />
+        <div class="row">
+            <div class="col-lg-4 mb-4">
+                <div class="card shadow-sm h-100 border-primary">
+                    <div class="card-header bg-primary text-white">
+                        <h5 class="mb-0">Dados do Contrato</h5>
+                    </div>
+                    <div class="card-body">
+
+                        <div class="form-group mb-3">
+                            <label asp-for="ValorAluguel" class="form-label fw-bold"></label>
+                            <div class="input-group">
+                                <span class="input-group-text">R$</span>
+                                <input asp-for="ValorAluguel" class="form-control" placeholder="0,00" />
+                            </div>
+                            <span asp-validation-for="ValorAluguel" class="text-danger small"></span>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-6">
+                                <div class="form-group mb-3">
+                                    <label asp-for="DataInicio" class="form-label"></label>
+                                    <input asp-for="DataInicio" type="date" class="form-control" />
+                                    <span asp-validation-for="DataInicio" class="text-danger small"></span>
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <div class="form-group mb-3">
+                                    <label asp-for="DataFim" class="form-label"></label>
+                                    <input asp-for="DataFim" type="date" class="form-control" />
+                                    <span asp-validation-for="DataFim" class="text-danger small"></span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group mb-3">
+                            <label asp-for="Contrato" class="form-label"></label>
+                            <input asp-for="Contrato" type="file" class="form-control" accept=".pdf,.jpg,.png,.jpeg" />
+                            <small class="text-muted">Formatos: PDF, JPG, PNG.</small>
+                            <span asp-validation-for="Contrato" class="text-danger small"></span>
+                        </div>
+
+                        <div class="form-group mb-3">
+                            <label asp-for="Motivo" class="form-label"></label>
+                            <textarea asp-for="Motivo" class="form-control" rows="3" placeholder="Observações sobre a locação..."></textarea>
+                            <span asp-validation-for="Motivo" class="text-danger small"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-8">
+                <div class="card shadow-sm mb-4">
+                    <div class="card-header bg-light">
+                        <h5 class="mb-0 text-dark">Dados do Inquilino</h5>
+                        <small class="text-muted">Se o CPF já existir, o sistema vinculará automaticamente.</small>
+                    </div>
+                    <div class="card-body">
+
+                        <div class="row">
+                            <div class="col-md-4 mb-3">
+                                <label asp-for="Inquilino.Cpf" class="form-label fw-bold"></label>
+                                <input asp-for="Inquilino.Cpf" class="form-control" placeholder="000.000.000-00" id="cpfField" />
+                                <span asp-validation-for="Inquilino.Cpf" class="text-danger small"></span>
+                            </div>
+                            <div class="col-md-8 mb-3">
+                                <label asp-for="Inquilino.Nome" class="form-label"></label>
+                                <input asp-for="Inquilino.Nome" class="form-control" placeholder="Nome completo" />
+                                <span asp-validation-for="Inquilino.Nome" class="text-danger small"></span>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <label asp-for="Inquilino.Email" class="form-label"></label>
+                                <input asp-for="Inquilino.Email" type="email" class="form-control" placeholder="exemplo@email.com" />
+                                <span asp-validation-for="Inquilino.Email" class="text-danger small"></span>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label asp-for="Inquilino.Telefone" class="form-label"></label>
+                                <input asp-for="Inquilino.Telefone" class="form-control" placeholder="(00) 00000-0000" />
+                                <span asp-validation-for="Inquilino.Telefone" class="text-danger small"></span>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-4 mb-3">
+                                <label asp-for="Inquilino.Nascimento" class="form-label"></label>
+                                <input asp-for="Inquilino.Nascimento" type="date" class="form-control" />
+                                <span asp-validation-for="Inquilino.Nascimento" class="text-danger small"></span>
+                            </div>
+                            <div class="col-md-4 mb-3">
+                                <label asp-for="Inquilino.EstadoCivil" class="form-label"></label>
+                                <select asp-for="Inquilino.EstadoCivil" class="form-select">
+                                    <option value="">Selecione...</option>
+                                    <option value="S">Solteiro(a)</option>
+                                    <option value="C">Casado(a)</option>
+                                    <option value="D">Divorciado(a)</option>
+                                    <option value="V">Viúvo(a)</option>
+                                    <option value="U">União Estável</option>
+                                </select>
+                                <span asp-validation-for="Inquilino.EstadoCivil" class="text-danger small"></span>
+                            </div>
+                            <div class="col-md-4 mb-3">
+                                <label asp-for="Inquilino.Profissao" class="form-label"></label>
+                                <input asp-for="Inquilino.Profissao" class="form-control" />
+                                <span asp-validation-for="Inquilino.Profissao" class="text-danger small"></span>
+                            </div>
+                        </div>
+
+                        <hr class="my-4" />
+                        <h6 class="text-muted mb-3">Endereço & Segurança</h6>
+
+                        <div class="row">
+                            <div class="col-md-3 mb-3">
+                                <label asp-for="Inquilino.Cep" class="form-label"></label>
+                                <input asp-for="Inquilino.Cep" class="form-control" placeholder="00000-000" />
+                                <span asp-validation-for="Inquilino.Cep" class="text-danger small"></span>
+                            </div>
+                            <div class="col-md-7 mb-3">
+                                <label asp-for="Inquilino.Logradouro" class="form-label"></label>
+                                <input asp-for="Inquilino.Logradouro" class="form-control" />
+                                <span asp-validation-for="Inquilino.Logradouro" class="text-danger small"></span>
+                            </div>
+                            <div class="col-md-2 mb-3">
+                                <label asp-for="Inquilino.Numero" class="form-label"></label>
+                                <input asp-for="Inquilino.Numero" class="form-control" />
+                                <span asp-validation-for="Inquilino.Numero" class="text-danger small"></span>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-5 mb-3">
+                                <label asp-for="Inquilino.Bairro" class="form-label"></label>
+                                <input asp-for="Inquilino.Bairro" class="form-control" />
+                                <span asp-validation-for="Inquilino.Bairro" class="text-danger small"></span>
+                            </div>
+                            <div class="col-md-5 mb-3">
+                                <label asp-for="Inquilino.Cidade" class="form-label"></label>
+                                <input asp-for="Inquilino.Cidade" class="form-control" />
+                                <span asp-validation-for="Inquilino.Cidade" class="text-danger small"></span>
+                            </div>
+                            <div class="col-md-2 mb-3">
+                                <label asp-for="Inquilino.Uf" class="form-label"></label>
+                                <input asp-for="Inquilino.Uf" class="form-control" placeholder="UF" maxlength="2" />
+                                <span asp-validation-for="Inquilino.Uf" class="text-danger small"></span>
+                            </div>
+                        </div>
+
+                        <div class="row bg-light p-2 rounded border">
+                            <div class="col-md-6">
+                                <label asp-for="Inquilino.Senha" class="form-label"></label>
+                                <input asp-for="Inquilino.Senha" type="password" class="form-control" />
+                                <span asp-validation-for="Inquilino.Senha" class="text-danger small"></span>
+                            </div>
+                            <div class="col-md-6">
+                                <label asp-for="Inquilino.ConfirmaSenha" class="form-label"></label>
+                                <input asp-for="Inquilino.ConfirmaSenha" type="password" class="form-control" />
+                                <span asp-validation-for="Inquilino.ConfirmaSenha" class="text-danger small"></span>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="d-grid gap-2">
+                    <button type="submit" class="btn btn-success btn-lg py-3">
+                        <i class="fa fa-check-circle"></i> Alugar Imóvel
+                    </button>
+                </div>
+            </div>
+        </div>
+    </form>
 </div>
 
 @section Scripts {
-    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+
+    <script>
+        $(document).ready(function(){
+            // Exemplo simples se você tiver a lib de mascara
+            // $('#cpfField').mask('000.000.000-00');
+            // $('#Inquilino_Cep').mask('00000-000');
+        });
+    </script>
 }

@@ -5,32 +5,32 @@ using GestaoAluguelWeb.Helpers;
 using GestaoAluguelWeb.Models;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.Rendering;
-using Service;
+using System.Transactions; // Necessário para TransactionScope
 
 namespace GestaoAluguelWeb.Controllers
 {
     [Authorize]
     public class LocacaoController : Controller
     {
-
         private readonly ILocacaoService LocacaoService;
         private readonly IImovelService imovelService;
+        private readonly IPessoaService pessoaService; // Serviço de Pessoa injetado
         private readonly IMapper mapper;
 
-        public LocacaoController(ILocacaoService locacaoService, IImovelService imovelService, IMapper mapper)
+        public LocacaoController(ILocacaoService locacaoService, IImovelService imovelService, IPessoaService pessoaService, IMapper mapper)
         {
             this.LocacaoService = locacaoService;
             this.imovelService = imovelService;
+            this.pessoaService = pessoaService;
             this.mapper = mapper;
         }
 
         // GET: LocacaoController
         public IActionResult Index()
         {
-            var locacoes = LocacaoService.GetAll(); // retorna List<Core.Locacao>
-            var locacoesModel = mapper.Map<List<LocacaoModel>>(locacoes); // mapeia para List<LocacaoModel>
-            return View(locacoesModel); // passa o model correto para a view
+            var locacoes = LocacaoService.GetAll();
+            var locacoesModel = mapper.Map<List<LocacaoModel>>(locacoes);
+            return View(locacoesModel);
         }
 
         // GET: LocacaoController/Details/5
@@ -45,9 +45,7 @@ namespace GestaoAluguelWeb.Controllers
         public ActionResult Create(int? idImovel)
         {
             var locacaoModel = new LocacaoModel();
-
             if (idImovel.HasValue)
-
                 locacaoModel.IdImovel = idImovel.Value;
 
             return View(locacaoModel);
@@ -91,21 +89,76 @@ namespace GestaoAluguelWeb.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Create(LocacaoModel locacaoModel)
         {
+            // Removemos o erro do IdInquilino do ModelState, pois ele virá 0 e nós vamos resolver isso agora
+            ModelState.Remove("IdInquilino");
+
+            // Valida se o resto (Dados da locação + Dados da Pessoa) estão corretos
             if (ModelState.IsValid)
             {
-                var locacao = mapper.Map<Locacao>(locacaoModel);
-                LocacaoService.Create(locacao);
-
-                // Atualiza o imóvel para "alugado"
-                var imovel = imovelService.Get(locacaoModel.IdImovel);
-                if (imovel != null)
+                using (var transaction = new TransactionScope(TransactionScopeAsyncFlowOption.Enabled))
                 {
-                    imovel.EstaAlugado = 1;
-                    imovelService.Edit(imovel);
-                }
+                    try
+                    {
+                        // 1. Tenta buscar a pessoa pelo CPF digitado na tela
+                        var pessoaExistente = pessoaService.GetByCpf(locacaoModel.Inquilino.Cpf);
+                        int idPessoaFinal;
 
-                return RedirectToAction(nameof(Index));
+                        if (pessoaExistente == null)
+                        {
+                            // --- CENÁRIO: PESSOA NÃO EXISTE (CRIAR) ---
+
+                            // Mapeia PessoaModel -> Pessoa (Entidade)
+                            var novaPessoa = mapper.Map<Pessoa>(locacaoModel.Inquilino);
+
+                            // Garante ID zero para criação
+                            novaPessoa.Id = 0;
+
+                            // Salva a nova pessoa
+                            pessoaService.Create(novaPessoa);
+
+                            // Pega o ID que o banco gerou
+                            idPessoaFinal = novaPessoa.Id;
+                        }
+                        else
+                        {
+                            // --- CENÁRIO: PESSOA JÁ EXISTE (USAR ID) ---
+                            idPessoaFinal = pessoaExistente.Id;
+
+                            // Opcional: Se quiser atualizar os dados da pessoa existente com o que foi digitado:
+                            // var pessoaAtualizada = mapper.Map(locacaoModel.Inquilino, pessoaExistente);
+                            // pessoaService.Edit(pessoaAtualizada);
+                        }
+
+                        // 2. Prepara a Locação
+                        var locacao = mapper.Map<Locacao>(locacaoModel);
+
+                        // AQUI ESTÁ O SEGREDOS: Atribuímos o ID da pessoa (nova ou velha) na locação
+                        locacao.IdInquilino = idPessoaFinal;
+
+                        LocacaoService.Create(locacao);
+
+                        // 3. Atualiza status do imóvel
+                        var imovel = imovelService.Get(locacaoModel.IdImovel);
+                        if (imovel != null)
+                        {
+                            imovel.EstaAlugado = 1;
+                            imovelService.Edit(imovel);
+                        }
+
+                        // 4. Salva tudo
+                        transaction.Complete();
+
+                        return RedirectToAction(nameof(Index));
+                    }
+                    catch (Exception ex)
+                    {
+                        // Logar o erro ex
+                        ModelState.AddModelError("", "Erro ao salvar: " + ex.Message);
+                    }
+                }
             }
+
+            // Se falhar, retorna a view com os dados para corrigir
             return View(locacaoModel);
         }
 
