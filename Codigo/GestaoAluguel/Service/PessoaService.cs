@@ -107,5 +107,14 @@ namespace Service
                        Telefone = pessoa.Telefone
                    };
         }
+        // ADICIONE A IMPLEMENTAÇÃO:
+        public Pessoa? GetByCpf(string cpf)
+        {
+            // Busca a primeira pessoa que tiver o CPF igual ao informado
+            // Retorna null se não encontrar ninguém.
+            return context.Pessoas
+                          .AsNoTracking() // Opcional: Melhora performance apenas para leitura
+                          .FirstOrDefault(p => p.Cpf == cpf);
+        }
     }
 }
