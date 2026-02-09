@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace GestaoAluguelWeb.Models
 {
@@ -45,5 +46,11 @@ namespace GestaoAluguelWeb.Models
         [Required(ErrorMessage = "O campo é obrigatório.")]
         [StringLength(50, ErrorMessage = "O campo deve ter no máximo 50 caracteres.")]
         public string Bairro { get; set; } = null!;
+
+        [Display(Name = "Foto do imóvel")]
+        public byte[]? Foto { get; set; }
+
+        [NotMapped]
+        public PapelUsuario Papel { get; set; }
     }
 }

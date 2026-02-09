@@ -1,4 +1,5 @@
-﻿@model IEnumerable<Core.Imovel>
+﻿@using GestaoAluguelWeb.Models
+@model IEnumerable<ImovelModel>
 
 @{
     ViewData["Title"] = "Imóveis";
@@ -81,8 +82,9 @@
                             <i class="bi bi-three-dots-vertical"></i>
                         </button>
                         <ul class="dropdown-menu dropdown-menu-end">
-                            <li><a class="dropdown-item" asp-action="Edit" asp-route-id="@item.Id"><i class="bi bi-pencil me-2"></i>Editar</a></li>
-
+                            @if (item.Papel == PapelUsuario.Proprietario){
+                                <li><a class="dropdown-item" asp-action="Edit" asp-route-id="@item.Id"><i class="bi bi-pencil me-2"></i>Editar</a></li>
+                            }
                             <li><a class="dropdown-item" asp-action="Details" asp-route-id="@item.Id"><i class="bi bi-info-circle me-2"></i>Detalhes</a></li>
 
                         </ul>
@@ -107,24 +109,36 @@
                     </p>
 
                     <div class="d-grid gap-2">
-                        @if (item.EstaAlugado == 1)
+                        @if (item.Papel == PapelUsuario.Proprietario)
+                        {
+                            @if (item.EstaAlugado == 1)
+                            {
+
+                                <button class="btn btn-teal shadow-sm" type="button">Extratos</button>
+                                <button class="btn btn-warning shadow-sm" type="button">Chamados de Reparo</button>
+                                <button class="btn btn-danger shadow-sm" type="button">Encerrar Locação</button>
+                                <button class="btn btn-purple shadow-sm" type="button">Enviar cobrança</button>
+                            }
+                            else
+                            {
+
+                                <a class="btn btn-success py-3 fw-bold shadow-sm"
+                                   asp-controller="Locacao"
+                                   asp-action="Create"
+                                   asp-route-idImovel="@item.Id">
+                                    Alugar Imóvel
+                                </a>
+                            }
+                        }
+                        else
                         {
 
                             <button class="btn btn-teal shadow-sm" type="button">Extratos</button>
                             <button class="btn btn-warning shadow-sm" type="button">Chamados de Reparo</button>
-                            <button class="btn btn-danger shadow-sm" type="button">Encerrar Locação</button>
-                            <button class="btn btn-purple shadow-sm" type="button">Enviar cobrança</button>
+                            <button class="btn btn-purple shadow-sm" type="button">Receber cobranças</button>
+
                         }
-                        else
-                        {
-                           
-                            <a class="btn btn-success py-3 fw-bold shadow-sm"
-                               asp-controller="Locacao"
-                               asp-action="Create"
-                               asp-route-idImovel="@item.Id">
-                                Alugar Imóvel
-                            </a>
-                        }
+
                     </div>
                 </div>
             </div>

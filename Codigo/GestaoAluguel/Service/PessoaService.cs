@@ -116,5 +116,12 @@ namespace Service
                           .AsNoTracking() // Opcional: Melhora performance apenas para leitura
                           .FirstOrDefault(p => p.Cpf == cpf);
         }
+
+        // Para edição de pessoa
+        public Pessoa? GetByEmail(string email)
+        {
+            return context.Pessoas
+                          .FirstOrDefault(p => p.Email == email);
+        }
     }
 }

@@ -12,5 +12,6 @@ namespace Core.Service
         IEnumerable<PessoaDTO> GetByNome(string nome);
         Pessoa? GetByCpf(string cpf);
         public Byte[]? GetFoto(int id);
+        public Pessoa? GetByEmail(string email);
     }
 }

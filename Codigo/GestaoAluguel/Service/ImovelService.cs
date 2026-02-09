@@ -1,6 +1,7 @@
 ﻿using Core;
 using Core.DTO;
 using Core.Service;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -52,9 +53,22 @@ namespace Service
                 .ToList();
         }
 
-        public IEnumerable<ImovelDTO> GetByProprietario(int idProprietario)
+        public IEnumerable<Imovel> GetByProprietario(int idProprietario)
         {
-            throw new NotImplementedException();
+            return context.Imovels
+                .Where(imovel => imovel.IdProprietario == idProprietario)
+                .OrderBy(imovel => imovel.Apelido)
+                .ToList();
+        }
+
+        public IEnumerable<Imovel> GetByInquilino(int idInquilino)
+        {
+            return context.Imovels
+                .Where(Imovel => (context.Locacaos
+                       .Where(locacao => locacao.IdInquilino == idInquilino && locacao.IdImovel == Imovel.Id
+                       && locacao.Status == 1).AsNoTracking().ToList()).Count > 0)
+                .OrderBy(imovel => imovel.Apelido)
+                .ToList();
         }
     }
 }

@@ -68,8 +68,6 @@ namespace Service
                        IdImovel = locacao.IdImovel,
                        IdInquilino = locacao.IdInquilino
                    };
-                   
-            IEnumerable<Locacao> locacoes = context.Locacaos;
 
         }
 
