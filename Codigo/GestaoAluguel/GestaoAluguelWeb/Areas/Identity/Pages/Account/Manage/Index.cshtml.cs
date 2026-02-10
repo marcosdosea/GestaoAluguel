@@ -6,9 +6,12 @@ using Core;
 using Core.Service;
 using GestaoAluguelWeb.Areas.Identity.Data;
 using GestaoAluguelWeb.Helpers;
+using GestaoAluguelWeb.Models;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
+using Service;
 using System;
 using System.ComponentModel.DataAnnotations;
 using System.Text.Encodings.Web;
@@ -246,16 +249,36 @@ namespace GestaoAluguelWeb.Areas.Identity.Pages.Account.Manage
                 // Se não existe, instanciamos uma nova
                 pessoa = new Pessoa();
                 pessoa.Email = email; // Garante o vinculo pelo email
-                pessoa.IdUsuario = user.Id; // Vincula o ID do Identity se tiver esse campo
                 ehNovaPessoa = true;
             }
-            // 3. AQUI É O PULO DO GATO: Preenchemos o objeto Pessoa com os dados do Input
 
-            if (Input.ArquivoFoto != null)
+            if(pessoa.IdUsuario == null)
+                pessoa.IdUsuario = user.Id; // Vincula o ID do Identity se não tiver esse campo
+
+            // 3. AQUI É O PULO DO GATO: Preenchemos o objeto Pessoa com os dados do Input
+            // Lógica para tratar o arquivo enviado
+            if (Input.ArquivoFoto != null && Input.ArquivoFoto.Length > 0)
             {
+
+                // --- USANDO O MÉTODO IsValid ---
+                var tiposPermitidos = new[] {
+                FileHelper.FileType.Jpeg,
+                FileHelper.FileType.Png,
+                FileHelper.FileType.Bmp
+
+            };
+
+                if (!FileHelper.IsValid(Input.ArquivoFoto, tiposPermitidos))
+                {
+                    ModelState.AddModelError("Foto", "Tipo de arquivo inválido. Apenas  JPG, PNG e Bmp são permitidos.");
+                    return Page();
+                }
+
                 // Converte e salva na pessoa
                 pessoa.Foto = await FileHelper.ConverterParaBytes(Input.ArquivoFoto);
+
             }
+            
 
             // Dados Pessoais
             pessoa.Nome = Input.Nome;

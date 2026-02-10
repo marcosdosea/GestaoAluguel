@@ -2,14 +2,15 @@
 // The .NET Foundation licenses this file to you under the MIT license.
 #nullable disable
 
-using System;
-using System.ComponentModel.DataAnnotations;
-using System.Threading.Tasks;
+using Core.Service;
 using GestaoAluguelWeb.Areas.Identity.Data;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.Extensions.Logging;
+using System;
+using System.ComponentModel.DataAnnotations;
+using System.Threading.Tasks;
 
 namespace GestaoAluguelWeb.Areas.Identity.Pages.Account.Manage
 {
@@ -18,15 +19,18 @@ namespace GestaoAluguelWeb.Areas.Identity.Pages.Account.Manage
         private readonly UserManager<UsuarioIdentity> _userManager;
         private readonly SignInManager<UsuarioIdentity> _signInManager;
         private readonly ILogger<DeletePersonalDataModel> _logger;
+        private readonly IPessoaService _pessoaService;
 
         public DeletePersonalDataModel(
             UserManager<UsuarioIdentity> userManager,
             SignInManager<UsuarioIdentity> signInManager,
-            ILogger<DeletePersonalDataModel> logger)
+            ILogger<DeletePersonalDataModel> logger,
+            IPessoaService pessoaService)
         {
             _userManager = userManager;
             _signInManager = signInManager;
             _logger = logger;
+            _pessoaService = pessoaService;
         }
 
         /// <summary>
@@ -62,7 +66,7 @@ namespace GestaoAluguelWeb.Areas.Identity.Pages.Account.Manage
             var user = await _userManager.GetUserAsync(User);
             if (user == null)
             {
-                return NotFound($"Unable to load user with ID '{_userManager.GetUserId(User)}'.");
+                return NotFound($"Não foi possivel achar seu usuário no banco.");
             }
 
             RequirePassword = await _userManager.HasPasswordAsync(user);
@@ -74,7 +78,7 @@ namespace GestaoAluguelWeb.Areas.Identity.Pages.Account.Manage
             var user = await _userManager.GetUserAsync(User);
             if (user == null)
             {
-                return NotFound($"Unable to load user with ID '{_userManager.GetUserId(User)}'.");
+                return NotFound($"Não foi possivel achar seu usuário no banco.");
             }
 
             RequirePassword = await _userManager.HasPasswordAsync(user);
@@ -82,16 +86,25 @@ namespace GestaoAluguelWeb.Areas.Identity.Pages.Account.Manage
             {
                 if (!await _userManager.CheckPasswordAsync(user, Input.Password))
                 {
-                    ModelState.AddModelError(string.Empty, "Incorrect password.");
+                    ModelState.AddModelError(string.Empty, "Senha incorreta.");
                     return Page();
                 }
+            }
+
+            int? pessoa = _pessoaService.GetIdByIdUsuario(user.Id);
+            if (pessoa != null)
+            {
+                _pessoaService.Delete(pessoa.Value);
+            } else
+            {
+                _logger.LogWarning("Nenhuma pessoa associada ao usuário com ID '{UserId}' foi encontrada para exclusão.", user.Id);
             }
 
             var result = await _userManager.DeleteAsync(user);
             var userId = await _userManager.GetUserIdAsync(user);
             if (!result.Succeeded)
             {
-                throw new InvalidOperationException($"Unexpected error occurred deleting user.");
+                throw new InvalidOperationException($"Erro inesperado ao apagar usuário.");
             }
 
             await _signInManager.SignOutAsync();

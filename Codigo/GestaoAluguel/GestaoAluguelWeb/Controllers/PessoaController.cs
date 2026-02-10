@@ -35,14 +35,6 @@ namespace GestaoAluguelWeb.Controllers
             this.signInManager = signInManager;
         }
 
-        // GET: PessoaController
-        public ActionResult Index()
-        {
-            var listaPessoas = pessoaService.GetAll();
-            var listaPessoasModel = mapper.Map<List<PessoaModel>>(listaPessoas);
-            return View(listaPessoasModel);
-        }
-
         // GET: PessoaController/Details/5
         public ActionResult Details(int id)
         {

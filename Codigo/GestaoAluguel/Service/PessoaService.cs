@@ -46,7 +46,7 @@ namespace Service
         public void Delete(int id)
         {
             var pessoa = context.Pessoas.Find(id);
-            if(pessoa != null)
+            if (pessoa != null)
             {
                 context.Remove(pessoa);
                 context.SaveChanges();
@@ -122,6 +122,13 @@ namespace Service
         {
             return context.Pessoas
                           .FirstOrDefault(p => p.Email == email);
+        }
+
+        public int? GetIdByIdUsuario(string idUsuario)
+        {
+            var pessoa = context.Pessoas.FirstOrDefault(p => p.IdUsuario == idUsuario);
+            return pessoa != null ? pessoa.Id : -1; // Retorna -1 se não encontrar
+
         }
     }
 }
