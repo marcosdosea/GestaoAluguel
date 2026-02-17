@@ -5,7 +5,8 @@ using GestaoAluguelWeb.Helpers;
 using GestaoAluguelWeb.Models;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using System.Transactions; // Necessário para TransactionScope
+using Microsoft.AspNetCore.Identity;
+using GestaoAluguelWeb.Areas.Identity.Data;
 
 namespace GestaoAluguelWeb.Controllers
 {
@@ -16,13 +17,15 @@ namespace GestaoAluguelWeb.Controllers
         private readonly IImovelService imovelService;
         private readonly IPessoaService pessoaService; // Serviço de Pessoa injetado
         private readonly IMapper mapper;
+        private readonly UserManager<UsuarioIdentity> userManager;
 
-        public LocacaoController(ILocacaoService locacaoService, IImovelService imovelService, IPessoaService pessoaService, IMapper mapper)
+        public LocacaoController(ILocacaoService locacaoService, IImovelService imovelService, IPessoaService pessoaService, IMapper mapper, UserManager<UsuarioIdentity> userManager)
         {
             this.LocacaoService = locacaoService;
             this.imovelService = imovelService;
             this.pessoaService = pessoaService;
             this.mapper = mapper;
+            this.userManager = userManager;
         }
 
         // GET: LocacaoController
@@ -87,7 +90,7 @@ namespace GestaoAluguelWeb.Controllers
         // POST: LocacaoController/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create(LocacaoModel locacaoModel)
+        public async Task<ActionResult> Create(LocacaoModel locacaoModel)
         {
             // Removemos o erro do IdInquilino do ModelState, pois ele virá 0 e nós vamos resolver isso agora
             ModelState.Remove("IdInquilino");
@@ -95,66 +98,112 @@ namespace GestaoAluguelWeb.Controllers
             // Valida se o resto (Dados da locação + Dados da Pessoa) estão corretos
             if (ModelState.IsValid)
             {
-                using (var transaction = new TransactionScope(TransactionScopeAsyncFlowOption.Enabled))
+                try
                 {
-                    try
+                    // 1. Tenta buscar a pessoa pelo CPF digitado na tela
+                    var pessoaExistente = pessoaService.GetByCpf(locacaoModel.Inquilino.Cpf);
+                    int idPessoaFinal;
+
+                    if (pessoaExistente == null)
                     {
-                        // 1. Tenta buscar a pessoa pelo CPF digitado na tela
-                        var pessoaExistente = pessoaService.GetByCpf(locacaoModel.Inquilino.Cpf);
-                        int idPessoaFinal;
+                        // --- CENÁRIO: PESSOA NÃO EXISTE (CRIAR) ---
 
-                        if (pessoaExistente == null)
+                        // Mapeia PessoaModel -> Pessoa (Entidade)
+                        var novaPessoa = mapper.Map<Pessoa>(locacaoModel.Inquilino);
+
+                        // Garante ID zero para criação
+                        novaPessoa.Id = 0;
+
+                        // Salva a nova pessoa
+                        pessoaService.Create(novaPessoa);
+
+                        // Pega o ID que o banco gerou
+                        idPessoaFinal = novaPessoa.Id;
+                    }
+                    else
+                    {
+                        // --- CENÁRIO: PESSOA JÁ EXISTE (USAR ID) ---
+                        idPessoaFinal = pessoaExistente.Id;
+                    }
+
+                    // 2. Verifica se a pessoa já tem usuário, se não, cria e associa
+                    var pessoaParaUsuario = pessoaService.Get(idPessoaFinal);
+                    if (pessoaParaUsuario != null && string.IsNullOrEmpty(pessoaParaUsuario.IdUsuario))
+                    {
+                        UsuarioIdentity usuarioExistente = null;
+                        if (!string.IsNullOrEmpty(pessoaParaUsuario.Email))
                         {
-                            // --- CENÁRIO: PESSOA NÃO EXISTE (CRIAR) ---
+                             usuarioExistente = await userManager.FindByEmailAsync(pessoaParaUsuario.Email);
+                        }
 
-                            // Mapeia PessoaModel -> Pessoa (Entidade)
-                            var novaPessoa = mapper.Map<Pessoa>(locacaoModel.Inquilino);
+                        if (usuarioExistente != null)
+                        {
+                            // CORREÇÃO AUTOMÁTICA: O Login exige que UserName == Email.
+                            if (usuarioExistente.UserName != usuarioExistente.Email)
+                            {
+                                usuarioExistente.UserName = usuarioExistente.Email;
+                                await userManager.UpdateNormalizedUserNameAsync(usuarioExistente);
+                                await userManager.UpdateAsync(usuarioExistente);
+                            }
 
-                            // Garante ID zero para criação
-                            novaPessoa.Id = 0;
-
-                            // Salva a nova pessoa
-                            pessoaService.Create(novaPessoa);
-
-                            // Pega o ID que o banco gerou
-                            idPessoaFinal = novaPessoa.Id;
+                            // USUÁRIO JÁ EXISTE: Apenas associa
+                            pessoaParaUsuario.IdUsuario = usuarioExistente.Id;
+                            pessoaService.Edit(pessoaParaUsuario);
                         }
                         else
                         {
-                            // --- CENÁRIO: PESSOA JÁ EXISTE (USAR ID) ---
-                            idPessoaFinal = pessoaExistente.Id;
+                            // USUÁRIO NÃO EXISTE: Cria novo
+                            // Cria usuário com CPF (apenas números)
+                            var cpfLimpo = string.Join("", System.Text.RegularExpressions.Regex.Split(pessoaParaUsuario.Cpf, @"[^\d]"));
+                            var novoUsuario = new UsuarioIdentity 
+                            { 
+                                UserName = pessoaParaUsuario.Email, 
+                                Email = pessoaParaUsuario.Email,
+                                EmailConfirmed = true 
+                            };
 
-                            // Opcional: Se quiser atualizar os dados da pessoa existente com o que foi digitado:
-                            // var pessoaAtualizada = mapper.Map(locacaoModel.Inquilino, pessoaExistente);
-                            // pessoaService.Edit(pessoaAtualizada);
+                            // Usa a senha fornecida no formulário ou uma padrão caso venha nulo (segurança)
+                            string senhaParaUsuario = !string.IsNullOrWhiteSpace(locacaoModel.Inquilino.Senha) 
+                                ? locacaoModel.Inquilino.Senha 
+                                : "Mudar@123"; 
+
+                            var result = await userManager.CreateAsync(novoUsuario, senhaParaUsuario);
+
+                            if (result.Succeeded)
+                            {
+                                pessoaParaUsuario.IdUsuario = novoUsuario.Id;
+                                pessoaService.Edit(pessoaParaUsuario);
+                            }
+                            else
+                            {
+                                // Lança exceção para cancelar a transação (se houvesse) e mostrar erro
+                                throw new Exception("Erro ao criar usuário automático: " + string.Join(", ", result.Errors.Select(e => e.Description)));
+                            }
                         }
-
-                        // 2. Prepara a Locação
-                        var locacao = mapper.Map<Locacao>(locacaoModel);
-
-                        // AQUI ESTÁ O SEGREDOS: Atribuímos o ID da pessoa (nova ou velha) na locação
-                        locacao.IdInquilino = idPessoaFinal;
-
-                        LocacaoService.Create(locacao);
-
-                        // 3. Atualiza status do imóvel
-                        var imovel = imovelService.Get(locacaoModel.IdImovel);
-                        if (imovel != null)
-                        {
-                            imovel.EstaAlugado = 1;
-                            imovelService.Edit(imovel);
-                        }
-
-                        // 4. Salva tudo
-                        transaction.Complete();
-
-                        return RedirectToAction(nameof(Index));
                     }
-                    catch (Exception ex)
+
+                    // 3. Prepara a Locação
+                    var locacao = mapper.Map<Locacao>(locacaoModel);
+
+                    // AQUI ESTÁ O SEGREDOS: Atribuímos o ID da pessoa (nova ou velha) na locação
+                    locacao.IdInquilino = idPessoaFinal;
+
+                    LocacaoService.Create(locacao);
+
+                    // 4. Atualiza status do imóvel
+                    var imovel = imovelService.Get(locacaoModel.IdImovel);
+                    if (imovel != null)
                     {
-                        // Logar o erro ex
-                        ModelState.AddModelError("", "Erro ao salvar: " + ex.Message);
+                        imovel.EstaAlugado = 1;
+                        imovelService.Edit(imovel);
                     }
+
+                    return RedirectToAction(nameof(Index));
+                }
+                catch (Exception ex)
+                {
+                    // Logar o erro ex
+                    ModelState.AddModelError("", "Erro ao salvar: " + ex.Message);
                 }
             }
 
@@ -194,9 +243,9 @@ namespace GestaoAluguelWeb.Controllers
         }
 
         // POST: LocacaoController/Delete/5
-        [HttpPost]
+        [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
-        public ActionResult Delete(int id, IFormCollection collection)
+        public ActionResult DeleteConfirmed(int id)
         {
             LocacaoService.Delete(id);
             return RedirectToAction(nameof(Index));
