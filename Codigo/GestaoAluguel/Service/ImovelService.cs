@@ -64,11 +64,23 @@ namespace Service
         public IEnumerable<Imovel> GetByInquilino(int idInquilino)
         {
             return context.Imovels
-                .Where(Imovel => (context.Locacaos
-                       .Where(locacao => locacao.IdInquilino == idInquilino && locacao.IdImovel == Imovel.Id
-                       && locacao.Status == 1).AsNoTracking().ToList()).Count > 0)
+                .Where(Imovel => (
+                        context.Locacaos
+                       .Where(locacao => locacao.IdInquilino == idInquilino 
+                              && locacao.IdImovel == Imovel.Id
+                              && locacao.Status == 1).AsNoTracking().ToList()).Count > 0)
                 .OrderBy(imovel => imovel.Apelido)
                 .ToList();
         }
+
+        public Byte[]? GetFoto(int id)
+        {
+            return context.Imovels
+                .AsNoTracking()
+                .Where(i => i.Id == id)
+                .Select(i => i.Foto)
+                .FirstOrDefault();
+        }
+
     }
 }

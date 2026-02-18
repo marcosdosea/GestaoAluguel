@@ -77,12 +77,12 @@
 
                 <div class="col-md-4 form-group mb-3">
                     <label asp-for="Cep" class="control-label"></label>
-                    <input asp-for="Cep" class="form-control" />
+                    <input asp-for="Cep" class="form-control" placeholder="00000-000" />
                     <span asp-validation-for="Cep" class="text-danger"></span>
                 </div>
 
                 <div class="col-md-4 form-group mb-3">
-                    <label asp-for="Uf" class="control-label"></label>
+                    <label asp-for="Uf" class="control-label">UF</label>
                     <select id="UF" name="UF" class="form-control">
                         <option value="AC">Acre</option>
                         <option value="AL">Alagoas</option>

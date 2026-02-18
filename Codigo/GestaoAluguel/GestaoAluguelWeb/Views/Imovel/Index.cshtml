@@ -1,4 +1,5 @@
-﻿@using GestaoAluguelWeb.Models
+﻿@using GestaoAluguelWeb.Helpers
+@using GestaoAluguelWeb.Models
 @model IEnumerable<ImovelModel>
 
 @{
@@ -63,10 +64,8 @@
 
         if (item.Foto != null && item.Foto.Length > 0)
         {
-            // Converte os bytes do banco para Base64 string
-            string base64 = Convert.ToBase64String(item.Foto);
-            // Monta o formato que o navegador entende
-            imagemSrc = $"data:image/jpeg;base64,{base64}";
+
+            imagemSrc = FileHelper.GetDataUrl(item.Foto);
         }
         else
         {

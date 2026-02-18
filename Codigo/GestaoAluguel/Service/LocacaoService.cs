@@ -74,7 +74,7 @@ namespace Service
         public IEnumerable<LocacaoDTO> GetByInquilino(int idInquilino)
         {
             return from locacao in context.Locacaos
-                   where locacao.IdImovel == idInquilino
+                   where locacao.IdInquilino == idInquilino
                    select new LocacaoDTO
                    {
                        Id = locacao.Id,
@@ -85,5 +85,22 @@ namespace Service
                        IdInquilino = locacao.IdInquilino
                    };
         }
+
+        public IEnumerable<LocacaoDTO> GetAtivasByInquilino(int idInquilino)
+        {
+            return from locacao in context.Locacaos
+                   where locacao.IdInquilino == idInquilino
+                   && locacao.Status == 1
+                   select new LocacaoDTO
+                   {
+                       Id = locacao.Id,
+                       DataInicio = locacao.DataInicio,
+                       DataFim = locacao.DataFim,
+                       Status = locacao.Status,
+                       IdImovel = locacao.IdImovel,
+                       IdInquilino = locacao.IdInquilino
+                   };
+        }
+
     }
 }

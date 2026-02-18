@@ -10,6 +10,7 @@ namespace GestaoAluguelWeb.Areas.Identity.Data;
 public class UsuarioIdentity : IdentityUser
 {
     public int? idPessoa;
+    public byte[]? Foto;
 
 }
 

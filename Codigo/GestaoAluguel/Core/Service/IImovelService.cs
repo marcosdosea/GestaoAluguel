@@ -11,5 +11,6 @@ namespace Core.Service
         IEnumerable<Imovel> GetAll();
         IEnumerable<Imovel> GetByProprietario(int idProprietario);
         IEnumerable<Imovel> GetByInquilino(int idInquilino);
+        public Byte[]? GetFoto(int id);
     }
 }

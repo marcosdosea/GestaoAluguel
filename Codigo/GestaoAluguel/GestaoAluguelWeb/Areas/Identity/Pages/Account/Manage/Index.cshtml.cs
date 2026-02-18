@@ -179,7 +179,7 @@ namespace GestaoAluguelWeb.Areas.Identity.Pages.Account.Manage
                 Nome = pessoa?.Nome,
                 Cpf = pessoa?.Cpf,
                 Rg = pessoa?.Rg,
-                Telefone = pessoa?.Telefone,
+                Telefone = pessoa?.Telefone == null ? phoneNumber : pessoa?.Telefone,
                 EstadoCivil = pessoa?.EstadoCivil,
                 Profissao = pessoa?.Profissao,
 
