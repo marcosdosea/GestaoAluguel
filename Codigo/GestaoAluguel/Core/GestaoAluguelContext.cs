@@ -143,7 +143,7 @@ public partial class GestaoAluguelContext : DbContext
                 .HasColumnName("estaAlugado");
             entity.Property(e => e.Foto)
                 .HasDefaultValueSql("'NULL'")
-                .HasColumnType("blob")
+                .HasColumnType("longblob")
                 .HasColumnName("foto");
             entity.Property(e => e.IdProprietario)
                 .HasColumnType("int(10) unsigned")

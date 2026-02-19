@@ -30,9 +30,19 @@
         }
 
     .card-img-top {
-        height: 200px;
-        object-fit: cover;
+        width: 100%; /* OBRIGA a ocupar a largura do card, nem mais, nem menos */
+        height: 200px; /* Fixa a altura pra todas ficarem iguais */
+        object-fit: cover; /* Corta o excesso para preencher o quadrado sem esticar */
+        object-position: center; /* Garante que o centro da foto (o rosto/casa) apareça */
         background-color: #e9ecef;
+        display: block; /* Remove espacinhos brancos fantasmas embaixo da imagem */
+        image-orientation: from-image;
+    }
+
+    /* Opcional: Efeito suave ao passar o mouse */
+    .card:hover .card-img-top {
+        opacity: 0.9;
+        transition: opacity 0.3s;
     }
 
     .fab-container {
@@ -70,7 +80,8 @@
         else
         {
             // Se não tiver foto, usa o placeholder que você já tinha
-            imagemSrc = $"https://placehold.co/600x400/e9ecef/6c757d?text={item.Apelido}";
+            var textoPlaceholder = System.Net.WebUtility.UrlEncode(item.Apelido ?? "Imovel");
+            imagemSrc = $"https://placehold.co/600x400/e9ecef/6c757d?text={textoPlaceholder}";
         }
         <div class="col">
             <div class="card h-100 shadow-sm border-0">
@@ -90,7 +101,29 @@
                     </div>
                 </div>
 
-                <img src="@imagemSrc" class="card-img-top" alt="Imagem do Imóvel @item.Apelido">
+                <div class="card-img-top position-relative" style="height: 200px; width: 100%; background-color: #e9ecef; overflow: hidden;">
+
+                    @* A Imagem fica presa aqui dentro *@
+                    <img src="@imagemSrc"
+                         alt="Imagem de @item.Apelido"
+                         style="width: 100%; height: 100%; object-fit: cover; object-position: center; border: none; display: block;">
+
+                    @* O Menu flutuante continua por cima *@
+                    <div class="position-absolute top-0 end-0 p-2">
+                        <div class="dropdown">
+                            <button class="btn btn-light btn-sm rounded-circle shadow-sm opacity-75" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                <i class="bi bi-three-dots-vertical"></i>
+                            </button>
+                            <ul class="dropdown-menu dropdown-menu-end">
+                                @if (item.Papel == PapelUsuario.Proprietario)
+                                {
+                                    <li><a class="dropdown-item" asp-action="Edit" asp-route-id="@item.Id"><i class="bi bi-pencil me-2"></i>Editar</a></li>
+                                }
+                                <li><a class="dropdown-item" asp-action="Details" asp-route-id="@item.Id"><i class="bi bi-info-circle me-2"></i>Detalhes</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
 
                 <div class="card-body">
                     <h5 class="card-title fw-bold">@item.Apelido</h5>
