@@ -83,14 +83,14 @@
                     <div class="row">
                         <div class="col-md-6 mb-3">
                             <div class="form-floating">
-                                <input asp-for="Input.EstadoCivil" class="form-control" placeholder="Estado Civil" />
-                                <select id="EstadoCivil" name="EstadoCivil" class="form-control">
+                                <select id="EstadoCivil" name="EstadoCivil" class="form-select">
                                     <option value="S">Solteiro(a)</option>
                                     <option value="C">Casado(a)</option>
                                     <option value="D">Divorciado(a)</option>
                                     <option value="U">União Estável</option>
                                     <option value="V">Viúvo(a)</option>
                                 </select>
+                                <label asp-for="Input.EstadoCivil"></label>
                                 <span asp-validation-for="Input.EstadoCivil" class="text-danger"></span>
                             </div>
                         </div>
@@ -165,7 +165,7 @@
                 <div class="col-md-1 mb-3">
                     <div class="form-floating">
                         <input asp-for="Input.Uf" class="form-control" placeholder="UF" />
-                        <select id="UF" name="UF" class="form-control">
+                        <select id="UF" name="UF" class="form-select">
                             <option value="AC">Acre</option>
                             <option value="AL">Alagoas</option>
                             <option value="AP">Amapá</option>

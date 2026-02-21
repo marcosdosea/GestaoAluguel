@@ -121,7 +121,25 @@ namespace Service
         public Pessoa? GetByEmail(string email)
         {
             return context.Pessoas
-                          .FirstOrDefault(p => p.Email == email);
+                .FirstOrDefault(p => p.Email == email);
+        }
+
+        public Pessoa? GetByEmailAsNoTracking(string email)
+        {
+            return context.Pessoas
+                .AsNoTracking()
+                .FirstOrDefault(p => p.Email == email);
+        }
+
+        public Boolean ExistsPessoaByCpf(string cpf)
+        {
+            return context.Pessoas
+                .Any(p => p.Cpf == cpf);
+        }
+        public Boolean ExistsPessoaByEmail(string email)
+        {
+            return context.Pessoas
+                          .Any(p => p.Email == email);
         }
 
         public int? GetIdByIdUsuario(string idUsuario)

@@ -1,66 +1,127 @@
-﻿@model GestaoAluguelWeb.Models.ImovelModel
+﻿@using GestaoAluguelWeb.Helpers
+@model GestaoAluguelWeb.Models.ImovelModel
 
 @{
-    ViewData["Title"] = "Details";
+    ViewData["Title"] = "Detalhes do Imóvel";
+
+    // --- LÓGICA DA IMAGEM PARA DETALHES ---
+    string imagemSrc = "";
+    if (Model.Foto != null && Model.Foto.Length > 0)
+    {
+        // Tenta usar o Helper, se falhar, vai no modo bruto (JPEG)
+        imagemSrc = FileHelper.GetDataUrl(Model.Foto);
+    }
+    else
+    {
+        var texto = System.Net.WebUtility.UrlEncode(Model.Apelido ?? "Imovel");
+        imagemSrc = $"https://placehold.co/800x400/e9ecef/6c757d?text={texto}";
+    }
 }
 
-<h1>Details</h1>
+<div class="container py-4">
+    @* --- CABEÇALHO COM FOTO E TÍTULO --- *@
+    <div class="card border-0 shadow-sm overflow-hidden mb-4">
+        <div class="row g-0">
+            @* Coluna da Imagem *@
+            <div class="col-md-5 bg-light position-relative" style="min-height: 300px;">
+                @* A Blindagem que a gente criou, agora adaptada pro layout lateral *@
+                <img src="@imagemSrc"
+                     alt="Foto de @Model.Apelido"
+                     style="width: 100%; height: 100%; object-fit: cover; position: absolute; top:0; left:0;">
+            </div>
 
-<div>
-    <h4>ImovelModel</h4>
-    <hr />
-    <dl class="row">
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Id)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Id)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Apelido)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Apelido)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Logradouro)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Logradouro)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Uf)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Uf)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Cep)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Cep)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Numero)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Numero)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Cidade)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Cidade)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Bairro)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Bairro)
-        </dd>
-    </dl>
+            @* Coluna das Informações Principais *@
+            <div class="col-md-7">
+                <div class="card-body p-4 d-flex flex-column h-100 justify-content-center">
+                    <div class="d-flex justify-content-between align-items-start mb-2">
+                        <h2 class="card-title fw-bold text-primary mb-0">@Model.Apelido</h2>
+                        @if (Model.EstaAlugado == 1)
+                        {
+                            <span class="badge bg-success fs-6 rounded-pill">Alugado</span>
+                        }
+                        else
+                        {
+                            <span class="badge bg-secondary fs-6 rounded-pill">Disponível</span>
+                        }
+                    </div>
+
+                    <p class="card-text text-muted mb-4">
+                        <i class="bi bi-geo-alt-fill me-2 text-danger"></i>
+                        @Model.Logradouro, @Model.Numero - @Model.Bairro<br>
+                        @Model.Cidade - @Model.Uf | CEP: @Model.Cep
+                    </p>
+
+                    <div class="row text-center g-2 mb-4">
+                        <div class="col-4">
+                            <div class="border rounded p-2 bg-light">
+                                <i class="bi bi-arrows-fullscreen text-primary d-block mb-1"></i>
+                            </div>
+                        </div>
+                        @* Adicione aqui Quartos/Banheiros se tiver no model *@
+                    </div>
+
+                    <div class="mt-auto">
+                        @if (Model.Papel == GestaoAluguelWeb.Models.PapelUsuario.Proprietario)
+                        {
+
+                            <a asp-action="Edit" asp-route-id="@Model.Id" class="btn btn-primary px-4 me-2">
+                                <i class="bi bi-pencil-square me-2"></i>Editar
+                            </a>
+
+                        }
+                        <a asp-action="Index" class="btn btn-outline-secondary">
+                            <i class="bi bi-arrow-left me-2"></i>Voltar
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    @* --- ÁREA DE AÇÕES RÁPIDAS (BOTÕES COLORIDOS) --- *@
+    <div class="row g-4">
+        @if (Model.EstaAlugado == 1)
+        {
+            <div class="col-md-4">
+                <div class="card h-100 border-0 shadow-sm p-3 text-center hover-card">
+                    <div class="card-body">
+                        <div class="icon-box bg-warning bg-opacity-10 text-warning mb-3 mx-auto rounded-circle d-flex align-items-center justify-content-center" style="width: 60px; height: 60px;">
+                            <i class="bi bi-tools fs-3"></i>
+                        </div>
+                        <h5>Chamados</h5>
+                        <p class="text-muted small">Ver solicitações de reparo</p>
+                        <a href="#" class="btn btn-outline-warning btn-sm stretched-link">Acessar</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card h-100 border-0 shadow-sm p-3 text-center hover-card">
+                    <div class="card-body">
+                        <div class="icon-box bg-info bg-opacity-10 text-info mb-3 mx-auto rounded-circle d-flex align-items-center justify-content-center" style="width: 60px; height: 60px;">
+                            <i class="bi bi-cash-coin fs-3"></i>
+                        </div>
+                        <h5>Pagamentos</h5>
+                        <p class="text-muted small">Histórico financeiro</p>
+                        <a href="#" class="btn btn-outline-info btn-sm stretched-link">Ver Extrato</a>
+                    </div>
+                </div>
+            </div>
+        }
+        else
+        {
+            <a class="btn btn-success py-3 fw-bold shadow-sm"
+               asp-controller="Locacao"
+               asp-action="Create"
+               asp-route-idImovel="@Model.Id">
+                Alugar Imóvel
+            </a>
+        }
+    </div>
 </div>
-<div>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
-    <a asp-action="Index">Back to List</a>
-</div>
+
+<style>
+    .hover-card:hover {
+        transform: translateY(-5px);
+        transition: transform 0.3s ease;
+    }
+</style>

@@ -8,6 +8,7 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
+using Microsoft.EntityFrameworkCore;
 using Service;
 
 namespace GestaoAluguelWeb.Controllers
@@ -230,9 +231,17 @@ namespace GestaoAluguelWeb.Controllers
         // GET: ImovelController/Delete/5
         public ActionResult Delete(int id)
         {
-            var imovel = ImovelService.Get(id);
+            Imovel? imovel = ImovelService.Get(id);
+            if (imovel == null) return NotFound();
+
+            // SEGURANÇA EM UMA LINHA:
+            // Verifica se o ID do dono do imóvel é igual ao ID que está no Cookie
+            if (imovel.IdProprietario != GetPessoaIdLogada())
+            {
+                return Forbid(); // Ou Redirect para página de "Sem Permissão"
+            }
             ImovelModel imovelModel = mapper.Map<ImovelModel>(imovel);
-            return View();
+            return View(imovelModel);
         }
 
         // POST: ImovelController/Delete/5
@@ -240,7 +249,29 @@ namespace GestaoAluguelWeb.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Delete(int id, ImovelModel imovelModel)
         {
-            ImovelService.Delete(id);
+            Imovel? imovel = ImovelService.GetComLocacoes(id);
+            if (imovel == null) return NotFound();
+
+            // SEGURANÇA EM UMA LINHA:
+            // Verifica se o ID do dono do imóvel é igual ao ID que está no Cookie
+            if (imovelModel.IdProprietario != GetPessoaIdLogada() || imovel.IdProprietario != GetPessoaIdLogada())
+            {
+                return Forbid(); // Ou Redirect para página de "Sem Permissão"
+            }
+
+            // VERIFICA SE EXISTE ALGUMA LOCAÇÃO ATIVA PARA ESSE IMÓVEL
+            // 2. A Lógica Mágica: Tem locação atrelada?
+            if (imovel.Locacaos != null && imovel.Locacaos.Any())
+            {
+                // EXCLUSÃO LÓGICA: Tem histórico! A gente só "esconde" ele do sistema.
+                // Miga, se você não tiver o campo "Ativo", crie no model e no banco!
+                imovel.Ativo = 0;
+                ImovelService.Edit(imovel);
+            }
+            else
+            {
+                ImovelService.Delete(id);
+            }
             return RedirectToAction(nameof(Index));
         }
     }

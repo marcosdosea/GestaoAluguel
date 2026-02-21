@@ -25,6 +25,8 @@ public partial class Imovel
 
     public byte[]? Foto { get; set; }
 
+    public sbyte Ativo { get; set; }
+
     public int IdProprietario { get; set; }
 
     public virtual ICollection<Chamadoreparo> Chamadoreparos { get; set; } = new List<Chamadoreparo>();

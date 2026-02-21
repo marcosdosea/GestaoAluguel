@@ -8,6 +8,7 @@ namespace Core.Service
         void Edit(Imovel imovel);
         void Delete(int id);
         Imovel? Get(int id);
+        Imovel? GetComLocacoes(int id);
         IEnumerable<Imovel> GetAll();
         IEnumerable<Imovel> GetByProprietario(int idProprietario);
         IEnumerable<Imovel> GetByInquilino(int idInquilino);

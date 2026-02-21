@@ -46,6 +46,12 @@ namespace Service
             return context.Imovels.Find(id);
         }
 
+        public Imovel? GetComLocacoes(int id)
+        {
+            return context.Imovels.Include(i => i.Locacaos).Where(i => i.Id == id).First();
+        }
+
+
         public IEnumerable<Imovel> GetAll()
         {
             return context.Imovels

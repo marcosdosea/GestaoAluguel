@@ -13,6 +13,9 @@ namespace Core.Service
         Pessoa? GetByCpf(string cpf);
         public Byte[]? GetFoto(int id);
         public Pessoa? GetByEmail(string email);
+        Pessoa? GetByEmailAsNoTracking(string email);
         public int? GetIdByIdUsuario(string idUsuario);
+        public Boolean ExistsPessoaByCpf(string cpf);
+        public Boolean ExistsPessoaByEmail(string email);
     }
 }

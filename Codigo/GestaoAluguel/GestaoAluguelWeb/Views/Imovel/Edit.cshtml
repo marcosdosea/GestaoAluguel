@@ -5,7 +5,7 @@
     ViewData["Title"] = "Create";
 }
 
-<h1>Cadastrar Imóvel</h1>
+<h1>Editar Imóvel</h1>
 
 <hr />
 
@@ -30,7 +30,7 @@
 
 <div class="container py-4">
     <div class="row justify-content-center">
-        <div class="col-lg-10">
+        <div class="col-lg-12">
             <div class="card border-0 shadow rounded-3">
                 <div class="card-header bg-primary text-white py-3">
                     <h4 class="mb-0"><i class="bi bi-house-add me-2"></i>Dados do Imóvel</h4>
@@ -49,7 +49,7 @@
                                 <label asp-for="Foto" class="form-label fw-bold"></label>
                                 <div class="row">
 
-                                    <img src= src="@imgSrc"
+                                    <img src="@imgSrc"
                                          alt="Imagem de @Model.Apelido" class="img-thumbnail mb-2" style="width: 150px; height: 150px; object-fit: cover;" />
                                     <input type="file" name="fotoFile" class="form-control-file" />
                                     <span asp-validation-for="Foto" class="text-danger"></span>
@@ -67,14 +67,14 @@
 
                         @* Linha 2: Bairro, Cidade e CEP *@
                         <div class="row mb-3">
-                            <div class="col-md-3">
+                            <div class="col-md-2">
                                 <label asp-for="Cep" class="form-label fw-bold">CEP</label>
                                 <input asp-for="Cep" class="form-control" placeholder="00000-000" />
                                 <span asp-validation-for="Cep" class="text-danger"></span>
                             </div>
                             <div class="col-md-3">
                                 <label asp-for="Uf" class="form-label fw-bold">UF</label>
-                                <select id="UF" name="UF" class="form-control">
+                                <select id="UF" name="UF" class="form-select">
                                     <option value="AC">Acre</option>
                                     <option value="AL">Alagoas</option>
                                     <option value="AP">Amapá</option>
@@ -105,7 +105,7 @@
                                 </select>
                                 <span asp-validation-for="Uf" class="text-danger"></span>
                             </div>
-                            <div class="col-md-3">
+                            <div class="col-md-4">
                                 <label asp-for="Cidade" class="form-label fw-bold">Cidade</label>
                                 <input asp-for="Cidade" class="form-control" />
                                 <span asp-validation-for="Cidade" class="text-danger"></span>

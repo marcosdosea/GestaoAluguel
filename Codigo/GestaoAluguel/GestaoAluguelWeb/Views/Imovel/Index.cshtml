@@ -160,6 +160,12 @@
                                    asp-route-idImovel="@item.Id">
                                     Alugar Imóvel
                                 </a>
+                                <a class="btn btn-danger py-3 fw-bold shadow-sm"
+                                   asp-controller="Imovel"
+                                   asp-action="Delete"
+                                   asp-route-id="@item.Id">
+                                    Excluir imóvel
+                                </a>
                             }
                         }
                         else
