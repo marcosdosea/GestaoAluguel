@@ -173,7 +173,7 @@
 
                             <button class="btn btn-teal shadow-sm" type="button">Extratos</button>
                             <button class="btn btn-warning shadow-sm" type="button">Chamados de Reparo</button>
-                            <button class="btn btn-purple shadow-sm" type="button">Receber cobranças</button>
+                            <button class="btn btn-purple shadow-sm" type="button">Visualizar cobranças</button>
 
                         }
 
@@ -189,36 +189,3 @@
         <i class="bi bi-plus-lg"></i>
     </a>
 </div>
-
-<div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="deleteModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header bg-danger">
-                <h5 class="modal-title text-white" id="deleteModalLabel">Confirmar Exclusão</h5>
-                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Fechar"></button>
-            </div>
-            <div class="modal-body">
-                Tem certeza que deseja excluir este imóvel?
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
-                <form id="deleteForm" method="post">
-                    <button type="submit" class="btn btn-danger">Excluir</button>
-                </form>
-            </div>
-        </div>
-    </div>
-</div>
-
-@section Scripts {
-    <script>
-        // Seu script original mantido
-        var deleteModal = document.getElementById('deleteModal');
-        deleteModal.addEventListener('show.bs.modal', function (event) {
-            var button = event.relatedTarget;
-            var action = button.getAttribute('data-action');
-            var form = document.getElementById('deleteForm');
-            form.action = action;
-        });
-    </script>
-}

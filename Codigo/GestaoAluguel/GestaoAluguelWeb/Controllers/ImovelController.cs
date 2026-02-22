@@ -119,6 +119,15 @@ namespace GestaoAluguelWeb.Controllers
 
             // 4. Se passou, carrega os dados e mostra a tela
             ImovelModel imovelModel = mapper.Map<ImovelModel>(imovel);
+            if (ehDono)
+            {
+                imovelModel.Papel = PapelUsuario.Proprietario;
+            }
+            else
+            {
+                imovelModel.Papel = PapelUsuario.Inquilino;
+            }
+                
             return View(imovelModel);
         }
 
