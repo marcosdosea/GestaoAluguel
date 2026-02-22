@@ -9,6 +9,7 @@ namespace Core.Service
         Chamadoreparo? Get(int id);
         IEnumerable<Chamadoreparo> GetAll();
         IEnumerable<ChamadoReparoDTO> GetByImovel(int idImovel);
+        IEnumerable<Chamadoreparo> GetByPessoa(int idImovel);
         Chamadoreparo ChamadoResolvido(int id);
     }
 }

@@ -3,24 +3,41 @@ using Core;
 using Core.Service;
 using GestaoAluguelWeb.Models;
 using Microsoft.AspNetCore.Mvc;
+using Service;
 
 namespace GestaoAluguelWeb.Controllers
 {
     public class ChamadoReparoController : Controller
     {
         private readonly IChamadoReparoService chamadoReparoService;
+        private readonly IPessoaService PessoaService;
+        private readonly IImovelService ImovelService;
         private readonly IMapper mapper;
 
-        public ChamadoReparoController(IChamadoReparoService chamadoReparoService, IMapper mapper)
+        public ChamadoReparoController(IChamadoReparoService chamadoReparoService, IPessoaService PessoaService, IImovelService imovelService, IMapper mapper)
         {
+            this.ImovelService = imovelService;
             this.chamadoReparoService = chamadoReparoService;
+            this.PessoaService = PessoaService;
             this.mapper = mapper;
+        }
+
+        private int GetPessoaIdLogada()
+        {
+            var claimId = User.FindFirst("PessoaId")?.Value;
+            return claimId != null ? int.Parse(claimId) : 0;
         }
 
         // GET: ChamadoReparo
         public IActionResult Index()
         {
-            var chamados = chamadoReparoService.GetAll();
+            var pessoa = PessoaService.Get(GetPessoaIdLogada());
+            if (pessoa == null)
+            {
+                // Se não achou a pessoa, manda cadastrar o perfil primeiro
+                return RedirectToPage("/Account/Manage/Index", new { area = "Identity" });
+            }
+            var chamados = chamadoReparoService.GetByPessoa(pessoa.Id);
             var chamadosModel = mapper.Map<IEnumerable<ChamadoReparoModel>>(chamados);
             return View(chamadosModel);
         }
@@ -32,6 +49,14 @@ namespace GestaoAluguelWeb.Controllers
             if (chamado == null)
             {
                 return NotFound();
+            }
+
+            int usuarioLogadoId = GetPessoaIdLogada();
+
+            if (chamado.IdInquilino != usuarioLogadoId && 
+                chamado.IdImovelNavigation.IdProprietario != usuarioLogadoId)
+            {
+                return Forbid();
             }
 
             var chamadoModel = mapper.Map<ChamadoReparoModel>(chamado);

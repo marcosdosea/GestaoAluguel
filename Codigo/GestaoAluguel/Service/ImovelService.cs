@@ -70,11 +70,12 @@ namespace Service
         public IEnumerable<Imovel> GetByInquilino(int idInquilino)
         {
             return context.Imovels
-                .Where(Imovel => (
-                        context.Locacaos
-                       .Where(locacao => locacao.IdInquilino == idInquilino 
-                              && locacao.IdImovel == Imovel.Id
-                              && locacao.Status == 1).AsNoTracking().ToList()).Count > 0)
+                .Where(Imovel => context.Locacaos.Any
+                        (   locacao => locacao.IdInquilino == idInquilino 
+                            && locacao.IdImovel == Imovel.Id
+                            && locacao.Status == 1
+                        )
+                )
                 .OrderBy(imovel => imovel.Apelido)
                 .ToList();
         }

@@ -100,5 +100,25 @@ namespace Service
 
             return chamado;
         }
+
+        public IEnumerable<Chamadoreparo> GetByPessoa(int idPessoa)
+        {
+
+            return context.Chamadoreparos
+                .Where(c => c.IdInquilino == idPessoa)
+                .Union
+                (
+                    context.Chamadoreparos.Where(
+                        c => (context.Imovels
+                                .Where(i => i.IdProprietario == idPessoa)
+                                .AsNoTracking().Any(i => i.Id == c.IdImovel)
+                        )
+                    )
+                ).ToList();
+
+
+
+        }
+
     }
 }
