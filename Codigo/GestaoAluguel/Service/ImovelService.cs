@@ -48,13 +48,14 @@ namespace Service
 
         public Imovel? GetComLocacoes(int id)
         {
-            return context.Imovels.Include(i => i.Locacaos).Where(i => i.Id == id).First();
+            return context.Imovels.Include(i => i.Locacaos).Where(i => i.Id == id && i.Ativo == 1).First();
         }
 
 
         public IEnumerable<Imovel> GetAll()
         {
             return context.Imovels
+                .Where(imovel => imovel.Ativo == 1)
                 .OrderBy(imovel => imovel.Apelido)
                 .ToList();
         }
@@ -62,7 +63,8 @@ namespace Service
         public IEnumerable<Imovel> GetByProprietario(int idProprietario)
         {
             return context.Imovels
-                .Where(imovel => imovel.IdProprietario == idProprietario)
+                .Where(imovel => imovel.IdProprietario == idProprietario
+                && imovel.Ativo == 1)
                 .OrderBy(imovel => imovel.Apelido)
                 .ToList();
         }
@@ -70,11 +72,14 @@ namespace Service
         public IEnumerable<Imovel> GetByInquilino(int idInquilino)
         {
             return context.Imovels
-                .Where(Imovel => (
-                        context.Locacaos
-                       .Where(locacao => locacao.IdInquilino == idInquilino 
+                .Where(Imovel => 
+                       (context.Locacaos
+                       .Any(locacao => locacao.IdInquilino == idInquilino
                               && locacao.IdImovel == Imovel.Id
-                              && locacao.Status == 1).AsNoTracking().ToList()).Count > 0)
+                              && locacao.Status == 1
+                       )) 
+                       && Imovel.Ativo == 1
+                 )
                 .OrderBy(imovel => imovel.Apelido)
                 .ToList();
         }
