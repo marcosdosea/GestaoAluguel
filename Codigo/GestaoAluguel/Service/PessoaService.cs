@@ -46,7 +46,7 @@ namespace Service
         public void Delete(int id)
         {
             var pessoa = context.Pessoas.Find(id);
-            if(pessoa != null)
+            if (pessoa != null)
             {
                 context.Remove(pessoa);
                 context.SaveChanges();
@@ -115,6 +115,38 @@ namespace Service
             return context.Pessoas
                           .AsNoTracking() // Opcional: Melhora performance apenas para leitura
                           .FirstOrDefault(p => p.Cpf == cpf);
+        }
+
+        // Para edição de pessoa
+        public Pessoa? GetByEmail(string email)
+        {
+            return context.Pessoas
+                .FirstOrDefault(p => p.Email == email);
+        }
+
+        public Pessoa? GetByEmailAsNoTracking(string email)
+        {
+            return context.Pessoas
+                .AsNoTracking()
+                .FirstOrDefault(p => p.Email == email);
+        }
+
+        public Boolean ExistsPessoaByCpf(string cpf)
+        {
+            return context.Pessoas
+                .Any(p => p.Cpf == cpf);
+        }
+        public Boolean ExistsPessoaByEmail(string email)
+        {
+            return context.Pessoas
+                          .Any(p => p.Email == email);
+        }
+
+        public int? GetIdByIdUsuario(string idUsuario)
+        {
+            var pessoa = context.Pessoas.FirstOrDefault(p => p.IdUsuario == idUsuario);
+            return pessoa != null ? pessoa.Id : -1; // Retorna -1 se não encontrar
+
         }
     }
 }

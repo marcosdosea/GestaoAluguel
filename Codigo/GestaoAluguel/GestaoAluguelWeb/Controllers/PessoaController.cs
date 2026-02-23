@@ -35,14 +35,6 @@ namespace GestaoAluguelWeb.Controllers
             this.signInManager = signInManager;
         }
 
-        // GET: PessoaController
-        public ActionResult Index()
-        {
-            var listaPessoas = pessoaService.GetAll();
-            var listaPessoasModel = mapper.Map<List<PessoaModel>>(listaPessoas);
-            return View(listaPessoasModel);
-        }
-
         // GET: PessoaController/Details/5
         public ActionResult Details(int id)
         {
@@ -64,10 +56,45 @@ namespace GestaoAluguelWeb.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create(PessoaModel pessoaModel)
         {
+            // Verificação se a pessoa existe por email ou CPF para evitar duplicidade,
+            // e para permitir que um usuário que já tenha uma pessoa cadastrada possa criar um usuário de login associado a essa pessoa,
+            // caso ainda não tenha um.
+            bool achouPessoa = false;
+            int? idPessoaAntiga = null;
+
             if (ModelState.IsValid)
             {
+                Pessoa? pessoaExistente = pessoaService.GetByEmailAsNoTracking(pessoaModel.Email);
+                if (pessoaExistente != null)
+                {
+                    var usuarioExistente = await userManager.FindByEmailAsync(pessoaModel.Email);
+                    if (usuarioExistente != null)
+                    {
+                        ModelState.AddModelError("Email", "Já existe um usuário cadastrado com este email.");
+                        return View(pessoaModel);
+                    }
+
+                    achouPessoa = true;
+                    idPessoaAntiga = pessoaExistente.Id;
+
+                }
+                else {                     
+                    pessoaExistente = pessoaService.GetByCpf(pessoaModel.Cpf);
+                    if (pessoaExistente != null)
+                    {
+                        var usuarioExistente = await userManager.FindByEmailAsync(pessoaExistente.Email);
+                        if (usuarioExistente != null)
+                        {
+                            ModelState.AddModelError("Cpf", "Já existe um usuário cadastrado com este CPF.");
+                            return View(pessoaModel);
+                        }
+                        achouPessoa = true;
+                        idPessoaAntiga = pessoaExistente.Id;
+                    }
+                }
+
                 // 1. Cria o usuário no banco de dados de Identidade
-                var user = new UsuarioIdentity { UserName = pessoaModel.Email, Email = pessoaModel.Email };
+                var user = new UsuarioIdentity { UserName = pessoaModel.Email, Email = pessoaModel.Email , PhoneNumber = pessoaModel.Telefone};
                 var result = await userManager.CreateAsync(user, pessoaModel.Senha);
 
                 if (result.Succeeded)
@@ -82,7 +109,16 @@ namespace GestaoAluguelWeb.Controllers
                     try
                     {
                         // 4. Salva a entidade Pessoa no banco da aplicação usando o serviço
-                        pessoaService.Create(pessoa);
+                        if (achouPessoa && idPessoaAntiga.HasValue)
+                        {
+                            // Se encontramos uma pessoa existente, vamos atualizar os dados dela
+                            pessoa.Id = idPessoaAntiga.Value; // Mantém o mesmo ID para atualizar
+                            pessoaService.Edit(pessoa); // Usa o método de edição para atualizar os dados
+                        }
+                        else
+                        {
+                            pessoaService.Create(pessoa);
+                        }
 
                         // 5. Se tudo deu certo, loga o novo usuário no sistema
                         await signInManager.SignInAsync(user, isPersistent: false);

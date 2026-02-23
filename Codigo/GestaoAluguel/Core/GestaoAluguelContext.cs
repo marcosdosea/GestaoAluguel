@@ -143,7 +143,7 @@ public partial class GestaoAluguelContext : DbContext
                 .HasColumnName("estaAlugado");
             entity.Property(e => e.Foto)
                 .HasDefaultValueSql("'NULL'")
-                .HasColumnType("blob")
+                .HasColumnType("longblob")
                 .HasColumnName("foto");
             entity.Property(e => e.IdProprietario)
                 .HasColumnType("int(10) unsigned")
@@ -157,6 +157,9 @@ public partial class GestaoAluguelContext : DbContext
             entity.Property(e => e.Uf)
                 .HasColumnType("enum('AC','AL','AP','AM','BA','CE','DF','ES','GO','MA','MT','MS','MG','PA','PB','PR','PE','PI','RJ','RN','RS','RO','RR','SC','SP','SE','TO')")
                 .HasColumnName("uf");
+            entity.Property(e => e.Ativo)
+                .HasColumnType("tinyint(4)")
+                .HasColumnName("ativo");
 
             entity.HasOne(d => d.IdProprietarioNavigation).WithMany(p => p.Imovels)
                 .HasForeignKey(d => d.IdProprietario)

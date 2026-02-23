@@ -2,19 +2,20 @@
 // The .NET Foundation licenses this file to you under the MIT license.
 #nullable disable
 
-using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Authorization;
+using Core.Service;
 using GestaoAluguelWeb.Areas.Identity.Data;
 using Microsoft.AspNetCore.Authentication;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.UI.Services;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.Extensions.Logging;
+using System;
+using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
+using System.Linq;
+using System.Threading.Tasks;
 
 namespace GestaoAluguelWeb.Areas.Identity.Pages.Account
 {
@@ -22,11 +23,13 @@ namespace GestaoAluguelWeb.Areas.Identity.Pages.Account
     {
         private readonly SignInManager<UsuarioIdentity> _signInManager;
         private readonly ILogger<LoginModel> _logger;
+        private readonly IPessoaService _pessoaService; // <--- 1. Injeção do Serviço
 
-        public LoginModel(SignInManager<UsuarioIdentity> signInManager, ILogger<LoginModel> logger)
+        public LoginModel(SignInManager<UsuarioIdentity> signInManager, ILogger<LoginModel> logger, IPessoaService pessoaService)
         {
             _signInManager = signInManager;
             _logger = logger;
+            _pessoaService = pessoaService; // <--- 2. Atribuição do Serviço
         }
 
         /// <summary>
@@ -116,6 +119,7 @@ namespace GestaoAluguelWeb.Areas.Identity.Pages.Account
                 if (result.Succeeded)
                 {
                     _logger.LogInformation("User logged in.");
+                    
                     return RedirectToAction("Index", "Imovel");
                 }
                 if (result.RequiresTwoFactor)

@@ -1,6 +1,7 @@
 using Core;
 using Core.Service;
 using GestaoAluguelWeb.Areas.Identity.Data;
+using GestaoAluguelWeb.Areas.Identity.Helpers;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
@@ -61,7 +62,8 @@ namespace GestaoAluguelWeb
                 options.Lockout.MaxFailedAccessAttempts = 5;
                 options.Lockout.AllowedForNewUsers = true;
             }).AddRoles<IdentityRole>()
-            .AddEntityFrameworkStores<IdentityContext>();
+            .AddEntityFrameworkStores<IdentityContext>()
+            .AddClaimsPrincipalFactory<AppUserClaimsPrincipalFactory>(); // <--- ADICIONE ISSO
 
             //Configure tokens life
             builder.Services.Configure<DataProtectionTokenProviderOptions>(options =>

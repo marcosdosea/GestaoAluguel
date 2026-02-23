@@ -48,7 +48,7 @@
 
                 <div class="col-md-2 form-group mb-3">
                     <label for="EstadoCivil" class="control-label">Estado Civil</label>
-                    <select id="EstadoCivil" name="EstadoCivil" class="form-control">
+                    <select id="EstadoCivil" name="EstadoCivil" class="form-select">
                         <option value="S">Solteiro(a)</option>
                         <option value="C">Casado(a)</option>
                         <option value="D">Divorciado(a)</option>
@@ -77,13 +77,13 @@
 
                 <div class="col-md-4 form-group mb-3">
                     <label asp-for="Cep" class="control-label"></label>
-                    <input asp-for="Cep" class="form-control" />
+                    <input asp-for="Cep" class="form-control" placeholder="00000-000" />
                     <span asp-validation-for="Cep" class="text-danger"></span>
                 </div>
 
                 <div class="col-md-4 form-group mb-3">
-                    <label asp-for="Uf" class="control-label"></label>
-                    <select id="UF" name="UF" class="form-control">
+                    <label asp-for="Uf" class="control-label">UF</label>
+                    <select id="UF" name="UF" class="form-select">
                         <option value="AC">Acre</option>
                         <option value="AL">Alagoas</option>
                         <option value="AP">Amapá</option>
@@ -188,10 +188,6 @@
 
         </form>
     </div>
-</div>
-
-<div>
-    <a asp-action="Index">Back to List</a>
 </div>
 
 @section Scripts {

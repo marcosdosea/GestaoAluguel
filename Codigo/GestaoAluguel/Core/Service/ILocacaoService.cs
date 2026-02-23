@@ -11,5 +11,6 @@ namespace Core.Service
         IEnumerable<Locacao> GetAll();
         IEnumerable<LocacaoDTO> GetByImovel(int idImovel);
         IEnumerable<LocacaoDTO> GetByInquilino(int idInquilino);
+        IEnumerable<LocacaoDTO> GetAtivasByInquilino(int idInquilino);
     }
 }

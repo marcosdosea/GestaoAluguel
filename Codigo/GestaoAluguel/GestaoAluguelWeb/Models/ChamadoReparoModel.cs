@@ -39,6 +39,10 @@ namespace GestaoAluguelWeb.Models
         [Display(Name = "Imóvel")]
         public int IdImovel { get; set; }
 
+        public String ApelidoImovel { get; set; }
+
+        public String EnderecoImovel { get; set; }
+
         [Required]
         [Display(Name = "Inquilino")]
         public int IdInquilino { get; set; }

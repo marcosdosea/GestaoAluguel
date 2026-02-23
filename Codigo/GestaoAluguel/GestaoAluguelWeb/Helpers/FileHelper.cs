@@ -17,6 +17,7 @@ namespace GestaoAluguelWeb.Helpers
             Png,
             Gif,
             Bmp,
+            WebP,
             Docx
         }
 
@@ -34,6 +35,7 @@ namespace GestaoAluguelWeb.Helpers
         { FileType.Png, new List<byte[]> { new byte[] { 0x89, 0x50, 0x4E, 0x47, 0x0D, 0x0A, 0x1A, 0x0A } } },
         { FileType.Gif, new List<byte[]> { new byte[] { 0x47, 0x49, 0x46, 0x38 } } },
         { FileType.Bmp, new List<byte[]> { new byte[] { 0x42, 0x4D } } },
+        { FileType.WebP, new List<byte[]> { new byte[] { 0x52, 0x49, 0x46, 0x46 } } },
         // Arquivos .docx, .xlsx, .pptx são baseados em ZIP, que começa com "PK"
         { FileType.Docx, new List<byte[]> { new byte[] { 0x50, 0x4B, 0x03, 0x04 } } }
     };
@@ -46,6 +48,7 @@ namespace GestaoAluguelWeb.Helpers
         { FileType.Png, "image/png" },
         { FileType.Gif, "image/gif" },
         { FileType.Bmp, "image/bmp" },
+        { FileType.WebP, "image/webp" },
         { FileType.Docx, "application/vnd.openxmlformats-officedocument.wordprocessingml.document" }
     };
 
@@ -62,23 +65,44 @@ namespace GestaoAluguelWeb.Helpers
         public static FileType GetFileType(Stream stream)
         {
             if (stream == null || stream.Length == 0 || !stream.CanRead) return FileType.Unknown;
-            stream.Position = 0;
-            var maxSignatureLength = _signatures.Values.SelectMany(s => s).Max(m => m.Length);
-            var headerBytes = new byte[maxSignatureLength];
-            stream.Read(headerBytes, 0, maxSignatureLength);
-            foreach (var (type, signatures) in _signatures)
-            {
-                foreach (var signature in signatures)
+            long originalPosition = stream.Position;
+            try {
+                stream.Position = 0;
+                var maxSignatureLength = _signatures.Values.SelectMany(s => s).Max(m => m.Length);
+                var headerBytes = new byte[maxSignatureLength];
+                int bytesRead = stream.Read(headerBytes, 0, maxSignatureLength);
+
+                if (bytesRead < 4) return FileType.Unknown; // Arquivo muito pequeno
+
+                foreach (var (type, signatures) in _signatures)
                 {
-                    if (headerBytes.Take(signature.Length).SequenceEqual(signature))
+                    foreach (var signature in signatures)
                     {
-                        stream.Position = 0;
-                        return type;
+                        if (headerBytes.Take(signature.Length).SequenceEqual(signature))
+                        {
+                            // Caso especial: WebP começa com RIFF, mas precisa ter "WEBP" nos bytes 8-11
+                            if (type == FileType.WebP)
+                            {
+                                if (bytesRead >= 12 &&
+                                    headerBytes[8] == 0x57 && headerBytes[9] == 0x45 &&
+                                    headerBytes[10] == 0x42 && headerBytes[11] == 0x50) // 'W' 'E' 'B' 'P'
+                                {
+                                    stream.Position = originalPosition;
+                                    return FileType.WebP;
+                                }
+                                continue; // Se for RIFF mas não for WEBP (pode ser AVI/WAV), continua procurando
+                            }
+                            stream.Position = originalPosition;
+                            return type;
+                        }
                     }
                 }
+                return FileType.Unknown;
+            }finally
+            {
+                // Sempre devolve o ponteiro para o começo!
+                stream.Position = originalPosition;
             }
-            stream.Position = 0;
-            return FileType.Unknown;
         }
 
         /// <summary>
@@ -110,29 +134,6 @@ namespace GestaoAluguelWeb.Helpers
         }
 
         /// <summary>
-        /// NOVO: Gera um Data URL (string Base64) para um arquivo, pronto para ser usado no atributo 'src' de tags HTML.
-        /// </summary>
-        /// <param name="file">O arquivo a ser convertido.</param>
-        /// <returns>Uma string Data URL ou null se o tipo de arquivo for desconhecido.</returns>
-        public static async Task<string?> GetDataUrlAsync(IFormFile file)
-        {
-            var fileType = GetFileType(file);
-
-            if (fileType == FileType.Unknown || !_mimeTypes.TryGetValue(fileType, out var mimeType))
-            {
-                return null; // Retorna nulo se não soubermos o tipo ou o MIME type
-            }
-
-            using (var memoryStream = new MemoryStream())
-            {
-                await file.CopyToAsync(memoryStream);
-                var fileBytes = memoryStream.ToArray();
-                var base64String = Convert.ToBase64String(fileBytes);
-                return $"data:{mimeType};base64,{base64String}";
-            }
-        }
-
-        /// <summary>
         /// NOVO: Identifica o tipo de arquivo a partir de um array de bytes.
         /// </summary>
         /// <param name="fileBytes">O conteúdo do arquivo como byte[].</param>
@@ -155,24 +156,70 @@ namespace GestaoAluguelWeb.Helpers
         /// </summary>
         /// <param name="fileBytes">O conteúdo do arquivo como byte[].</param>
         /// <returns>Uma string Data URL ou null se o tipo de arquivo for desconhecido.</returns>
-        public static string? GetDataUrl(byte[] fileBytes)
+        public static string? GetDataUrl (byte[] fileBytes)
         {
-            if (fileBytes == null || fileBytes.Length == 0)
-            {
-                return null;
-            }
+            if (fileBytes == null || fileBytes.Length == 0) return null;
 
             var fileType = GetFileType(fileBytes);
 
-            if (fileType == FileType.Unknown || !_mimeTypes.TryGetValue(fileType, out var mimeType))
+            // Se não achou o tipo exato, mas sabemos que é bytes, tenta forçar Jpeg ou Png como fallback
+            // ou retorna null se for desconhecido strict.
+            if (fileType == FileType.Unknown)
             {
-                return null;
+                // Tenta detectar se é JPEG ou PNG mesmo sem assinatura clara, baseado em heurística simples
+                if (fileBytes.Length > 4)
+                {
+                    if (fileBytes[0] == 0xFF && fileBytes[1] == 0xD8) // JPEG
+                    {
+                        fileType = FileType.Jpeg;
+                    }
+                    else if (fileBytes[0] == 0x89 && fileBytes[1] == 0x50 && fileBytes[2] == 0x4E && fileBytes[3] == 0x47) // PNG
+                    {
+                        fileType = FileType.Png;
+                    }
+                    else
+                    {
+                        return null; // Tipo desconhecido, não conseguimos identificar
+                    }
+                }
+            }
+
+            if (!_mimeTypes.TryGetValue(fileType, out var mimeType))
+            {
+                // Fallback amigável: se não descobriu, assume jpeg pra tentar mostrar
+                mimeType = "image/jpeg";
             }
 
             var base64String = Convert.ToBase64String(fileBytes);
             return $"data:{mimeType};base64,{base64String}";
         }
-        
+
+        /// <summary>
+        /// NOVO: Gera um Data URL (string Base64) para um arquivo, pronto para ser usado no atributo 'src' de tags HTML.
+        /// </summary>
+        /// <param name="file">O arquivo a ser convertido.</param>
+        /// <returns>Uma string Data URL ou null se o tipo de arquivo for desconhecido.</returns>
+        public static async Task<string?> GetDataUrlAsync(IFormFile file)
+        {
+            var arquivoBytes = await ConverterParaBytes(file);
+            return GetDataUrl(arquivoBytes ?? Array.Empty<byte>());
+        }
+
+        /// <summary>
+        /// Converte o IFormFile para Byte[] (útil para salvar no banco).
+        /// </summary>
+
+        public static async Task<byte[]?> ConverterParaBytes(IFormFile file)
+        {
+            if (file == null) return null;
+
+            using (var memoryStream = new MemoryStream())
+            {
+                await file.CopyToAsync(memoryStream);
+                return memoryStream.ToArray();
+            }
+        }
+
     }
 
 }

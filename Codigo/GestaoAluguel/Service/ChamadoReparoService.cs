@@ -45,7 +45,7 @@ namespace Service
         {
             try
             {
-                return context.Chamadoreparos.Find(id);
+                return context.Chamadoreparos.Include(c => c.IdImovelNavigation).Where(c => c.Id == id).First();
             }
             catch (Exception ex)
             {
@@ -88,17 +88,25 @@ namespace Service
             }
         }
 
-        public Chamadoreparo ChamadoResolvido(int id)
+        public IEnumerable<Chamadoreparo> GetByPessoa(int idPessoa)
         {
-            var chamado = Get(id) ?? throw new ArgumentException($"Chamado com ID {id} não encontrado");
 
-            if (chamado.Status != "R")
-            {
-                chamado.Status = "R";
-                context.SaveChanges();
-            }
+            return context.Chamadoreparos
+                .Include(c => c.IdImovelNavigation)
+                .Where(c => c.IdInquilino == idPessoa)
+                .Union
+                (
+                    context.Chamadoreparos
+                    .Include(c => c.IdImovelNavigation)
+                    .Where(
+                        c => (context.Imovels
+                                .Where(i => i.IdProprietario == idPessoa)
+                                .AsNoTracking().Any(i => i.Id == c.IdImovel)
+                        )
+                    )
+                ).ToList();
 
-            return chamado;
         }
+
     }
 }

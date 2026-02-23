@@ -20,7 +20,9 @@ namespace GestaoAluguelWeb.Tests.Controllers
         public void Initialize()
         {
             // Arrange
-            var mockService = new Mock<IImovelService>();
+            var mockImovelService = new Mock<IImovelService>();
+            var mockLocacaoService = new Mock<ILocacaoService>();
+            var mockPessoaService = new Mock<IPessoaService>();
 
             // Configuração do AutoMapper (Simulando o Profile para o teste funcionar isolado)
             IMapper mapper = new MapperConfiguration(cfg =>
@@ -30,22 +32,27 @@ namespace GestaoAluguelWeb.Tests.Controllers
             }).CreateMapper();
 
             // Configuração dos Mocks (Comportamentos esperados)
-            mockService.Setup(service => service.GetAll())
+            mockImovelService.Setup(service => service.GetAll())
                 .Returns(GetTestImoveis());
 
-            mockService.Setup(service => service.Get(1))
+            mockImovelService.Setup(service => service.Get(1))
                 .Returns(GetTargetImovel());
 
-            mockService.Setup(service => service.Create(It.IsAny<Imovel>()))
+            mockImovelService.Setup(service => service.Create(It.IsAny<Imovel>()))
                 .Verifiable();
 
-            mockService.Setup(service => service.Edit(It.IsAny<Imovel>()))
+            mockImovelService.Setup(service => service.Edit(It.IsAny<Imovel>()))
                 .Verifiable();
 
-            mockService.Setup(service => service.Delete(It.IsAny<int>()))
+            mockImovelService.Setup(service => service.Delete(It.IsAny<int>()))
                 .Verifiable();
 
-            controller = new ImovelController(mockService.Object, mapper);
+            controller = new ImovelController(
+                mockImovelService.Object,
+                mockLocacaoService.Object,
+                mockPessoaService.Object,
+                mapper
+            );
         }
 
         [TestMethod()]

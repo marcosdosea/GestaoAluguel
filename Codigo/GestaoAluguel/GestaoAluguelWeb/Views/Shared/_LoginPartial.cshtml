@@ -1,28 +1,79 @@
+@using Core
 @using Microsoft.AspNetCore.Identity
 @using GestaoAluguelWeb.Areas.Identity.Data
+@using Core.Service
 
 @inject SignInManager<UsuarioIdentity> SignInManager
 @inject UserManager<UsuarioIdentity> UserManager
+@inject IPessoaService PessoaService
+
+@{
+    // Variáveis para guardar a foto e o nome
+    string imagemPerfil = null;
+    string nomeExibicao = null;
+
+    if (SignInManager.IsSignedIn(User))
+    {
+        var usuarioLogado = await UserManager.GetUserAsync(User);
+
+        // Se o usuário tem um IdPessoa vinculado, busca os dados completos
+        if (usuarioLogado != null)
+        {
+            Pessoa? pessoa = null;
+
+            if (usuarioLogado.idPessoa.HasValue)
+                pessoa = PessoaService.Get(usuarioLogado.idPessoa.Value);
+            else if (usuarioLogado.Email != null)
+            // Miga, confirma se o método de buscar no seu Service é "Get", "Obter" ou "Find"
+                pessoa = PessoaService.GetByEmail(usuarioLogado.Email);
+
+            if (pessoa != null)
+            {
+                nomeExibicao = pessoa.Nome; // Ou o campo que você usa para nome
+
+                // SE A FOTO FOR SALVA NO BANCO (byte[]):
+                if (pessoa.Foto != null && pessoa.Foto.Length > 0)
+                {
+                    var base64 = Convert.ToBase64String(pessoa.Foto);
+                    imagemPerfil = String.Format("data:image/jpg;base64,{0}", base64);
+                }
+
+                // SE A FOTO FOR UM CAMINHO (string):
+                // imagemPerfil = pessoa.CaminhoFoto;
+            }
+        }
+
+        // Se não achou nome na tabela Pessoa, usa o e-mail ou nome do Identity msm
+        if (string.IsNullOrEmpty(nomeExibicao))
+        {
+            nomeExibicao = UserManager.GetUserName(User);
+        }
+    }
+}
 
 <ul class="navbar-nav">
 @if (SignInManager.IsSignedIn(User))
 {
     <li class="nav-item">
-        <a id="manage" class="nav-link text-dark" asp-area="Identity" asp-page="/Account/Manage/Index" title="Manage">Hello @UserManager.GetUserName(User)!</a>
+        <a id="manage" class="nav-link text-dark" asp-area="Identity" asp-page="/Account/Manage/Index" title="Manage">
+            @if (!string.IsNullOrEmpty(imagemPerfil))
+            {
+                @* Exibe a foto redondinha, estilo avatar *@
+                <img src="@imagemPerfil" alt="Foto de @nomeExibicao"
+                        style="width: 30px; height: 30px; border-radius: 50%; object-fit: cover; margin-right: 5px;" />
+            }
+            else
+            {
+                @* Se não tiver foto, pode usar um ícone padrão do Bootstrap *@
+                <i class="bi bi-person-circle" style="font-size: 1.2rem; margin-right: 5px;"></i>
+            }
+            Olá, @nomeExibicao!
+        </a>
     </li>
     <li class="nav-item">
         <form id="logoutForm" class="form-inline" asp-area="Identity" asp-page="/Account/Logout" asp-route-returnUrl="@Url.Action("Index", "Home", new { area = "" })">
-            <button id="logout" type="submit" class="nav-link btn btn-link text-dark border-0">Logout</button>
+            <button id="logout" type="submit" class="nav-link btn btn-link text-dark border-0">Sair</button>
         </form>
-    </li>
-}
-else
-{
-    <li class="nav-item">
-        <a class="nav-link text-dark" id="register" asp-area="Identity" asp-page="/Account/Register">Register</a>
-    </li>
-    <li class="nav-item">
-        <a class="nav-link text-dark" id="login" asp-area="Identity" asp-page="/Account/Login">Login</a>
     </li>
 }
 </ul>

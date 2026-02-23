@@ -1,30 +1,224 @@
 ﻿@page
 @model IndexModel
 @{
-    ViewData["Title"] = "Profile";
+    ViewData["Title"] = "Perfil";
     ViewData["ActivePage"] = ManageNavPages.Index;
 }
 
 <h3>@ViewData["Title"]</h3>
 <partial name="_StatusMessage" for="StatusMessage" />
-<div class="row">
-    <div class="col-md-6">
-        <form id="profile-form" method="post">
-            <div asp-validation-summary="ModelOnly" class="text-danger" role="alert"></div>
-            <div class="form-floating mb-3">
-                <input asp-for="Username" class="form-control" placeholder="Please choose your username." disabled />
-                <label asp-for="Username" class="form-label"></label>
+
+<form id="profile-form" method="post" enctype="multipart/form-data">
+    <div asp-validation-summary="ModelOnly" class="text-danger" role="alert"></div>
+
+    <ul class="nav nav-tabs mb-4" id="profileTabs" role="tablist">
+        <li class="nav-item" role="presentation">
+            <button class="nav-link active" id="dados-tab" data-bs-toggle="tab" data-bs-target="#dados" type="button" role="tab" aria-controls="dados" aria-selected="true">Dados Pessoais</button>
+        </li>
+        <li class="nav-item" role="presentation">
+            <button class="nav-link" id="contato-tab" data-bs-toggle="tab" data-bs-target="#contato" type="button" role="tab" aria-controls="contato" aria-selected="false">Contato</button>
+        </li>
+        <li class="nav-item" role="presentation">
+            <button class="nav-link" id="endereco-tab" data-bs-toggle="tab" data-bs-target="#endereco" type="button" role="tab" aria-controls="endereco" aria-selected="false">Endereço</button>
+        </li>
+    </ul>
+
+    <div class="tab-content" id="profileTabsContent">
+
+        <div class="tab-pane fade show active" id="dados" role="tabpanel" aria-labelledby="dados-tab">
+            <div class="row">
+                <div class="col-md-4 text-center mb-3">
+                    @if (Model.Input.Foto != null)
+                    {
+                        <img id="imgPreview" src="data:image/jpeg;base64,@Convert.ToBase64String(Model.Input.Foto)" class="img-thumbnail rounded-circle" style="width: 150px; height: 150px; object-fit: cover;" />
+                    }
+                    else
+                    {
+                        <img id="imgPreview" src="~/img/avatar.webp" class="img-thumbnail rounded-circle" style="width: 150px; height: 150px; object-fit: cover;" />
+                    }
+                    <div class="mt-2">
+                        <label asp-for="Input.ArquivoFoto" class="form-label btn btn-sm btn-outline-primary">Alterar Foto</label>
+                        <input asp-for="Input.ArquivoFoto" type="file" class="form-control d-none" onchange="previewImage(this)" />
+                    </div>
+                </div>
+
+                <div class="col-md-8">
+                    <div class="form-floating mb-3">
+                        <input asp-for="Input.Nome" class="form-control" placeholder="Nome" />
+                        <label asp-for="Input.Nome"></label>
+                        <span asp-validation-for="Input.Nome" class="text-danger"></span>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6 mb-3">
+                            <div class="form-floating">
+                                <input asp-for="Input.Cpf" class="form-control" placeholder="CPF" />
+                                <label asp-for="Input.Cpf"></label>
+                                <span asp-validation-for="Input.Cpf" class="text-danger"></span>
+                            </div>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <div class="form-floating">
+                                <input asp-for="Input.Rg" class="form-control" placeholder="RG" />
+                                <label asp-for="Input.Rg"></label>
+                                <span asp-validation-for="Input.Rg" class="text-danger"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6 mb-3">
+                            <div class="form-floating">
+                                <input asp-for="Input.Nascimento" class="form-control" type="date" />
+                                <label asp-for="Input.Nascimento"></label>
+                                <span asp-validation-for="Input.Nascimento" class="text-danger"></span>
+                            </div>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <div class="form-floating">
+                                <input asp-for="Input.Profissao" class="form-control" placeholder="Profissão" />
+                                <label asp-for="Input.Profissao"></label>
+                                <span asp-validation-for="Input.Profissao" class="text-danger"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6 mb-3">
+                            <div class="form-floating">
+                                <select id="EstadoCivil" name="EstadoCivil" class="form-select">
+                                    <option value="S">Solteiro(a)</option>
+                                    <option value="C">Casado(a)</option>
+                                    <option value="D">Divorciado(a)</option>
+                                    <option value="U">União Estável</option>
+                                    <option value="V">Viúvo(a)</option>
+                                </select>
+                                <label asp-for="Input.EstadoCivil"></label>
+                                <span asp-validation-for="Input.EstadoCivil" class="text-danger"></span>
+                            </div>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <div class="form-floating">
+                                <input asp-for="Input.NomeConjuge" class="form-control" placeholder="Nome do Cônjuge" />
+                                <label asp-for="Input.NomeConjuge"></label>
+                                <span asp-validation-for="Input.NomeConjuge" class="text-danger"></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="form-floating mb-3">
-                <input asp-for="Input.PhoneNumber" class="form-control" placeholder="Please enter your phone number."/>
-                <label asp-for="Input.PhoneNumber" class="form-label"></label>
-                <span asp-validation-for="Input.PhoneNumber" class="text-danger"></span>
+        </div>
+
+        <div class="tab-pane fade" id="contato" role="tabpanel" aria-labelledby="contato-tab">
+            <div class="row mt-3">
+                <div class="col-md-12">
+                    <div class="form-floating mb-3">
+                        <input asp-for="Input.Email" class="form-control" disabled />
+                        <label asp-for="Input.Email"></label>
+                    </div>
+
+                    <div class="form-floating mb-3">
+                        <input asp-for="Input.PhoneNumber" class="form-control" placeholder="Telefone" />
+                        <label asp-for="Input.PhoneNumber">Telefone</label>
+                        <span asp-validation-for="Input.PhoneNumber" class="text-danger"></span>
+                    </div>
+                </div>
             </div>
-            <button id="update-profile-button" type="submit" class="w-100 btn btn-lg btn-primary">Save</button>
-        </form>
+        </div>
+
+        <div class="tab-pane fade" id="endereco" role="tabpanel" aria-labelledby="endereco-tab">
+            <div class="row mt-3">
+                <div class="col-md-4 mb-3">
+                    <div class="form-floating">
+                        <input asp-for="Input.Cep" class="form-control" placeholder="CEP" id="cep" placeholder="00000-000" />
+                        <label asp-for="Input.Cep"></label>
+                        <span asp-validation-for="Input.Cep" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="col-md-8 mb-3">
+                    <div class="form-floating">
+                        <input asp-for="Input.Logradouro" class="form-control" placeholder="Logradouro" />
+                        <label asp-for="Input.Logradouro"></label>
+                        <span asp-validation-for="Input.Logradouro" class="text-danger"></span>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-4 mb-3">
+                    <div class="form-floating">
+                        <input asp-for="Input.Numero" class="form-control" placeholder="Número" />
+                        <label asp-for="Input.Numero"></label>
+                        <span asp-validation-for="Input.Numero" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-3">
+                    <div class="form-floating">
+                        <input asp-for="Input.Bairro" class="form-control" placeholder="Bairro" />
+                        <label asp-for="Input.Bairro"></label>
+                        <span asp-validation-for="Input.Bairro" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="col-md-3 mb-3">
+                    <div class="form-floating">
+                        <input asp-for="Input.Cidade" class="form-control" placeholder="Cidade" />
+                        <label asp-for="Input.Cidade"></label>
+                        <span asp-validation-for="Input.Cidade" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="col-md-1 mb-3">
+                    <div class="form-floating">
+                        <input asp-for="Input.Uf" class="form-control" placeholder="UF" />
+                        <select id="UF" name="UF" class="form-select">
+                            <option value="AC">Acre</option>
+                            <option value="AL">Alagoas</option>
+                            <option value="AP">Amapá</option>
+                            <option value="AM">Amazonas</option>
+                            <option value="BA">Bahia</option>
+                            <option value="CE">Ceará</option>
+                            <option value="DF">Distrito Federal</option>
+                            <option value="ES">Espírito Santo</option>
+                            <option value="GO">Goiás</option>
+                            <option value="MA">Maranhão</option>
+                            <option value="MT">Mato Grosso</option>
+                            <option value="MS">Mato Grosso do Sul</option>
+                            <option value="MG">Minas Gerais</option>
+                            <option value="PA">Pará</option>
+                            <option value="PB">Paraíba</option>
+                            <option value="PR">Paraná</option>
+                            <option value="PE">Pernambuco</option>
+                            <option value="PI">Piauí</option>
+                            <option value="RJ">Rio de Janeiro</option>
+                            <option value="RN">Rio Grande do Norte</option>
+                            <option value="RS">Rio Grande do Sul</option>
+                            <option value="RO">Rondônia</option>
+                            <option value="RR">Roraima</option>
+                            <option value="SC">Santa Catarina</option>
+                            <option value="SP">São Paulo</option>
+                            <option value="SE">Sergipe</option>
+                            <option value="TO">Tocantins</option>
+                        </select>
+                        <span asp-validation-for="Input.Uf" class="text-danger"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
     </div>
-</div>
+
+    <div class="mt-4">
+        <button id="update-profile-button" type="submit" class="w-100 btn btn-lg btn-primary">Salvar Todas as Alterações</button>
+    </div>
+</form>
 
 @section Scripts {
     <partial name="_ValidationScriptsPartial" />
+    <script>
+        // Script simples para pré-visualizar a imagem antes de salvar
+        function previewImage(input) {
+            if (input.files && input.files[0]) {
+                var reader = new FileReader();
+                reader.onload = function (e) {
+                    document.getElementById('imgPreview').src = e.target.result;
+                }
+                reader.readAsDataURL(input.files[0]);
+            }
+        }
+    </script>
 }
