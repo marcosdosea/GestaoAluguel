@@ -165,6 +165,7 @@ namespace GestaoAluguelWeb.Controllers
                 }
                 imovel.IdProprietario = GetPessoaIdLogada(); // Garante que o imóvel criado seja sempre do usuário logado
                 imovel.EstaAlugado = 0; // Novo imóvel começa como disponível
+                imovel.Ativo = 1; // Novo imóvel começa como ativo
                 ImovelService.Create(imovel);
                 return RedirectToAction(nameof(Index));
             }
