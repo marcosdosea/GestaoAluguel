@@ -1,73 +1,95 @@
 ﻿@model GestaoAluguelWeb.Models.ChamadoReparoModel
 
 @{
-    ViewData["Title"] = "Edit";
+    ViewData["Title"] = "Editar Chamado";
 }
 
-<h1>Edit</h1>
+<div class="container py-4">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card shadow-sm border-0">
+                <div class="card-header bg-primary text-white py-3">
+                    <h4 class="mb-0 fw-bold">
+                        <i class="bi bi-pencil-square me-2"></i> Editar Chamado #@Model.Id
+                    </h4>
+                </div>
+                
+                <div class="card-body p-4">
+                    <form asp-action="Edit">
+                        <div asp-validation-summary="ModelOnly" class="text-danger mb-3"></div>
+                        <input type="hidden" asp-for="Id" />
+                        <input type="hidden" asp-for="IdInquilino" />
 
-<h4>ChamadoReparoModel</h4>
-<hr />
-<div class="row">
-    <div class="col-md-4">
-        <form asp-action="Edit">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <div class="form-group">
-                <label asp-for="Id" class="control-label"></label>
-                <input asp-for="Id" class="form-control" />
-                <span asp-validation-for="Id" class="text-danger"></span>
+                        <div class="row g-4">
+                            <div class="col-md-8">
+                                <label asp-for="IdImovel" class="form-label fw-semibold">Imóvel Associado</label>
+                                <select asp-for="IdImovel" class="form-select bg-light" asp-items="ViewBag.IdImovel"></select>
+                                <span asp-validation-for="IdImovel" class="text-danger"></span>
+                            </div>
+
+                            <div class="col-md-4">
+                                <label asp-for="Status" class="form-label fw-semibold">Status do Chamado</label>
+                                <select asp-for="Status" class="form-select bg-light">
+                                    <option value="C">Cadastrado</option>
+                                    <option value="P">Em Progresso</option>
+                                    <option value="R">Resolvido</option>
+                                </select>
+                                <span asp-validation-for="Status" class="text-danger"></span>
+                            </div>
+
+                            <div class="col-md-12">
+                                <label asp-for="Descricao" class="form-label fw-semibold">Descrição do Problema <span class="text-danger">*</span></label>
+                                <textarea asp-for="Descricao" class="form-control bg-light" rows="5"></textarea>
+                                <span asp-validation-for="Descricao" class="text-danger"></span>
+                            </div>
+
+                            <div class="col-md-6">
+                                <label asp-for="DataCadastro" class="form-label fw-semibold">
+                                    <i class="bi bi-calendar-plus me-1 text-muted"></i> Data de Cadastro
+                                </label>
+                                <input asp-for="DataCadastro" class="form-control bg-light" type="date" />
+                                <span asp-validation-for="DataCadastro" class="text-danger"></span>
+                            </div>
+
+                            <div class="col-md-6">
+                                <label asp-for="DataResolucao" class="form-label fw-semibold">
+                                    <i class="bi bi-calendar-check me-1 text-muted"></i> Data de Resolução
+                                </label>
+                                <input asp-for="DataResolucao" class="form-control bg-light" type="date" />
+                                <span asp-validation-for="DataResolucao" class="text-danger"></span>
+                            </div>
+
+                            <div class="col-md-12 pt-2">
+                                <div class="card bg-light border-0 shadow-sm">
+                                    <div class="card-body py-3 px-4">
+                                        <div class="form-check form-switch fs-5 mb-0">
+                                            <input class="form-check-input" type="checkbox" role="switch" asp-for="EstaResolvido" id="switchEstaResolvido" />
+                                            <label class="form-check-label fw-semibold ms-2 text-dark" for="switchEstaResolvido">
+                                                @Html.DisplayNameFor(model => model.EstaResolvido)
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <div class="d-flex justify-content-end gap-2 mt-5 border-top pt-4">
+                            <a asp-action="Index" class="btn btn-outline-secondary px-4">
+                                <i class="bi bi-arrow-left me-1"></i> Cancelar
+                            </a>
+                            <button type="submit" class="btn btn-primary px-4 shadow-sm">
+                                <i class="bi bi-save me-1"></i> Salvar Alterações
+                            </button>
+                        </div>
+                    </form>
+                </div>
             </div>
-            <div class="form-group">
-                <label asp-for="Status" class="control-label"></label>
-                <input asp-for="Status" class="form-control" />
-                <span asp-validation-for="Status" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Tipo" class="control-label"></label>
-                <input asp-for="Tipo" class="form-control" />
-                <span asp-validation-for="Tipo" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Descricao" class="control-label"></label>
-                <input asp-for="Descricao" class="form-control" />
-                <span asp-validation-for="Descricao" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="DataCadastro" class="control-label"></label>
-                <input asp-for="DataCadastro" class="form-control" />
-                <span asp-validation-for="DataCadastro" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="DataResolucao" class="control-label"></label>
-                <input asp-for="DataResolucao" class="form-control" />
-                <span asp-validation-for="DataResolucao" class="text-danger"></span>
-            </div>
-            <div class="form-group form-check">
-                <label class="form-check-label">
-                    <input class="form-check-input" asp-for="EstaResolvido" /> @Html.DisplayNameFor(model => model.EstaResolvido)
-                </label>
-            </div>
-            <div class="form-group">
-                <label asp-for="IdImovel" class="control-label"></label>
-                <input asp-for="IdImovel" class="form-control" />
-                <span asp-validation-for="IdImovel" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="IdInquilino" class="control-label"></label>
-                <input asp-for="IdInquilino" class="form-control" />
-                <span asp-validation-for="IdInquilino" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <input type="submit" value="Save" class="btn btn-primary" />
-            </div>
-        </form>
+        </div>
     </div>
-</div>
-
-<div>
-    <a asp-action="Index">Back to List</a>
 </div>
 
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
 }
+

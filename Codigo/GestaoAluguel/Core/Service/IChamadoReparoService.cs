@@ -10,6 +10,5 @@ namespace Core.Service
         IEnumerable<Chamadoreparo> GetAll();
         IEnumerable<ChamadoReparoDTO> GetByImovel(int idImovel);
         IEnumerable<Chamadoreparo> GetByPessoa(int idImovel);
-        Chamadoreparo ChamadoResolvido(int id);
     }
 }

@@ -1,72 +1,129 @@
 ﻿@model GestaoAluguelWeb.Models.ChamadoReparoModel
 
 @{
-    ViewData["Title"] = "Details";
+    ViewData["Title"] = "Detalhes do Chamado";
 }
 
-<h1>Details</h1>
+<div class="container py-4">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card shadow-sm border-0">
+                <div class="card-header bg-info text-white py-3">
+                    <h4 class="mb-0 fw-bold">
+                        <i class="bi bi-info-circle me-2"></i> Detalhes do Chamado
+                    </h4>
+                </div>
 
-<div>
-    <h4>ChamadoReparoModel</h4>
-    <hr />
-    <dl class="row">
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Id)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Id)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Status)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Status)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Tipo)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Tipo)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Descricao)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Descricao)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.DataCadastro)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.DataCadastro)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.DataResolucao)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.DataResolucao)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.EstaResolvido)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.EstaResolvido)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.IdImovel)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.IdImovel)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.IdInquilino)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.IdInquilino)
-        </dd>
-    </dl>
-</div>
-<div>
-    @Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |
-    <a asp-action="Index">Back to List</a>
+                <div class="card-body p-5">
+                    <div class="row mb-4">
+                        <div class="col-sm-4 text-muted fw-semibold">Código do Chamado</div>
+                        <div class="col-sm-8 fw-bold fs-5 text-dark">#@Model.Id</div>
+                    </div>
+
+                    <div class="row mb-4">
+                        <div class="col-sm-4 text-muted fw-semibold">Status Atual</div>
+                        <div class="col-sm-8">
+                            @if (Model.Status == "A")
+                            {
+                                <span class="badge bg-warning text-dark rounded-pill px-3 py-2 fs-6"><i class="bi bi-exclamation-circle me-1"></i> Aberto</span>
+                            }
+                            else if (Model.Status == "E")
+                            {
+                                <span class="badge bg-info text-dark rounded-pill px-3 py-2 fs-6"><i class="bi bi-hourglass-split me-1"></i> Em Andamento</span>
+                            }
+                            else if (Model.Status == "R" || Model.Status == "F")
+                            {
+                                <span class="badge bg-success rounded-pill px-3 py-2 fs-6"><i class="bi bi-check-circle me-1"></i> Resolvido</span>
+                            }
+                            else
+                            {
+                                <span class="badge bg-secondary rounded-pill px-3 py-2 fs-6">@Model.Status</span>
+                            }
+                        </div>
+                    </div>
+
+                    <div class="row mb-4 border-bottom pb-3">
+                        <div class="col-sm-4 text-muted fw-semibold">
+                            <i class="bi bi-house-heart me-1"></i> Imóvel
+                        </div>
+                        <div class="col-sm-8 fw-medium text-dark">
+                            <span class="fs-6">@Model.ApelidoImovel</span>
+                            <span class="text-muted ms-2 fst-italic fs-6">
+                                (Código: #@Model.IdImovel)
+                            </span>
+                        </div>
+                    </div>
+                    <div class="row mb-4 border-bottom pb-3">
+                        <div class="col-sm-4 text-muted fw-semibold">
+                            <i class="bi bi-geo-alt me-1"></i> Endereço
+                        </div>
+                        <div class="col-sm-8 fw-medium text-dark">
+                            @Model.EnderecoImovel
+                        </div>
+                    </div>
+
+                    <div class="row mb-4">
+                        <div class="col-sm-4 text-muted fw-semibold">Descrição do Reparo</div>
+                        <div class="col-sm-8 p-3 bg-light rounded border">
+                            @Model.Descricao
+                        </div>
+                    </div>
+
+                    <div class="row mb-4 border-bottom pb-3">
+                        <div class="col-sm-4 text-muted fw-semibold">
+                            <i class="bi bi-calendar-plus me-1"></i> Data de Cadastro
+                        </div>
+                        <div class="col-sm-8 fw-medium text-dark">
+                            @Model.DataCadastro.ToShortDateString()
+                        </div>
+                    </div>
+
+                    <div class="row mb-4 border-bottom pb-3">
+                        <div class="col-sm-4 text-muted fw-semibold">
+                            <i class="bi bi-calendar-check me-1"></i> Data de Resolução
+                        </div>
+                        <div class="col-sm-8 fw-medium text-dark">
+                            @if (Model.DataResolucao != null)
+                            {
+                                @Model.DataResolucao?.ToShortDateString()
+                            }
+                            else
+                            {
+                                <span class="text-muted fst-italic">Ainda não definida</span>
+                            }
+                        </div>
+                    </div>
+
+                    <div class="row mb-4">
+                        <div class="col-sm-4 text-muted fw-semibold">
+                            Situação do Reparo
+                        </div>
+                        <div class="col-sm-8">
+                            @if (Model.EstaResolvido)
+                            {
+                                <span class="badge bg-success rounded-pill px-3 py-2 fs-6 shadow-sm">
+                                    <i class="bi bi-check-circle-fill me-1"></i> Resolvido
+                                </span>
+                            }
+                            else
+                            {
+                                <span class="badge bg-warning text-dark rounded-pill px-3 py-2 fs-6 shadow-sm">
+                                    <i class="bi bi-clock-history me-1"></i> Pendente
+                                </span>
+                            }
+                        </div>
+                    </div>
+
+                    <div class="d-flex justify-content-end gap-2 mt-5 border-top pt-4">
+                        <a asp-action="Index" class="btn btn-outline-secondary px-4">
+                            <i class="bi bi-arrow-left me-1"></i> Voltar
+                        </a>
+                        <a asp-action="Edit" asp-route-id="@Model.Id" class="btn btn-primary px-4 shadow-sm">
+                            <i class="bi bi-pencil-square me-1"></i> Editar
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
