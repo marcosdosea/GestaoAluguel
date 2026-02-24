@@ -1,4 +1,7 @@
-﻿<!DOCTYPE html>
+﻿@using GestaoAluguelWeb.Areas.Identity.Data
+@using Microsoft.AspNetCore.Identity
+@inject SignInManager<UsuarioIdentity> SignInManager
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8" />
@@ -21,18 +24,22 @@
                 <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
                     <ul class="navbar-nav flex-grow-1">
                         <partial name="_LoginPartial" />
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Imovel" asp-action="Index">Início</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Locacao" asp-action="Index">Visualizar Contratos</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="ChamadoReparo" asp-action="Index">Chamados de Reparo</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Pagamento" asp-action="Index">Consultar extrato</a>
-                        </li>
+                        @if (SignInManager.IsSignedIn(User))
+                        {
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-area="" asp-controller="Imovel" asp-action="Index">Início</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-area="" asp-controller="Locacao" asp-action="Index">Visualizar Contratos</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-area="" asp-controller="ChamadoReparo" asp-action="Index">Chamados de Reparo</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-area="" asp-controller="Pagamento" asp-action="Index">Consultar extrato</a>
+                            </li>
+                        }
+
                     </ul>
                 </div>
             </div>

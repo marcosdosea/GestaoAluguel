@@ -297,6 +297,7 @@ namespace GestaoAluguelWeb.Areas.Identity.Pages.Account.Manage
             pessoa.Cidade = Input.Cidade;
             pessoa.Uf = Input.Uf;
             pessoa.Cep = Input.Cep;
+            pessoa.IdUsuario = user.Id; // Garante que o ID do usuário do Identity esteja vinculado à pessoa
 
             // 4. Salva no Banco de Dados
             try

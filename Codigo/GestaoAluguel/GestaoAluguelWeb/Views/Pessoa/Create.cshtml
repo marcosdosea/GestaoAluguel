@@ -178,12 +178,19 @@
                     <input asp-for="ConfirmaSenha" class="form-control" />
                     <span asp-validation-for="ConfirmaSenha" class="text-danger"></span>
                 </div>
+            </div>
+            <div class="row align-content-center">
+                <p class="mt-4 text-dark">
+                    Já possui uma conta? <a asp-area="Identity" asp-page="/Account/Login" class="text-decoration-none">Faça login</a>
+                </p>
 
             </div>
 
             <div class="form-group">
                 <input type="submit" value="Criar" class="btn btn-primary" />
             </div>
+
+            
 
 
         </form>
