@@ -198,12 +198,12 @@ namespace GestaoAluguelWeb.Controllers
 
                 if (model.IdInquilino != idPessoaLogada)
                 {
-                    var chamadoBanco = chamadoReparoService.Get(id);
-                    if (chamadoBanco == null)
+                    var imovelBanco = ImovelService.Get(model.IdImovel);
+                    if (imovelBanco == null)
                     {
                         return NotFound();
                     }
-                    if (chamadoBanco.IdImovelNavigation.IdProprietario != idPessoaLogada)
+                    if (imovelBanco.IdProprietario != idPessoaLogada)
                     return Forbid();
 
                 }
@@ -212,6 +212,12 @@ namespace GestaoAluguelWeb.Controllers
                 chamadoReparoService.Edit(chamado);
 
                 return RedirectToAction(nameof(Index));
+            } else
+            {
+
+                var imoveis = ImovelService.GetByUsuarioComLocacaoAtiva(GetPessoaIdLogada());
+                ViewBag.IdImovel = new SelectList(imoveis, "Id", "Apelido", model.IdImovel);
+
             }
 
             return View(model);
@@ -232,9 +238,16 @@ namespace GestaoAluguelWeb.Controllers
             if (imovel.IdProprietario != idPessoaLogada && !imovel.Locacaos.Any(l => l.IdInquilino == idPessoaLogada && l.Status == 1))
                 return Forbid();
 
-            var chamadosDTO = chamadoReparoService.GetByImovel(idImovel);
-            var chamadosModel = mapper.Map<IEnumerable<ChamadoReparoModel>>(chamadosDTO);
+            var chamados = chamadoReparoService.GetByImovel(idImovel);
+            var chamadosModel = mapper.Map<IEnumerable<ChamadoReparoModel>>(chamados);
 
+            for (int i = 0; i < chamadosModel.Count(); i++)
+            {
+                var chamado = chamados.ElementAt(i);
+                var model = chamadosModel.ElementAt(i);
+                model.EnderecoImovel = chamado.IdImovelNavigation.Logradouro + ", " + chamado.IdImovelNavigation.Numero + " - " + chamado.IdImovelNavigation.Bairro;
+                model.ApelidoImovel = chamado.IdImovelNavigation.Apelido;
+            }
             ViewBag.IdImovel = idImovel;
 
             return View(chamadosModel);

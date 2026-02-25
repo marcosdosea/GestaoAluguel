@@ -38,6 +38,25 @@
                             </div>
 
                             <div class="col-md-12">
+                                <label asp-for="Tipo" class="form-label fw-semibold"></label>
+                                <select id="Tipo" name="Tipo" class="form-select">
+                                    <option value="">Selecione o problema...</option>
+                                    <option value="Encanação">Encanação</option>
+                                    <option value="Elétrica">Elétrica</option>
+                                    <option value="Estrutural">Estrutural</option>
+                                    <option value="Automação">Automação</option>
+                                    <option value="Ar Condicionado">Ar Condicionado / Climatização</option>
+                                    <option value="Infiltração">Infiltração / Umidade</option>
+                                    <option value="Marcenaria">Marcenaria / Móveis</option>
+                                    <option value="Fechaduras e Esquadrias">Esquadrias / Fechaduras</option>
+                                    <option value="Pintura">Pintura</option>
+                                    <option value="Eletrodomésticos">Eletrodomésticos</option>
+                                    <option value="Outros">Outros</option>
+                                </select>
+                                <span asp-validation-for="Tipo" class="text-danger"></span>
+                            </div>
+
+                            <div class="col-md-12">
                                 <label asp-for="Descricao" class="form-label fw-semibold">Descrição do Problema <span class="text-danger">*</span></label>
                                 <textarea asp-for="Descricao" class="form-control bg-light" rows="5"></textarea>
                                 <span asp-validation-for="Descricao" class="text-danger"></span>

@@ -8,7 +8,7 @@ namespace Core.Service
         void Edit(Chamadoreparo chamadoreparo);
         Chamadoreparo? Get(int id);
         IEnumerable<Chamadoreparo> GetAll();
-        IEnumerable<ChamadoReparoDTO> GetByImovel(int idImovel);
+        IEnumerable<Chamadoreparo> GetByImovel(int idImovel);
         IEnumerable<Chamadoreparo> GetByPessoa(int idImovel);
     }
 }

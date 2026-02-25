@@ -65,20 +65,12 @@ namespace Service
             }
         }
 
-        public IEnumerable<ChamadoReparoDTO> GetByImovel(int idImovel)
+        public IEnumerable<Chamadoreparo> GetByImovel(int idImovel)
         {
             try
             {
                 var chamados = context.Chamadoreparos
                     .Where(c => c.IdImovel == idImovel)
-                    .Select(c => new ChamadoReparoDTO
-                    {
-                        Id = c.Id,
-                        Status = c.Status,
-                        DataCadastro = c.DataCadastro,
-                        EstaResolvido = c.EstaResolvido,
-                        IdImovel = c.IdImovel
-                    })
                     .ToList();
                 return chamados;
             }
