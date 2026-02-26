@@ -150,7 +150,7 @@
                                 <button class="btn btn-teal shadow-sm" type="button">Extratos</button>
                                 <a class="btn btn-warning shadow-sm"
                                    asp-controller="ChamadoReparo"
-                                   asp-action="Create"
+                                   asp-action="PorImovel"
                                    asp-route-idImovel="@item.Id">
                                     Chamados de Reparo
                                 </a>
@@ -186,7 +186,12 @@
                         {
 
                             <button class="btn btn-teal shadow-sm" type="button">Extratos</button>
-                            <button class="btn btn-warning shadow-sm" type="button">Chamados de Reparo</button>
+                            <a class="btn btn-warning shadow-sm"
+                               asp-controller="ChamadoReparo"
+                               asp-action="PorImovel"
+                               asp-route-idImovel="@item.Id">
+                                Chamados de Reparo
+                            </a>
                             <button class="btn btn-purple shadow-sm" type="button">Visualizar cobranças</button>
 
                         }

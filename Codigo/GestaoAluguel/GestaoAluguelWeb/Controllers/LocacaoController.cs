@@ -148,7 +148,7 @@ namespace GestaoAluguelWeb.Controllers
                         // 4. Salva tudo
                         transaction.Complete();
 
-                        return RedirectToAction(nameof(Index));
+                        return RedirectToAction("Index", "Imovel");
                     }
                     catch (Exception ex)
                     {

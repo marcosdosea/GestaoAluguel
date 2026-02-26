@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using Microsoft.AspNetCore.Mvc.ModelBinding.Validation;
+using System.ComponentModel.DataAnnotations;
 
 namespace GestaoAluguelWeb.Models
 {
@@ -39,9 +40,11 @@ namespace GestaoAluguelWeb.Models
         [Display(Name = "Imóvel")]
         public int IdImovel { get; set; }
 
-        public String ApelidoImovel { get; set; }
+        [ValidateNever]
+        public String? ApelidoImovel { get; set; }
 
-        public String EnderecoImovel { get; set; }
+        [ValidateNever]
+        public String? EnderecoImovel { get; set; }
 
         [Required]
         [Display(Name = "Inquilino")]

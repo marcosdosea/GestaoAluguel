@@ -63,7 +63,26 @@
                     </div>
 
                     <div class="row mb-4">
-                        <div class="col-sm-4 text-muted fw-semibold">Descrição do Reparo</div>
+                        <div class="col-sm-4 text-muted fw-semibold">
+                            <i class="bi bi-tools me-1"></i> Tipo do Reparo
+                        </div>
+                        @if(Model.Tipo!= null && Model.Tipo.Length > 0){
+                            <div class="col-sm-8 fw-medium text-dark">
+                                @Model.Tipo
+                            </div>
+                        }
+                        else
+                        {
+                            <div class="col-sm-8 fw-medium text-dark">
+                                Não definido
+                            </div>
+                        }
+                    </div>
+
+                    <div class="row mb-4">
+                        <div class="col-sm-4 text-muted fw-semibold">
+                            <i class="bi bi-pencil-square me-1"></i> Descrição do Reparo
+                         </div>
                         <div class="col-sm-8 p-3 bg-light rounded border">
                             @Model.Descricao
                         </div>
