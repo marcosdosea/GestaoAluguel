@@ -23,15 +23,15 @@
                     <div class="row mb-4">
                         <div class="col-sm-4 text-muted fw-semibold">Status Atual</div>
                         <div class="col-sm-8">
-                            @if (Model.Status == "A")
+                            @if (Model.Status == "C")
                             {
                                 <span class="badge bg-warning text-dark rounded-pill px-3 py-2 fs-6"><i class="bi bi-exclamation-circle me-1"></i> Aberto</span>
                             }
-                            else if (Model.Status == "E")
+                            else if (Model.Status == "P")
                             {
-                                <span class="badge bg-info text-dark rounded-pill px-3 py-2 fs-6"><i class="bi bi-hourglass-split me-1"></i> Em Andamento</span>
+                                <span class="badge bg-info text-dark rounded-pill px-3 py-2 fs-6"><i class="bi bi-hourglass-split me-1"></i> Em Progresso</span>
                             }
-                            else if (Model.Status == "R" || Model.Status == "F")
+                            else if (Model.Status == "R")
                             {
                                 <span class="badge bg-success rounded-pill px-3 py-2 fs-6"><i class="bi bi-check-circle me-1"></i> Resolvido</span>
                             }
