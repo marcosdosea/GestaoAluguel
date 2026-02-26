@@ -92,7 +92,8 @@
                             <i class="bi bi-three-dots-vertical"></i>
                         </button>
                         <ul class="dropdown-menu dropdown-menu-end">
-                            @if (item.Papel == PapelUsuario.Proprietario){
+                            @if (item.Papel == PapelUsuario.Proprietario)
+                            {
                                 <li><a class="dropdown-item" asp-action="Edit" asp-route-id="@item.Id"><i class="bi bi-pencil me-2"></i>Editar</a></li>
                             }
                             <li><a class="dropdown-item" asp-action="Details" asp-route-id="@item.Id"><i class="bi bi-info-circle me-2"></i>Detalhes</a></li>
@@ -153,7 +154,15 @@
                                    asp-route-idImovel="@item.Id">
                                     Chamados de Reparo
                                 </a>
-                                <button class="btn btn-danger shadow-sm" type="button">Encerrar Locação</button>
+                                <button class="btn btn-danger shadow-sm"
+                                        type="button"
+                                        data-bs-toggle="modal"
+                                        data-bs-target="#confirmarEncerramentoModal"
+                                        data-id-imovel="@item.Id"
+                                        data-apelido="@item.Apelido"
+                                        data-inquilino="@item.NomeInquilino">
+                                    Encerrar Locação
+                                </button>
                                 <button class="btn btn-purple shadow-sm" type="button">Enviar cobrança</button>
                             }
                             else
@@ -194,3 +203,58 @@
         <i class="bi bi-plus-lg"></i>
     </a>
 </div>
+
+<!-- Modal de Confirmação -->
+<div class="modal fade" id="confirmarEncerramentoModal" tabindex="-1" aria-labelledby="modalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content border-0 shadow-lg" style="border-radius: 12px; overflow: hidden;">
+            <div class="modal-header bg-danger text-white border-0 py-3">
+                <h5 class="modal-title fw-bold" id="modalLabel">Confirmar Encerramento</h5>
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body p-4 text-center">
+                <div class="mb-3">
+                    <i class="bi bi-exclamation-triangle text-danger" style="font-size: 3.5rem;"></i>
+                </div>
+                <h4 class="fw-bold text-dark mb-2">Atenção!</h4>
+                <p class="text-muted mb-0">
+                    Tem certeza que deseja encerrar a locação do imóvel <br />
+                    <strong id="apelidoImovelModal" class="text-danger"></strong>?
+                </p>
+                <p class="mt-2 text-dark">
+                    Inquilino atual: <strong id="nomeInquilinoModal"></strong>
+                </p>
+                <hr class="my-4 opacity-25">
+                <p class="small text-muted">Esta ação não poderá ser desfeita. O imóvel ficará marcado como <strong>Disponível</strong> imediatamente.</p>
+            </div>
+            <div class="modal-footer border-0 p-3 pt-0 justify-content-center">
+                <button type="button" class="btn btn-light px-4 fw-medium border shadow-sm" data-bs-dismiss="modal">Cancelar</button>
+                <form id="formEncerrar" method="post" asp-controller="Locacao" asp-action="Encerrar">
+                    @Html.AntiForgeryToken()
+                    <input type="hidden" name="idImovel" id="idImovelModal" value="" />
+                    <button type="submit" class="btn btn-danger px-4 fw-bold shadow-sm">Sim, Encerrar</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var modal = document.getElementById('confirmarEncerramentoModal');
+            if (modal) {
+                modal.addEventListener('show.bs.modal', function (event) {
+                    var button = event.relatedTarget;
+                    var idImovel = button.getAttribute('data-id-imovel');
+                    var apelido = button.getAttribute('data-apelido');
+                    var inquilino = button.getAttribute('data-inquilino');
+
+                    document.getElementById('idImovelModal').value = idImovel;
+                    document.getElementById('apelidoImovelModal').textContent = apelido;
+                    document.getElementById('nomeInquilinoModal').textContent = inquilino || "Não informado";
+                });
+            }
+        });
+    </script>
+}

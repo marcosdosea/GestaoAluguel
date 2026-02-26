@@ -50,6 +50,9 @@ namespace GestaoAluguelWeb.Models
         [Display(Name = "Foto do imóvel")]
         public byte[]? Foto { get; set; }
 
+        [Display(Name = "Inquilino Atual")]
+        public string? NomeInquilino { get; set; }
+
         [NotMapped]
         public PapelUsuario Papel { get; set; }
     }

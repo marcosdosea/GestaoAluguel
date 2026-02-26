@@ -201,5 +201,45 @@ namespace GestaoAluguelWeb.Controllers
             LocacaoService.Delete(id);
             return RedirectToAction(nameof(Index));
         }
+
+        // POST: Locacao/Encerrar
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public IActionResult Encerrar(int idImovel)
+        {
+            using (var transaction = new TransactionScope(TransactionScopeAsyncFlowOption.Enabled))
+            {
+                try
+                {
+                    // 1. Busca a locação ativa para o imóvel
+                    var locacao = LocacaoService.GetAtivaByImovel(idImovel);
+                    if (locacao == null)
+                    {
+                        return NotFound("Não foi encontrada uma locação ativa para este imóvel.");
+                    }
+
+                    // 2. Atualiza a locação
+                    locacao.DataFim = DateTime.Now;
+                    locacao.Status = 0; // Inativa
+                    LocacaoService.Edit(locacao);
+
+                    // 3. Atualiza o imóvel
+                    var imovel = imovelService.Get(idImovel);
+                    if (imovel != null)
+                    {
+                        imovel.EstaAlugado = 0; // Disponível
+                        imovelService.Edit(imovel);
+                    }
+
+                    transaction.Complete();
+                    return RedirectToAction("Index", "Imovel");
+                }
+                catch (Exception)
+                {
+                    // Em caso de erro, redireciona de volta para a lista de imóveis
+                    return RedirectToAction("Index", "Imovel");
+                }
+            }
+        }
     }
 }

@@ -37,9 +37,9 @@ namespace Service
 
         public void Edit(Locacao locacao)
         {
-            
-                context.Update(locacao);
-                context.SaveChanges();
+
+            context.Update(locacao);
+            context.SaveChanges();
         }
 
         public Locacao? Get(int id)
@@ -74,7 +74,7 @@ namespace Service
         public IEnumerable<LocacaoDTO> GetByInquilino(int idInquilino)
         {
             return from locacao in context.Locacaos
-                   where locacao.IdInquilino == idInquilino
+                   where idInquilino == locacao.IdInquilino
                    select new LocacaoDTO
                    {
                        Id = locacao.Id,
@@ -100,6 +100,12 @@ namespace Service
                        IdImovel = locacao.IdImovel,
                        IdInquilino = locacao.IdInquilino
                    };
+        }
+
+        public Locacao? GetAtivaByImovel(int idImovel)
+        {
+            return context.Locacaos
+                .FirstOrDefault(l => l.IdImovel == idImovel && l.Status == 1);
         }
 
     }

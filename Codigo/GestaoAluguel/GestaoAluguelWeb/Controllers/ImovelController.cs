@@ -27,7 +27,7 @@ namespace GestaoAluguelWeb.Controllers
             FileHelper.FileType.Bmp
 
         };
-        public ImovelController(IImovelService imovelService, ILocacaoService LocacaoService,IPessoaService PessoaService, IMapper mapper)
+        public ImovelController(IImovelService imovelService, ILocacaoService LocacaoService, IPessoaService PessoaService, IMapper mapper)
         {
             this.ImovelService = imovelService;
             this.LocacaoService = LocacaoService;
@@ -60,13 +60,24 @@ namespace GestaoAluguelWeb.Controllers
             {
 
                 ImovelModel modelo = mapper.Map<ImovelModel>(imovel);
-                if (modelo != null) {
-
+                if (modelo != null)
+                {
                     modelo.Papel = PapelUsuario.Proprietario;
-                    listaMeusImoveis.Add(modelo);
 
+                    // Se estiver alugado, busca o nome do inquilino
+                    if (modelo.EstaAlugado == 1)
+                    {
+                        var locacaoAtiva = LocacaoService.GetAtivaByImovel(modelo.Id);
+                        if (locacaoAtiva != null)
+                        {
+                            var inquilino = PessoaService.Get(locacaoAtiva.IdInquilino);
+                            modelo.NomeInquilino = inquilino?.Nome;
+                        }
+                    }
+
+                    listaMeusImoveis.Add(modelo);
                 }
-                    
+
             }
 
             // 2. Buscar imóveis onde sou INQUILINO
@@ -127,7 +138,7 @@ namespace GestaoAluguelWeb.Controllers
             {
                 imovelModel.Papel = PapelUsuario.Inquilino;
             }
-                
+
             return View(imovelModel);
         }
 
@@ -209,7 +220,7 @@ namespace GestaoAluguelWeb.Controllers
                     return Forbid(); // Ou Redirect para página de "Sem Permissão"
                 }
 
-                
+
                 if (fotoFile != null && fotoFile.Length > 0)
                 {
 
