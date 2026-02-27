@@ -14,33 +14,43 @@
 </head>
 <body>
     <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-modern box-shadow mb-3">
             <div class="container-fluid">
-                <a class="navbar-brand" asp-area="" asp-controller="Imovel" asp-action="Index">GestãoAluguelWeb</a>
+                <a class="navbar-brand d-flex align-items-center gap-2" asp-area="" asp-controller="Imovel" asp-action="Index">
+                    <img src="~/img/logo.webp" alt="Gestão Aluguel Logo" class="navbar-logo" />
+                    <span class="brand-text">GestãoAluguel</span>
+                </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
                         aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
-                    <ul class="navbar-nav flex-grow-1">
-                        <partial name="_LoginPartial" />
+                    <ul class="navbar-nav flex-grow-1 align-items-center">
                         @if (SignInManager.IsSignedIn(User))
                         {
                             <li class="nav-item">
-                                <a class="nav-link text-dark" asp-area="" asp-controller="Imovel" asp-action="Index">Início</a>
+                                <a class="nav-link" asp-area="" asp-controller="Imovel" asp-action="Index">
+                                    <i class="bi bi-house-door me-1"></i> Início
+                                </a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link text-dark" asp-area="" asp-controller="Locacao" asp-action="Index">Visualizar Contratos</a>
+                                <a class="nav-link" asp-area="" asp-controller="Locacao" asp-action="Index">
+                                    <i class="bi bi-file-earmark-text me-1"></i> Contratos
+                                </a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link text-dark" asp-area="" asp-controller="ChamadoReparo" asp-action="Index">Chamados de Reparo</a>
+                                <a class="nav-link" asp-area="" asp-controller="ChamadoReparo" asp-action="Index">
+                                    <i class="bi bi-tools me-1"></i> Reparos
+                                </a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link text-dark" asp-area="" asp-controller="Pagamento" asp-action="Index">Consultar extrato</a>
+                                <a class="nav-link" asp-area="" asp-controller="Pagamento" asp-action="Index">
+                                    <i class="bi bi-wallet2 me-1"></i> Extrato
+                                </a>
                             </li>
                         }
-
                     </ul>
+                    <partial name="_LoginPartial" />
                 </div>
             </div>
         </nav>
