@@ -36,7 +36,7 @@ que 22.4% dos brasileiros vivem de aluguel. Mas uma das características mais no
 
 <h2 id="apresentação">5. Apresentação GestãoAluguel</h2>  
 
- [![](https://markdown-videos-api.jorgenkh.no/youtube/2zuk50CgTIY?width=320&height=180&filetype=gif)]((https://www.youtube.com/shorts/2zuk50CgTIY))
+ [![](https://markdown-videos-api.jorgenkh.no/youtube/2zuk50CgTIY?width=320&height=180&filetype=gif)](https://www.youtube.com/shorts/2zuk50CgTIY)
 
 <h2 id="equipe">6. Equipe </h2>
 
